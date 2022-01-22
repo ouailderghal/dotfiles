@@ -1,0 +1,49 @@
+# General aliases
+alias v="$(which nvim)"
+alias q="exit"
+alias h="htop"
+alias ne="neofetch"
+alias x="startx"
+alias sv="sudo sv"
+alias rf="rm -rf"
+alias systemctl="sudo systemctl"
+alias open="$(which xdg-open)"
+alias o="$(which xdg-open)"
+alias pinger="$(which ping) -c 3 1.1.1.1"
+alias fs_created="sudo $(which tune2fs) -l /dev/sda1 | grep 'Filesystem created:'"
+
+# ls
+alias sl="ls"
+alias l="ls -lh"
+alias ll="ls -lah"
+
+# Git
+alias g="git"
+alias gl="git log --oneline --decorate"
+alias ga="git add"
+alias gaa="git add -A"
+alias gcm="git commit -m"
+alias gs="git status"
+alias gss="git status -s"
+alias gb="git branch"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias gp="git push"
+
+# Tmux
+alias t="tmux"
+alias ta="tmux a"
+alias tat="tmux attach -t"
+alias tls="tmux list-sessions"
+alias tks="tmux kill-session -t"
+alias tkserver="tmux kill-server"
+
+# Void Linux
+alias xi="sudo xbps-install"
+alias xis="sudo xbps-install -S"
+alias xs="sudo xbps-install -Sy"
+alias xu="sudo xbps-install -Su"
+alias xq="xbps-query -Rs"
+
+# Laravel
+alias pas="$(which php) artisan serve"
