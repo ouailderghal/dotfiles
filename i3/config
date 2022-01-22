@@ -6,6 +6,7 @@ set $term alacritty
 set $editor nvim
 set $browser firefox
 set $gui_file_manager pcmanfm
+set $file_manager lf
 
 # Windows specifications
 for_window [class="Xfce4-appfinder"] floating enable
@@ -16,6 +17,7 @@ for_window [class="Nitrogen"] floating enable
 # Keybindings
 bindsym $mod+b exec $browser
 bindsym $mod+p exec $gui_file_manager
+bindsym $mod+Shift+p exec $term -e $file_manager
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
