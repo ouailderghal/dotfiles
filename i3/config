@@ -14,9 +14,6 @@ for_window [class="Nitrogen"] floating enable
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
 
-# Background
-exec feh --bg-scale $HOME/Pictures/wallpapers/wallpaper.jpg
-
 # Font
 font pango:JetBrains Mono 10
 
