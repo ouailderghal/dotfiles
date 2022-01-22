@@ -9,6 +9,7 @@ set $editor nvim
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
+for_window [class="Nitrogen"] floating enable
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
