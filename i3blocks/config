@@ -1,0 +1,19 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[volume]
+command=scripts/volume
+LABEL=♪ 
+interval=1
+signal=10
+STEP=5%
+
+[battery2]
+command=scripts/battery2
+markup=pango
+interval=10
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
