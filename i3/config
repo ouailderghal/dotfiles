@@ -4,12 +4,16 @@ set $mod Mod4
 # Constants
 set $term alacritty
 set $editor nvim
+set $browser firefox
 
 # Windows specifications
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Nitrogen"] floating enable
+
+# Keybindings
+bindsym $mod+b exec $browser
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
