@@ -70,3 +70,5 @@ npm
 go
 telegram-desktop
 discord
+wget
+curl
