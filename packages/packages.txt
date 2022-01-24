@@ -72,3 +72,4 @@ telegram-desktop
 discord
 wget
 curl
+xcompmgr
