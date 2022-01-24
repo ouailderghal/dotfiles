@@ -18,6 +18,7 @@ for_window [class="Nitrogen"] floating enable
 bindsym $mod+b exec $browser
 bindsym $mod+p exec $gui_file_manager
 bindsym $mod+Shift+p exec $term -e $file_manager
+bindsym $mod+Control+l exec "i3lock -c 000000"
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
