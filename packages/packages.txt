@@ -73,3 +73,4 @@ discord
 wget
 curl
 xcompmgr
+hugo
