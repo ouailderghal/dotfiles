@@ -23,6 +23,9 @@ bindsym $mod+Control+l exec "i3lock -c 000000"
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
 
+# Gaps
+gaps inner 8
+
 # Font
 font pango:JetBrains Mono 10
 
