@@ -74,3 +74,4 @@ wget
 curl
 xcompmgr
 hugo
+scrot
