@@ -13,6 +13,7 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Nitrogen"] floating enable
+for_window [class="Seahorse"] floating enable
 
 # Keybindings
 bindsym $mod+b exec $browser
@@ -157,3 +158,4 @@ bar {
         status_command i3blocks
         position bottom
 }
+
