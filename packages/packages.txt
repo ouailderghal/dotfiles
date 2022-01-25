@@ -76,3 +76,4 @@ curl
 xcompmgr
 hugo
 scrot
+gnome-clocks
