@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 gaps inner 8
 
 # Font
-font pango:Terminus (TTF) 14
+font pango:Ubuntu Mono 14
 
 # xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
