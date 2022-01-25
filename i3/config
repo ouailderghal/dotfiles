@@ -18,6 +18,7 @@ for_window [class="Org.gnome.clocks"] floating enable
 
 # Keybindings
 bindsym $mod+b exec $browser
+bindsym $mod+Shift+b exec $browser --private-window
 bindsym $mod+p exec $gui_file_manager
 bindsym $mod+Shift+p exec $term -e $file_manager
 bindsym $mod+Control+l exec "i3lock -c 000000"
