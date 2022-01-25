@@ -2,3 +2,4 @@ visual-studio-code-bin
 terminus-font-ttf
 brave-bin
 zoom
+slack-desktop
