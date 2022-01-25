@@ -51,6 +51,7 @@ ttf-liberation
 ttf-dejavu
 ttf-bitstream-vera
 ttf-jetbrains-mono
+ttf-ubuntu-font-family
 otf-font-awesome
 noto-fonts
 gnu-free-fonts
