@@ -23,6 +23,8 @@ bindsym $mod+Shift+p exec $term -e $file_manager
 bindsym $mod+Control+l exec "i3lock -c 000000"
 bindsym Print exec "scrot --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
 bindsym --release $mod+Print exec "scrot --select --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
+bindsym $mod+t exec telegram-desktop
+bindsym $mod+Shift+t exec killall telegram-desktop
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
