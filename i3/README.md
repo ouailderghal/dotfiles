@@ -1,5 +1,7 @@
 # i3 configuration file
 
+![Screenshot](./screenshot.png)
+
 ## Keybindings
 
 - <kbd>mod</kbd>+<kbd>b</kbd> : open `Firefox` browser
