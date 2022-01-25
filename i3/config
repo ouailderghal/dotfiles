@@ -14,6 +14,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Seahorse"] floating enable
+for_window [class="Org.gnome.clocks"] floating enable
 
 # Keybindings
 bindsym $mod+b exec $browser
