@@ -26,6 +26,7 @@ bindsym Print exec "scrot --silent --file $HOME/Pictures/Screenshot-$(date '+%d-
 bindsym --release $mod+Print exec "scrot --select --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+Shift+t exec killall telegram-desktop
+bindsym $mod+Control+h exec $term -e "htop"
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
