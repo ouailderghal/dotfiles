@@ -11,3 +11,4 @@
 - <kbd>mod</kbd>+<kbd>Control</kbd>+<kbd>l</kbd> : lock screen with `i3lock`
 - <kbd>Print</kbd> : take a screenshot of the entire screen
 - <kbd>mod</kbd>+<kbd>Print</kbd> : take a screenshot of the selected rectangle
+- <kbd>mod</kbd>+<kbd>Control</kbd>+<kbd>h</kbd> : launch `htop` process viewer
