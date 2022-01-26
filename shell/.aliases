@@ -1,5 +1,5 @@
 # General aliases
-alias v="$(which nvim)"
+alias v="nvim"
 alias q="exit"
 alias h="htop"
 alias ne="neofetch"
@@ -7,10 +7,10 @@ alias x="startx"
 alias sv="sudo sv"
 alias rf="rm -rf"
 alias systemctl="sudo systemctl"
-alias open="$(which xdg-open)"
-alias o="$(which xdg-open)"
-alias pinger="$(which ping) -c 3 1.1.1.1"
-alias fs_created="sudo $(which tune2fs) -l /dev/sda1 | grep 'Filesystem created:'"
+alias open="xdg-open"
+alias o="xdg-open"
+alias pinger="ping -c 3 1.1.1.1"
+alias fs_created="sudo tune2fs -l /dev/sda1 | grep 'Filesystem created:'"
 
 # ls
 alias sl="ls"
@@ -46,4 +46,4 @@ alias xu="sudo xbps-install -Su"
 alias xq="xbps-query -Rs"
 
 # Laravel
-alias pas="$(which php) artisan serve"
+alias pas="php artisan serve"
