@@ -79,3 +79,4 @@ scrot
 gnome-clocks
 jedi-language-server
 python-jedi
+simplescreenrecorder
