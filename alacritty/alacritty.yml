@@ -17,6 +17,7 @@ window:
   dynamic_padding: true
   decorations: full
   startup_mode: Windowed
+  opacity: 1
 
   title: Alacritty
   dynamic_title: false
@@ -57,9 +58,6 @@ cursor:
 
   vi_mode_style: Block
   unfocused_hollow: true
-
-# Background opacity
-background_opacity: 1
 
 # Key bindings
 key_bindings:
