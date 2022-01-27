@@ -80,3 +80,5 @@ jedi-language-server
 python-jedi
 simplescreenrecorder
 slock
+zip
+unzip
