@@ -83,3 +83,4 @@ simplescreenrecorder
 slock
 zip
 unzip
+xarchiver
