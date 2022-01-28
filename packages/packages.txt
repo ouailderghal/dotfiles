@@ -12,6 +12,7 @@ firefox
 thunderbird
 gitg
 ristretto
+sxiv
 geany
 htop
 keepassxc
