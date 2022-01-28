@@ -15,6 +15,7 @@ alias fs_created="sudo tune2fs -l /dev/sda1 | grep 'Filesystem created:'"
 # Python
 alias act="if [[ -d .venv ]]; then source .venv/bin/activate; elif [[ -d venv ]]; then source venv/bin/activate; else; echo 'ERROR: There is no venv in this directory'; fi"
 alias venv="if [[ ! -d .venv ]]; then virtualenv -p python3 .venv && echo '.venv/ created successfully'; fi"
+alias freeze="pip freeze > requirements.txt"
 
 # ls
 alias sl="ls"
