@@ -35,19 +35,19 @@ font:
   size: 8
 
   normal:
-    family: Ubuntu Mono
+    family: IBM Plex Mono
     style: Regular
 
   bold:
-    family: Ubuntu Mono
+    family: IBM Plex Mono
     style: Bold
 
   italic:
-    family: Ubuntu Mono
+    family: IBM Plex Mono
     style: Italic
 
   bold_italic:
-    family: Ubuntu Mono
+    family: IBM Plex Mono
     style: Italic Bold
 
 # Cursor
