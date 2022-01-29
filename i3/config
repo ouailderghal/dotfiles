@@ -16,6 +16,10 @@ for_window [class="Nitrogen"] floating enable
 for_window [class="Seahorse"] floating enable
 for_window [class="Org.gnome.clocks"] floating enable
 
+assign [class="TelegramDesktop"] $ws10
+assign [class="Slack"] $ws10
+assign [class="zoom"] $ws10
+
 # Keybindings
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser --private-window
