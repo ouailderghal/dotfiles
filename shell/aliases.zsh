@@ -2,7 +2,7 @@
 alias v="nvim"
 alias q="exit"
 alias h="htop"
-alias ne="neofetch"
+alias nf="neofetch"
 alias x="startx"
 alias sv="sudo sv"
 alias rf="rm -rf"
