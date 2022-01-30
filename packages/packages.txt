@@ -10,7 +10,6 @@ pcmanfm
 arandr
 firefox
 thunderbird
-gitg
 ristretto
 sxiv
 geany
@@ -38,6 +37,8 @@ tmux
 network-manager-applet
 nitrogen
 git
+gitg
+github-cli
 openssh
 docker
 docker-compose
