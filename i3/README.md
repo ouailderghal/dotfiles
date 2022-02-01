@@ -12,3 +12,8 @@
 - <kbd>Print</kbd> : take a screenshot of the entire screen
 - <kbd>mod</kbd>+<kbd>Print</kbd> : take a screenshot of the selected rectangle
 - <kbd>mod</kbd>+<kbd>Control</kbd>+<kbd>h</kbd> : launch `htop` process viewer
+
+### Gaps
+- <kbd>mod</kbd>+<kbd>g</kbd> : increase inner gaps by 5 pixels
+- <kbd>mod</kbd>+<kbd>Shift</kbd>+<kbd>g</kbd>: decrease inner gaps by 5 pixels
+- <kbd>mod</kbd>+<kbd>Control</kbd>+<kbd>g</kbd>: reset inner gaps to default value
