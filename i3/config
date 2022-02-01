@@ -39,6 +39,9 @@ exec --no-startup-id dex --autostart --environment i3
 
 # Gaps
 gaps inner 8
+bindsym $mod+g gaps inner current plus 5
+bindsym $mod+Shift+g gaps inner current minus 5
+bindsym $mod+Control+g gaps inner all set 8
 
 # Font
 font pango:IBM Plex Mono 12
