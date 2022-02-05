@@ -85,3 +85,5 @@ slock
 zip
 unzip
 xarchiver
+typescript
+ts-node
