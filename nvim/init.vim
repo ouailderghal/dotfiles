@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'morhetz/gruvbox'
 call plug#end()
 
-
 syntax on
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -21,6 +20,9 @@ set cursorline
 set clipboard=unnamedplus
 set textwidth=120
 set colorcolumn=-2
+
+" Leader key <space>
+let mapleader = " "
 
 " Color scheme & transparent background
 set background=dark
