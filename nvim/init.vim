@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
     Plug 'morhetz/gruvbox'
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
 syntax on
@@ -37,3 +38,6 @@ nnoremap <silent> <S-j> :m .+1<CR>==
 vnoremap <silent> <S-k> :m '<-2<CR>gv=gv
 vnoremap <silent> <S-j> :m '>+1<CR>gv=gv
 nnoremap <silent> <A-d> yypjk$
+
+"" Comment a line
+noremap <C-c> :Commentary<CR>
