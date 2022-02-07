@@ -3,6 +3,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
 call plug#end()
 
+" Reload init.vim & install plugins
+au FileType vim noremap <F12> :source ~/.config/nvim/init.vim <bar> :PlugInstall<CR>
+
 syntax on
 set noerrorbells
 set tabstop=4 softtabstop=4
