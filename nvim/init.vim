@@ -28,3 +28,12 @@ let mapleader = " "
 set background=dark
 colorscheme gruvbox
 " hi Normal guibg=NONE ctermbg=NONE
+
+" Key remaps
+
+"" Move & duplicate line
+nnoremap <silent> <S-k> :m .-2<CR>==
+nnoremap <silent> <S-j> :m .+1<CR>==
+vnoremap <silent> <S-k> :m '<-2<CR>gv=gv
+vnoremap <silent> <S-j> :m '>+1<CR>gv=gv
+nnoremap <silent> <A-d> yypjk$
