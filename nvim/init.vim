@@ -41,3 +41,7 @@ nnoremap <silent> <A-d> yypjk$
 
 "" Comment a line
 noremap <C-c> :Commentary<CR>
+
+"" Spelling
+nnoremap <leader>sen :set spell <bar> :set spelllang=en<CR>
+nnoremap <leader>sfr :set spell <bar> :set spelllang=fr<CR>
