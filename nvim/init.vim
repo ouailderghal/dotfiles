@@ -45,3 +45,7 @@ noremap <C-c> :Commentary<CR>
 "" Spelling
 nnoremap <leader>sen :set spell <bar> :set spelllang=en<CR>
 nnoremap <leader>sfr :set spell <bar> :set spelllang=fr<CR>
+
+" Switch between buffers
+nnoremap <silent> <C-j> :bp<CR>
+nnoremap <silent> <C-k> :bn<CR>
