@@ -49,3 +49,11 @@ nnoremap <leader>sfr :set spell <bar> :set spelllang=fr<CR>
 " Switch between buffers
 nnoremap <silent> <C-j> :bp<CR>
 nnoremap <silent> <C-k> :bn<CR>
+
+" Resize & switch between splits
+nnoremap <silent> <leader>h :wincmd h<CR>
+nnoremap <silent> <leader>k :wincmd k<CR>
+nnoremap <silent> <leader>j :wincmd j<CR>
+nnoremap <silent> <leader>l :wincmd l<CR>
+nnoremap <silent> <leader>= :vertical resize +5<CR>
+nnoremap <silent> <leader>- :vertical resize -5<CR>
