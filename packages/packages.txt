@@ -90,3 +90,4 @@ typescript
 ts-node
 ctags
 entr
+dunst
