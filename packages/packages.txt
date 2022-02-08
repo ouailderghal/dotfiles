@@ -91,3 +91,4 @@ ts-node
 ctags
 entr
 dunst
+renameutils
