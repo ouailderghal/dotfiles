@@ -89,3 +89,4 @@ xarchiver
 typescript
 ts-node
 ctags
+entr
