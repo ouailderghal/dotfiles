@@ -28,9 +28,9 @@ bindsym $mod+Shift+b exec $browser --private-window
 bindsym $mod+p exec $gui_file_manager
 bindsym $mod+Shift+p exec $term -e $file_manager
 bindsym --release $mod+Control+l exec "slock"
-bindsym Print exec "scrot --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
-bindsym --release $mod+Shift+Print exec "scrot --select --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
-bindsym --release $mod+Print exec "scrot --focused --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png"
+bindsym Print exec "scrot --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png && notify-send 'Screenshot saved' 'Entire Screen' -i ~/.icons/screenshot.png"
+bindsym --release $mod+Shift+Print exec "scrot --select --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png && notify-send 'Screenshot saved' 'Selected Region' -i ~/.icons/screenshot.png"
+bindsym --release $mod+Print exec "scrot --focused --silent --file $HOME/Pictures/Screenshot-$(date '+%d-%m-%Y-%H:%M:%S').png && notify-send 'Screenshot saved' 'Focused Window' -i ~/.icons/screenshot.png"
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+Shift+t exec killall telegram-desktop
 bindsym $mod+Control+h exec $term -e "htop"
