@@ -92,3 +92,4 @@ ctags
 entr
 dunst
 renameutils
+mariadb
