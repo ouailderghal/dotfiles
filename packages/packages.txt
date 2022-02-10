@@ -93,3 +93,4 @@ entr
 dunst
 renameutils
 mariadb
+unrar
