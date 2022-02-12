@@ -45,7 +45,7 @@ bindsym $mod+Shift+g gaps inner current minus 5
 bindsym $mod+Control+g gaps inner all set $gaps
 
 # Font
-font pango:IBM Plex Mono 12
+font pango:Iosevka Term 12
 
 # xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
