@@ -17,7 +17,6 @@ for_window [class="Nitrogen"] floating enable
 for_window [class="Seahorse"] floating enable
 for_window [class="Org.gnome.clocks"] floating enable
 
-assign [class="firefox"] $ws1
 assign [class="TelegramDesktop"] $ws10
 assign [class="Slack"] $ws10
 assign [class="zoom"] $ws10
