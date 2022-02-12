@@ -57,6 +57,7 @@ ttf-ubuntu-font-family
 otf-font-awesome
 noto-fonts
 gnu-free-fonts
+ttc-iosevka
 xdg-utils
 jdk-openjdk
 jre-openjdk
