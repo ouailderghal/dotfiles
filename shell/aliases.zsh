@@ -12,6 +12,7 @@ alias open="xdg-open"
 alias o="xdg-open"
 alias pinger="ping -c 3 1.1.1.1"
 alias fs_created="sudo tune2fs -l /dev/sda1 | grep 'Filesystem created:'"
+alias vo='bash -c "vi $(fzf)"'
 
 # Python
 alias act="if [[ -d .venv ]]; then source .venv/bin/activate; elif [[ -d venv ]]; then source venv/bin/activate; else; echo 'ERROR: There is no venv in this directory'; fi"
