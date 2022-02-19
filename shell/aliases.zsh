@@ -41,6 +41,7 @@ alias gaf='bash -c "git add $(fzf)"'
 # Tmux
 alias t="tmux"
 alias ta="tmux a"
+alias tns="tmux new-session -s"
 alias tat="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
