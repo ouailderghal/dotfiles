@@ -36,6 +36,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gp="git push"
+alias gaf='bash -c "git add $(fzf)"'
 
 # Tmux
 alias t="tmux"
