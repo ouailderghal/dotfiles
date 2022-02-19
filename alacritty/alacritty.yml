@@ -19,7 +19,7 @@ window:
   startup_mode: Windowed
   opacity: 1
 
-  title: Alacritty
+  # title: Alacritty
   dynamic_title: false
 
   class:
@@ -35,19 +35,19 @@ font:
   size: 8
 
   normal:
-    family: Ubuntu Mono
+    family: Iosevka Term
     style: Regular
 
   bold:
-    family: Ubuntu Mono
+    family: Iosevka Term
     style: Bold
 
   italic:
-    family: Ubuntu Mono
+    family: Iosevka Term
     style: Italic
 
   bold_italic:
-    family: Ubuntu Mono
+    family: Iosevka Term
     style: Italic Bold
 
 # Cursor
