@@ -101,5 +101,4 @@ composer
 plantuml
 mypaint
 breeze-icons
-okular
 jupyter
