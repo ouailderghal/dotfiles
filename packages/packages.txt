@@ -102,3 +102,5 @@ plantuml
 mypaint
 breeze-icons
 jupyter
+zathura
+zathura-pdf-mupdf
