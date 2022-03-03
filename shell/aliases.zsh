@@ -55,4 +55,5 @@ alias xu="sudo xbps-install -Su"
 alias xq="xbps-query -Rs"
 
 # Laravel
+alias pa="php artisan"
 alias pas="php artisan serve"
