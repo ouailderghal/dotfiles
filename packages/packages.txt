@@ -6,7 +6,6 @@ acpi
 gnome-keyring
 seahorse
 alacritty
-pcmanfm
 arandr
 firefox
 thunderbird
