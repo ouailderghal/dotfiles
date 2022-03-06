@@ -37,6 +37,9 @@ bindsym $mod+Control+h exec $term -e "htop"
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
 
+# Set border
+for_window [class="^.*"] border pixel 2
+
 # Gaps
 gaps inner $gaps
 bindsym $mod+g gaps inner current plus 5
