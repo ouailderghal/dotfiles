@@ -6,7 +6,7 @@ set $gaps 8
 set $term st
 set $editor nvim
 set $browser firefox
-set $gui_file_manager pcmanfm
+set $gui_file_manager thunar
 set $file_manager lf
 
 # Windows specifications
