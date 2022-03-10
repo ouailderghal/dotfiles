@@ -14,5 +14,8 @@ mkdir -p ~/.config/i3 && stow i3 -t ~/.config/i3
 
 # i3 status bar
 mkdir -p ~/.config/i3status && stow i3status -t ~/.config/i3status
+
+# neovim
+mkdir -p ~/.config/nvim && stow nvim -t ~/.config/nvim
 ```
 
