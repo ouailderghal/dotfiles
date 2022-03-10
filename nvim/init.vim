@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'tpope/vim-commentary'
+    Plug 'aklt/plantuml-syntax'
 call plug#end()
 
 " Reload init.vim & install plugins
