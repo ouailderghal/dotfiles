@@ -29,8 +29,8 @@ bindsym --release $mod+Control+l exec "slock"
 bindsym Print exec "screenshooter -e"
 bindsym --release $mod+Shift+Print exec "screenshooter -s"
 bindsym --release $mod+Print exec "screenshooter -f"
-bindsym $mod+t exec telegram-desktop
-bindsym $mod+Shift+t exec killall telegram-desktop
+bindsym $mod+t exec ~/.local/share/telegram/Telegram
+bindsym $mod+Shift+t exec killall Telegram
 bindsym $mod+Control+h exec $term -e "htop"
 
 # XDG autostart 
