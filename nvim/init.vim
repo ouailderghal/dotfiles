@@ -31,7 +31,7 @@ let mapleader = " "
 " Color scheme & transparent background
 set background=dark
 colorscheme gruvbox
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 " Key remaps
 
