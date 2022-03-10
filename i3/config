@@ -40,12 +40,6 @@ exec --no-startup-id dex --autostart --environment i3
 # Set border
 for_window [class="^.*"] border pixel 2
 
-# Gaps
-gaps inner $gaps
-bindsym $mod+g gaps inner current plus 5
-bindsym $mod+Shift+g gaps inner current minus 5
-bindsym $mod+Control+g gaps inner all set $gaps
-
 # Font
 font pango:Iosevka Term 12
 
