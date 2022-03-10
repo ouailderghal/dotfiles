@@ -2,7 +2,6 @@
 set $mod Mod4
 
 # Constants
-set $gaps 8
 set $term rxvt-unicode
 set $editor nvim
 set $browser firefox
