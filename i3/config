@@ -21,6 +21,7 @@ assign [class="TelegramDesktop"] $ws10
 assign [class="Slack"] $ws10
 assign [class="zoom"] $ws10
 assign [class="Quodlibet"] $ws8
+assign [class="deemix-gui"] $ws8
 
 # Keybindings
 bindsym $mod+b exec $browser
