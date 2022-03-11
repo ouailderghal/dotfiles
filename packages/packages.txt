@@ -102,3 +102,4 @@ stow
 quodlibet
 ufw
 gufw
+emacs
