@@ -20,5 +20,8 @@ mkdir -p ~/.config/i3status && stow i3status -t ~/.config/i3status
 
 # neovim
 mkdir -p ~/.config/nvim && stow nvim -t ~/.config/nvim
+
+# alacritty
+mkdir -p ~/.config/alacritty && stow nvim -t ~/.config/alacritty
 ```
 
