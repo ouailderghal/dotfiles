@@ -1,23 +1,23 @@
 live_config_reload: true
 
 import:
-  - ~/.config/alacritty/theme.yml
+  - ~/.config/alacritty/themes/xterm.yml
+  # - ~/.config/alacritty/themes/gruvbox-dark.yml
 
 # Environment
 env:
-  TERM: alacritty
+  TERM: xterm-256color
   EDITOR: /usr/bin/nvim
 
 # Shell
 shell:
-  program: /bin/zsh
+  program: /bin/bash
 
 # Window
 window:
   dynamic_padding: true
   decorations: full
   startup_mode: Windowed
-  opacity: 1
 
   # title: Alacritty
   dynamic_title: false
@@ -35,19 +35,19 @@ font:
   size: 8
 
   normal:
-    family: Iosevka Term
+    family: Liberation Mono
     style: Regular
 
   bold:
-    family: Iosevka Term
+    family: Liberation Mono
     style: Bold
 
   italic:
-    family: Iosevka Term
+    family: Liberation Mono
     style: Italic
 
   bold_italic:
-    family: Iosevka Term
+    family: Liberation Mono
     style: Italic Bold
 
 # Cursor
@@ -68,4 +68,3 @@ key_bindings:
   - { key: Back,       mods: Control|Shift,              action: ResetFontSize    }
   - { key: K,          mods: Control|Shift,              action: IncreaseFontSize }
   - { key: J,          mods: Control|Shift,              action: DecreaseFontSize }
-
