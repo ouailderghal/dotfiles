@@ -108,3 +108,5 @@ xfce4-goodies
 filezilla
 stow
 quodlibet
+ufw
+gufw
