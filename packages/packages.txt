@@ -104,3 +104,4 @@ ufw
 gufw
 emacs
 ncdu
+youtube-dl
