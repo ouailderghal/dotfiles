@@ -22,6 +22,9 @@ mkdir -p ~/.config/i3status && stow i3status -t ~/.config/i3status
 mkdir -p ~/.config/nvim && stow nvim -t ~/.config/nvim
 
 # alacritty
-mkdir -p ~/.config/alacritty && stow nvim -t ~/.config/alacritty
+mkdir -p ~/.config/alacritty && stow alacritty -t ~/.config/alacritty
+
+# tmux
+mkdir -p ~/.config/tmux && stow tmux -t ~/.config/tmux
 ```
 
