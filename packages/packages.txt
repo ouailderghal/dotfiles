@@ -106,3 +106,4 @@ zathura-pdf-mupdf
 xfce4
 xfce4-goodies
 filezilla
+stow
