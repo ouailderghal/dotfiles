@@ -105,3 +105,10 @@ gufw
 emacs
 ncdu
 youtube-dl
+gvfs
+gvfs-google
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gvfs-goa
+gvfs-afc
