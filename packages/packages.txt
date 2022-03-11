@@ -103,3 +103,4 @@ quodlibet
 ufw
 gufw
 emacs
+ncdu
