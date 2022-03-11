@@ -105,6 +105,7 @@ gufw
 emacs
 ncdu
 youtube-dl
+udisks2
 gvfs
 gvfs-google
 gvfs-mtp
