@@ -113,3 +113,4 @@ gvfs-nfs
 gvfs-smb
 gvfs-goa
 gvfs-afc
+bash-completion
