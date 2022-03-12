@@ -4,3 +4,4 @@ brave-bin
 zoom
 slack-desktop
 drawio-desktop-bin
+postman-bin
