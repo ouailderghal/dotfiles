@@ -34,6 +34,7 @@ bindsym --release $mod+Print exec "screenshooter -f"
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+Shift+t exec killall telegram-desktop
 bindsym $mod+Control+h exec $term -e "htop"
+bindsym --release $mod+Control+s exec "xfce4-session-logout -s"
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
