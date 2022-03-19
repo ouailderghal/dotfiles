@@ -23,6 +23,8 @@ assign [class="Quodlibet"] $ws8
 assign [class="deemix-gui"] $ws8
 assign [class="Org.gnome.clocks"] $ws9
 
+for_window [class="Org.gnome.clocks"] resize set 640 480
+
 # Keybindings
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser --private-window
