@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Constants
-set $term alacritty
+set $term st
 set $editor nvim
 set $browser firefox
 set $gui_file_manager thunar
