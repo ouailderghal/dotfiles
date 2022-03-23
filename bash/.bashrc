@@ -1,12 +1,9 @@
-#
-# /etc/bash.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
+PS1='\w > '
 
 case ${TERM} in
   xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
@@ -30,15 +27,26 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-test -d $HOME/go/bin && PATH=$HOME/go/bin:$PATH
-test -d $HOME/.local/bin && PATH=$HOME/.local/bin:$PATH
-test -d $HOME/.config/composer/vendor/bin && PATH=$HOME/.config/composer/vendor/bin:$PATH
-test -f $HOME/.dotfiles/bash/git-completion.bash && . $HOME/.dotfiles/bash/git-completion.bash
+# Local binaries
+LOCAL_PATH=$HOME/.local/
+test -d $LOCAL_PATH/bin && PATH=$LOCAL_PATH/bin:$PATH
 
-# Tina Draw
-TINA_PATH=$HOME/.local/share/tina
+# Go binaries
+GO_PATH=$HOME/go/
+test -d $GO_PATH/bin && PATH=$GO_PATH/bin:$PATH
+
+# Composer binaries
+COMPOSER_PATH=$HOME/.config/composer/
+test -d $COMPOSER_PATH/vendor/bin && PATH=$COMPOSER_PATH/vendor/bin:$PATH
+
+# Tina Draw binaries & man
+TINA_PATH=$HOME/.local/share/tina/
 test -d $TINA_PATH/bin && PATH=$TINA_PATH/bin:$PATH
 test -d $TINA_PATH/doc && export MANPATH=$TINA_PATH/doc/man:$MANPATH
+
+# Git prompt & completion
+GIT_PROMPT_PATH=$HOME/.dotfiles/bash/
+test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-completion.bash
 
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
