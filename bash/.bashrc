@@ -35,6 +35,11 @@ test -d $HOME/.local/bin && PATH=$HOME/.local/bin:$PATH
 test -d $HOME/.config/composer/vendor/bin && PATH=$HOME/.config/composer/vendor/bin:$PATH
 test -f $HOME/.dotfiles/bash/git-completion.bash && . $HOME/.dotfiles/bash/git-completion.bash
 
+# Tina Draw
+TINA_PATH=$HOME/.local/share/tina
+test -d $TINA_PATH/bin && PATH=$TINA_PATH/bin:$PATH
+test -d $TINA_PATH/doc && export MANPATH=$TINA_PATH/doc/man:$MANPATH
+
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
