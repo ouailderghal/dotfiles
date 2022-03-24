@@ -4,7 +4,7 @@ set $mod Mod4
 # Constants
 set $term st
 set $editor nvim
-set $browser firefox
+set $browser brave
 set $gui_file_manager thunar
 set $file_manager lf
 
@@ -27,7 +27,7 @@ for_window [class="Org.gnome.clocks"] resize set 640 480
 
 # Keybindings
 bindsym $mod+b exec $browser
-bindsym $mod+Shift+b exec $browser --private-window
+bindsym $mod+Shift+b exec $browser --incognito
 bindsym $mod+p exec $gui_file_manager
 bindsym $mod+Shift+p exec $term -e $file_manager
 bindsym --release $mod+Control+l exec "slock"
