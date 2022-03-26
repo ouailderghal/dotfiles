@@ -2,10 +2,19 @@
 #+AUTHOR: Ouail Derghal
 
 * Interface preferences
+  I like my Emacs window to be clean, the following functions remove the =tool bar=, the =menu bar= and the =scroll bar=.
   #+begin_src emacs-lisp
     (tool-bar-mode 0)
     (menu-bar-mode 0)
     (scroll-bar-mode -1)  
+  #+end_src
+
+  Install =doom-themes= and load =doom-one= theme at startup. The third boolean parameter on *load-theme* function prevents confirmation popup to load elisp theme file (always confirm on loading elisp theme file).
+  #+begin_src emacs-lisp
+    (use-package doom-themes
+      :ensure t
+      :init
+      (load-theme 'doom-one t))
   #+end_src
   
 ** Font
@@ -19,12 +28,6 @@
 			 :width 'normal)
    #+end_src
 
-  #+begin_src emacs-lisp
-    (use-package doom-themes
-      :ensure t
-      :init
-      (load-theme 'doom-one t))
-  #+end_src
 
 * evil
   #+begin_src emacs-lisp
