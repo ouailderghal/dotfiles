@@ -1,0 +1,35 @@
+#+TITLE: Emacs configuration
+#+AUTHOR: Ouail Derghal
+
+* Interface preferences
+  #+begin_src emacs-lisp
+    (tool-bar-mode 0)
+    (menu-bar-mode 0)
+    (scroll-bar-mode -1)  
+  #+end_src
+  
+** Font
+   #+begin_src emacs-lisp
+     (global-set-key (kbd "C-S-k") 'text-scale-increase)
+     (global-set-key (kbd "C-S-j") 'text-scale-decrease)
+     (set-face-attribute 'default nil
+			 :family "Iosevka Term"
+			 :height 150
+			 :weight 'normal
+			 :width 'normal)
+   #+end_src
+
+  #+begin_src emacs-lisp
+    (use-package doom-themes
+      :ensure t
+      :init
+      (load-theme 'doom-one t))
+  #+end_src
+
+* evil
+  #+begin_src emacs-lisp
+    (use-package evil
+      :ensure t
+      :config
+      (evil-mode))
+  #+end_src
