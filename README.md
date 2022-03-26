@@ -26,5 +26,8 @@ mkdir -p ~/.config/alacritty && stow alacritty -t ~/.config/alacritty
 
 # tmux
 mkdir -p ~/.config/tmux && stow tmux -t ~/.config/tmux
+
+# emacs
+mkdir -p ~/.emacs.d && stow emacs -t ~/.emacs.d
 ```
 
