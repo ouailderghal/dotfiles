@@ -50,6 +50,15 @@
   (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 
+; org mode ====================================================================
+
+; org superstar
+; UFT-8 bullets in org mode
+(use-package org-superstar
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
+
 ; extra packages ==============================================================
 
 ; rainbow mode
