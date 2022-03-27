@@ -34,4 +34,19 @@
   :init
   (load-theme 'doom-one t))
 
+; evil ===================================================================
+
+; evil mode
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode)) ; enable evil mode
+
+; evil numbers
+; this package permits you to increase and decrease numbers in text files
+(use-package evil-numbers
+  :ensure t
+  :config
+  (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
 ;==============================================================================
