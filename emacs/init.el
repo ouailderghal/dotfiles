@@ -17,6 +17,10 @@
 (menu-bar-mode 0) ; disable menu bar
 (scroll-bar-mode -1) ; disable scroll bar
 
+; line numbers
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode 1) ; enable line numbers
+
 ; font configuration
 (set-face-attribute 'default nil
                     :family "Iosevka Term"
