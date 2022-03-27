@@ -61,6 +61,12 @@
 
 ; extra packages ==============================================================
 
+; ido mode
+(use-package ido
+  :ensure t
+  :config
+  (ido-mode t))
+
 ; rainbow mode
 ; show HEX colors in the editor
 (use-package rainbow-mode
