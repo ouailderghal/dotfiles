@@ -18,7 +18,22 @@
 (scroll-bar-mode -1) ; disable scroll bar
 
 ; line numbers
-(setq display-line-numbers-type 'relative)
+(require 'display-line-numbers)
+
+(defcustom display-line-numbers-exempt-modes
+  '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode dired-mode)
+  "Major modes on which to disable line numbers."
+  :group 'display-line-numbers
+  :type 'list
+  :version "green")
+
+(defun display-line-numbers--turn-on ()
+  "Turn on line numbers except for certain major modes."
+  (unless (or (minibufferp)
+              (member major-mode display-line-numbers-exempt-modes))
+    (display-line-numbers-mode)))
+
+(setq display-line-numbers-type 'relative) ; set line numbers typer to relative
 (global-display-line-numbers-mode 1) ; enable line numbers
 
 ; font configuration
