@@ -51,7 +51,7 @@
 (use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'solarized-dark t)
+  (load-theme 'solarized-dark-high-contrast t)
 
   (setq solarized-use-variable-pitch nil
         solarized-height-plus-1 1.0
