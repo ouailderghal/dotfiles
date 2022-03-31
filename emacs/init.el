@@ -37,35 +37,52 @@
 (global-display-line-numbers-mode 1) ; enable line numbers
 
 ; font configuration
+(setq od/default-fixed-font "Inconsolata")
+(setq od/default-fixed-font-size 130)
+(setq od/font-change-increment 1.1)
+
+(setq od/current-fixed-font-size od/default-fixed-font-size)
+
 (set-face-attribute 'default nil
-                    :family "Inconsolata"
-                    :height 140
-                    :weight 'normal
-                    :width 'normal)
+		    :family od/default-fixed-font
+		    :height od/default-fixed-font-size)
 
-; increase & decrease font size keybindings
-(global-set-key (kbd "C-S-k") 'text-scale-increase) ; increase font
-(global-set-key (kbd "C-S-j") 'text-scale-decrease) ; decrease font
+(set-face-attribute 'fixed-pitch nil
+		    :family od/default-fixed-font
+		    :height od/default-fixed-font-size)
 
-; install solarized theme
-(use-package solarized-theme
-  :ensure t
-  :config
-  (load-theme 'solarized-dark-high-contrast t)
+(defun od/set-font-size ()
+  "Change default and fixed-pitch font sizes."
+  (set-face-attribute 'default nil
+		      :height od/current-fixed-font-size)
+  (set-face-attribute 'fixed-pitch nil
+		      :height od/current-fixed-font-size))
 
-  (setq solarized-use-variable-pitch nil
-        solarized-height-plus-1 1.0
-        solarized-height-plus-2 1.0
-        solarized-height-plus-3 1.0
-        solarized-height-plus-4 1.0)
+(defun od/increase-font-size ()
+  "Increase current font size by a factor."
+  (interactive)
+  (setq od/current-fixed-font-size
+	(ceiling (* od/current-fixed-font-size od/font-change-increment)))
+  (od/set-font-size))
 
-  (let ((line (face-attribute 'mode-line :underline)))
-    (set-face-attribute 'mode-line          nil :overline   line)
-    (set-face-attribute 'mode-line-inactive nil :overline   line)
-    (set-face-attribute 'mode-line-inactive nil :underline  line)
-    (set-face-attribute 'mode-line          nil :box        nil)
-    (set-face-attribute 'mode-line-inactive nil :box        nil)
-    (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
+(defun od/decrease-font-size ()
+  "Decrease current font size by a factor down to a min size of 1."
+  (interactive)
+  (setq od/current-fixed-font-size
+	(max 1
+	     (floor (/ od/current-fixed-font-size od/font-change-increment))))
+  (od/set-font-size))
+
+(defun od/reset-font-size ()
+  "Reset font size to the default value."
+  (interactive)
+  (setq od/current-fixed-font-size od/default-fixed-font-size)
+  (od/set-font-size))
+
+; increase, decrease and reset font size keybindings
+(global-set-key (kbd "C-S-k") 'od/increase-font-size) ; increase font
+(global-set-key (kbd "C-S-j") 'od/decrease-font-size) ; decrease font
+(global-set-key (kbd "C-=") 'od/reset-font-size) ; reset font
 
 ; evil ===================================================================
 
@@ -109,3 +126,16 @@
   :ensure t)
 
 ;==============================================================================
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "333958c446e920f5c350c4b4016908c130c3b46d590af91e1e7e2a0611f1e8c5" default)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
