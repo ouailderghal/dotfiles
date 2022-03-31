@@ -78,6 +78,9 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1))))
 
+; org ellipsis symbol
+(setq org-ellipsis " ↴")
+
 ; extra packages ==============================================================
 
 ; ido mode
