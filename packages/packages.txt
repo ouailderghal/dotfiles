@@ -50,6 +50,7 @@ noto-fonts
 gnu-free-fonts
 ttc-iosevka
 xdg-utils
+xdg-user-dirs
 jdk-openjdk
 jre-openjdk
 jdk8-openjdk
