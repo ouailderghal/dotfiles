@@ -38,8 +38,8 @@
 
 ; font configuration
 (set-face-attribute 'default nil
-                    :family "Iosevka Term"
-                    :height 150
+                    :family "Inconsolata"
+                    :height 140
                     :weight 'normal
                     :width 'normal)
 
