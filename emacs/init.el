@@ -47,11 +47,25 @@
 (global-set-key (kbd "C-S-k") 'text-scale-increase) ; increase font
 (global-set-key (kbd "C-S-j") 'text-scale-decrease) ; decrease font
 
-; install doom themes
-(use-package doom-themes
+; install solarized theme
+(use-package solarized-theme
   :ensure t
-  :init
-  (load-theme 'doom-one t))
+  :config
+  (load-theme 'solarized-dark t)
+
+  (setq solarized-use-variable-pitch nil
+        solarized-height-plus-1 1.0
+        solarized-height-plus-2 1.0
+        solarized-height-plus-3 1.0
+        solarized-height-plus-4 1.0)
+
+  (let ((line (face-attribute 'mode-line :underline)))
+    (set-face-attribute 'mode-line          nil :overline   line)
+    (set-face-attribute 'mode-line-inactive nil :overline   line)
+    (set-face-attribute 'mode-line-inactive nil :underline  line)
+    (set-face-attribute 'mode-line          nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
 
 ; evil ===================================================================
 
