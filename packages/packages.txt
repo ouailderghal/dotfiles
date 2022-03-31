@@ -114,3 +114,4 @@ gvfs-goa
 gvfs-afc
 bash-completion
 pdfarranger
+perl-file-mimeinfo
