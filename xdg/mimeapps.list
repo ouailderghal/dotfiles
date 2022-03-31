@@ -2,3 +2,4 @@
 x-scheme-handler/tg=userapp-Telegram Desktop-WJV9J1.desktop
 image/jpeg=org.xfce.ristretto.desktop
 application/pdf=org.gnome.Evince.desktop
+text/org=emacs.desktop
