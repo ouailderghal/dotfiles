@@ -45,6 +45,9 @@ exec --no-startup-id dex --autostart --environment i3
 # Set border
 for_window [class="^.*"] border pixel 4
 
+# Set gaps
+gaps inner 5
+
 # Font
 font pango:Liberation Mono 11
 
