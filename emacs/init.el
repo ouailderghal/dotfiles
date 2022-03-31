@@ -9,6 +9,14 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+; personal information ========================================================
+
+(setq user-full-name "Ouail Derghal"
+      user-mail-address "ouail.derghal@univ-constantine2.dz"
+      calendar-latitude 36.35
+      calendar-longitude 6.6
+      calendar-location-name "Constantine, Algeria")
+
 ; ui configuration ============================================================
 
 ; clean ui
@@ -16,6 +24,12 @@
 (tool-bar-mode 0) ; disable tool bar
 (menu-bar-mode 0) ; disable menu bar
 (scroll-bar-mode -1) ; disable scroll bar
+
+; doom-themes
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-badger t))
 
 ; line numbers
 (require 'display-line-numbers)
@@ -84,6 +98,14 @@
 (global-set-key (kbd "C-S-j") 'od/decrease-font-size) ; decrease font
 (global-set-key (kbd "C-=") 'od/reset-font-size) ; reset font
 
+
+; backup =================================================================
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ; evil ===================================================================
 
 ; evil mode
@@ -99,6 +121,12 @@
   :config
   (define-key evil-normal-state-map (kbd "C-c =") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt))
+
+; evil surround
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
 
 ; org mode ====================================================================
 
@@ -125,17 +153,37 @@
 (use-package rainbow-mode
   :ensure t)
 
+; engine mode
+(use-package engine-mode
+  :ensure t
+  :config
+  (engine-mode t))
+
+(engine/set-keymap-prefix (kbd "C-c s"))
+
+(defengine google
+  "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+  :keybinding "g")
+
+(defengine duckduckgo
+  "https://duckduckgo.com/?q=%s"
+  :keybinding "d")
+
+(defengine wikipedia
+  "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+  :keybinding "w")
+
+(defengine scholar
+  "https://scholar.google.com/scholar?hl=en&q=%s"
+  :keybinding "s")
+
+(defengine google-images
+  "http://www.google.com/images?hl=en&source=hp&biw=1440&bih=795&gbv=2&aq=f&aqi=&aql=&oq=&q=%s")
+
+(defengine github
+  "https://github.com/search?ref=simplesearch&q=%s")
+
+(defengine youtube
+  "http://www.youtube.com/results?aq=f&oq=&search_query=%s")
+
 ;==============================================================================
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "333958c446e920f5c350c4b4016908c130c3b46d590af91e1e7e2a0611f1e8c5" default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

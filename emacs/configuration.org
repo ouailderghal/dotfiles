@@ -1,0 +1,185 @@
+#+AUTHOR: Ouail Derghal
+
+* Personal information
+Setting up my personal information (full name, email and location).
+
+#+begin_src emacs-lisp
+  (setq user-full-name "Ouail Derghal"
+        user-mail-address "ouail.derghal@univ-constantine2.dz"
+        calendar-latitude 36.35
+        calendar-longitude 6.6
+        calendar-location-name "Constantine, Algeria")
+#+end_src
+
+* Interface configuration
+** Clean the UI
+When you start Emacs, it shows a startup screen. I don't like this behaviour, the code bellow will inhebit the startup message.
+
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t)
+#+end_src
+
+Hide tool bar, menu bar and scroll bar to make the interface more clean.
+
+#+begin_src emacs-lisp
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+  (scroll-bar-mode -1)
+#+end_src
+
+** Font configuration
+Make sure that you have [[https://archlinux.org/packages/community/any/ttf-inconsolata/][Inconsolata]] font installed on your system (I use Arch BTW!).
+
+#+begin_src shell
+  sudo pacman -S --noconfirm ttf-inconsolata
+#+end_src
+
+
+Define =font name=, =default size=, =current size= and =scale factor=.
+
+#+begin_src emacs-lisp
+  (setq od/default-fixed-font "Inconsolata")
+  (setq od/default-fixed-font-size 130)
+  (setq od/current-fixed-font-size od/default-fixed-font-size)
+  (setq od/font-change-increment 1.1)
+#+end_src
+
+Set default values for =default= and =fixed-pitch= font family and size.
+
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil
+                      :family od/default-fixed-font
+                      :height od/default-fixed-font-size)
+
+  (set-face-attribute 'fixed-pitch nil
+                      :family od/default-fixed-font
+                      :height od/default-fixed-font-size)
+#+end_src
+
+Helper functions to =set=, =increase=, =decrease= and =reset= font size.
+
+#+begin_src emacs-lisp
+  (defun od/set-font-size ()
+    "Change default and fixed-pitch font sizes."
+    (set-face-attribute 'default nil
+                        :height od/current-fixed-font-size)
+    (set-face-attribute 'fixed-pitch nil
+                        :height od/current-fixed-font-size))
+
+  (defun od/increase-font-size ()
+    "Increase current font size by a factor."
+    (interactive)
+    (setq od/current-fixed-font-size
+    (ceiling (* od/current-fixed-font-size od/font-change-increment)))
+    (od/set-font-size))
+
+  (defun od/decrease-font-size ()
+    "Decrease current font size by a factor down to a min size of 1."
+    (interactive)
+    (setq od/current-fixed-font-size
+    (max 1
+         (floor (/ od/current-fixed-font-size od/font-change-increment))))
+    (od/set-font-size))
+
+  (defun od/reset-font-size ()
+    "Reset font size to the default value."
+    (interactive)
+    (setq od/current-fixed-font-size od/default-fixed-font-size)
+    (od/set-font-size))
+#+end_src
+
+Keyboard bindings to the previously-defined functions.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-S-k") 'od/increase-font-size)
+  (global-set-key (kbd "C-S-j") 'od/decrease-font-size)
+  (global-set-key (kbd "C-=")   'od/reset-font-size)
+#+end_src
+
+** Theme
+Install [[https://github.com/doomemacs/themes][doom-themes]] and set =doom-badger= as default theme.
+
+#+begin_src emacs-lisp
+  (use-package doom-themes
+  	:ensure t
+  	:config
+  	(load-theme 'doom-badger t))
+#+end_src
+
+** Line numbers
+Disable line numbers in certain mode (=term-mode=, =dired=, ...).
+
+#+begin_src emacs-lisp
+  (require 'display-line-numbers)
+
+  (defcustom display-line-numbers-exempt-modes 
+    '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode dired-mode) 
+    "Major modes on which to disable line numbers." 
+    :group 'display-line-numbers 
+    :type 'list 
+    :version "green")
+
+  (defun display-line-numbers--turn-on () 
+    "Turn on line numbers except for certain major modes."
+    (unless (or (minibufferp) 
+                (member major-mode display-line-numbers-exempt-modes)) 
+      (display-line-numbers-mode)))
+#+end_src
+
+Set line numbers type to =relative= and enable =display-line-numbers-mode= globally.
+
+#+begin_src emacs-lisp
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode 1)
+#+end_src
+
+
+
+* =evil=
+Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
+
+#+begin_src emacs-lisp
+  (use-package evil
+      :ensure t
+      :config
+      (evil-mode))
+#+end_src
+
+** =evil-surround=
+Install and enable [[https://github.com/emacs-evil/evil-surround][evil-surround]] globally. This plugin allows you to change the surrounding of text objects.
+
+#+begin_src emacs-lisp
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode 1))
+#+end_src
+
+** =evil-numbers=
+Install [[https://github.com/cofi/evil-numbers][evil-numbers]] and configure bindings. This plugin allows you to increment numbers in text buffers. Keybingins are only available in =evil normal state=.
+
+#+begin_src emacs-lisp
+  (use-package 
+    evil-numbers 
+    :ensure t 
+    :config
+    (define-key evil-normal-state-map (kbd "C-c k") 'evil-numbers/inc-at-pt) 
+    (define-key evil-normal-state-map (kbd "C-c j") 'evil-numbers/dec-at-pt))
+#+end_src
+
+* General configuration
+#+begin_src emacs-lisp
+  (setq-default tab-width 2)
+  (setq-default indent-tabs-mode nil)
+#+end_src
+  
+** Backup files
+By default, Emacs saves backup files in the same directory as the file loaded in the buffer. I like to keep backup files in =/tmp= directory.
+
+#+begin_src emacs-lisp
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+#+end_src

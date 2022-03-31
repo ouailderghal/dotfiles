@@ -6,5 +6,5 @@ image/bmp=org.xfce.ristretto.desktop
 image/jpg=org.xfce.ristretto.desktop
 image/jpeg=org.xfce.ristretto.desktop
 image/png=org.xfce.ristretto.desktop
-application/pdf=org.gnome.Evince.desktop
+application/pdf=org.pwmt.zathura.desktop
 text/org=emacs.desktop;
