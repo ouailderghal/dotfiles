@@ -1,4 +1,5 @@
 #+AUTHOR: Ouail Derghal
+#+STARTUP: fold
 
 * Personal information
 Setting up my personal information (full name, email and location).
