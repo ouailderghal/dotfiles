@@ -13,10 +13,11 @@ Setting up my personal information (full name, email and location).
 
 * Interface configuration
 ** Clean the UI
-When you start Emacs, it shows a startup screen. I don't like this behaviour, the code bellow will inhebit the startup message.
+When you start Emacs, it shows a startup screen. I don't like this behaviour, the code bellow will inhebit the startup message. Also remove the message on scratch buffer.
 
 #+begin_src emacs-lisp
   (setq inhibit-startup-message t)
+  (setq initial-scratch-message nil)
 #+end_src
 
 Hide tool bar, menu bar and scroll bar to make the interface more clean.
