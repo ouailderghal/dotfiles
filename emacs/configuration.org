@@ -135,8 +135,6 @@ Set line numbers type to =relative= and enable =display-line-numbers-mode= globa
   (global-display-line-numbers-mode 1)
 #+end_src
 
-
-
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
 
@@ -174,7 +172,14 @@ Install [[https://github.com/cofi/evil-numbers][evil-numbers]] and configure bin
   (setq-default tab-width 2)
   (setq-default indent-tabs-mode nil)
 #+end_src
-  
+
+** Shorten yes-or-no prompt
+Ask `y or n` instead of `yes or no`.
+
+#+begin_src emacs-lisp
+  (fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
+
 ** Backup files
 By default, Emacs saves backup files in the same directory as the file loaded in the buffer. I like to keep backup files in =/tmp= directory.
 
