@@ -12,23 +12,16 @@ Setting up my personal information (full name, email and location).
         calendar-location-name "Constantine, Algeria")
 #+end_src
 
+* Use =defaults.el=
+Load configuration from =default.el= file.
+
+#+begin_src emacs-lisp
+  (load-file "~/.emacs.d/defaults.el")
+  (defaults/all-settings)
+  (defaults/backup-to-tmp-directory)
+#+end_src
+  
 * Interface configuration
-** Clean the UI
-When you start Emacs, it shows a startup screen. I don't like this behaviour, the code bellow will inhebit the startup message. Also remove the message on scratch buffer.
-
-#+begin_src emacs-lisp
-  (setq inhibit-startup-message t)
-  (setq initial-scratch-message nil)
-#+end_src
-
-Hide tool bar, menu bar and scroll bar to make the interface more clean.
-
-#+begin_src emacs-lisp
-  (tool-bar-mode 0)
-  (menu-bar-mode 0)
-  (scroll-bar-mode -1)
-#+end_src
-
 ** Font configuration
 Make sure that you have [[https://archlinux.org/packages/community/any/ttf-inconsolata/][Inconsolata]] font installed on your system (I use Arch BTW!).
 
@@ -231,20 +224,3 @@ Define search engines.
   (setq-default indent-tabs-mode nil)
 #+end_src
 
-** Shorten yes-or-no prompt
-Ask `y or n` instead of `yes or no`.
-
-#+begin_src emacs-lisp
-  (fset 'yes-or-no-p 'y-or-n-p)
-#+end_src
-
-** Backup files
-By default, Emacs saves backup files in the same directory as the file loaded in the buffer. I like to keep backup files in =/tmp= directory.
-
-#+begin_src emacs-lisp
-  (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
-
-  (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t)))
-#+end_src
