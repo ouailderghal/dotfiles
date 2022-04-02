@@ -32,6 +32,14 @@
   "Always follow symlinks."
   (setq vc-follow-symlinks t))
 
+(defun defaults/never-follow-symlinks ()
+  "Never follow symlinks."
+  (setq vc-follow-symlinks nil))
+
+(defun defaults/never-confirm-org-babel-evaluate ()
+  "Disable confirmation message when loading Org files with babel."
+  (setq org-confirm-babel-evaluate nil))
+
 (defun defaults/all-settings ()
   "Use all default settings."
   (defaults/quiet-startup)
@@ -39,5 +47,6 @@
   (defaults/append-new-line)
   (defaults/confirm-closing-emacs)
   (defaults/shorten-yes-or-no)
-  (defaults/always-follow-symlinks))
+  (defaults/never-follow-symlinks)
+  (defaults/never-confirm-org-babel-evaluate))
 
