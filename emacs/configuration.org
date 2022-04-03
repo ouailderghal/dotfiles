@@ -108,7 +108,7 @@ Disable line numbers in certain mode (=term-mode=, =dired=, ...).
   (require 'display-line-numbers)
 
   (defcustom display-line-numbers-exempt-modes 
-    '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode dired-mode) 
+    '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode dired-mode ranger-mode) 
     "Major modes on which to disable line numbers." 
     :group 'display-line-numbers 
     :type 'list 
@@ -217,6 +217,14 @@ Define search engines.
    (defengine youtube
        "http://www.youtube.com/results?aq=f&oq=&search_query=%s")
  #+end_src
+
+* =ranger.el=
+Install =ranger.el= file manager.
+
+#+begin_src emacs-lisp
+  (use-package ranger
+    :ensure t)
+#+end_src
 
 * General configuration
 #+begin_src emacs-lisp
