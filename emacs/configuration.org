@@ -152,7 +152,9 @@ Insert a timestamp when a TODO item is marked as =CLOSED=.
 Add Org files to =org-agenda= and set a keybinding.
 
 #+begin_src emacs-lisp
-  (setq org-agenda-files '("~/todo.org"))
+  (setq org-agenda-files
+        '("~/todo.org" "~/studies.org"))
+
   (global-set-key (kbd "C-c a") 'org-agenda)
 #+end_src
 
