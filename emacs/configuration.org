@@ -136,6 +136,13 @@ Replace ellipsis symbol when subtree is folded.
   (setq org-ellipsis " ↴")
 #+end_src
 
+Setup TODO keywords.
+
+#+begin_src emacs-lisp
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAITING(w)" "PAUSED(p)" "|" "DONE(d)" "CANCELED(c)")))
+#+end_src
+
 Insert a timestamp when a TODO item is marked as =CLOSED=.
 
 #+begin_src emacs-lisp
@@ -148,6 +155,7 @@ Add Org files to =org-agenda= and set a keybinding.
   (setq org-agenda-files '("~/todo.org"))
   (global-set-key (kbd "C-c a") 'org-agenda)
 #+end_src
+
 
 ** =org-superstar=
 Install and enable [[https://github.com/integral-dw/org-superstar-mode][org-superstar]]. This plugin replaces =stars= with UTF-8 bullets in Org files.
