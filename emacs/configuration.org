@@ -135,7 +135,13 @@ Replace ellipsis symbol when subtree is folded.
 #+begin_src emacs-lisp
   (setq org-ellipsis " ↴")
 #+end_src
-  
+
+Insert a timestamp when a TODO item is marked as =CLOSED=.
+
+#+begin_src emacs-lisp
+  (setq org-log-done t)
+#+end_src
+
 ** =org-superstar=
 Install and enable [[https://github.com/integral-dw/org-superstar-mode][org-superstar]]. This plugin replaces =stars= with UTF-8 bullets in Org files.
 
