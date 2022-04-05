@@ -142,6 +142,13 @@ Insert a timestamp when a TODO item is marked as =CLOSED=.
   (setq org-log-done t)
 #+end_src
 
+Add Org files to =org-agenda= and set a keybinding.
+
+#+begin_src emacs-lisp
+  (setq org-agenda-files '("~/todo.org"))
+  (global-set-key (kbd "C-c a") 'org-agenda)
+#+end_src
+
 ** =org-superstar=
 Install and enable [[https://github.com/integral-dw/org-superstar-mode][org-superstar]]. This plugin replaces =stars= with UTF-8 bullets in Org files.
 
