@@ -151,9 +151,9 @@ Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
 
 #+begin_src emacs-lisp
   (use-package evil
-      :ensure t
-      :config
-      (evil-mode))
+        :ensure t
+        :init (setq evil-want-C-i-jump nil)
+        :config (evil-mode 1))
 #+end_src
 
 ** =evil-surround=
@@ -231,4 +231,5 @@ Install =ranger.el= file manager.
   (setq-default tab-width 2)
   (setq-default indent-tabs-mode nil)
 #+end_src
+
 
