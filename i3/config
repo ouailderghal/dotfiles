@@ -49,7 +49,7 @@ for_window [class="^.*"] border pixel 4
 gaps inner 5
 
 # Font
-font pango:Liberation Mono 11
+font pango:Liberation Mono 10
 
 # xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
