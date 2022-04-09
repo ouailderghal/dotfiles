@@ -175,6 +175,7 @@ Install and enable [[https://github.com/integral-dw/org-superstar-mode][org-supe
   (setq ido-everywhere t)
   (ido-mode 1)
 #+end_src
+
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
 
@@ -281,5 +282,12 @@ Helper functions to open the =simple terminal= in default directory or in home d
   (defun od/open-simple-terminal-here ()
     (interactive)
     (shell-command (concat "st -d" default-directory)))
+#+end_src
+
+Binding the two helper functions.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<f1>") 'od/open-simple-terminal)
+  (global-set-key (kbd "S-<f1>") 'od/open-simple-terminal-here)
 #+end_src
 
