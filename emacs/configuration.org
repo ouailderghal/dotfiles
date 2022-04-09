@@ -185,6 +185,12 @@ Disable prompt when creating new buffers if the file name does not exist.
   (setq ido-create-new-buffer 'always)
 #+end_src
 
+Set file order in the Ido prompt based on file extension.
+
+#+begin_src emacs-lisp
+  (setq ido-file-extensions-order '(".org" ".el" ".md" ".txt"))
+#+end_src
+
 
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
