@@ -198,6 +198,12 @@ Ignore specific directories and files.
   (setq ido-ignore-directories '(".git"))
 #+end_src
 
+Ignore specific file extensions.
+
+#+begin_src emacs-lisp
+  (setq ido-ignore-extensions t)
+  (setq completion-ignored-extensions '(".o" ".l"))
+#+end_src
 
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
