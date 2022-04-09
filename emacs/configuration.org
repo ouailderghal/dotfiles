@@ -191,6 +191,13 @@ Set file order in the Ido prompt based on file extension.
   (setq ido-file-extensions-order '(".org" ".el" ".md" ".txt"))
 #+end_src
 
+Ignore specific directories and files.
+
+#+begin_src emacs-lisp
+  (setq ido-ignore-files '(":w" ".projectile"))
+  (setq ido-ignore-directories '(".git"))
+#+end_src
+
 
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
