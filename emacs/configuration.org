@@ -274,15 +274,17 @@ Install =ranger.el= file manager.
 #+end_src
 
 * Helper functions
-** Open [[https://st.suckless.org/][simple terminal]]
-Helper functions to open the =simple terminal= in default directory or in home directory. Make sure that you have [[http://st.suckless.org/patches/workingdir/][workingdir patch]] applied to your [[https://github.com/ouailderghal/st][st build]].
+** Open simple terminal
+Helper functions to open the [[https://st.suckless.org/][simple terminal]] in default directory or in home directory. Make sure that you have [[http://st.suckless.org/patches/workingdir/][workingdir patch]] applied to your [[https://github.com/ouailderghal/st][st build]].
 
 #+begin_src emacs-lisp
   (defun od/open-simple-terminal ()
+    "Open simple terminal in home directory."
     (interactive)
     (shell-command "st -d ~"))
 
   (defun od/open-simple-terminal-here ()
+    "Open simple terminal in current directory."
     (interactive)
     (shell-command (concat "st -d" default-directory)))
 #+end_src
