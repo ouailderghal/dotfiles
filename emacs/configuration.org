@@ -91,14 +91,17 @@ Keyboard bindings to the previously-defined functions.
   (global-set-key (kbd "C-=")   'od/reset-font-size)
 #+end_src
 
-** Theme
+** Themes
 Install [[https://github.com/doomemacs/themes][doom-themes]] and set =doom-badger= as default theme.
 
 #+begin_src emacs-lisp
   (use-package doom-themes
-  	:ensure t
-  	:config
-  	(load-theme 'doom-badger t))
+    :ensure t)
+
+  (use-package zenburn-theme
+    :ensure t
+    :config
+    (load-theme 'zenburn t))
 #+end_src
 
 ** Line numbers
