@@ -179,6 +179,13 @@ Install and enable [[https://github.com/integral-dw/org-superstar-mode][org-supe
   (ido-mode 1)
 #+end_src
 
+Disable prompt when creating new buffers if the file name does not exist.
+
+#+begin_src emacs-lisp
+  (setq ido-create-new-buffer 'always)
+#+end_src
+
+
 * =evil=
 Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
 
