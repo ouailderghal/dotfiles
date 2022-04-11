@@ -136,8 +136,8 @@ A smater mode-line.
     :ensure t
     :config
     (setq sml/no-confirm-load-theme t)
-    (setq sml/theme 'dark)
-    (sml/setup))
+    (setq sml/theme 'dark))
+  
 #+end_src
 
 * Org
@@ -298,4 +298,4 @@ Binding the two helper functions.
 #+begin_src emacs-lisp
   (global-set-key (kbd "<f10>") 'od/open-simple-terminal)
   (global-set-key (kbd "S-<f10>") 'od/open-simple-terminal-here)
-#+end_
+#+end_src
