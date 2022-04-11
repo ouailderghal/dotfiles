@@ -299,3 +299,25 @@ Binding the two helper functions.
   (global-set-key (kbd "<f10>") 'od/open-simple-terminal)
   (global-set-key (kbd "S-<f10>") 'od/open-simple-terminal-here)
 #+end_src
+
+** Open file manager
+Open =Thunar= file manager from within Emacs.
+
+#+begin_src emacs-lisp
+  (defun od/open-thunar ()
+    "Open simple terminal in home directory."
+    (interactive)
+    (shell-command "thunar ~"))
+
+  (defun od/open-thunar-here ()
+    "Open simple terminal in current directory."
+    (interactive)
+    (shell-command (concat "thunar " default-directory)))
+#+end_src
+
+Binding the two helper functions.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "<f9>") 'od/open-thunar)
+  (global-set-key (kbd "S-<f9>") 'od/open-thunar-here)
+#+end_src
