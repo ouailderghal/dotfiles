@@ -128,6 +128,18 @@ Set line numbers type to =relative= and enable =display-line-numbers-mode= globa
   (global-display-line-numbers-mode 1)
 #+end_src
 
+** Smart mode-line
+A smater mode-line.
+
+#+begin_src emacs-lisp
+  (use-package smart-mode-line
+    :ensure t
+    :config
+    (setq sml/no-confirm-load-theme t)
+    (setq sml/theme 'dark)
+    (sml/setup))
+#+end_src
+
 * Org
 
 Replace ellipsis symbol when subtree is folded.
