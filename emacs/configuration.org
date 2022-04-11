@@ -205,38 +205,6 @@ Ignore specific file extensions.
   (setq completion-ignored-extensions '(".o" ".l"))
 #+end_src
 
-* =evil=
-Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
-
-#+begin_src emacs-lisp
-  (use-package evil
-        :ensure t
-        :init (setq evil-want-C-i-jump nil)
-        :config (evil-mode 1))
-#+end_src
-
-** =evil-surround=
-Install and enable [[https://github.com/emacs-evil/evil-surround][evil-surround]] globally. This plugin allows you to change the surrounding of text objects.
-
-#+begin_src emacs-lisp
-  (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode 1))
-#+end_src
-
-** =evil-numbers=
-Install [[https://github.com/cofi/evil-numbers][evil-numbers]] and configure bindings. This plugin allows you to increment numbers in text buffers. Keybingins are only available in =evil normal state=.
-
-#+begin_src emacs-lisp
-  (use-package 
-    evil-numbers 
-    :ensure t 
-    :config
-    (define-key evil-normal-state-map (kbd "C-c k") 'evil-numbers/inc-at-pt) 
-    (define-key evil-normal-state-map (kbd "C-c j") 'evil-numbers/dec-at-pt))
-#+end_src
-
 * =engine=
 Install =engine-mode= and configure keyboard binding. This plugin allows you to search in several engines from the comfort of Emacs.
 
