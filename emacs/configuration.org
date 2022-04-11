@@ -96,12 +96,9 @@ Install [[https://github.com/doomemacs/themes][doom-themes]] and set =doom-badge
 
 #+begin_src emacs-lisp
   (use-package doom-themes
-    :ensure t)
-
-  (use-package zenburn-theme
     :ensure t
     :config
-    (load-theme 'zenburn t))
+    (load-theme 'doom-material-dark t))
 #+end_src
 
 ** Line numbers
@@ -261,6 +258,7 @@ Install =ranger.el= file manager.
     (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
     (projectile-mode +1))
 #+end_src
+
 * General configuration
 #+begin_src emacs-lisp
   (setq-default tab-width 2)
@@ -288,5 +286,4 @@ Binding the two helper functions.
 #+begin_src emacs-lisp
   (global-set-key (kbd "<f10>") 'od/open-simple-terminal)
   (global-set-key (kbd "S-<f10>") 'od/open-simple-terminal-here)
-#+end_src
-
+#+end_
