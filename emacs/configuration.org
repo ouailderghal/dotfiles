@@ -294,15 +294,6 @@ Install =ranger.el= file manager.
     :ensure t)
 #+end_src
 
-* Projectile
-#+begin_src emacs-lisp
-  (use-package projectile
-    :ensure t
-    :config
-    (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-    (projectile-mode +1))
-#+end_src
-
 * General configuration
 #+begin_src emacs-lisp
   (setq-default tab-width 2)
