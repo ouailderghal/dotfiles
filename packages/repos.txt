@@ -1,0 +1,2 @@
+https://github.com/o2sh/onefetch/releases
+https://github.com/cli/cli/releases/tag/v2.8.0
