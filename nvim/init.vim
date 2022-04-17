@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'aklt/plantuml-syntax'
     Plug 'godlygeek/tabular'
     Plug 'preservim/vim-markdown'
+    Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Reload init.vim & install plugins
