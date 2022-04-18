@@ -23,17 +23,17 @@ Load configuration from =default.el= file.
   
 * Interface configuration
 ** Font configuration
-Make sure that you have [[https://archlinux.org/packages/community/any/ttf-inconsolata/][Inconsolata]] font installed on your system (I use Arch BTW!).
+Make sure that you have [[https://github.com/tonsky/FiraCode][Fira Code]] font installed on your system (I use Arch BTW!).
 
 #+begin_src shell
-  sudo pacman -S --noconfirm ttf-inconsolata
+  sudo dnf install -y fira-code-fonts
 #+end_src
 
 
 Define =font name=, =default size=, =current size= and =scale factor=.
 
 #+begin_src emacs-lisp
-  (setq od/default-fixed-font "Inconsolata")
+  (setq od/default-fixed-font "Fira Code")
   (setq od/default-fixed-font-size 130)
   (setq od/current-fixed-font-size od/default-fixed-font-size)
   (setq od/font-change-increment 1.1)
