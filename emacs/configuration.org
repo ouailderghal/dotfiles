@@ -229,6 +229,12 @@ Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
         :config (evil-mode 1))
 #+end_src
 
+Change cursor shape to /box/ on insert mode.
+
+#+begin_src emacs-lisp
+  (setq evil-insert-state-cursor '(box "white"))
+#+end_src
+
 ** =evil-surround=
 Install and enable [[https://github.com/emacs-evil/evil-surround][evil-surround]] globally. This plugin allows you to change the surrounding of text objects.
 
