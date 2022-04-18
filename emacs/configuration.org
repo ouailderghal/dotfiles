@@ -97,13 +97,11 @@ Install [[https://github.com/doomemacs/themes][doom-themes]] and set =doom-badge
 #+begin_src emacs-lisp
   (use-package doom-themes
     :ensure t
-    :config)
+    :config
+    (load-theme 'doom-dark+ t))
 
   (use-package zenburn-theme
-    :ensure t
-    :config
-    (load-theme 'zenburn t))
-
+    :ensure t)
 #+end_src
 
 ** Line numbers
