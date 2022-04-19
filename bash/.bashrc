@@ -51,7 +51,8 @@ test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-comp
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
-    PS1='\u@\h:\w$(__git_ps1 " (%s)") \n> '
+    # PS1='\u@\h:\w$(__git_ps1 " (%s)") \n$ '
+    PS1='\e[0;32m\u\e[m@\h:\e[0;32m\w\e[0;31m$(__git_ps1 " (%s)") \n\e[m$ '
 else
-    PS1='\u@\h:\w > '
+    PS1='\u@\h:\w $ '
 fi
