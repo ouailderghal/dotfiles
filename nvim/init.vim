@@ -4,7 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'aklt/plantuml-syntax'
     Plug 'godlygeek/tabular'
     Plug 'preservim/vim-markdown'
-    Plug 'ycm-core/YouCompleteMe'
+    Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 " Reload init.vim & install plugins
@@ -34,8 +34,8 @@ let mapleader = " "
 
 " Color scheme & transparent background
 set background=dark
-colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme PaperColor
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Key remaps
 
