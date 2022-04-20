@@ -2,7 +2,8 @@ live_config_reload: true
 
 import:
   # - ~/.config/alacritty/themes/xterm.yml
-  - ~/.config/alacritty/themes/gruvbox-dark.yml
+  # - ~/.config/alacritty/themes/gruvbox-dark.yml
+  - ~/.config/alacritty/themes/papercolor-dark.yml
 
 # Environment
 env:
