@@ -4,7 +4,7 @@ set $mod Mod4
 # Constants
 set $term st
 set $editor nvim
-set $browser firefox
+set $browser brave-browser
 set $gui_file_manager thunar
 set $file_manager lf
 
