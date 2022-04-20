@@ -3,7 +3,7 @@
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-PS1='\w > '
+PS1='\u (\w) \n$ '
 
 case ${TERM} in
   xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
@@ -51,8 +51,7 @@ test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-comp
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
-    # PS1='\u@\h:\w$(__git_ps1 " (%s)") \n$ '
-    PS1='\e[0;32m\u\e[m@\h:\e[0;32m\w\e[0;31m$(__git_ps1 " (%s)") \n\e[m$ '
+    PS1='\u (\e[0;31m\w\e[m) $(__git_ps1 "[\e[0;32m%s\e[m]") \n$ '
 else
-    PS1='\u@\h:\w $ '
+    PS1='\u (\w) \n$ '
 fi
