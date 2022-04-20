@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'godlygeek/tabular'
     Plug 'preservim/vim-markdown'
     Plug 'NLKNguyen/papercolor-theme'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Reload init.vim & install plugins
