@@ -32,8 +32,9 @@ LOCAL_PATH=$HOME/.local/
 test -d $LOCAL_PATH/bin && PATH=$LOCAL_PATH/bin:$PATH
 
 # Go
-export GOPATH=$HOME/go
-test -d $GOPATH/bin && PATH=$GOPATH/bin:$PATH
+GOPATH=$HOME/go
+GOBIN=$GOPATH/bin
+test -d $GOBIN && PATH=$GOBIN:$PATH
 
 # Composer binaries
 COMPOSER_PATH=$HOME/.config/composer/
