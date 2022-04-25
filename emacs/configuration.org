@@ -230,7 +230,7 @@ Install and enable [[https://github.com/emacs-evil/evil][evil-mode]] globally.
 Change cursor shape to /box/ on insert mode.
 
 #+begin_src emacs-lisp
-  (setq evil-insert-state-cursor '(box "white"))
+  ;(setq evil-insert-state-cursor '(box "white"))
 #+end_src
 
 ** =evil-surround=
