@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
     Plug 'fatih/vim-go'
+    Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 " Reload init.vim & install plugins
