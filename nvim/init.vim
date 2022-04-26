@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
     Plug 'fatih/vim-go'
     Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Reload init.vim & install plugins
@@ -16,6 +17,7 @@ au FileType vim noremap <F12> :source ~/.config/nvim/init.vim <bar> :PlugInstall
 
 syntax on
 set noerrorbells
+set nocompatible
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
