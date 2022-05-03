@@ -32,6 +32,7 @@ liberation-fonts
 dejavu-fonts-all
 jetbrains-mono-fonts
 fontawesome-fonts
+open-sans-fonts
 java-17-openjdk
 java-17-openjdk-{headless,javadoc,devel}
 gimp
