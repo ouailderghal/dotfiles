@@ -24,6 +24,9 @@ append_path "$HOME/go/bin"
 # Force PATH to be environment
 export PATH
 
+# Set EDITOR
+export EDITOR=vi
+
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then
 	for profile in /etc/profile.d/*.sh; do
