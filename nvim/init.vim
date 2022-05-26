@@ -29,7 +29,7 @@ set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
-"set cursorline
+set cursorline
 set clipboard=unnamedplus
 set textwidth=120
 set colorcolumn=-2
