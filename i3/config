@@ -52,6 +52,7 @@ font pango:Liberation Mono 10
 # xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id nitrogen --restore
 set $refresh_i3status killall -SIGUSR1 i3status
 
 floating_modifier $mod
