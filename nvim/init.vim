@@ -37,10 +37,10 @@ set colorcolumn=-2
 " Leader key <space>
 let mapleader = " "
 
-" Color scheme & transparent background
+" Colorscheme
 set background=dark
-" colorscheme PaperColor
-" hi Normal guibg=NONE ctermbg=NONE
+colorscheme nightfox
+" hi Normal guibg=NONE ctermbg=NONE 
 
 " Key remaps
 
