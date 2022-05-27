@@ -47,7 +47,7 @@ for_window [class="^.*"] border pixel 2
 client.focused #555555 #555555 #ffffff #2e9ef4 #CC0000
 
 # Font
-font pango:Liberation Mono 10
+font pango:Jetbrains Mono 10
 
 # xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
