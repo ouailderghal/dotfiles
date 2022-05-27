@@ -1,9 +1,9 @@
 # Deploy configuration files
 
-Make sure that you have `GNU Stow` installed to your machine.
+Make sure that you have [GNU Stow](https://www.gnu.org/software/stow/) installed to your system.
 
 ```shell
-sudo pacman -S --noconfirm stow
+sudo dnf install -y stow
 ```
 
 Execute the following commands to deploy config files to your system :
