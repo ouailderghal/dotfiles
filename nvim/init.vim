@@ -3,12 +3,12 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'aklt/plantuml-syntax'
 Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'pearofducks/ansible-vim'
+" Plug 'preservim/vim-markdown'
 call plug#end()
 
 " Reload init.vim & install plugins
