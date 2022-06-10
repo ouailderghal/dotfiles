@@ -1,8 +1,9 @@
 live_config_reload: true
 
 import:
-  # - ~/.config/alacritty/themes/xterm.yml
   - ~/.config/alacritty/themes/iterm.yaml
+  # - ~/.config/alacritty/themes/pencil_light.yaml
+  # - ~/.config/alacritty/themes/xterm.yml
 
 # Environment
 env:
