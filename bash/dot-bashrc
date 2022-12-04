@@ -3,7 +3,7 @@
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-PS1='\u (\w) \n$ '
+PS1='\u@\h (\w) \n$ '
 
 case ${TERM} in
   xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
@@ -28,7 +28,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Local binaries
-LOCAL_PATH=$HOME/.local/
+LOCAL_PATH=$HOME/.local
 test -d $LOCAL_PATH/bin && PATH=$LOCAL_PATH/bin:$PATH
 
 # Go
@@ -45,6 +45,16 @@ TINA_PATH=$HOME/.local/share/tina/
 test -d $TINA_PATH/bin && PATH=$TINA_PATH/bin:$PATH
 test -d $TINA_PATH/doc && export MANPATH=$TINA_PATH/doc/man:$MANPATH
 
+# Java
+JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.352.b08-2.fc36.x86_64"
+test -d $JAVA_HOME/bin && PATH=$JAVA_HOME/bin:$PATH
+
+OpenESB_HOME=/home/ouail/.local/share/OpenESB-SE-3.3.0.67
+
+# Scripts
+SCRIPTS_PATH=$HOME/.scripts/
+test -d $SCRIPTS_PATH && PATH=$SCRIPTS_PATH:$PATH
+
 # Git prompt & completion
 GIT_PROMPT_PATH=$HOME/.dotfiles/bash/
 test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-completion.bash
@@ -52,7 +62,11 @@ test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-comp
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
-    PS1='\u (\e[0;31m\w\e[m) $(__git_ps1 "[\e[0;32m%s\e[m]") \n$ '
+    PS1='\u@\e[0;32m\h\e[m (\e[0;31m\w\e[m) $(__git_ps1 "[\e[0;32m%s\e[m]") \n$ '
 else
-    PS1='\u (\w) \n$ '
+    PS1='\u@\h (\w) \n$ '
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

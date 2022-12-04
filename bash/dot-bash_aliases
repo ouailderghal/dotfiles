@@ -11,9 +11,9 @@ alias systemctl="sudo systemctl"
 alias open="xdg-open"
 alias o="xdg-open"
 alias pinger="ping -c 3 1.1.1.1"
-alias fs_created="sudo tune2fs -l /dev/sda1 | grep 'Filesystem created:'"
+alias fs_created="sudo tune2fs -l /dev/nvme0n1p2 | grep 'Filesystem created:'"
 alias vo='bash -c "vi $(fzf)"'
-alias conf='cd ~/.dotfiles && bash -c "vi $(fzf)"'
+alias cnf="command-not-found"
 
 # Python
 alias act="if [[ -d .venv ]]; then source .venv/bin/activate; elif [[ -d venv ]]; then source venv/bin/activate; else; echo 'ERROR: There is no venv in this directory'; fi"
@@ -55,6 +55,9 @@ alias xs="sudo xbps-install -Sy"
 alias xu="sudo xbps-install -Su"
 alias xq="xbps-query -Rs"
 
-# Laravel
 alias pa="php artisan"
 alias pas="php artisan serve"
+alias dc="docker-compose"
+alias va="vagrant"
+alias an="ansible"
+alias anp="ansible-playbook"
