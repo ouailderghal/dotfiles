@@ -336,3 +336,8 @@
   (use-package web-mode :ensure t)
 #+end_src
 
+* LSP mode
+#+begin_src emacs-lisp
+  (use-package lsp-mode :ensure t)
+#+end_src
+
