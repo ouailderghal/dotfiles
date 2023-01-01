@@ -70,3 +70,11 @@
   (defaults/shorten-yes-or-no)
   (defaults/no-backup-files)
 #+end_src
+
+* Dired
+#+begin_src emacs-lisp
+  (use-package all-the-icons-dired
+    :ensure t
+    :config
+    (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+#+end_src
