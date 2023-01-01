@@ -332,7 +332,10 @@
 
 * Magit
 #+begin_src emacs-lisp
-  (use-package magit :ensure t)
+  (use-package magit
+    :ensure t
+    :config
+    (global-set-key (kbd "C-c g") 'magit-status))
 #+end_src
 
 * Web mode
