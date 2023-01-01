@@ -1,4 +1,5 @@
+clear 49
 keycode 49 = less greater
-clear Lock
-keysym Caps_Lock = Escape
-add Lock = Caps_Lock
+
+clear 66
+keycode 66 = Escape NoSymbol Escape
