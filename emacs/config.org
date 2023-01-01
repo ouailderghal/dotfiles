@@ -234,6 +234,10 @@
     (evil-collection-init))
 #+end_src
 
+#+begin_src emacs-lisp
+  (setq evil-insert-state-cursor '(box "white"))
+#+end_src
+
 * Org mode
 ** General configuration
 #+begin_src emacs-lisp
