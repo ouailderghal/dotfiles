@@ -331,3 +331,8 @@
   (use-package magit :ensure t)
 #+end_src
 
+* Web mode
+#+begin_src emacs-lisp
+  (use-package web-mode :ensure t)
+#+end_src
+
