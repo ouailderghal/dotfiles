@@ -261,3 +261,41 @@
   (use-package ox-twbs
     :ensure t)
 #+end_src
+
+* Engine mode
+#+begin_src emacs-lisp
+  (use-package engine-mode
+    :ensure t
+    :config
+    (engine-mode t)
+    (engine/set-keymap-prefix (kbd "C-c s")))
+#+end_src
+
+** Enignes definition
+#+begin_src emacs-lisp
+  (defengine google
+    "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+    :keybinding "g")
+
+  (defengine youtube
+    "http://www.youtube.com/results?aq=f&oq=&search_query=%s"
+    :keybinding "y")
+
+  (defengine duckduckgo
+    "https://duckduckgo.com/?q=%s"
+    :keybinding "d")
+
+  (defengine wikipedia
+    "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+    :keybinding "w")
+
+  (defengine scholar
+    "https://scholar.google.com/scholar?hl=en&q=%s"
+    :keybinding "s")
+
+  (defengine google-images
+    "http://www.google.com/images?hl=en&source=hp&biw=1440&bih=795&gbv=2&aq=f&aqi=&aql=&oq=&q=%s")
+
+  (defengine github
+    "https://github.com/search?ref=simplesearch&q=%s")
+#+end_src
