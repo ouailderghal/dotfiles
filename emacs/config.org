@@ -13,3 +13,60 @@
   (package-install 'use-package))
 #+end_src
 
+* Defaults
+** Configuration file
+#+begin_src emacs-lisp
+  (setq emacs-config-file "~/.emacs.d/config.org")
+  (global-set-key (kbd "<f12>") (lambda() (interactive) (find-file emacs-config-file)))
+  (global-set-key (kbd "<f5>") (lambda() (interactive) (org-babel-load-file emacs-config-file)))
+#+end_src
+
+** Quiet startup
+#+begin_src emacs-lisp
+  (defun defaults/quiet-startup ()
+  "Inhibit the startup message and clear scratch buffer."
+  (setq inhibit-startup-message t)
+  (setq initial-scratch-message nil))
+#+end_src
+
+** Clean startup
+#+begin_src emacs-lisp
+    (defun defaults/clean-startup ()
+    "Remove toolbar, menubar and scrollbar and cursor blink"
+    (tool-bar-mode -1)
+    (menu-bar-mode -1)
+    (scroll-bar-mode -1)
+    (blink-cursor-mode -1)
+  )
+#+end_src
+
+** Confirm closing Emacs
+#+begin_src emacs-lisp
+  (defun defaults/confirm-closing-emacs ()
+    "Ask if syre that you want to close Eamcs."
+    (setq confirm-kill-emacs 'y-or-n-p))
+#+end_src
+
+** Short yes-or-no
+#+begin_src emacs-lisp
+  (defun defaults/shorten-yes-or-no ()
+  "`y/n?' instead of `yes/no?'."
+  (fset 'yes-or-no-p 'y-or-n-p))
+#+end_src
+
+** No backup files
+#+begin_src emacs-lisp
+    (defun defaults/no-backup-files ()
+    "Disable backup and autosave files"
+    (setq make-backup-files nil)
+    (setq auto-save-default nil))
+#+end_src
+
+** Apply default settings
+#+begin_src emacs-lisp
+  (defaults/quiet-startup)
+  (defaults/clean-startup)
+  (defaults/confirm-closing-emacs)
+  (defaults/shorten-yes-or-no)
+  (defaults/no-backup-files)
+#+end_src
