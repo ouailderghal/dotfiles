@@ -235,10 +235,6 @@
 #+end_src
 
 #+begin_src emacs-lisp
-  (setq evil-insert-state-cursor '(box "white"))
-#+end_src
-
-#+begin_src emacs-lisp
   (define-key evil-insert-state-map (kbd "jk") 'evil-normal-state)
 #+end_src
 
