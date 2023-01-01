@@ -78,3 +78,68 @@
     :config
     (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 #+end_src
+
+* Interface customization
+** Clean interface
+#+begin_src emacs-lisp
+  (defaults/quiet-startup)
+  (defaults/clean-startup)
+#+end_src
+
+** Relative line numbers
+#+begin_src emacs-lisp
+  (setq display-line-numbers-type 'relative)
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+#+end_src
+
+** Highlight current line
+#+begin_src emacs-lisp
+  (add-hook 'prog-mode-hook #'hl-line-mode)
+  (add-hook 'text-mode-hook #'hl-line-mode)
+#+end_src
+
+** Font confguration
+#+begin_src emacs-lisp
+  (setq od/default-fixed-font "Ubuntu Mono")
+  (setq od/default-fixed-font-size 115)
+  (setq od/font-change-increment 1.1)
+  (setq od/current-fixed-font-size od/default-fixed-font-size)
+  
+  (set-face-attribute 'default nil
+		      :family od/default-fixed-font
+		      :height od/default-fixed-font-size)
+
+  (set-face-attribute 'fixed-pitch nil
+		      :family od/default-fixed-font
+		      :height od/default-fixed-font-size)
+#+end_src
+
+** Theme configuration
+#+begin_src emacs-lisp
+  (use-package doom-themes
+    :ensure t
+    :config
+    (setq doom-themes-enable-bold t)
+    (setq doom-themes-enable-italic t)
+    (load-theme 'doom-zenburn t)
+    (doom-themes-visual-bell-config)
+    (doom-themes-org-config))
+#+end_src
+
+** DOOM modeline
+#+begin_src emacs-lisp
+  (use-package all-the-icons
+    :ensure t)
+#+end_src
+
+#+begin_src emacs-lisp
+  (use-package doom-modeline
+    :ensure t
+    :init
+    (doom-modeline-mode 1))
+
+  (display-battery-mode 1)
+  
+  (setq display-time-default-load-average nil)
+  (display-time-mode 1)
+#+end_src
