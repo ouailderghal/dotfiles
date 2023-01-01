@@ -1,0 +1,3 @@
+#+TITLE: Emacs configuration file
+#+AUTHOR: Ouail Derghal
+#+STARTUP: overview
