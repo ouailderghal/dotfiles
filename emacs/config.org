@@ -233,3 +233,31 @@
     :config
     (evil-collection-init))
 #+end_src
+
+* Org mode
+** General configuration
+#+begin_src emacs-lisp
+  (setq org-ellipsis " ↴")
+  (setq org-log-done t)
+  (add-hook 'org-mode-hook #'visual-line-mode)
+  (setq org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))
+#+end_src
+
+** Org cycle with Evil mode
+#+begin_src emacs-lisp
+  (evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
+#+end_src
+
+** Org bullets
+#+begin_src emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+end_src
+
+** OX twbs
+#+begin_src emacs-lisp
+  (use-package ox-twbs
+    :ensure t)
+#+end_src
