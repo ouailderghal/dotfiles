@@ -299,3 +299,14 @@
   (defengine github
     "https://github.com/search?ref=simplesearch&q=%s")
 #+end_src
+
+* Indent gUides mode
+#+begin_src emacs-lisp
+  (use-package highlight-indent-guides
+    :ensure t
+    :init
+    (add-hook 'prog-mode-hook #'highlight-indent-guides-mode)
+    (add-hook 'yaml-mode-hook #'highlight-indent-guides-mode)
+    :config
+    (setq highlight-indent-guides-method 'character))
+#+end_src
