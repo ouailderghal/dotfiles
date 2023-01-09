@@ -245,6 +245,7 @@
   (setq org-log-done t)
   (add-hook 'org-mode-hook #'visual-line-mode)
   (setq org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●"))
+  (setq org-highlight-latex-and-related '(latex script entities))
 #+end_src
 
 ** Org cycle with Evil mode
