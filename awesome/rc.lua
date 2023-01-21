@@ -578,6 +578,7 @@ autorun = true
 autorunApps =
 {
    "megasync",
+   "nm-applet",
 }
 
 if autorun then
