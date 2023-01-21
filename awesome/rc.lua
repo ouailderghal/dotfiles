@@ -52,6 +52,9 @@ terminal = "st"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
+-- Personal variables
+browser = "google-chrome"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -370,7 +373,11 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"}),
+
+    -- Personal keybindings
+    awful.key({ modkey,         }, "b", function() awful.util.spawn_with_shell(browser) end),
+    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell(string.format("%s --incognito", browser)) end)
 )
 
 -- Bind all key numbers to tags.
