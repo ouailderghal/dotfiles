@@ -54,6 +54,7 @@ editor_cmd = terminal .. " -e " .. editor
 
 -- Personal variables
 browser = "google-chrome"
+fileManager = "dolphin"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -377,7 +378,9 @@ clientkeys = gears.table.join(
 
     -- Personal keybindings
     awful.key({ modkey,         }, "b", function() awful.util.spawn_with_shell(browser) end),
-    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell(string.format("%s --incognito", browser)) end)
+    awful.key({ modkey, "Shift" }, "b", function() awful.util.spawn_with_shell(string.format("%s --incognito", browser)) end),
+    awful.key({ modkey,         }, "e", function() awful.util.spawn_with_shell(fileManager) end)
+
 )
 
 -- Bind all key numbers to tags.
