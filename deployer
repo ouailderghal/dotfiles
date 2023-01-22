@@ -20,7 +20,11 @@ dotfiles = [
 ]
 
 
-def check_stow() -> bool:
+def which_stow() -> bool:
+    """
+    Check if GNU stow is available in your PATH
+    :return: True if stow is installed, otherwise False
+    """
     from shutil import which
     return which('stow') is not None
 
@@ -28,7 +32,6 @@ def check_stow() -> bool:
 def stow(name: str, target: pathlib.Path) -> None:
     """
     Deploy config directory using GNU stow
-
     :param name: config name
     :param target: path to deploy the config
     """
@@ -39,8 +42,7 @@ def stow(name: str, target: pathlib.Path) -> None:
 
 
 def main() -> None:
-    d = Deployer()
-    d.deploy()
+    pass
 
 
 if __name__ == '__main__':
