@@ -1,12 +1,38 @@
 #!/usr/bin/env python
 
+from pathlib import Path
+
+
 def check_stow() -> bool:
     from shutil import which
     return which('stow') is not None
 
 
+class Deployer:
+    home = Path.home()
+    config = home.joinpath('.config')
+
+    dotfiles = [
+        ('alacritty', config.joinpath('alacritty')),
+        ('awesome', config.joinpath('awesome')),
+        ('bash', home),
+        ('emacs', home.joinpath('.emacs.d')),
+        ('i3', config.joinpath('i3')),
+        ('i3status', config.joinpath('i3status')),
+        ('neofetch', config.joinpath('neofetch')),
+        ('nvim', config.joinpath('nvim')),
+        ('tmux', config.joinpath('tmux')),
+        ('xmodmap', home)
+    ]
+
+    def deploy(self, config: str = 'all'):
+        for item in self.dotfiles:
+            print(item[1])
+
+
 def main() -> None:
-    print(check_stow())
+    d = Deployer()
+    d.deploy()
 
 
 if __name__ == '__main__':
