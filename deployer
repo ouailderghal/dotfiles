@@ -1,11 +1,25 @@
 #!/usr/bin/env python
 
 from pathlib import Path
+import pathlib
 
 
 def check_stow() -> bool:
     from shutil import which
     return which('stow') is not None
+
+
+def stow(name: str, target: pathlib.Path) -> None:
+    """
+    Deploy config directory using GNU stow
+
+    :param name: config name
+    :param target: path to deploy the config
+    """
+    from os import system
+    target.mkdir(parents=True, exist_ok=True)
+    command = f'stow {name} -t {target}'
+    system(command)
 
 
 class Deployer:
@@ -26,8 +40,9 @@ class Deployer:
     ]
 
     def deploy(self, config: str = 'all'):
-        for item in self.dotfiles:
-            print(item[1])
+        for name, target in self.dotfiles:
+            self.stow(name, target)
+            break
 
 
 def main() -> None:
