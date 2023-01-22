@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
+def check_stow() -> bool:
+    from shutil import which
+    return which('stow') is not None
+
+
 def main() -> None:
-    print('Hello, World')
+    print(check_stow())
 
 
 if __name__ == '__main__':
