@@ -3,6 +3,22 @@
 from pathlib import Path
 import pathlib
 
+HOME = Path.home()
+CONFIG = HOME.joinpath('.config')
+
+dotfiles = [
+    ('alacritty', CONFIG.joinpath('alacritty')),
+    ('awesome', CONFIG.joinpath('awesome')),
+    ('bash', HOME),
+    ('emacs', HOME.joinpath('.emacs.d')),
+    ('i3', CONFIG.joinpath('i3')),
+    ('i3status', CONFIG.joinpath('i3status')),
+    ('neofetch', CONFIG.joinpath('neofetch')),
+    ('nvim', CONFIG.joinpath('nvim')),
+    ('tmux', CONFIG.joinpath('tmux')),
+    ('xmodmap', HOME)
+]
+
 
 def check_stow() -> bool:
     from shutil import which
@@ -20,29 +36,6 @@ def stow(name: str, target: pathlib.Path) -> None:
     target.mkdir(parents=True, exist_ok=True)
     command = f'stow {name} -t {target}'
     system(command)
-
-
-class Deployer:
-    home = Path.home()
-    config = home.joinpath('.config')
-
-    dotfiles = [
-        ('alacritty', config.joinpath('alacritty')),
-        ('awesome', config.joinpath('awesome')),
-        ('bash', home),
-        ('emacs', home.joinpath('.emacs.d')),
-        ('i3', config.joinpath('i3')),
-        ('i3status', config.joinpath('i3status')),
-        ('neofetch', config.joinpath('neofetch')),
-        ('nvim', config.joinpath('nvim')),
-        ('tmux', config.joinpath('tmux')),
-        ('xmodmap', home)
-    ]
-
-    def deploy(self, config: str = 'all'):
-        for name, target in self.dotfiles:
-            self.stow(name, target)
-            break
 
 
 def main() -> None:
