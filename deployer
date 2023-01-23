@@ -31,7 +31,7 @@ def which_stow() -> bool:
 
 def stow(name: str, target: pathlib.Path) -> bool:
     """
-    Deploy config directory using GNU stow
+    Create symlinks for a specific configuration using GNU stow
     :param name: config name
     :param target: path to deploy the config
     """
@@ -42,8 +42,28 @@ def stow(name: str, target: pathlib.Path) -> bool:
     return True if result.returncode == 0 else False
 
 
+def deploy_config(name: str) -> bool:
+    """
+    Deploy specific configuration files to target
+    :param name: configuration name
+    """
+    try:
+        config = list(filter(lambda item: item[0] == name, dotfiles))[0]
+        target = config[1]
+        result = stow(name, target)
+
+        if result:
+            print(f'[OK] {name} configuration has been deployed successfully.')
+            return True
+
+        return False
+    except IndexError:
+        print(f'[ERR] config {name} not found.')
+        return False
+
+
 def main() -> None:
-    pass
+    deploy_config('alacritty')
 
 
 if __name__ == '__main__':
