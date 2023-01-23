@@ -29,16 +29,17 @@ def which_stow() -> bool:
     return which('stow') is not None
 
 
-def stow(name: str, target: pathlib.Path) -> None:
+def stow(name: str, target: pathlib.Path) -> bool:
     """
     Deploy config directory using GNU stow
     :param name: config name
     :param target: path to deploy the config
     """
-    from os import system
+    import subprocess
     target.mkdir(parents=True, exist_ok=True)
     command = f'stow {name} -t {target}'
-    system(command)
+    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
+    return True if result.returncode == 0 else False
 
 
 def main() -> None:
