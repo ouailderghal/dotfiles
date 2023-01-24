@@ -3,7 +3,7 @@
 
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
-PS1='\u@\h (\w) \n$ '
+PS1='\u@\h (\w) \nλ '
 
 case ${TERM} in
   xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
@@ -62,9 +62,9 @@ test -f $GIT_PROMPT_PATH/git-completion.bash && source $GIT_PROMPT_PATH/git-comp
 if [ -f $HOME/.dotfiles/bash/git-prompt.sh ]; then
     source $HOME/.dotfiles/bash/git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
-    PS1='\u@\e[0;32m\h\e[m (\e[0;31m\w\e[m) $(__git_ps1 "[\e[0;32m%s\e[m]") \n$ '
+    PS1='\u@\e[0;32m\h\e[m (\e[0;31m\w\e[m) $(__git_ps1 "[\e[0;32m%s\e[m]") \nλ '
 else
-    PS1='\u@\h (\w) \n$ '
+    PS1='\u@\h (\w) \nλ '
 fi
 
 export NVM_DIR="$HOME/.nvm"
