@@ -1,3 +1,5 @@
+require('ouailderghal.remap')
+
 local opt = vim.opt
 
 -- line numbers
