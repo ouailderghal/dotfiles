@@ -95,8 +95,11 @@ def deploy_all() -> None:
 def main() -> None:
     args = get_args()
 
-    if args.deploy and args.config_name is not None:
+    if args.deploy and args.config_name is not None and not args.deploy_all:
         deploy_config(args.config_name)
+
+    if args.deploy and args.deploy_all and args.config_name is None:
+        deploy_all()
 
 
 if __name__ == '__main__':
