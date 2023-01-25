@@ -6,10 +6,9 @@ import pathlib
 
 
 class Deployer:
-    def __init__(self, home: pathlib.Path, config: pathlib.Path):
+    def __init__(self, home: pathlib.Path):
         self.home = home
-        self.config = config
-
+        self.config = self.home.joinpath('.config')
 
         self.dotfiles = [
             ('alacritty', self.config.joinpath('alacritty')),
@@ -32,7 +31,7 @@ class Deployer:
         from shutil import which
         return which('stow') is not None
 
-    def _stow(name: str, target: pathlib.Path) -> bool:
+    def _stow(self, name: str, target: pathlib.Path) -> bool:
         """
         Create symlinks for a specific configuration using GNU stow
         :param name: config name
@@ -44,16 +43,15 @@ class Deployer:
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
         return True if result.returncode == 0 else False
 
-
-    def deploy_config(name: str) -> bool:
+    def deploy_config(self, name: str) -> bool:
         """
         Deploy specific configuration files to target
         :param name: configuration name
         """
         try:
-            config = list(filter(lambda item: item[0] == name, dotfiles))[0]
+            config = list(filter(lambda item: item[0] == name, self.dotfiles))[0]
             target = config[1]
-            result = stow(name, target)
+            result = self._stow(name, target)
 
             if result:
                 print(f'[OK] configuration {name} has been deployed successfully.')
@@ -64,10 +62,9 @@ class Deployer:
             print(f'[ERR] configuration {name} is not found.')
             return False
 
-    def deploy_all() -> None:
-        for config_name, _ in dotfiles:
-            deploy_config(config_name)
-
+    def deploy_all(self) -> None:
+        for config_name, _ in self.dotfiles:
+            self.deploy_config(config_name)
 
 
 def get_args() -> argparse.Namespace:
@@ -100,15 +97,17 @@ def get_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-
 def main() -> None:
+    home = pathlib.Path.home()
+    deployer = Deployer(home)
+
     args = get_args()
 
     if args.deploy and args.config_name is not None and not args.deploy_all:
-        deploy_config(args.config_name)
+        deployer.deploy_config(args.config_name)
 
     if args.deploy and args.deploy_all and args.config_name is None:
-        deploy_all()
+        deployer.deploy_all()
 
 
 if __name__ == '__main__':
