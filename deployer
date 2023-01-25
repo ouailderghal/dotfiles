@@ -82,8 +82,13 @@ def deploy_config(name: str) -> bool:
         return False
 
 
+def deploy_all() -> None:
+    for config_name, _ in dotfiles:
+        deploy_config(config_name)
+
+
 def main() -> None:
-    args = get_args()
+    deploy_all()
 
 
 if __name__ == '__main__':
