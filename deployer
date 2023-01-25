@@ -33,8 +33,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument('-c, --config',
                         help='configuration name',
                         type=str,
-                        default='all',
-                        required=True,
+                        required=False,
                         dest='config_name')
 
     return parser.parse_args()
@@ -88,7 +87,10 @@ def deploy_all() -> None:
 
 
 def main() -> None:
-    deploy_all()
+    args = get_args()
+
+    if args.deploy and args.config_name is not None:
+        deploy_config(args.config_name)
 
 
 if __name__ == '__main__':
