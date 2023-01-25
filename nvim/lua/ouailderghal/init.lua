@@ -2,6 +2,9 @@ require('ouailderghal.remap')
 
 local opt = vim.opt
 
+-- fat gui cursor
+opt.guicursor = ""
+
 -- line numbers
 opt.number = true
 opt.relativenumber = true
