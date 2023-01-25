@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+
+from pathlib import Path
+import pathlib
+
+HOME = Path.home()
+CONFIG = HOME.joinpath('.config')
+
+dotfiles = [
+    ('alacritty', CONFIG.joinpath('alacritty')),
+    ('awesome', CONFIG.joinpath('awesome')),
+    ('bash', HOME),
+    ('emacs', HOME.joinpath('.emacs.d')),
+    ('i3', CONFIG.joinpath('i3')),
+    ('i3status', CONFIG.joinpath('i3status')),
+    ('neofetch', CONFIG.joinpath('neofetch')),
+    ('nvim', CONFIG.joinpath('nvim')),
+    ('tmux', CONFIG.joinpath('tmux')),
+    ('xmodmap', HOME)
+]
+
+
+def which_stow() -> bool:
+    """
+    Check if GNU stow is available in your PATH
+    :return: True if stow is installed, otherwise False
+    """
+    from shutil import which
+    return which('stow') is not None
+
+
+def stow(name: str, target: pathlib.Path) -> bool:
+    """
+    Create symlinks for a specific configuration using GNU stow
+    :param name: config name
+    :param target: path to deploy the config
+    """
+    import subprocess
+    target.mkdir(parents=True, exist_ok=True)
+    command = f'stow {name} -t {target}'
+    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
+    return True if result.returncode == 0 else False
+
+
+def deploy_config(name: str) -> bool:
+    """
+    Deploy specific configuration files to target
+    :param name: configuration name
+    """
+    try:
+        config = list(filter(lambda item: item[0] == name, dotfiles))[0]
+        target = config[1]
+        result = stow(name, target)
+
+        if result:
+            print(f'[OK] {name} configuration has been deployed successfully.')
+            return True
+
+        return False
+    except IndexError:
+        print(f'[ERR] config {name} not found.')
+        return False
+
+
+def main() -> None:
+    deploy_config('alacritty')
+
+
+if __name__ == '__main__':
+    main()
