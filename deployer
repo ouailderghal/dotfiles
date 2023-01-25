@@ -39,7 +39,7 @@ class Deployer:
         """
         import subprocess
         target.mkdir(parents=True, exist_ok=True)
-        command = f'stow {name} -t {target}'
+        command = f'stow --dotfiles {name} -t {target}'
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
         return True if result.returncode == 0 else False
 
