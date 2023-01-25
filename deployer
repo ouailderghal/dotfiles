@@ -78,12 +78,12 @@ def deploy_config(name: str) -> bool:
         result = stow(name, target)
 
         if result:
-            print(f'[OK] {name} configuration has been deployed successfully.')
+            print(f'[OK] configuration {name} has been deployed successfully.')
             return True
 
         return False
     except IndexError:
-        print(f'[ERR] config {name} not found.')
+        print(f'[ERR] configuration {name} is not found.')
         return False
 
 
