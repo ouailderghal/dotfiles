@@ -4,21 +4,70 @@ from pathlib import Path
 import argparse
 import pathlib
 
-HOME = Path.home()
-CONFIG = HOME.joinpath('.config')
 
-dotfiles = [
-    ('alacritty', CONFIG.joinpath('alacritty')),
-    ('awesome', CONFIG.joinpath('awesome')),
-    ('bash', HOME),
-    ('emacs', HOME.joinpath('.emacs.d')),
-    ('i3', CONFIG.joinpath('i3')),
-    ('i3status', CONFIG.joinpath('i3status')),
-    ('neofetch', CONFIG.joinpath('neofetch')),
-    ('nvim', CONFIG.joinpath('nvim')),
-    ('tmux', CONFIG.joinpath('tmux')),
-    ('xmodmap', HOME)
-]
+class Deployer:
+    def __init__(self, home: pathlib.Path, config: pathlib.Path):
+        self.home = home
+        self.config = config
+
+
+        self.dotfiles = [
+            ('alacritty', self.config.joinpath('alacritty')),
+            ('awesome', self.config.joinpath('awesome')),
+            ('bash', self.home),
+            ('emacs', self.home.joinpath('.emacs.d')),
+            ('i3', self.config.joinpath('i3')),
+            ('i3status', self.config.joinpath('i3status')),
+            ('neofetch', self.config.joinpath('neofetch')),
+            ('nvim', self.config.joinpath('nvim')),
+            ('tmux', self.config.joinpath('tmux')),
+            ('xmodmap', self.home)
+        ]
+
+    def _which_stow() -> bool:
+        """
+        Check if GNU stow is available in your PATH
+        :return: True if stow is installed, otherwise False
+        """
+        from shutil import which
+        return which('stow') is not None
+
+    def _stow(name: str, target: pathlib.Path) -> bool:
+        """
+        Create symlinks for a specific configuration using GNU stow
+        :param name: config name
+        :param target: path to deploy the config
+        """
+        import subprocess
+        target.mkdir(parents=True, exist_ok=True)
+        command = f'stow {name} -t {target}'
+        result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
+        return True if result.returncode == 0 else False
+
+
+    def deploy_config(name: str) -> bool:
+        """
+        Deploy specific configuration files to target
+        :param name: configuration name
+        """
+        try:
+            config = list(filter(lambda item: item[0] == name, dotfiles))[0]
+            target = config[1]
+            result = stow(name, target)
+
+            if result:
+                print(f'[OK] configuration {name} has been deployed successfully.')
+                return True
+
+            return False
+        except IndexError:
+            print(f'[ERR] configuration {name} is not found.')
+            return False
+
+    def deploy_all() -> None:
+        for config_name, _ in dotfiles:
+            deploy_config(config_name)
+
 
 
 def get_args() -> argparse.Namespace:
@@ -29,6 +78,12 @@ def get_args() -> argparse.Namespace:
                         required=True,
                         action='store_true',
                         dest='deploy')
+
+    parser.add_argument('-r, --remove',
+                        help='undeploy configuration file',
+                        required=False,
+                        action='store_true',
+                        dest='undeploy')
 
     parser.add_argument('-a, --all',
                         help='deploy all configuration files',
@@ -44,52 +99,6 @@ def get_args() -> argparse.Namespace:
 
     return parser.parse_args()
 
-
-def which_stow() -> bool:
-    """
-    Check if GNU stow is available in your PATH
-    :return: True if stow is installed, otherwise False
-    """
-    from shutil import which
-    return which('stow') is not None
-
-
-def stow(name: str, target: pathlib.Path) -> bool:
-    """
-    Create symlinks for a specific configuration using GNU stow
-    :param name: config name
-    :param target: path to deploy the config
-    """
-    import subprocess
-    target.mkdir(parents=True, exist_ok=True)
-    command = f'stow {name} -t {target}'
-    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
-    return True if result.returncode == 0 else False
-
-
-def deploy_config(name: str) -> bool:
-    """
-    Deploy specific configuration files to target
-    :param name: configuration name
-    """
-    try:
-        config = list(filter(lambda item: item[0] == name, dotfiles))[0]
-        target = config[1]
-        result = stow(name, target)
-
-        if result:
-            print(f'[OK] configuration {name} has been deployed successfully.')
-            return True
-
-        return False
-    except IndexError:
-        print(f'[ERR] configuration {name} is not found.')
-        return False
-
-
-def deploy_all() -> None:
-    for config_name, _ in dotfiles:
-        deploy_config(config_name)
 
 
 def main() -> None:
