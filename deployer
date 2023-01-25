@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from pathlib import Path
+import argparse
 import pathlib
 
 HOME = Path.home()
@@ -18,6 +19,25 @@ dotfiles = [
     ('tmux', CONFIG.joinpath('tmux')),
     ('xmodmap', HOME)
 ]
+
+
+def get_args() -> argparse.Namespace:
+    parser =  argparse.ArgumentParser(description='Deploy configuraiton files')
+
+    parser.add_argument('-d, --deploy',
+                        help='deploy configuration files',
+                        required=True,
+                        action='store_true',
+                        dest='deploy')
+
+    parser.add_argument('-c, --config',
+                        help='configuration name',
+                        type=str,
+                        default='all',
+                        required=True,
+                        dest='config_name')
+
+    return parser.parse_args()
 
 
 def which_stow() -> bool:
@@ -63,7 +83,7 @@ def deploy_config(name: str) -> bool:
 
 
 def main() -> None:
-    deploy_config('alacritty')
+    args = get_args()
 
 
 if __name__ == '__main__':
