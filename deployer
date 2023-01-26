@@ -9,6 +9,7 @@ class Deployer:
     def __init__(self):
         self.home = pathlib.Path.home()
         self.config = self.home.joinpath('.config')
+        self.which_stow =  self._which_stow()
 
         self.dotfiles = [
             ('alacritty', self.config.joinpath('alacritty')),
@@ -23,6 +24,7 @@ class Deployer:
             ('xmodmap', self.home)
         ]
 
+    @staticmethod
     def _which_stow() -> bool:
         """
         Check if GNU stow is available in your PATH
@@ -48,6 +50,10 @@ class Deployer:
         Deploy specific configuration files to target
         :param name: configuration name
         """
+        if not self.which_stow:
+            print('[ERR] stow is not installed.')
+            return False
+
         try:
             config = list(filter(lambda item: item[0] == name, self.dotfiles))[0]
             target = config[1]
@@ -63,6 +69,10 @@ class Deployer:
             return False
 
     def deploy_all(self) -> None:
+        if not self.which_stow:
+            print('[ERR] stow is not installed.')
+            return False
+
         for config_name, _ in self.dotfiles:
             self.deploy_config(config_name)
 
