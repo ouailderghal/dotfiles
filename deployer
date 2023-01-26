@@ -6,8 +6,8 @@ import pathlib
 
 
 class Deployer:
-    def __init__(self, home: pathlib.Path):
-        self.home = home
+    def __init__(self):
+        self.home = pathlib.Path.home()
         self.config = self.home.joinpath('.config')
 
         self.dotfiles = [
@@ -98,8 +98,7 @@ def get_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    home = pathlib.Path.home()
-    deployer = Deployer(home)
+    deployer = Deployer()
 
     args = get_args()
 
