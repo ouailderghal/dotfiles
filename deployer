@@ -6,6 +6,10 @@ import pathlib
 
 
 class Deployer:
+    """
+    Configuration files deployer class
+    """
+
     def __init__(self):
         self.home = pathlib.Path.home()
         self.config = self.home.joinpath('.config')
@@ -30,6 +34,7 @@ class Deployer:
         Check if GNU stow is available in your PATH
         :return: True if stow is installed, otherwise False
         """
+
         from shutil import which
         return which('stow') is not None
 
@@ -39,6 +44,7 @@ class Deployer:
         :param name: config name
         :param target: path to deploy the config
         """
+
         import subprocess
         target.mkdir(parents=True, exist_ok=True)
         command = f'stow --dotfiles {name} -t {target}'
@@ -50,6 +56,7 @@ class Deployer:
         Deploy specific configuration files to target
         :param name: configuration name
         """
+
         if not self.which_stow:
             print('[ERR] stow is not installed.')
             return False
@@ -69,6 +76,10 @@ class Deployer:
             return False
 
     def deploy_all(self) -> None:
+        """
+        Deploy all configuration files to their targets
+        """
+
         if not self.which_stow:
             print('[ERR] stow is not installed.')
             return False
