@@ -4,7 +4,6 @@ from pathlib import Path
 import argparse
 import pathlib
 import sys
-import os
 
 
 class Deployer:
@@ -70,7 +69,7 @@ class Deployer:
             sys.exit(0)
         except IndexError:
             print(f'[ERR] configuration {name} is not found.')
-            os.exit(1)
+            sys.exit(1)
         except FileNotFoundError:
             print(f'[WARN] configuration {name} is not deployed.')
             sys.exit(1)
@@ -116,6 +115,12 @@ class Deployer:
 def get_args() -> argparse.Namespace:
     parser =  argparse.ArgumentParser(description='Deploy configuraiton files')
 
+    parser.add_argument('-a, --all',
+                        help='perform action on all configuration files',
+                        required=False,
+                        action='store_true',
+                        dest='all')
+
     parser.add_argument('-d, --deploy',
                         help='deploy configuration files',
                         required=False,
@@ -127,12 +132,6 @@ def get_args() -> argparse.Namespace:
                         required=False,
                         action='store_true',
                         dest='remove')
-
-    parser.add_argument('-a, --all',
-                        help='deploy all configuration files',
-                        required=False,
-                        action='store_true',
-                        dest='deploy_all')
 
     parser.add_argument('-c, --config',
                         help='configuration name',
@@ -148,13 +147,13 @@ def main() -> None:
 
     args = get_args()
 
-    if args.deploy and args.config_name is not None and not args.deploy_all:
+    if args.deploy and args.config_name is not None and not args.all:
         deployer.deploy_config(args.config_name)
 
-    if args.deploy and args.deploy_all and args.config_name is None:
+    if args.deploy and args.all and args.config_name is None:
         deployer.deploy_all()
 
-    if args.remove and args.config_name is not None:
+    if args.remove and args.config_name is not None and not args.all:
         deployer.remove_config(args.config_name)
 
 
