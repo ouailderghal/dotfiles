@@ -16,7 +16,7 @@ shell:
 window:
   dynamic_padding: true
   decorations: full
-  startup_mode: Windowed
+  startup_mode: Maximized
 
   # title: Alacritty
   dynamic_title: false
