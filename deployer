@@ -3,6 +3,8 @@
 from pathlib import Path
 import argparse
 import pathlib
+import sys
+import os
 
 
 class Deployer:
@@ -51,6 +53,29 @@ class Deployer:
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
         return True if result.returncode == 0 else False
 
+    def remove_config(self, name: str) -> None:
+        """
+        Remove a specific configuration files
+        :param name: configuration name
+        """
+        from shutil import rmtree
+
+        try:
+            config = list(filter(lambda item: item[0] == name, self.dotfiles))[0]
+            target = config[1]
+
+            rmtree(target)
+
+            print(f'[OK] configuration {name} has been removed successfully.')
+            sys.exit(0)
+        except IndexError:
+            print(f'[ERR] configuration {name} is not found.')
+            os.exit(1)
+        except FileNotFoundError:
+            print(f'[WARN] configuration {name} is not deployed.')
+            sys.exit(1)
+
+
     def deploy_config(self, name: str) -> bool:
         """
         Deploy specific configuration files to target
@@ -93,15 +118,15 @@ def get_args() -> argparse.Namespace:
 
     parser.add_argument('-d, --deploy',
                         help='deploy configuration files',
-                        required=True,
+                        required=False,
                         action='store_true',
                         dest='deploy')
 
     parser.add_argument('-r, --remove',
-                        help='undeploy configuration file',
+                        help='remove configuration file',
                         required=False,
                         action='store_true',
-                        dest='undeploy')
+                        dest='remove')
 
     parser.add_argument('-a, --all',
                         help='deploy all configuration files',
@@ -128,6 +153,9 @@ def main() -> None:
 
     if args.deploy and args.deploy_all and args.config_name is None:
         deployer.deploy_all()
+
+    if args.remove and args.config_name is not None:
+        deployer.remove_config(args.config_name)
 
 
 if __name__ == '__main__':
