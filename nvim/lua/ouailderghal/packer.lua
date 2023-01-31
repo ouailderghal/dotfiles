@@ -13,14 +13,21 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
 
   use {
+    'theprimeagen/harpoon' ,
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end}
+  use {
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+    config = function() require("toggleterm").setup() end
+  }
 
   use {
     'nvim-treesitter/nvim-treesitter',
