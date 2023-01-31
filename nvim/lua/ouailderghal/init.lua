@@ -2,7 +2,7 @@ require('ouailderghal.remap')
 
 local opt = vim.opt
 
-opt.timeoutlen = 0
+opt.timeoutlen = 300
 
 -- fat gui cursor
 opt.guicursor = ""
@@ -12,8 +12,8 @@ opt.number = true
 opt.relativenumber = true
 
 -- tabs and indentation
-opt.tabstop = 2 
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
