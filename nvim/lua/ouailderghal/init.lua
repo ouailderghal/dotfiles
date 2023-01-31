@@ -2,7 +2,7 @@ require('ouailderghal.remap')
 
 local opt = vim.opt
 
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 
 -- fat gui cursor
 opt.guicursor = ""
