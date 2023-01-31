@@ -9,8 +9,8 @@ return require('packer').startup(function(use)
   use 'jnurmine/Zenburn'
   use "lukas-reineke/indent-blankline.nvim"
   use 'b3nj5m1n/kommentary'
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-
+  use 'nvim-lualine/lualine.nvim'
+  use 'tpope/vim-fugitive'
 
   use {
     'nvim-telescope/telescope.nvim',
