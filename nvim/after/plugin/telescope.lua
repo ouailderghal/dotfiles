@@ -7,5 +7,5 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 
 -- Find file in a Git repo
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 
