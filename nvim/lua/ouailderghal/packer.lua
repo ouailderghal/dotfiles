@@ -10,7 +10,9 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use 'b3nj5m1n/kommentary'
   use 'nvim-lualine/lualine.nvim'
+
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
 
   use {
     'theprimeagen/harpoon' ,
