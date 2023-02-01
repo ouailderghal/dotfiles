@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
     use 'b3nj5m1n/kommentary'
     use 'nvim-lualine/lualine.nvim'
     use 'lewis6991/gitsigns.nvim'
+    use 'Vonr/align.nvim'
 
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
