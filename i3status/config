@@ -27,15 +27,6 @@ battery all {
         format = "%status %percentage %remaining"
 }
 
-disk "/" {
-        format = "/root:%avail"
-}
-
-
-disk "/home" {
-        format = "/home:%avail"
-}
-
 memory {
         format = "FREE:%available"
         threshold_degraded = "1G"
