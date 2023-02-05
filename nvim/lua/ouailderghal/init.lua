@@ -5,7 +5,7 @@ local opt = vim.opt
 opt.timeoutlen = 500
 
 -- fat gui cursor
-opt.guicursor = ""
+-- opt.guicursor = ""
 
 -- line numbers
 opt.number = true
