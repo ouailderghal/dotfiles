@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'Vonr/align.nvim'
     use 'numToStr/Comment.nvim'
+    use 'rakr/vim-one'
 
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
