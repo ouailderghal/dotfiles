@@ -7,6 +7,7 @@ set $editor nvim
 set $browser google-chrome
 set $gui_file_manager nautilus
 set $file_manager ranger
+set $clipboard copyq
 
 # Windows specifications
 for_window [class="Xfce4-appfinder"] floating enable
@@ -30,7 +31,7 @@ for_window [class="Org.gnome.clocks"] resize set 640 480
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser --incognito
 bindsym $mod+p exec $gui_file_manager
-bindsym $mod+Shift+p exec $term -e $file_manager
+bindsym $mod+Shift+p exec $clipboard toggle
 bindsym --release $mod+Control+l exec "slock"
 bindsym Print exec "screenshooter -e"
 bindsym --release $mod+Shift+Print exec "screenshooter -s"
@@ -39,6 +40,7 @@ bindsym $mod+t exec telegram-desktop
 bindsym $mod+Shift+t exec killall telegram-desktop
 bindsym $mod+Control+h exec $term -e "htop"
 bindsym --release $mod+Control+s exec "xfce4-session-logout -s"
+
 
 # XDG autostart 
 exec --no-startup-id dex --autostart --environment i3
