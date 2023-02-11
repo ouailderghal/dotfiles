@@ -1,2 +1,2 @@
-local color = "one"
+local color = "zenburn"
 vim.cmd.colorscheme(color)
