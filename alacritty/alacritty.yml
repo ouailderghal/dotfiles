@@ -31,18 +31,18 @@ scrolling:
 
 # Font configuration
 font:
-  size: 14
+  size: 18
 
   normal:
-    family: Cascadia Code
+    family: Ubuntu Mono
     style: Regular
 
   bold:
-    family: Cascadia Code
+    family: Ubuntu Mono
     style: Bold
 
   italic:
-    family: Cascadia Code
+    family: Ubuntu Mono
     style: Italic
 
   bold_italic:
