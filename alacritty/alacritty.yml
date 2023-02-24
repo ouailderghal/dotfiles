@@ -10,7 +10,7 @@ env:
 
 # Shell
 shell:
-  program: /bin/bash
+  program: /bin/zsh
 
 # Window
 window:
