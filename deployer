@@ -26,7 +26,8 @@ class Deployer:
             ('neofetch', self.config.joinpath('neofetch')),
             ('nvim', self.config.joinpath('nvim')),
             ('tmux', self.config.joinpath('tmux')),
-            ('xmodmap', self.home)
+            ('xmodmap', self.home),
+            ('zsh', self.home),
         ]
 
     @staticmethod
@@ -106,7 +107,7 @@ class Deployer:
 
         if not self.which_stow:
             print('[ERR] stow is not installed.')
-            return False
+            return
 
         for config_name, _ in self.dotfiles:
             self.deploy_config(config_name)
