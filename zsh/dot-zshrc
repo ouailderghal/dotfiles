@@ -14,7 +14,7 @@ DISABLE_LS_COLORS="false"
 DISABLE_AUTO_TITLE="false"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-ZSH_CUSTOM=$ZSH/custom
+ZSH_CUSTOM=$HOME/.zsh-custom
 
 plugins=(git gh tmux dnf laravel docker ansible golang)
 
