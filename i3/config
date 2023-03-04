@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Constants
-set $term alacritty
+set $term terminator
 set $editor nvim
 set $browser google-chrome
 set $gui_file_manager nautilus
