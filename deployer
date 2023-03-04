@@ -28,6 +28,7 @@ class Deployer:
             ('tmux', self.config.joinpath('tmux')),
             ('xmodmap', self.home),
             ('zsh', self.home),
+            ('terminator', self.config.joinpath('terminator')),
         ]
 
     @staticmethod
