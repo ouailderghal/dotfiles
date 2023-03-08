@@ -25,7 +25,7 @@ class Deployer:
             ('i3status', self.config.joinpath('i3status')),
             ('neofetch', self.config.joinpath('neofetch')),
             ('nvim', self.config.joinpath('nvim')),
-            ('tmux', self.config.joinpath('tmux')),
+            ('tmux', self.home),
             ('xmodmap', self.home),
             ('zsh', self.home),
             ('terminator', self.config.joinpath('terminator')),
