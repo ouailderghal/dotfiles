@@ -29,6 +29,7 @@ class Deployer:
             ('xmodmap', self.home),
             ('zsh', self.home),
             ('terminator', self.config.joinpath('terminator')),
+	    ('git', self.home),
         ]
 
     @staticmethod
