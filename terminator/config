@@ -9,8 +9,10 @@
   search = <Shift><Alt>s
 [profiles]
   [[default]]
+    background_color = "#ffffff"
     cursor_color = "#aaaaaa"
     font = Ubuntu Mono 14
+    foreground_color = "#000000"
     use_custom_command = True
     custom_command = /bin/zsh
     use_system_font = False
