@@ -11,7 +11,7 @@
   [[default]]
     background_color = "#ffffff"
     cursor_color = "#aaaaaa"
-    font = Ubuntu Mono 14
+    font = Fira Code 10
     foreground_color = "#000000"
     use_custom_command = True
     custom_command = /bin/zsh
