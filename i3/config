@@ -59,8 +59,9 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xmodmap ~/.xmodmaprc
 set $refresh_i3status killall -SIGUSR1 i3status
 
-# megasync
+# startuo
 exec --no-startup-id megasync
+exec --no-startup-id copyq
 
 floating_modifier $mod
 bindsym $mod+Return exec $term
