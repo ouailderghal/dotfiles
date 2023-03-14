@@ -1,4 +1,5 @@
 require('ouailderghal.remap')
+require('ouailderghal.packer')
 
 local opt = vim.opt
 
