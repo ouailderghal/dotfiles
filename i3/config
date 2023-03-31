@@ -5,7 +5,7 @@ set $mod Mod4
 set $term terminator
 set $editor nvim
 set $browser firefox
-set $gui_file_manager nautilus
+set $gui_file_manager thunar
 set $file_manager ranger
 set $clipboard copyq
 
