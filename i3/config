@@ -178,8 +178,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Status bar
-bar {
-        status_command i3status
-        position bottom
-}
-
+# bar {
+        # status_command i3status
+        # position bottom
+# }
