@@ -2,9 +2,9 @@
 set $mod Mod4
 
 # Constants
-set $term terminator
+set $term alacritty
 set $editor nvim
-set $browser firefox
+set $browser google-chrome
 set $gui_file_manager thunar
 set $file_manager ranger
 set $clipboard copyq
