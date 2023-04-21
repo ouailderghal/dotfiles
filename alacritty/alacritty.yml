@@ -34,19 +34,19 @@ font:
   size: 18
 
   normal:
-    family: Ubuntu Mono
+    family: Fira Mono
     style: Regular
 
   bold:
-    family: Ubuntu Mono
+    family: Fira Mono
     style: Bold
 
   italic:
-    family: Ubuntu Mono
+    family: Fira Mono
     style: Italic
 
   bold_italic:
-    family: Ubuntu Mono
+    family: Fira Mono
     style: Italic Bold
 
 # Cursor
