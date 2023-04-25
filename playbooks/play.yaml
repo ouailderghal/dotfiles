@@ -1,0 +1,52 @@
+---
+- name: Configure Debian
+  hosts: localhost
+  become: yes
+  
+  roles:
+    - { role: zotero, tags: zotero }
+  
+  tasks:
+    - name: Install KeePassXC
+      tags: keepassxc
+      apt: name=keepassxc state=present
+
+    - name: Install CopyQ
+      tags: copyq
+      apt: name=copyq state=present
+
+    - name: Install Terminator
+      tags: terminator
+      apt: name=terminator state=present
+
+    - name: Install texlive and texstudio
+      tags: latex
+      apt:
+        state: present
+        name:
+          - texlive-full
+          - texstudio
+
+    - name: Install fonts
+      tags: fonts
+      apt:
+        state: present
+        name:
+          - fonts-firacode
+
+    - name: Install Discord
+      tags: discord
+      apt: 
+        deb: https://dl.discordapp.net/apps/linux/0.0.26/discord-0.0.26.deb
+
+
+    - name: Install command-line utilities
+      tags: cli
+      apt:
+        state: present
+        name:
+          - tmux
+          - fzf
+          - neofetch
+          - htop
+

@@ -1,0 +1,6 @@
+---
+- name: Download Zotero 6.0.26
+  ansible.builtin.get_url:
+    url: https://download.zotero.org/client/release/6.0.26/Zotero-6.0.26_linux-x86_64.tar.bz2
+    dest: /tmp
+    mode: '0440'
