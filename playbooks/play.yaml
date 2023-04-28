@@ -22,10 +22,10 @@
 
     - name: Install texlive and texstudio
       tags: latex
-      apt:
+      ansible.builtin.dnf:
         state: present
         name:
-          - texlive-full
+          - texlive-scheme-full
           - texstudio
 
     - name: Install fonts
