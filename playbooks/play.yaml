@@ -5,6 +5,7 @@
   
   roles:
     - { role: zotero, tags: zotero }
+    - { role: docker, DOCKER_USER: ouail, tags: docker }
   
   tasks:
     - name: Install KeePassXC

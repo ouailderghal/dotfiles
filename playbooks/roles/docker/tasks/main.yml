@@ -1,0 +1,31 @@
+---
+- name: Add Docker repository
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+
+- name: Install Docker
+  ansible.builtin.dnf:
+    state: present
+    name:
+      - docker-ce 
+      - docker-ce-cli
+      - containerd.io 
+      - docker-buildx-plugin
+      - docker-compose-plugin
+
+- name: Enable Docker service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Add user to Docker group
+  ansible.builtin.user:
+    name: "{{ DOCKER_USER }}"
+    groups: docker
+    append: yes
+
+- name: Pull hello-world image
+  community.docker.docker_image:
+    source: pull
