@@ -17,7 +17,7 @@
     remote_src: true
   when: not zotero_directory.stat.exists
 
-- name: Create a symbolic link for Zotero binary
+- name: Create symbolic link for Zotero binary
   ansible.builtin.file:
     src: "{{ zotero_dir }}/zotero"
     dest: /usr/local/bin/zotero
