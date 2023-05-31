@@ -2,9 +2,10 @@
 - name: Configure Debian
   hosts: localhost
   become: yes
-  
+
+
   roles:
-    - { role: zotero, tags: zotero }
+    - { role: zotero, zotero_pkg_release: "6.0.26", tags: zotero }
     - { role: docker, DOCKER_USER: ouail, tags: docker }
   
   tasks:
