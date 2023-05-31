@@ -1,0 +1,8 @@
+---
+zotero_pkg_url: "https://download.zotero.org/client/release"
+zotero_pkg_name: "Zotero"
+zotero_pkg_platform: "linux-x86_64"
+zotero_archive: "/tmp/zotero.tar.bz2"
+zotero_install_target: "/opt"
+zotero_dir: "{{ zotero_install_target }}/{{ zotero_pkg_name }}_{{ zotero_pkg_platform }}"
+zotero_url: "{{ zotero_pkg_url }}/{{ zotero_pkg_release }}/{{ zotero_pkg_name }}-{{ zotero_pkg_release }}_{{ zotero_pkg_platform }}.tar.bz2"

@@ -1,6 +1,47 @@
 ---
-- name: Download Zotero 6.0.26
+- name: Download Zotero package
   ansible.builtin.get_url:
-    url: https://download.zotero.org/client/release/6.0.26/Zotero-6.0.26_linux-x86_64.tar.bz2
-    dest: /tmp
-    mode: '0440'
+    url: "{{ zotero_url }}"
+    dest: "{{ zotero_archive }}"
+    mode: "0644"
+
+- name: Check if Zotero directory exists
+  ansible.builtin.stat:
+    path: "{{ zotero_dir }}"
+  register: zotero_directory
+
+- name: Extract Zotero package
+  ansible.builtin.unarchive:
+    src: "{{ zotero_archive }}"
+    dest: "{{ zotero_install_target }}"
+    remote_src: true
+  when: not zotero_directory.stat.exists
+
+- name: Create a symbolic link for Zotero binary
+  ansible.builtin.file:
+    src: "{{ zotero_dir }}/zotero"
+    dest: /usr/local/bin/zotero
+    state: link
+
+- name: Create symbolic link for Zotero desktop entry
+  ansible.builtin.file:
+    src: "{{ zotero_dir }}/zotero.desktop"
+    dest: /usr/share/applications/zotero.desktop
+    state: link
+
+- name: Update Zotero desktop entry execution path
+  ansible.builtin.lineinfile:
+    path: "{{ zotero_dir }}/zotero.desktop"
+    regexp: "^Exec="
+    line: "Exec={{ zotero_dir }}/zotero"
+
+- name: Update Zotero desktop entry icon path
+  ansible.builtin.lineinfile:
+    path: "{{ zotero_dir }}/zotero.desktop"
+    regexp: "^Icon="
+    line: "Icon={{ zotero_dir }}/chrome/icons/default/default48.png"
+
+- name: Add Zotero desktop entry comment
+  ansible.builtin.lineinfile:
+    path: "{{ zotero_dir }}/zotero.desktop"
+    line: "Comment=Your personal research assistant"
