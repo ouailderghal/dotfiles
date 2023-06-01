@@ -1,2 +1,3 @@
 ---
 zotero_pkg_release: "6.0.26"
+zotero_install_target: "/opt"
