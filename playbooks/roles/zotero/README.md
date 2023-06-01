@@ -1,32 +1,37 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This Ansible role installs Zotero, a powerful reference management tool, on Linux systems. Zotero allows researchers, scholars, and academics to collect, organize, and cite research materials in various formats, making it an invaluable tool for managing references and citations.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role requires Java Runtime Environment (JRE).
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The role does not have any mandatory variables. However, you can customize the installation by modifying the following optional variables:
+
+- `zotero_pkg_release`: Specifies the version of Zotero to install. By default, version `6.0.26` will be installed.
+
+- `zotero_install_target`: Defines the directory where Zotero will be installed. The default installation directory is `/opt/zotero`.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role does not have any external dependencies.
+
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+To use this role in your playbook, include the following YAML snippet:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
-
+         - { role: ouailderghal1.zotero, zotero_pkg_release: 6.0.25 }
+         
 License
 -------
 
@@ -35,4 +40,6 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created by Ouail Derghal. Feel free to contact me at <ouailderghal1@gmail.com> for any questions or suggestions.
+
+I hope this role simplifies the installation of Zotero and enhances your research workflow. Happy referencing!
