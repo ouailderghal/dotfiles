@@ -35,7 +35,7 @@ To use this role in your playbook, include the following YAML snippet:
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
