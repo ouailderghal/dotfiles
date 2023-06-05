@@ -31,7 +31,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 8
+  size: 16
 
   normal:
     family: Fira Mono
