@@ -31,22 +31,22 @@ scrolling:
 
 # Font configuration
 font:
-  size: 16
+  size: 8
 
   normal:
-    family: Fira Mono
+    family: Fira Code
     style: Regular
 
   bold:
-    family: Fira Mono
+    family: Fira Code
     style: Bold
 
   italic:
-    family: Fira Mono
+    family: Fira Code
     style: Italic
 
   bold_italic:
-    family: Fira Mono
+    family: Fira Code
     style: Italic Bold
 
 # Cursor
