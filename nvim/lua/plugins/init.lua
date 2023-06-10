@@ -4,6 +4,7 @@ local Plugins = {
   {'tpope/vim-repeat'},
   {'kyazdani42/nvim-web-devicons', lazy = true},
   {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
+	{'aklt/plantuml-syntax'},
 
   -- Themes
   {'folke/tokyonight.nvim'},
