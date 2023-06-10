@@ -31,22 +31,22 @@ scrolling:
 
 # Font configuration
 font:
-  size: 8
+  size: 12
 
   normal:
-    family: Fira Code
+    family: Agave Nerd Font Mono
     style: Regular
 
   bold:
-    family: Fira Code
+    family: Agave Nerd Font Mono
     style: Bold
 
   italic:
-    family: Fira Code
+    family: Agave Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Fira Code
+    family: Agave Nerd Font Mono
     style: Italic Bold
 
 # Cursor
