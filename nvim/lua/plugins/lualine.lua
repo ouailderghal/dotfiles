@@ -7,7 +7,7 @@ Plugin.event = 'VeryLazy'
 -- See :help lualine.txt
 Plugin.opts = {
   options = {
-    theme = 'zenburn',
+    theme = 'darkplus',
     icons_enabled = true,
     component_separators = '|',
     section_separators = '',

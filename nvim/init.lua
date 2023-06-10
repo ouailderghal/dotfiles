@@ -8,4 +8,4 @@ load('user.commands')
 load('user.keymaps')
 load('user.plugins')
 
-pcall(vim.cmd.colorscheme, 'zenburn')
+pcall(vim.cmd.colorscheme, 'darkplus')
