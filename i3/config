@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Constants
-set $term alacritty
+set $term terminator
 set $editor nvim
 set $browser google-chrome
 set $gui_file_manager thunar
@@ -178,7 +178,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Status bar
-# bar {
-        # status_command i3status
-        # position bottom
-# }
+bar {
+        status_command i3status
+        position bottom
+}
