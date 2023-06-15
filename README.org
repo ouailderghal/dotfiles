@@ -1,8 +1,0 @@
-#+TITLE: Configuration files
-
-* Deploy
-In order to deploy configuration files to your system, you are required to install [[https://www.gnu.org/software/stow/][stow]].
-
-#+begin_src shell
-  sudo dnf install -y stow
-#+end_src
