@@ -9,6 +9,7 @@
   "darkplus.nvim": { "branch": "master", "commit": "7c236649f0617809db05cd30fb10fed7fb01b83b" },
   "friendly-snippets": { "branch": "main", "commit": "28ee6669ab36cab6ff7d3d7f17ecb045e0138e7f" },
   "gitsigns": { "branch": "main", "commit": "4455bb5364d29ff86639dfd5533d4fe4b48192d4" },
+  "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
   "indent_blankline": { "branch": "master", "commit": "7075d7861f7a6bbf0de0298c83f8a13195e6ec01" },
   "lazy.nvim": { "branch": "main", "commit": "6b2311a46a3808e366bb251270f4cc04afb421ed" },
   "lualine": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },

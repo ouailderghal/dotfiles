@@ -6,6 +6,9 @@ local Plugins = {
   {'numToStr/Comment.nvim', config = true, event = 'VeryLazy'},
 	{'aklt/plantuml-syntax'},
 
+	{'nvim-lua/plenary.nvim'},
+	{'ThePrimeagen/harpoon'},
+
   -- Themes
   {'folke/tokyonight.nvim'},
   {'joshdick/onedark.vim'},
