@@ -5,8 +5,8 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.wrap = true
 vim.opt.breakindent = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.signcolumn = 'yes'
 
