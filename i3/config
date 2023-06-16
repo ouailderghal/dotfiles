@@ -66,6 +66,7 @@ exec --no-startup-id copyq
 
 floating_modifier $mod
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --class floating
 bindsym $mod+Shift+q kill
 
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -183,3 +184,6 @@ bar {
 	status_command i3status
   	position bottom
 }
+
+# enable startup in float from exec by setting the x11 class to floating
+for_window [instance="floating"] floating enabled
