@@ -1,20 +1,18 @@
 #!/bin/bash
 #
-# Linker Script (create symlinks for dotfiles)
+# Linker Script (creates symlinks for dotfiles)
 #
-# Author : Ouail Derghal
-# Email  :  <ouailderghal1@gmail.com>
+# Author: Ouail Derghal
+# Email: <ouailderghal1@gmail.com>
 #
-#
-# Deploy configuration files present in this repo
+# Deploy configuration files from this repository
 # to your local machine. This script has been tested
-# on Debian 12 BookWarm. It should work on other GNU/Linux
-# distributions as well. 
+# on Debian 12 "Bookwarm" but should also work on
+# other GNU/Linux distributions.
 #
-# Please make sure that you have `stow` installed.
-# Run: `sudo apt install stow` if you are on Debian.
+# Please ensure that you have `stow` installed.
+# If you are using Debian, run: `sudo apt install stow`.
 #
-
 
 HOME_DIR="$HOME"
 CONFIG_DIR="$HOME_DIR/.config"
