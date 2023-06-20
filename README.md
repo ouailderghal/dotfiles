@@ -29,3 +29,66 @@ To use these configuration files on a Debian-based system, follow the steps belo
 11. **Zsh**: Install Zsh: `sudo apt install zsh`
 
 Feel free to explore and utilize these configuration files according to your needs. They aim to provide a starting point for customizing the corresponding tools and applications to suit your preferences.
+
+## `linker.sh`
+
+The `linker.sh` script allows you to easily deploy configuration files from this repository to your local machine using symbolic links. Follow the steps below to utilize the script effectively:
+
+**Prerequisites:**
+
+- Make sure you have `stow` installed on your system. If you are using Debian, you can install it by running the command: `sudo apt install stow`.
+
+**Steps:**
+
+1. Clone this repository to your local machine:
+
+   ```shell
+   git clone https://github.com/ouailderghal/dotfiles.git
+   ```
+
+2. Navigate to the directory where the `linker.sh` script is located:
+
+   ```shell
+   cd /path/to/dotfiles
+   ```
+
+3. Make the script executable:
+
+   ```shell
+   chmod +x linker.sh
+   ```
+
+4. Apply a configuration:
+
+   ```shell
+   ./linker.sh apply configuration_name
+   ```
+
+   Replace `configuration_name` with the name of the specific configuration you want to apply.
+
+   For example:
+
+   ```shell
+   ./linker.sh apply tmux
+   ```
+
+   This will create symbolic links for the `tmux` configuration files in their respective locations.
+
+5. Unapply a configuration:
+
+   ```shell
+   ./linker.sh unapply configuration_name
+   ```
+
+   Replace `configuration_name` with the name of the configuration you want to unapply.
+
+   For example:
+
+   ```shell
+   ./linker.sh unapply tmux
+   ```
+
+   This will remove the symbolic links created for the `tmux` configuration files.
+
+Note: Ensure that the necessary dotfiles and configurations are present in the repository's directory structure before applying them using the `linker.sh` script.
+
