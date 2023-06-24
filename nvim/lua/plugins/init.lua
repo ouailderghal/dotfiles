@@ -7,6 +7,7 @@ local Plugins = {
 	{ 'aklt/plantuml-syntax' },
 	{ 'nvim-lua/plenary.nvim' },
 	{ 'ThePrimeagen/harpoon' },
+	{ 'Glench/Vim-Jinja2-Syntax' },
 
 	-- Themes
 	{ 'folke/tokyonight.nvim' },
