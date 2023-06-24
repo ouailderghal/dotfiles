@@ -18,3 +18,5 @@ vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
 vim.keymap.set('n', '<leader>bq', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<leader>bl', '<cmd>buffer #<cr>')
 
+-- Fugitive
+vim.keymap.set('n', '<leader>gg', '<cmd>:G<cr>')
