@@ -13,6 +13,7 @@ function Plugin.init()
   -- See :help telescope.builtin
   vim.keymap.set('n', '<leader>?', '<cmd>Telescope oldfiles<cr>')
   vim.keymap.set('n', '<leader><space>', '<cmd>Telescope buffers<cr>')
+  vim.keymap.set('n', '<leader>pf', '<cmd>Telescope git_files<cr>')
   vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
   vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
   vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
