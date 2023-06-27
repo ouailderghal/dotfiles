@@ -31,7 +31,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 10
+  size: 14
 
   normal:
     family: UbuntuMono Nerd Font
