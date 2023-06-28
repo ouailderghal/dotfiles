@@ -23,7 +23,7 @@ ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_CUSTOM=$HOME/.zsh-custom
 
-plugins=(git gh tmux dnf laravel docker ansible golang)
+plugins=(git gh tmux dnf laravel docker ansible golang virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
