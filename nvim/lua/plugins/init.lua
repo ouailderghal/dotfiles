@@ -5,8 +5,6 @@ local Plugins = {
 	{ 'kyazdani42/nvim-web-devicons', lazy = true },
 	{ 'numToStr/Comment.nvim',        config = true, event = 'VeryLazy' },
 	{ 'aklt/plantuml-syntax' },
-	{ 'nvim-lua/plenary.nvim' },
-	{ 'ThePrimeagen/harpoon' },
 	{ 'Glench/Vim-Jinja2-Syntax' },
 
 	-- Themes
