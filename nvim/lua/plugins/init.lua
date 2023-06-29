@@ -6,6 +6,7 @@ local Plugins = {
 	{ 'numToStr/Comment.nvim',        config = true, event = 'VeryLazy' },
 	{ 'aklt/plantuml-syntax' },
 	{ 'Glench/Vim-Jinja2-Syntax' },
+	{ 'mhinz/vim-startify' },
 
 	-- Themes
 	{ 'folke/tokyonight.nvim' },
