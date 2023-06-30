@@ -17,8 +17,10 @@ vim.keymap.set({'n', 'x'}, 'x', '"_x')
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
 vim.keymap.set('n', '<leader>bq', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<leader>bl', '<cmd>buffer #<cr>')
-vim.keymap.set('n', '<C-j>', '<cmd>bn<cr>')
-vim.keymap.set('n', '<C-k>', '<cmd>bp<cr>')
+
+-- Switch buffers
+vim.keymap.set('n', '<C-k>', '<cmd>bn<cr>')
+vim.keymap.set('n', '<C-j>', '<cmd>bp<cr>')
 
 -- Fugitive
 vim.keymap.set('n', '<leader>gg', '<cmd>:G<cr>')
