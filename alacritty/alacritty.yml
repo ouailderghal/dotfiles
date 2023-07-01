@@ -17,7 +17,7 @@ window:
   dynamic_padding: true
   decorations: full
   startup_mode: Maximized
-  opacity: 0.95
+  opacity: 0.90
 
   # title: Alacritty
   dynamic_title: false
