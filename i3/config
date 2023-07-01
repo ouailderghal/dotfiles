@@ -47,7 +47,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # Set border
 for_window [class="^.*"] border pixel 2
-client.focused #555555 #555555 #ffffff #2e9ef4 #CC0000
+client.focused #555555 #555555 #ffffff #2e9ef4 #7cb8bb
 
 # Font
 font pango:UbuntuMono Nerd Font 11
