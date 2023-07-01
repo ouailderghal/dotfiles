@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 
 # Status bar
 bar {
-	status_command i3status
+	status_command i3status -c ~/.config/i3stauts/config
   	position bottom
 }
 
