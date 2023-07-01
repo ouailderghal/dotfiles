@@ -32,7 +32,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser --incognito
 bindsym $mod+p exec $gui_file_manager
 bindsym $mod+Shift+p exec $clipboard toggle
-bindsym --release $mod+Control+l exec "slock"
+bindsym --release $mod+Control+l exec "xflock4"
 bindsym Print exec "screenshooter -e"
 bindsym --release $mod+Shift+Print exec "screenshooter -s"
 bindsym --release $mod+Print exec "screenshooter -f"
