@@ -7,6 +7,7 @@ local Plugins = {
 	{ 'aklt/plantuml-syntax' },
 	{ 'Glench/Vim-Jinja2-Syntax' },
 	{ 'mhinz/vim-startify' },
+	{ "derektata/lorem.nvim" },
 
 	-- Themes
 	{ 'folke/tokyonight.nvim' },
