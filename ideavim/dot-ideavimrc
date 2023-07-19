@@ -60,3 +60,4 @@ map <leader>fs <action>(NewScratchFile)
 
 "" Tools
 map <C-g> <action>(ActivateTerminalToolWindow)
+map <C-t> <action>(ActivateTODOToolWindow)
