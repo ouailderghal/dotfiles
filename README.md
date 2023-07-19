@@ -13,20 +13,20 @@ This repository contains a collection of configuration files for various tools a
 - **tmux**: Configuration file for Tmux, a terminal multiplexer that allows managing multiple terminal sessions within a single window.
 - **zsh**: Configuration file for Zsh, a powerful shell with extensive customization options.
 
-## Installation Instructions (Debian)
+## Installation Instructions (Arch Linux)
 
-To use these configuration files on a Debian-based system, follow the steps below:
+To use these configuration files on an Arch-based system, follow the steps below:
 
-1. **Alacritty**: Install Alacritty: `sudo apt install alacritty`
-2. **Git**: Install Git: `sudo apt install git`
-3. **i3status**: Install i3status: `sudo apt install i3status`
-4. **Neovim**: Install Neovim: `sudo apt install neovim`
-5. **Terminator**: Install Terminator: `sudo apt install terminator`
+1. **Alacritty**: Install Alacritty: `sudo pacman -S alacritty`
+2. **Git**: Install Git: `sudo pacman -S git`
+3. **i3status**: Install i3status: `sudo pacman -S i3status`
+4. **Neovim**: Install Neovim: `sudo pacman -S neovim`
+5. **Terminator**: Install Terminator: `sudo pacman -S terminator`
 6. **Xmodmap**: No installation is required for Xmodmap. 
-7. **i3**: Install i3 window manager: `sudo apt install i3`
-8. **Neofetch**: Install Neofetch: `sudo apt install neofetch`
-9. **Tmux**: Install Tmux: `sudo apt install tmux`
-11. **Zsh**: Install Zsh: `sudo apt install zsh`
+7. **i3**: Install i3 window manager: `sudo pacman -S i3`
+8. **Neofetch**: Install Neofetch: `sudo pacman -S neofetch`
+9. **Tmux**: Install Tmux: `sudo pacman -S tmux`
+11. **Zsh**: Install Zsh: `sudo pacman -S zsh`
 
 Feel free to explore and utilize these configuration files according to your needs. They aim to provide a starting point for customizing the corresponding tools and applications to suit your preferences.
 
@@ -36,7 +36,7 @@ The `linker.sh` script allows you to easily deploy configuration files from this
 
 **Prerequisites:**
 
-- Make sure you have `stow` installed on your system. If you are using Debian, you can install it by running the command: `sudo apt install stow`.
+- Make sure you have `stow` installed on your system. If you are using Arch, you can install it by running the command: `sudo pacman -S stow`.
 
 **Steps:**
 
@@ -61,7 +61,7 @@ The `linker.sh` script allows you to easily deploy configuration files from this
 4. Apply a configuration:
 
    ```shell
-   ./linker.sh apply configuration_name
+   ./linker.sh --apply configuration_name
    ```
 
    Replace `configuration_name` with the name of the specific configuration you want to apply.
@@ -69,7 +69,7 @@ The `linker.sh` script allows you to easily deploy configuration files from this
    For example:
 
    ```shell
-   ./linker.sh apply tmux
+   ./linker.sh --apply tmux
    ```
 
    This will create symbolic links for the `tmux` configuration files in their respective locations.
@@ -77,7 +77,7 @@ The `linker.sh` script allows you to easily deploy configuration files from this
 5. Unapply a configuration:
 
    ```shell
-   ./linker.sh unapply configuration_name
+   ./linker.sh --unapply configuration_name
    ```
 
    Replace `configuration_name` with the name of the configuration you want to unapply.
@@ -85,7 +85,7 @@ The `linker.sh` script allows you to easily deploy configuration files from this
    For example:
 
    ```shell
-   ./linker.sh unapply tmux
+   ./linker.sh --unapply tmux
    ```
 
    This will remove the symbolic links created for the `tmux` configuration files.
