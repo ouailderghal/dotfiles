@@ -9,3 +9,6 @@ set showcmd                 " Show partial commands in the bottom right of the s
 set visualbell              " Use a visual bell instead of an audible one
 set clipboard+=unnamed      " Enable system clipboard integration
 
+" Custom Leader Key
+let mapleader = " "         " Set the leader key to a space
+
