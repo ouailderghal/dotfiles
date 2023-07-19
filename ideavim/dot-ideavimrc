@@ -1,19 +1,26 @@
 " Vim Configuration File
 
 " General Settings
-set scrolloff=10            " Number of lines to keep above and below the cursor when scrolling
-set number                  " Show line numbers
-set relativenumber          " Show relative line numbers
-set showmode                " Show the current mode (insert/normal/visual) in the command line
-set showcmd                 " Show partial commands in the bottom right of the screen
-set visualbell              " Use a visual bell instead of an audible one
-set clipboard+=unnamed      " Enable system clipboard integration
+set scrolloff=10 " Number of lines to keep above and below the cursor when scrolling
+set number " Show line numbers
+set relativenumber " Show relative line numbers
+set showmode " Show the current mode (insert/normal/visual) in the command line
+set showcmd " Show partial commands in the bottom right of the screen
+set visualbell " Use a visual bell instead of an audible one
+set clipboard+=unnamed " Enable system clipboard integration
 
 " Custom Leader Key
-let mapleader = " "         " Set the leader key to a space
+let mapleader = " " " Set the leader key to a space
 
 " Search Settings
-set ignorecase              " Ignore case when searching
-set smartcase               " Use case-sensitive search if the search pattern contains uppercase characters
-set incsearch               " Incremental search as characters are typed
-set hlsearch                " Highlight search matches
+set ignorecase " Ignore case when searching
+set smartcase " Use case-sensitive search if the search pattern contains uppercase characters
+set incsearch " Incremental search as characters are typed
+set hlsearch " Highlight search matches
+
+" === Remaps ===
+
+"" Font Size Adjustment
+map <C-S-k> <Action>(EditorIncreaseFontSize) " Increase font size in the editor
+map <C-S-j> <Action>(EditorDecreaseFontSize) " Decrease font size in the editor
+map <C-S-BS> <Action>(EditorResetFontSize)   " Reset font size in the editor
