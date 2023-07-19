@@ -1,0 +1,11 @@
+" Vim Configuration File
+
+" General Settings
+set scrolloff=10            " Number of lines to keep above and below the cursor when scrolling
+set number                  " Show line numbers
+set relativenumber          " Show relative line numbers
+set showmode                " Show the current mode (insert/normal/visual) in the command line
+set showcmd                 " Show partial commands in the bottom right of the screen
+set visualbell              " Use a visual bell instead of an audible one
+set clipboard+=unnamed      " Enable system clipboard integration
+
