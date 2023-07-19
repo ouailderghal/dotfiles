@@ -1,54 +1,54 @@
 " Vim Configuration File
-" IdeaVim action names can be found here:
+" IdeaVim action names can be found here: https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 
 " General Settings
-set scrolloff=10 " Number of lines to keep above and below the cursor when scrolling
-set number " Show line numbers
-set relativenumber " Show relative line numbers
-set showmode " Show the current mode (insert/normal/visual) in the command line
-set showcmd " Show partial commands in the bottom right of the screen
-set visualbell " Use a visual bell instead of an audible one
-set clipboard+=unnamed " Enable system clipboard integration
+set scrolloff=10
+set number
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
 
 " Custom Leader Key
 let mapleader = " "
 
 " Search Settings
-set ignorecase " Ignore case when searching
-set smartcase " Use case-sensitive search if the search pattern contains uppercase characters
-set incsearch " Incremental search as characters are typed
-set hlsearch " Highlight search matches
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 " === Remaps ===
 
 "" Font Size Adjustment
-map <C-S-k> <Action>(EditorIncreaseFontSize) " Increase font size in the editor
-map <C-S-j> <Action>(EditorDecreaseFontSize) " Decrease font size in the editor
-map <C-S-BS> <Action>(EditorResetFontSize)   " Reset font size in the editor
+map <C-S-k> <Action>(EditorIncreaseFontSize)
+map <C-S-j> <Action>(EditorDecreaseFontSize)
+map <C-S-BS> <Action>(EditorResetFontSize)
 
 "" Buffer Navigation
-nnoremap <C-n> :bn<CR> " Go to the next buffer
-nnoremap <C-p> :bp<CR> " Go to the previous buffer
-map <leader>bq <action>(CloseContent) " Close the current buffer
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+map <leader>bq <action>(CloseContent)
 
 "" Pane Navigation
-nnoremap <A-h> <C-w>h " Move to the pane on the left
-nnoremap <A-l> <C-w>l " Move to the pane on the right
-nnoremap <A-k> <C-w>k " Move to the pane above
-nnoremap <A-j> <C-w>j " Move to the pane below
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
 
 "" Comment
-map <leader>cc <action>(CommentByLineComment) " Comment the current line(s)
+map <leader>cc <action>(CommentByLineComment)
 
 "" Git
-map <leader>gg <Action>(CheckinProject) " Save and commit changes to the project
-map <leader>gw <Action>(ActivateVersionControlToolWindow) " Open the version control tool window
-map <leader>gb <Action>(Git.Branches) " Show git branches
+map <leader>gg <Action>(CheckinProject)
+map <leader>gw <Action>(ActivateVersionControlToolWindow)
+map <leader>gb <Action>(Git.Branches)
 
 "" Display Options
-map <leader>dd <action>(ToggleDistractionFreeMode) " Toggle distraction-free mode
-map <leader>dz <action>(ToggleZenMode) " Toggle zen mode
-map <leader>df <action>(ToggleFullScreen) " Toggle full-screen mode
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
 
 "" File Navigation
 map <leader>ff <action>(GotoFile)
