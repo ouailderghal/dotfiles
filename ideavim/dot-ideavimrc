@@ -35,3 +35,6 @@ nnoremap <A-h> <C-w>h " Move to the pane on the left
 nnoremap <A-l> <C-w>l " Move to the pane on the right
 nnoremap <A-k> <C-w>k " Move to the pane above
 nnoremap <A-j> <C-w>j " Move to the pane below
+
+"" Comment
+map <leader>cc <action>(CommentByLineComment)   " Comment the current line(s)
