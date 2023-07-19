@@ -49,3 +49,10 @@ map <leader>dd <action>(ToggleDistractionFreeMode) " Toggle distraction-free mod
 map <leader>dz <action>(ToggleZenMode) " Toggle zen mode
 map <leader>df <action>(ToggleFullScreen) " Toggle full-screen mode
 
+"" File Navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fc <action>(FindInPath)
+map <leader><leader> <Action>(RecentFiles)
+map <leader>fl <action>(RecentLocations)
+map <leader>fs <action>(NewScratchFile)
