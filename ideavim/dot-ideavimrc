@@ -43,3 +43,9 @@ map <leader>cc <action>(CommentByLineComment) " Comment the current line(s)
 map <leader>gg <Action>(CheckinProject) " Save and commit changes to the project
 map <leader>gw <Action>(ActivateVersionControlToolWindow) " Open the version control tool window
 map <leader>gb <Action>(Git.Branches) " Show git branches
+
+"" Display Options
+map <leader>dd <action>(ToggleDistractionFreeMode) " Toggle distraction-free mode
+map <leader>dz <action>(ToggleZenMode) " Toggle zen mode
+map <leader>df <action>(ToggleFullScreen) " Toggle full-screen mode
+
