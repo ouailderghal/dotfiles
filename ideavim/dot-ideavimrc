@@ -57,3 +57,6 @@ map <leader>fc <action>(FindInPath)
 map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
+
+"" Tools
+map <C-g> <action>(ActivateTerminalToolWindow)
