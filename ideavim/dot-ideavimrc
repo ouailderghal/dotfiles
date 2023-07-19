@@ -24,3 +24,8 @@ set hlsearch " Highlight search matches
 map <C-S-k> <Action>(EditorIncreaseFontSize) " Increase font size in the editor
 map <C-S-j> <Action>(EditorDecreaseFontSize) " Decrease font size in the editor
 map <C-S-BS> <Action>(EditorResetFontSize)   " Reset font size in the editor
+
+"" Buffer Navigation
+nnoremap <C-n> :bn<CR> " Go to the next buffer
+nnoremap <C-p> :bp<CR> " Go to the previous buffer
+map <leader>bq <action>(CloseContent) " Close the current buffer
