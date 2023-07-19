@@ -10,7 +10,7 @@ set visualbell " Use a visual bell instead of an audible one
 set clipboard+=unnamed " Enable system clipboard integration
 
 " Custom Leader Key
-let mapleader = " " " Set the leader key to a space
+let mapleader = " "
 
 " Search Settings
 set ignorecase " Ignore case when searching
@@ -29,3 +29,9 @@ map <C-S-BS> <Action>(EditorResetFontSize)   " Reset font size in the editor
 nnoremap <C-n> :bn<CR> " Go to the next buffer
 nnoremap <C-p> :bp<CR> " Go to the previous buffer
 map <leader>bq <action>(CloseContent) " Close the current buffer
+
+"" Pane Navigation
+nnoremap <A-h> <C-w>h " Move to the pane on the left
+nnoremap <A-l> <C-w>l " Move to the pane on the right
+nnoremap <A-k> <C-w>k " Move to the pane above
+nnoremap <A-j> <C-w>j " Move to the pane below
