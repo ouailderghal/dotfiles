@@ -28,6 +28,7 @@ declare -A config=(
 	[xmodmap]="$HOME_DIR"
 	[zsh]="$HOME_DIR"
 	[git]="$HOME_DIR"
+	[ideavim]="$HOME_DIR"
 )
 
 help() {
