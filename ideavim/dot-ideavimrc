@@ -12,3 +12,8 @@ set clipboard+=unnamed      " Enable system clipboard integration
 " Custom Leader Key
 let mapleader = " "         " Set the leader key to a space
 
+" Search Settings
+set ignorecase              " Ignore case when searching
+set smartcase               " Use case-sensitive search if the search pattern contains uppercase characters
+set incsearch               " Incremental search as characters are typed
+set hlsearch                " Highlight search matches
