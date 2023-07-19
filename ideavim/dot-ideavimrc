@@ -1,4 +1,5 @@
 " Vim Configuration File
+" IdeaVim action names can be found here:
 
 " General Settings
 set scrolloff=10 " Number of lines to keep above and below the cursor when scrolling
