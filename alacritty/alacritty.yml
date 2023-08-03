@@ -1,7 +1,7 @@
 live_config_reload: true
 
 import:
-  - ~/.config/alacritty/themes/zenburn.yaml
+  - ~/.config/alacritty/themes/solarized_dark.yaml
 
 # Environment
 env:
@@ -17,7 +17,7 @@ window:
   dynamic_padding: true
   decorations: full
   startup_mode: Maximized
-  opacity: 0.85
+  opacity: 1
 
   # title: Alacritty
   dynamic_title: false
@@ -32,7 +32,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 14
+  size: 8
 
   normal:
     family: UbuntuMono Nerd Font
