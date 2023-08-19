@@ -300,6 +300,9 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
     awful.key({ modkey,           }, "b", function () awful.spawn(browser)                    end,
               {description = "open browser", group = "launcher"}),
+    awful.key({ modkey, "Control"   }, "l", function () awful.spawn("slock")                  end,
+              {description = "lock screen", group = "launcher"}),
+
 
     awful.key({ modkey, "Control" }, "n",
               function ()
