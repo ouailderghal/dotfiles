@@ -1,7 +1,7 @@
 live_config_reload: true
 
 import:
-  - ~/.config/alacritty/themes/xterm.yaml
+  - ~/.config/alacritty/themes/themes/dracula.yaml
 
 # Environment
 env:
