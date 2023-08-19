@@ -1,7 +1,7 @@
 live_config_reload: true
 
 import:
-  - ~/.config/alacritty/themes/solarized_dark.yaml
+  - ~/.config/alacritty/themes/xterm.yaml
 
 # Environment
 env:
