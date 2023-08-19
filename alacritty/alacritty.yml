@@ -12,13 +12,6 @@ env:
 shell:
   program: /bin/zsh
 
-# Window
-window:
-  dynamic_padding: true
-  decorations: full
-  startup_mode: Maximized
-  opacity: 1
-
   # title: Alacritty
   dynamic_title: false
 
@@ -32,22 +25,22 @@ scrolling:
 
 # Font configuration
 font:
-  size: 8
+  size: 12
 
   normal:
-    family: Hack Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Regular
 
   bold:
-    family: Hack Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: Hack Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Hack Nerd Font Mono
+    family: UbuntuMono Nerd Font Mono
     style: Italic Bold
 
 # Cursor
