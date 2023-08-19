@@ -10,13 +10,3 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.signcolumn = 'yes'
-
--- Transparent background
-vim.api.nvim_command([[
-    augroup ChangeBackgroudColour
-        autocmd colorscheme * :hi normal guibg=none
-    augroup END
-]])
-
-vim.opt.termguicolors = true
-
