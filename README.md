@@ -27,6 +27,7 @@ To use these configuration files on an Arch-based system, follow the steps below
 8. **Neofetch**: Install Neofetch: `sudo pacman -S neofetch`
 9. **Tmux**: Install Tmux: `sudo pacman -S tmux`
 11. **Zsh**: Install Zsh: `sudo pacman -S zsh`
+12. **Awesome**: Install Awesome: `sudo pacman -S awesome`
 
 Feel free to explore and utilize these configuration files according to your needs. They aim to provide a starting point for customizing the corresponding tools and applications to suit your preferences.
 
