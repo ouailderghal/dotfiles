@@ -49,6 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
+browser = "google-chrome-stable"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -272,7 +273,7 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back", group = "client"}),
-
+	
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -297,6 +298,8 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+    awful.key({ modkey,           }, "b", function () awful.spawn(browser)                    end,
+              {description = "open browser", group = "launcher"}),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
