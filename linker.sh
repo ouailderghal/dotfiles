@@ -29,6 +29,7 @@ declare -A config=(
 	[zsh]="$HOME_DIR"
 	[git]="$HOME_DIR"
 	[ideavim]="$HOME_DIR"
+	[awesome]="$CONFIG_DIR/awesome"
 )
 
 help() {
