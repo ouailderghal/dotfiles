@@ -30,6 +30,7 @@ declare -A config=(
 	[git]="$HOME_DIR"
 	[ideavim]="$HOME_DIR"
 	[awesome]="$CONFIG_DIR/awesome"
+	[qtile]="$CONFIG_DIR/qtile"
 )
 
 help() {
