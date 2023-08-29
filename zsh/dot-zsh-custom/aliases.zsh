@@ -1,6 +1,4 @@
 # General aliases
-alias v="nvim"
-alias vi="nvim"
 alias q="exit"
 alias h="htop"
 alias nf="neofetch"
