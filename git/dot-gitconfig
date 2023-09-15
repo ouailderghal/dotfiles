@@ -3,3 +3,5 @@
 	email = ouailderghal1@gmail.com
 [init]
 	defaultBranch = main
+[merge]
+	tool = meld
