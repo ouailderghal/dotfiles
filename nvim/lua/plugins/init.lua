@@ -15,7 +15,8 @@ local Plugins = {
 	{ 'tanvirtin/monokai.nvim' },
 	{ 'lunarvim/darkplus.nvim' },
 	{ 'phha/zenburn.nvim' },
-	{ 'Mofiqul/dracula.nvim' }
+	{ 'Mofiqul/dracula.nvim' },
+	{ "ellisonleao/gruvbox.nvim" },
 }
 
 return Plugins

@@ -8,4 +8,4 @@ load('user.commands')
 load('user.keymaps')
 load('user.plugins')
 
-pcall(vim.cmd.colorscheme, 'dracula')
+pcall(vim.cmd.colorscheme, 'gruvbox')

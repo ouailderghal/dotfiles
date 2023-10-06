@@ -7,7 +7,7 @@ Plugin.event = 'VeryLazy'
 -- See :help lualine.txt
 Plugin.opts = {
   options = {
-    theme = 'dracula-nvim',
+    theme = 'gruvbox',
     icons_enabled = true,
     component_separators = '|',
     section_separators = '',
