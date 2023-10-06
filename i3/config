@@ -1,110 +1,87 @@
-# Modifier key
+# i3 config file (v4)
+
+# set font
+font pango:UbuntuMono Nerd Font 10
+
+# set modifier key
 set $mod Mod4
 
-# Constants
-set $term alacritty
-set $editor nvim
-set $browser firefox
-set $gui_file_manager thunar
-set $file_manager ranger
-set $clipboard copyq
-
-# Windows specifications
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="zoom"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [class="Seahorse"] floating enable
-for_window [class="Org.gnome.clocks"] floating enable
-for_window [class="copyq"] floating enable
-
-assign [class="TelegramDesktop"] $ws10
-assign [class="Slack"] $ws10
-assign [class="zoom"] $ws10
-assign [class="Quodlibet"] $ws8
-assign [class="deemix-gui"] $ws8
-assign [class="Org.gnome.clocks"] $ws9
-
-for_window [class="Org.gnome.clocks"] resize set 640 480
-
-# Keybindings
-bindsym $mod+b exec $browser
-bindsym $mod+Shift+b exec $browser --incognito
-bindsym $mod+p exec $gui_file_manager
-bindsym $mod+Shift+p exec $clipboard toggle
-bindsym --release $mod+Control+l exec "xflock4"
-bindsym Print exec "screenshooter -e"
-bindsym --release $mod+Shift+Print exec "screenshooter -s"
-bindsym --release $mod+Print exec "screenshooter -f"
-bindsym $mod+t exec telegram-desktop
-bindsym $mod+Shift+t exec killall telegram-desktop
-bindsym $mod+Control+h exec $term -e "htop"
-bindsym --release $mod+Control+s exec "xfce4-session-logout -s"
-
-
-# XDG autostart 
+# Start XDG autostart
 exec --no-startup-id dex --autostart --environment i3
-
-# Set border
-for_window [class="^.*"] border pixel 2
-client.focused #555555 #555555 #ffffff #2e9ef4 #7cb8bb
-
-# Font
-font pango:UbuntuMono Nerd Font 11
-
-
-# xss-lock, nm-applet and pactl 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id xmodmap ~/.xmodmaprc
+
+# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# startup
-exec --no-startup-id megasync
-exec --no-startup-id copyq
-exec --no-startup-id xcompmgr
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
 
+# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --class floating
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
 bindsym $mod+Shift+q kill
 
+# start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+shift+d exec --no-startup-id xfce4-appfinder
+# A more modern dmenu replacement is rofi:
+# bindsym $mod+d exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
+# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
+# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal and vertical orientation
+# split in horizontal orientation
 # bindsym $mod+h split h
+
+# split in vertical orientation
 bindsym $mod+v split v
 
-# fullscreen mode 
+# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change layout
+# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -114,15 +91,23 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
 # Cycle recent workspaces
 bindsym $mod+Tab workspace back_and_forth
 
-# Workspaces
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -144,12 +129,12 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10 
+bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 container to workspace number $ws3
+bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
@@ -163,28 +148,46 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec xfce4-session-logout
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window 
+# resize window (you can also use the mouse for that)
 mode "resize" {
-	bindsym Left resize shrink width 10 px or 10 ppt
-  	bindsym Down resize grow height 10 px or 10 ppt
-  	bindsym Up resize shrink height 10 px or 10 ppt
-  	bindsym Right resize grow width 10 px or 10 ppt
-  
-	# back to normal
-  	bindsym Return mode "default"
-  	bindsym Escape mode "default"
-  	bindsym $mod+r mode "default"
+     # These bindings trigger as soon as you enter the resize mode
+
+     # Pressing left will shrink the window’s width.
+     # Pressing right will grow the window’s width.
+     # Pressing up will shrink the window’s height.
+     # Pressing down will grow the window’s height.
+     bindsym $left       resize shrink width 10 px or 10 ppt
+     bindsym $down       resize grow height 10 px or 10 ppt
+     bindsym $up         resize shrink height 10 px or 10 ppt
+     bindsym $right      resize grow width 10 px or 10 ppt
+
+     # same bindings, but for the arrow keys
+     bindsym Left        resize shrink width 10 px or 10 ppt
+     bindsym Down        resize grow height 10 px or 10 ppt
+     bindsym Up          resize shrink height 10 px or 10 ppt
+     bindsym Right       resize grow width 10 px or 10 ppt
+
+     # back to normal: Enter or Escape or $mod+r
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+     bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Status bar
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
-	status_command i3status -c ~/.config/i3stauts/config
-  	position bottom
+    status_command i3status
 }
 
-# enable startup in float from exec by setting the x11 class to floating
-for_window [instance="floating"] floating enabled
+# startup
+exec --no-startup-id nitrogen --restore
+
+# keybindings
+bindsym $mod+Shift+d exec xfce4-appfinder
+bindsym $mod+b exec google-chrome
+bindsym $mod+Shift+b exec google-chrome --incognito
+bindsym $mod+Shift+p exec copyq toggle
