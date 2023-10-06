@@ -17,8 +17,10 @@ export PATH=$PATH:$GOBIN
 # Ruby
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="clean"
+# Emacs
+export PATH=$PATH:$HOME/.config/emacs/bin
+
+ZSH_THEME="gentoo"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"

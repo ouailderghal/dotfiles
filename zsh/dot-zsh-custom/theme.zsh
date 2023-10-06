@@ -1,6 +1,3 @@
-# Vi mode
-set -o vi
-
 # Theme
 autoload -Uz colors && colors
 
