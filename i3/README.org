@@ -1,0 +1,76 @@
+#+title: i3 Config
+#+author: Ouail Derghal
+#+property: header-args :tangle config.xyz
+#+auto_tangle: t
+
+* General
+** Modifiers
+*** Mod key
+Set the modifier key as the =Windows= key. If you prefer to use the =Meta/Alt= key, modify the value of the variable to =Mod4=.
+
+#+begin_src conf
+set $mod Mod4
+#+end_src
+
+*** Floating modifier
+Set the floating modifier used to drag floating windows to their wanted position.
+
+#+begin_src conf
+floating_modifier $mod
+tiling_drag modifier titlebar
+#+end_src
+
+*** Vim keys
+Vim keys for focus, movement, and resize directions.
+
+# the arrows is not convenient
+#+begin_src conf
+set $up k
+set $down j
+set $left h
+set $right l
+#+end_src
+
+** Font family
+I prefer to use the patched version of =Ubuntu Mono= font with =Nerd= icons. You can obtain the font from the Nerd Fonts [[https://www.nerdfonts.com/font-downloads][download page]].
+
+#+begin_src conf
+font pango:UbuntuMono Nerd Font 10
+#+end_src
+
+* Startup
+** Autostart XDG applications
+Launch XDG autostart applications, enable =XSS lock= to secure the screen when the computer is in sleep mode, and activate the =NetworkManager applet= to monitor the network status.
+
+#+begin_src conf
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+#+end_src
+
+** Custom startup applications
+The following applications will automatically start when i3 starts up:
+|----------------------+-----------------------------------------|
+| Command              | Description                             |
+|----------------------+-----------------------------------------|
+| =nitrogen --restore= | Restore the most recent used wallpaper. |
+| =emacs --daemon=     | Launch =emacs= in daemon mode.          |
+|----------------------+-----------------------------------------|
+
+#+begin_src conf
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id emacs --daemon
+#+end_src
+
+* Keybindings
+** Default bindings
+*** pactl
+Set keybindings to ajust volume using =pactl= in =PulseAudio=.
+
+#+begin_src conf
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#+end_src
