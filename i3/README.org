@@ -1,6 +1,6 @@
 #+title: i3 Config
 #+author: Ouail Derghal
-#+property: header-args :tangle config.xyz
+#+property: header-args :tangle config
 #+auto_tangle: t
 
 * General
