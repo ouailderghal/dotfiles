@@ -53,6 +53,12 @@ set $ws9 "9"
 set $ws10 "10"
 #+end_src
 
+** Terminal
+Set the terminal variable to to =Alacritty=:
+#+begin_src conf
+set $terminal alacritty
+#+end_src
+
 * Startup
 ** XDG applications
 Launch XDG autostart applications, enable =XSS lock= to secure the screen when the computer is in sleep mode, and activate the =NetworkManager applet= to monitor the network status.
@@ -155,6 +161,21 @@ bindsym $mod+minus scratchpad show
 Cycle through recent workspaces:
 #+begin_src conf
 bindsym $mod+Tab workspace back_and_forth
+#+end_src
+
+Start a terminal:
+#+begin_src conf
+bindsym $mod+Return exec $terminal
+#+end_src
+
+Kill focused window:
+#+begin_src conf
+bindsym $mod+Shift+q kill
+#+end_src
+
+Start dmenu (a program launcher):
+#+begin_src conf
+bindsym $mod+d exec --no-startup-id dmenu_run
 #+end_src
 
 *** Workspaces
