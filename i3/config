@@ -21,6 +21,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $terminal alacritty
+
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -71,6 +73,12 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+Return exec $terminal
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
