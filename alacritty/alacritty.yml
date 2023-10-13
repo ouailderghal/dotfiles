@@ -1,7 +1,7 @@
 live_config_reload: true
 
 import:
-  - ~/.config/alacritty/themes/themes/dracula.yaml
+  - ~/.config/alacritty/themes/themes/github_dark.yaml
 
 # Environment
 env:
