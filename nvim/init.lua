@@ -567,6 +567,7 @@ local expr_opts = { noremap = true, expr = true, silent = true }
 
 keymap("n", "<leader>gg", ":Git<CR>", default_opts)
 keymap("n", "<leader>bd", ":bd<CR>", default_opts)
+keymap("n", "<leader>qq", ":q!<CR>", default_opts)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
