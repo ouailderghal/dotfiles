@@ -560,5 +560,12 @@ cmp.setup {
   },
 }
 
+-- Custom bindings
+local keymap = vim.api.nvim_set_keymap
+local default_opts = { noremap = true, silent = true }
+local expr_opts = { noremap = true, expr = true, silent = true }
+
+keymap("n", "<leader>gg", ":Git<CR>", default_opts)
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
