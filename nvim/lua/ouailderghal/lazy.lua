@@ -92,11 +92,12 @@ require('lazy').setup({
     },
 
     {
-        -- Theme inspired by Atom
-        'ellisonleao/gruvbox.nvim',
+        -- Solarized theme
+        'maxmx03/solarized.nvim',
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme 'gruvbox'
+            vim.o.background = 'dark'
+            vim.cmd.colorscheme 'solarized'
         end,
     },
 
@@ -107,7 +108,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = true,
-                theme = 'gruvbox',
+                theme = 'solarized',
                 component_separators = '|',
                 section_separators = '',
             },
