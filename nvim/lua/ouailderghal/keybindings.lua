@@ -17,3 +17,4 @@ vim.keymap.set('n', '<leader>op', '<cmd>:Neotree toggle<cr>')
 vim.keymap.set('n', '<C-n>', '<cmd>:bn<cr>')
 vim.keymap.set('n', '<C-p>', '<cmd>:bp<cr>')
 
+vim.keymap.set('n', '<leader>zz', '<cmd>:ZenMode<cr>')
