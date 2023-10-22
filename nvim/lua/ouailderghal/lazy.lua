@@ -91,12 +91,13 @@ require('lazy').setup({
     },
 
     {
-        -- Solarized theme
-        'maxmx03/solarized.nvim',
+        -- Themes
+        -- 'ellisonleao/gruvbox.nvim',
+	'navarasu/onedark.nvim',
         priority = 1000,
         config = function()
             vim.o.background = 'dark'
-            vim.cmd.colorscheme 'solarized'
+            vim.cmd.colorscheme 'onedark'
         end,
     },
 
@@ -107,7 +108,7 @@ require('lazy').setup({
         opts = {
             options = {
                 icons_enabled = true,
-                theme = 'solarized',
+                theme = 'onedark',
                 component_separators = '|',
                 section_separators = '',
             },
