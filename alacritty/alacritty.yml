@@ -25,7 +25,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 10
+  size: 8
 
   normal:
     family: Mononoki Nerd Font
