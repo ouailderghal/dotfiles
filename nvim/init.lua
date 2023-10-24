@@ -76,8 +76,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
-require("ouailderghal.telescope")
-
 require("ouailderghal.treesitter")
 
 -- Diagnostic keymaps
