@@ -25,7 +25,7 @@ return {
     -- Gruvbox theme
     {
         "ellisonleao/gruvbox.nvim",
-        cond = false,
+        cond = true,
         priority = 1000,
         config = function()
             vim.o.background = "dark"
@@ -34,7 +34,7 @@ return {
     },
     {
         'nvim-lualine/lualine.nvim',
-        cond = false,
+        cond = true,
         opts = {
             options = {
                 icons_enabled = true,
@@ -48,7 +48,7 @@ return {
     -- Zenburn theme
     {
         "jnurmine/Zenburn",
-        cond = true,
+        cond = false,
         priority = 1000,
         config = function()
             vim.o.background = "dark"
@@ -57,7 +57,7 @@ return {
     },
     {
         'nvim-lualine/lualine.nvim',
-        cond = true,
+        cond = false,
         opts = {
             options = {
                 icons_enabled = true,
