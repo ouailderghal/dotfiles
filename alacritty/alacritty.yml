@@ -28,19 +28,19 @@ font:
   size: 8
 
   normal:
-    family: Mononoki Nerd Font
+    family: UbuntuMono Nerd Font Mono
     style: Regular
 
   bold:
-    family: Mononoki Nerd Font
+    family: UbuntuMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: Mononoki Nerd Font
+    family: UbuntuMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Mononoki Nerd Font
+    family: UbuntuMono Nerd Font Mono
     style: Italic Bold
 
 # Cursor
