@@ -16,7 +16,7 @@
 
 HOME_DIR="$HOME"
 CONFIG_DIR="$HOME_DIR/.config"
-DOTFILES_DIR="$HOME_DIR/Projects/dotfiles"
+DOTFILES_DIR="$HOME_DIR/.dotfiles"
 
 declare -A config=( 
 	[alacritty]="$CONFIG_DIR/alacritty"
