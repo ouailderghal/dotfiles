@@ -1,11 +1,11 @@
 return {
     {
-        "Shatur/neovim-ayShatur/neovim-ayu",
+        "ellisonleao/gruvbox.nvim",
         cond = true,
         priority = 1000,
         config = function()
             vim.o.background = "dark"
-            vim.cmd.colorscheme "ayu-dark"
+            vim.cmd.colorscheme "gruvbox"
         end
     },
     {
@@ -14,7 +14,7 @@ return {
         opts = {
             options = {
                 icons_enabled = true,
-                theme = 'ayu-dark',
+                theme = "gruvbox",
                 component_separators = '|',
                 section_separators = '',
             },
