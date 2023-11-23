@@ -20,7 +20,7 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 # Emacs
 export PATH=$PATH:$HOME/.config/emacs/bin
 
-ZSH_THEME="gentoo"
+ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"
