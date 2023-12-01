@@ -8,6 +8,9 @@ env:
   TERM: xterm-256color
   EDITOR: /usr/bin/nvim
 
+window:
+  startup_mode: Maximized
+
 # Shell
 shell:
   program: /bin/zsh
