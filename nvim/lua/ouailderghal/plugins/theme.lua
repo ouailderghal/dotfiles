@@ -1,11 +1,11 @@
 return {
     {
-        'Tsuzat/NeoSolarized.nvim',
+        'navarasu/onedark.nvim',
         cond = true,
         priority = 1000,
         config = function()
             vim.o.background = "dark"
-            vim.cmd.colorscheme "NeoSolarized"
+            vim.cmd.colorscheme "onedark"
         end
     },
     {
@@ -14,7 +14,7 @@ return {
         opts = {
             options = {
                 icons_enabled = true,
-                theme = "solarized",
+                theme = "onedark",
                 component_separators = '|',
                 section_separators = '',
             },
