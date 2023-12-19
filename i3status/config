@@ -25,6 +25,7 @@ ethernet _first_ {
 
 battery all {
         format = "%status %percentage %remaining"
+	path = "/sys/class/power_supply/CMB1/uevent"
 }
 
 memory {
