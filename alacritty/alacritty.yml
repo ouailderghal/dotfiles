@@ -28,7 +28,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 6
+  size: 10
 
   normal:
     family: JetBrainsMono Nerd Font Mono
