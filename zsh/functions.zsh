@@ -8,7 +8,7 @@ od-open-config () {
 
 # Open dotfiles freelance projects directory.
 od-open-project-freelance () {
-    cd $HOME/Projects/freelance/
+    cd $HOME/Projects/work/
     cd $(ls | fzf)
     dirname=${PWD##*/}
     echo $dirname
