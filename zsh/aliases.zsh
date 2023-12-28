@@ -24,6 +24,7 @@ alias venv="if [[ ! -d .venv ]]; then virtualenv -p python3 .venv && echo '.venv
 alias freeze="pip freeze > requirements.txt"
 
 # ls
+alias ls="ls --color=auto"
 alias sl="ls"
 alias l="ls -lh"
 alias ll="ls -lah"
