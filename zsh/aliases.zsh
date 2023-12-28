@@ -15,8 +15,9 @@ alias fs_created="sudo tune2fs -l /dev/nvme0n1p2 | grep 'Filesystem created:'"
 alias cnf="command-not-found"
 
 # fzf
-alias proj='bash -c "nvim $(fzf)"'
-alias conf='cd Projects/dotfiles/ && bash -c "nvim $(fzf)" && cd' 
+alias opc="od-open-config"
+alias opw="od-open-project-work"
+alias opp="od-open-project-personal"
 
 # Python
 alias act="if [[ -d .venv ]]; then source .venv/bin/activate; elif [[ -d venv ]]; then source venv/bin/activate; else; echo 'ERROR: There is no venv in this directory'; fi"
