@@ -6,8 +6,8 @@ od-open-config () {
     cd $HOME
 }
 
-# Open dotfiles freelance projects directory.
-od-open-project-freelance () {
+# Open work projects directory.
+od-open-project-work () {
     cd $HOME/Projects/work/
     cd $(ls | fzf)
     dirname=${PWD##*/}
@@ -15,7 +15,7 @@ od-open-project-freelance () {
     tmux new-session -s $dirname
 }
 
-# Open dotfiles personal projects directory.
+# Open personal projects directory.
 od-open-project-personal () {
     cd $HOME/Projects/personal/
     cd $(ls | fzf)
