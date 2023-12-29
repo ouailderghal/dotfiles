@@ -8,3 +8,9 @@ export LANG=en_US.UTF-8
 export EDITOR=$(which nvim)
 export DOTFILES_DIR="$HOME/.dotfiles"
 
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
