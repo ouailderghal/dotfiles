@@ -15,6 +15,12 @@ od-open-project-work () {
     tmux new-session -s $dirname
 }
 
+# Change directory into work projects.
+od-cd-project-work () {
+    cd $HOME/Projects/work/
+    cd $(ls | fzf)
+}
+
 # Open personal projects directory.
 od-open-project-personal () {
     cd $HOME/Projects/personal/
