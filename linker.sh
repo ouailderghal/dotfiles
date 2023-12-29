@@ -31,7 +31,8 @@ declare -A config=(
 	[ideavim]="$HOME_DIR"
 	[awesome]="$CONFIG_DIR/awesome"
 	[qtile]="$CONFIG_DIR/qtile"
-    [doom]="$CONFIG_DIR/doom"
+	[doom]="$CONFIG_DIR/doom"
+	[x]="$HOME_DIR"
 )
 
 help() {
