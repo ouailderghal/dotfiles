@@ -29,3 +29,18 @@ od-open-project-personal () {
     echo $dirname
     tmux new-session -s $dirname
 }
+
+# Open Git Fugitive.
+od-fugitive () {
+    nvim +Git +only
+}
+
+# Open Git logs in Fugitive.
+od-fugitive-log () {
+    nvim -c "Git log" +only
+}
+
+# Open Git logs in Fugitive (one line).
+od-fugitive-log-oneline () {
+    nvim -c "Git log --oneline --decorate" +only
+}
