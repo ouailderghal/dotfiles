@@ -44,6 +44,12 @@ alias gcb="git checkout -b"
 alias gp="git push"
 alias gaf='bash -c "git add $(fzf)"'
 
+# Fugitive
+alias fugitive="od-fugitive"
+alias f="od-fugitive"
+alias fl="od-fugitive-log-oneline"
+alias fll="od-fugitive-log"
+
 # Tmux
 alias t="tmux"
 alias ta="tmux a"
