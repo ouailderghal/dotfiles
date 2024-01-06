@@ -2,7 +2,7 @@ import = [
     "~/.config/alacritty/themes/themes/smoooooth.toml"
 ]
 
-shell = "/bin/zsh"
+shell = "/bin/bash"
 
 [font]
 size = 12.0
