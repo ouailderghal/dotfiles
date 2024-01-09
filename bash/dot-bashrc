@@ -1,5 +1,11 @@
 # -*- mode: sh; -*-
 
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export EDITOR=$(which vim)
+export DOTFILES_DIR="$HOME/.dotfiles"
+
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -34,12 +40,25 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+GIT_PROMPT="$DOTFILES_DIR/bash/git-prompt.sh"
+[ -f $GIT_PROMPT ] && source $GIT_PROMPT && git_prompt=yes
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    if [ "$git_prompt" = yes ]; then
+        export GIT_PS1_SHOWDIRTYSTATE=1
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    fi
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    if [ "$git_prompt" = yes ]; then
+        export GIT_PS1_SHOWDIRTYSTATE=1
+    	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")\$ '
+    else
+    	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
 fi
-unset color_prompt force_color_prompt
+unset color_prompt force_color_prompt git_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -78,3 +97,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Configure Go environment variables
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# Configure NVM (Node Version Manager) environment variables
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Set PATH so it includes Doom Emacs binaries
+export EMACS_DIR="$HOME/.config/emacs"
+[ -d $EMACS_DIR ] && export PATH=$PATH:$EMACS_DIR/bin
