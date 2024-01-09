@@ -33,6 +33,7 @@ declare -A config=(
 	[qtile]="$CONFIG_DIR/qtile"
 	[doom]="$CONFIG_DIR/doom"
 	[x]="$HOME_DIR"
+	[bash]="$HOME_DIR"
 )
 
 help() {
