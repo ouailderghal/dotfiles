@@ -44,9 +44,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec alacritty
-
 # kill focused window
 bindsym $mod+Shift+A kill
 
@@ -184,12 +181,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-bindsym Mod4+Tab exec --no-startup-id i3-msg workspace back_and_forth
-bindsym Mod4+Control+l exec --no-startup-id i3lock -c 000000
-bindsym $mod+Shift+d exec --no-startup-id xfce4-appfinder
-
-# Remove window title bar
-for_window [class="^.*"] border pixel 2
 
 include config.d/*
