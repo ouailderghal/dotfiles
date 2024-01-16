@@ -2,7 +2,7 @@
 
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 export DOTFILES_DIR="$HOME/.dotfiles"
 
 # If not running interactively, don't do anything
