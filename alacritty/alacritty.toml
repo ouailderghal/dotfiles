@@ -1,26 +1,26 @@
 import = [
-    "~/.config/alacritty/themes/themes/smoooooth.toml"
+    "~/.config/alacritty/themes/themes/doom_one.toml"
 ]
 
 shell = "/bin/bash"
 
 [font]
-size = 12.0
+size = 15.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
 
 [keyboard]
