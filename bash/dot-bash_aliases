@@ -1,7 +1,7 @@
 # -*- mode: sh; -*-
 
 # General aliases
-alias e="emacs"
+alias e="nvim"
 alias q="exit"
 alias rf="rm -rf"
 alias systemctl="sudo systemctl"
