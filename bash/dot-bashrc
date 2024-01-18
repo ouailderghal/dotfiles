@@ -111,3 +111,8 @@ export NVM_DIR="$HOME/.nvm"
 # Set PATH so it includes Doom Emacs binaries
 export EMACS_DIR="$HOME/.config/emacs"
 [ -d $EMACS_DIR ] && export PATH=$PATH:$EMACS_DIR/bin
+
+# Set PATH so it includes Balena CLI binaries
+export BALENA_CLI_DIR="$HOME/.local/share/balena-cli"
+[ -d $BALENA_CLI_DIR ] && export PATH=$PATH:$BALENA_CLI_DIR
+
