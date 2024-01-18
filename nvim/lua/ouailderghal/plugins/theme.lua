@@ -1,11 +1,11 @@
 return {
     {
-        'navarasu/onedark.nvim',
-        cond = true,
-        priority = 1000,
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000 ,
+        lazy = false,
         config = function()
             vim.o.background = "dark"
-            vim.cmd.colorscheme "onedark"
+            vim.cmd.colorscheme "gruvbox"
         end
     },
     {
@@ -14,7 +14,7 @@ return {
         opts = {
             options = {
                 icons_enabled = true,
-                theme = "onedark",
+                theme = "gruvbox",
                 component_separators = '|',
                 section_separators = '',
             },
