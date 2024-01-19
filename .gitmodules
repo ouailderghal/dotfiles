@@ -8,3 +8,6 @@
 [submodule "mbsync"]
 	path = mbsync
 	url = git@github.com:ouailderghal/mbsync.git
+[submodule "msmtp"]
+	path = msmtp
+	url = git@github.com:ouailderghal/msmtp.git
