@@ -34,6 +34,7 @@ declare -A config=(
 	[doom]="$CONFIG_DIR/doom"
 	[x]="$HOME_DIR"
 	[bash]="$HOME_DIR"
+	[neomutt]="$CONFIG_DIR/neomutt"
 )
 
 help() {
