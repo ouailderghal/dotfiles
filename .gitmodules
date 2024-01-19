@@ -2,3 +2,6 @@
 	path = alacritty/themes
 	branch = main
 	url = https://github.com/alacritty/alacritty-theme.git
+[submodule "neomutt"]
+	path = neomutt
+	url = git@github.com:ouailderghal/neomutt.git
