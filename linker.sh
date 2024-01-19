@@ -35,6 +35,8 @@ declare -A config=(
 	[x]="$HOME_DIR"
 	[bash]="$HOME_DIR"
 	[neomutt]="$CONFIG_DIR/neomutt"
+	[mbsync]="$HOME_DIR"
+	[msmtp]="$HOME_DIR"
 )
 
 help() {
