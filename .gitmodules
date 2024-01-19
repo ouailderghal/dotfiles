@@ -5,3 +5,6 @@
 [submodule "neomutt"]
 	path = neomutt
 	url = git@github.com:ouailderghal/neomutt.git
+[submodule "mbsync"]
+	path = mbsync
+	url = git@github.com:ouailderghal/mbsync.git
