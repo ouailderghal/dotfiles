@@ -45,8 +45,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.relativenumber = true
 
-vim.o.textwidth = 80
+vim.o.textwidth = 120
 -- vim.opt.colorcolumn = 80
-vim.api.nvim_set_option_value("colorcolumn", "80", {})
+vim.api.nvim_set_option_value("colorcolumn", "120", {})
 
 vim.o.cursorline = true
