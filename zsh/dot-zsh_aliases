@@ -1,11 +1,8 @@
+# -*- mode: sh; -*-
+
 # General aliases
 alias e="nvim"
 alias q="exit"
-alias h="htop"
-alias nf="neofetch"
-alias of="onefetch"
-alias x="startxfce4"
-alias sv="sudo sv"
 alias rf="rm -rf"
 alias systemctl="sudo systemctl"
 alias open="xdg-open"
@@ -18,11 +15,6 @@ alias cnf="command-not-found"
 alias opc="od-open-config"
 alias opw="od-open-project-work"
 alias opp="od-open-project-personal"
-
-# Python
-alias act="if [[ -d .venv ]]; then source .venv/bin/activate; elif [[ -d venv ]]; then source venv/bin/activate; else; echo 'ERROR: There is no venv in this directory'; fi"
-alias venv="if [[ ! -d .venv ]]; then virtualenv -p python3 .venv && echo '.venv/ created successfully'; fi"
-alias freeze="pip freeze > requirements.txt"
 
 # ls
 alias ls="ls --color=auto"
@@ -42,13 +34,6 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gp="git push"
-alias gaf='bash -c "git add $(fzf)"'
-
-# Fugitive
-alias fugitive="od-fugitive"
-alias f="od-fugitive"
-alias fl="od-fugitive-log-oneline"
-alias fll="od-fugitive-log"
 
 # Tmux
 alias t="tmux"
@@ -59,16 +44,11 @@ alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
 
-# Void Linux
-alias xi="sudo xbps-install"
-alias xis="sudo xbps-install -S"
-alias xs="sudo xbps-install -Sy"
-alias xu="sudo xbps-install -Su"
-alias xq="xbps-query -Rs"
-
-alias pa="php artisan"
-alias pas="php artisan serve"
+# Other
 alias dc="docker-compose"
 alias va="vagrant"
 alias an="ansible"
 alias anp="ansible-playbook"
+
+# NixOS
+alias nrs="sudo nixos-rebuild switch"
