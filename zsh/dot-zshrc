@@ -7,7 +7,7 @@ export BROWSER="brave-browser-stable"
 export LANG=en_US.UTF-8
 export DOTFILES="$HOME/.dotfiles"
 
-ZSH_THEME="steeef"
+ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="false"
