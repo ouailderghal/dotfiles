@@ -2,12 +2,3 @@
 	path = alacritty/themes
 	branch = main
 	url = https://github.com/alacritty/alacritty-theme.git
-[submodule "neomutt"]
-	path = neomutt
-	url = git@github.com:ouailderghal/neomutt.git
-[submodule "mbsync"]
-	path = mbsync
-	url = git@github.com:ouailderghal/mbsync.git
-[submodule "msmtp"]
-	path = msmtp
-	url = git@github.com:ouailderghal/msmtp.git
