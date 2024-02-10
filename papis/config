@@ -1,0 +1,9 @@
+[settings]
+opentool = okular
+default-library = papers
+picktool = fzf
+notes-name = 'notes.md'
+
+[papers]
+dir = ~/Documents/papers
+
