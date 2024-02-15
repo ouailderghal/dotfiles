@@ -10,6 +10,8 @@ alias o="xdg-open"
 alias pinger="ping -c 3 1.1.1.1"
 alias fs_created="sudo tune2fs -l /dev/nvme0n1p2 | grep 'Filesystem created:'"
 alias cnf="command-not-found"
+alias xclip="xclip -selection c"
+alias tf="terraform"
 
 # fzf
 alias opc="od-open-config"
