@@ -1,8 +1,7 @@
-import = [
-    "~/.config/alacritty/themes/themes/doom_one.toml"
-]
-
 shell = "/bin/zsh"
+
+[window]
+opacity = 0.9
 
 [font]
 size = 12.0
