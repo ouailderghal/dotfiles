@@ -1,28 +1,19 @@
-# -*- mode: sh; -*-
-
-# General aliases
-alias e="nvim"
-alias q="exit"
-alias rf="rm -rf"
-alias systemctl="sudo systemctl"
-alias open="xdg-open"
-alias o="xdg-open"
-alias pinger="ping -c 3 1.1.1.1"
-alias fs_created="sudo tune2fs -l /dev/nvme0n1p2 | grep 'Filesystem created:'"
-alias cnf="command-not-found"
-alias xclip="xclip -selection c"
-alias tf="terraform"
-
-# fzf
-alias opc="od-open-config"
-alias opw="od-open-project-work"
-alias opp="od-open-project-personal"
-
 # ls
 alias ls="ls --color=auto"
 alias sl="ls"
 alias l="ls -lh"
 alias ll="ls -lah"
+
+# General
+alias q="exit"
+alias e="nvim"
+alias rf="rm -rf"
+alias systemctl="sudo systemctl"
+alias ss="sudo systemctl"
+alias open="xdg-open"
+alias o="xdg-open"
+alias pinger="ping -c 3 archlinux.org"
+alias xclip="xclip -selection c"
 
 # Git
 alias g="git"
@@ -46,11 +37,10 @@ alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
 
-# Other
-alias dc="docker-compose"
+# DevOps
+alias tf="terraform"
+alias dc="docker compose"
 alias va="vagrant"
 alias an="ansible"
 alias anp="ansible-playbook"
-
-# NixOS
-alias nrs="sudo nixos-rebuild switch"
+alias gc="gcloud"
