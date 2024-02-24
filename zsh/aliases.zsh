@@ -38,6 +38,7 @@ alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
 
 # DevOps
+alias d="docker"
 alias tf="terraform"
 alias dc="docker compose"
 alias va="vagrant"
