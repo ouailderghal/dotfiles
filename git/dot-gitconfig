@@ -1,6 +1,10 @@
 [user]
 	name = Ouail Derghal
 	email = ouailderghal1@gmail.com
+
+[includeIf "gitdir:~/Projects/phd/"]
+    path = .gitconfig-imt
+
 [init]
 	defaultBranch = main
 [merge]
