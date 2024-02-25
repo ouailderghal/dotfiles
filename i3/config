@@ -55,6 +55,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="copyq"] floating enable
+for_window [class="SimpleScreenRecorder"] floating enable
 
 assign [class="Brave-browser"] 1
 assign [class="discord"] 10
