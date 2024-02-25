@@ -13,7 +13,7 @@ alias ss="sudo systemctl"
 alias open="xdg-open"
 alias o="xdg-open"
 alias pinger="ping -c 3 archlinux.org"
-alias xclip="xclip -selection c"
+alias copy="xclip -selection c"
 
 # Git
 alias g="git"
