@@ -1,4 +1,3 @@
-### General config
 
 # Set font.
 font pango:UbuntuMono Nerd Font 11
@@ -46,6 +45,8 @@ bindsym $mod+Shift+b exec $browser_incognito
 bindsym $mod+Shift+f exec $file_manager
 bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
+bindsym $mod+y exec scrot
+bindsym $mod+Shift+y --release exec scrot -s
 
 ### Window rules.
 for_window [class="Pcmanfm"] floating enable
