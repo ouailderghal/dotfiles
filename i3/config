@@ -47,6 +47,8 @@ bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
+bindsym $mod+Control+l --release exec i3lock -c 000000
+
 
 ### Window rules.
 for_window [class="Pcmanfm"] floating enable
