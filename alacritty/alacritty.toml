@@ -1,7 +1,7 @@
 shell = "/bin/zsh"
 
 [window]
-opacity = 0.9
+opacity = 0.8
 
 [font]
 size = 12.0
