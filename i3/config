@@ -45,6 +45,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser_incognito
 bindsym $mod+Shift+f exec $file_manager
 bindsym $mod+Shift+d exec $appfinder
+bindsym $mod+p exec copyq toggle
 
 ### Window rules.
 for_window [class="Pcmanfm"] floating enable
@@ -53,8 +54,7 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
-
-
+for_window [class="copyq"] floating enable
 
 assign [class="Brave-browser"] 1
 assign [class="discord"] 10
