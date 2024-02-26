@@ -4,7 +4,7 @@ shell = "/bin/zsh"
 opacity = 0.8
 
 [font]
-size = 12.0
+size = 9.0
 
 [font.bold]
 family = "UbuntuMono Nerd Font Mono"
