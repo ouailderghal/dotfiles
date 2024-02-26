@@ -1,9 +1,8 @@
-
 # Set font.
 font pango:UbuntuMono Nerd Font 11
 
 # Set apps.
-set $term alacritty
+set $term kitty
 set $file_manager pcmanfm
 set $browser brave-browser-stable
 set $browser_incognito brave-browser-stable --incognito
