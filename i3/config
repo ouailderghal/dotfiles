@@ -16,6 +16,7 @@ exec --no-startup-id xcompmgr -c
 exec --no-startup-id nm-applet
 exec --no-startup-id copyq
 exec --no-startup-id discord
+exec --no-startup-id flameshot
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
