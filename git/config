@@ -1,0 +1,20 @@
+[user]
+	name = Ouail Derghal
+	email = ouailderghal1@gmail.com
+	signingkey = C9557C30943B96D2C27F18E61F8E47CECB0E0E16
+
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgsign = true
+
+[merge]
+	tool = meld
+
+[diff]
+	tool = meld
+
+[includeIf "gitdir:~/Projects/imt/"]
+    path = ~/.config/git/imt
+	
