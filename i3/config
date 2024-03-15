@@ -3,20 +3,18 @@ font pango:UbuntuMono Nerd Font 11
 
 # Set apps.
 set $term alacritty
-set $file_manager pcmanfm
+set $fileManager pcmanfm
 set $browser brave-browser-stable
-set $browser_incognito brave-browser-stable --incognito
+set $browserIncognito brave-browser-stable --incognito
 set $appfinder rofi -show drun -icon-theme "Papirus" -show-icons
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xcompmgr -c
 exec --no-startup-id nm-applet
 exec --no-startup-id copyq
 exec --no-startup-id discord
-exec --no-startup-id flameshot
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -41,8 +39,8 @@ tiling_drag modifier titlebar
 ### Program bindings.
 bindsym $mod+Return exec $term
 bindsym $mod+b exec $browser
-bindsym $mod+Shift+b exec $browser_incognito
-bindsym $mod+Shift+f exec $file_manager
+bindsym $mod+Shift+b exec $browserIncognito
+bindsym $mod+Shift+f exec $fileManager
 bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
@@ -51,18 +49,23 @@ bindsym $mod+Control+l --release exec i3lock -c 000000
 
 
 ### Window rules.
-for_window [class="Pcmanfm"] floating enable
-for_window [class="Thunar"] floating enable
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [class="copyq"] floating enable
-for_window [class="SimpleScreenRecorder"] floating enable
+for_window [class="^Pcmanfm$"] floating enable
+for_window [class="^Thunar$"] floating enable
+for_window [class="^Xfce4-appfinder$"] floating enable
+for_window [class="^Pavucontrol$"] floating enable
+for_window [class="^Lxappearance$"] floating enable
+for_window [class="^Nitrogen$"] floating enable
+for_window [class="^copyq$"] floating enable
+for_window [class="^SimpleScreenRecorder$"] floating enable
 
-assign [class="Brave-browser"] 1
-assign [class="discord"] 10
-assign [class="TelegramDesktop"] 10
+assign [class="^Brave-browser$"] 1
+assign [class="^Zotero$"] 3
+assign [class="^org.jabref.gui.MainApplication$"] 3
+assign [class="^thunderbird-default$"] 9
+assign [class="^discord$"] 10
+assign [class="^TelegramDesktop$"] 10
+assign [class="^Hexchat$"] 10
+assign [class="^Signal$"] 10
 
 ### Window management binding.
 
@@ -192,7 +195,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-### Start i3bar.
+### Status Bar
 bar {
         status_command i3status
 }
