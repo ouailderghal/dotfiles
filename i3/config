@@ -39,6 +39,7 @@ tiling_drag modifier titlebar
 
 ### Program bindings.
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --class floating_term
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
@@ -57,6 +58,7 @@ for_window [class="^Lxappearance$"] floating enable
 for_window [class="^Nitrogen$"] floating enable
 for_window [class="^copyq$"] floating enable
 for_window [class="^SimpleScreenRecorder$"] floating enable
+for_window [class="^floating_term$"] floating enable
 
 assign [class="^Brave-browser$"] 1
 assign [class="^Zotero$"] 3
