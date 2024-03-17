@@ -61,6 +61,12 @@ for_window [class="^SimpleScreenRecorder$"] floating enable
 assign [class="^Brave-browser$"] 1
 assign [class="^Zotero$"] 3
 assign [class="^org.jabref.gui.MainApplication$"] 3
+
+assign [class="^Inkscape$"] 8
+assign [class="^Gimp-2.10$"] 8
+assign [class="^MyPaint$"] 8
+assign [class="^draw.io$"] 8
+
 assign [class="^thunderbird-default$"] 9
 assign [class="^discord$"] 10
 assign [class="^TelegramDesktop$"] 10
