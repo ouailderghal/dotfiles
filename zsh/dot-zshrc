@@ -5,8 +5,8 @@ export BROWSER="brave-browser-stable"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 
-export ZSH_CONFIG="$HOME/.config/zsh"
 export DOTFILES="$HOME/.dotfiles"
+export ZSH_CONFIG="$DOTFILES/zsh"
 
 ### Export PATH
 path+="/usr/local/bin"
@@ -40,7 +40,7 @@ else
 fi
 
 ### Load vi.zsh
-test -f "$ZSH_CONFIG/vi.zsh" && source "$ZSH_CONFIG/vi.zsh"
+# test -f "$ZSH_CONFIG/vi.zsh" && source "$ZSH_CONFIG/vi.zsh"
 
 ### Load aliases.zsh 
 test -f "$ZSH_CONFIG/aliases.zsh" && source "$ZSH_CONFIG/aliases.zsh"
