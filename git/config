@@ -15,6 +15,6 @@
 [diff]
 	tool = meld
 
-[includeIf "gitdir:~/Projects/imt/"]
+[includeIf "gitdir:~/Projects/phd/"]
     path = ~/.config/git/imt
 	
