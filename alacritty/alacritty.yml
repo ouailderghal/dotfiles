@@ -19,22 +19,22 @@ scrolling:
 tabspaces: 4
 
 font:
-  size: 11.0
+  size: 12.0
 
   normal:
-    family: CaskaydiaMono Nerd Font
+    family: Ubuntumono Nerd Font
     style: Regular
 
   bold:
-    family: CaskaydiaMono Nerd Font
+    family: Ubuntumono Nerd Font
     style: Bold
 
   italic:
-    family: CaskaydiaMono Nerd Font
+    family: Ubuntumono Nerd Font
     style: Italic
 
   bold_italic:
-    family: CaskaydiaMono Nerd Font
+    family: Ubuntumono Nerd Font
     style: Bold Italic
 
   offset:
