@@ -6,7 +6,7 @@ set $term alacritty
 set $fileManager pcmanfm
 set $browser brave-browser-stable
 set $browserIncognito brave-browser-stable --incognito
-set $appfinder rofi -show drun -icon-theme "Papirus" -show-icons
+set $appfinder xfce4-appfinder
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
