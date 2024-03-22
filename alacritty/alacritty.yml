@@ -1,8 +1,5 @@
 live_config_reload: true
 
-import:
-  - ~/.config/alacritty/themes/themes/kanagawa_wave.yaml
-
 env:
   TERM: xterm-256color
 
