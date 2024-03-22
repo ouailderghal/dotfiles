@@ -150,7 +150,21 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10" 
+
+set $monitorLeft "HDMI-1"
+set $monitorRight "eDP-1"
+
+workspace $ws1 output $monitorLeft
+workspace $ws2 output $monitorLeft
+workspace $ws3 output $monitorLeft
+workspace $ws4 output $monitorLeft
+workspace $ws5 output $monitorLeft
+workspace $ws6 output $monitorLeft
+workspace $ws7 output $monitorLeft
+workspace $ws8 output $monitorLeft
+workspace $ws9 output $monitorLeft
+workspace $ws10 output $monitorRight
 
 # switch to workspace.
 bindsym $mod+1 workspace number $ws1
