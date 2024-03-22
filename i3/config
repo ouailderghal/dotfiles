@@ -1,5 +1,5 @@
 # Set font.
-font pango:UbuntuMono Nerd Font 11
+font pango:FiraMono Nerd Font Mono 13
 
 # Set apps.
 set $term alacritty
@@ -221,5 +221,5 @@ bindsym $mod+r mode "resize"
 
 ### Status Bar
 bar {
-        status_command i3status
+        status_command i3blocks
 }
