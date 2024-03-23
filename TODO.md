@@ -1,1 +1,2 @@
 - [ ] Add `.bashrc`.
+- [ ] Migrate from `i3status` to `i3blocks`.
