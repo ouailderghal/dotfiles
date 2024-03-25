@@ -1,5 +1,5 @@
 # Set font.
-font pango:FiraMono Nerd Font Mono 13
+font pango:FiraMono Nerd Font Mono 11
 
 # Set apps.
 set $term alacritty
