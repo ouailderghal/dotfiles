@@ -17,6 +17,7 @@ exec --no-startup-id copyq
 exec --no-startup-id discord
 exec --no-startup-id thunderbird
 exec --no-startup-id megasync
+exec --no-startup-id xset r rate 250 60
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
