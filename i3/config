@@ -71,7 +71,7 @@ assign [class="^Gimp-2.10$"] 8
 assign [class="^MyPaint$"] 8
 assign [class="^draw.io$"] 8
 
-assign [class="^thunderbird-default$"] 9
+assign [class="^thunderbird$"] 9
 assign [class="^discord$"] 10
 assign [class="^TelegramDesktop$"] 10
 assign [class="^Hexchat$"] 10
