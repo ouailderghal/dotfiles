@@ -121,3 +121,10 @@ mods = "Alt"
 action = "ScrollToBottom"
 key = "L"
 mods = "Alt"
+
+
+[[keyboard.bindings]]
+command = { program = "/bin/bash", args = [ "-c", "/usr/local/bin/spawn-alacritty-cwd" ] }
+
+key = "N"
+mods = "Control|Shift"
