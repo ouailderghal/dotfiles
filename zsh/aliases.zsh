@@ -14,6 +14,7 @@ alias open="xdg-open"
 alias o="xdg-open"
 alias pinger="ping -c 3 archlinux.org"
 alias copy="xclip -selection c"
+alias t="todo.sh"
 
 # Git
 alias g="git"
@@ -29,7 +30,6 @@ alias gcb="git checkout -b"
 alias gp="git push"
 
 # Tmux
-alias t="tmux"
 alias ta="tmux a"
 alias tns="tmux new-session -s"
 alias tat="tmux attach -t"
