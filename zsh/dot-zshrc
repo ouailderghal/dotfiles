@@ -19,7 +19,7 @@ eval $(keychain --eval --agents ssh --quick --quiet)
 ### Set OhMyZSH settings
 zstyle ':omz:update' mode disabled
 
-ZSH_THEME="half-life"
+ZSH_THEME="gentoo"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"
