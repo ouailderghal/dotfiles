@@ -13,9 +13,6 @@ path+="/usr/local/bin"
 path+="$HOME/bin"
 path+="$HOME/.local/bin"
 
-### Load Keychain.
-eval $(keychain --eval --agents ssh --quick --quiet)
-
 ### Set OhMyZSH settings
 zstyle ':omz:update' mode disabled
 
