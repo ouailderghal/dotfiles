@@ -5,7 +5,7 @@ export BROWSER="firefox"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/Projects/personal/dotfiles"
 export ZSH_CONFIG="$DOTFILES/zsh"
 
 ### Export PATH
