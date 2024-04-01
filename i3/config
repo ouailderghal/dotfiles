@@ -1,10 +1,10 @@
 # Set font.
-font pango:Hack Nerd Font Mono 10
+font pango:JetBrainsMono Nerd Font Mono 8
 
 # Set apps.
 set $term alacritty
 set $fileManager pcmanfm
-set $browser firefox
+set $browser brave-browser
 set $browserIncognito brave-browser-stable --incognito
 set $appfinder xfce4-appfinder
 
