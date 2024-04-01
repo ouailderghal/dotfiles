@@ -64,19 +64,19 @@ for_window [class="^Arandr$"] floating enable
 for_window [class="^floating_term$"] floating enable
 
 assign [class="^Brave-browser$"] 1
-assign [class="^Zotero$"] 3
-assign [class="^org.jabref.gui.MainApplication$"] 3
+assign [class="^Zotero$"] 5
+assign [class="^org.jabref.gui.MainApplication$"] 5
 
-assign [class="^Inkscape$"] 8
-assign [class="^Gimp-2.10$"] 8
-assign [class="^MyPaint$"] 8
-assign [class="^draw.io$"] 8
+assign [class="^Inkscape$"] 7
+assign [class="^Gimp-2.10$"] 7
+assign [class="^MyPaint$"] 7
+assign [class="^draw.io$"] 7
 
-assign [class="^thunderbird$"] 9
-assign [class="^discord$"] 10
-assign [class="^TelegramDesktop$"] 10
-assign [class="^Hexchat$"] 10
-assign [class="^Signal$"] 10
+assign [class="^thunderbird$"] 8
+assign [class="^discord$"] 9
+assign [class="^TelegramDesktop$"] 9
+assign [class="^Hexchat$"] 9
+assign [class="^Signal$"] 9
 
 ### Window management binding.
 
