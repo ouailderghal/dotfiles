@@ -222,5 +222,5 @@ bindsym $mod+r mode "resize"
 
 ### Status Bar
 bar {
-        status_command i3blocks
+        status_command i3status
 }

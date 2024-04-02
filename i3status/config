@@ -5,7 +5,7 @@ general {
 
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery all"
+order += "battery CMB1"
 order += "tztime local"
 
 wireless _first_ {
@@ -18,8 +18,9 @@ ethernet _first_ {
     format_down = "E: down"
 }
 
-battery all {
+battery CMB1 {
     format = "%status %percentage %remaining"
+    path = "/sys/class/power_supply/CMB1/uevent"
 }
 
 tztime local {
