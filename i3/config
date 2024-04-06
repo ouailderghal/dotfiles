@@ -10,7 +10,6 @@ set $appfinder xfce4-appfinder
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id xsetroot -solid "#000000"
 exec --no-startup-id copyq
 
@@ -37,7 +36,7 @@ bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
-bindsym $mod+Control+l --release exec i3lock -c 000000
+bindsym $mod+Control+l --release exec xflock4
 
 ### Window rules.
 for_window [class="^Pcmanfm$"] floating enable
