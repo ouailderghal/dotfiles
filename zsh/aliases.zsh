@@ -12,7 +12,7 @@ alias systemctl="sudo systemctl"
 alias ss="sudo systemctl"
 alias open="xdg-open"
 alias o="xdg-open"
-alias pinger="ping -c 3 archlinux.org"
+alias pinger="ping -c 3 fedoraproject.org"
 alias copy="xclip -selection c"
 alias t="todo.sh"
 
