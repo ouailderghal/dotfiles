@@ -124,7 +124,7 @@ mods = "Alt"
 
 
 [[keyboard.bindings]]
-command = { program = "/bin/bash", args = [ "-c", "/usr/local/bin/spawn-alacritty-cwd" ] }
+command = { program = "/bin/bash", args = [ "-c", "$HOME/.local/bin/spawn-alacritty-cwd" ] }
 
 key = "N"
 mods = "Control|Shift"
