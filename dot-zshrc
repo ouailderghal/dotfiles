@@ -45,7 +45,7 @@ test -f "$TODO_CONFIG_DIR/todo_completion" && source "$TODO_CONFIG_DIR/todo_comp
 unset TODO_CONFIG_DIR
 
 ### Load aliases.zsh 
-test -f "$ZSH_CONFIG/aliases.zsh" && source "$ZSH_CONFIG/aliases.zsh"
+test -f "$HOME/.bash_aliases" && source "$HOME/.bash_aliases"
 
 ### Load Google Cloud CLI binaries
 GOOGLE_CLOUD_CLI_BIN="/opt/google-cloud-cli/bin"
