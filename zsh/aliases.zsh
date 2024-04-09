@@ -30,6 +30,7 @@ alias gcb="git checkout -b"
 alias gp="git push"
 
 # Tmux
+alias tm="tmux"
 alias ta="tmux a"
 alias tns="tmux new-session -s"
 alias tat="tmux attach -t"
