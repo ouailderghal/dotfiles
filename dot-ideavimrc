@@ -44,11 +44,12 @@ map <leader>cc <action>(CommentByLineComment)
 map <leader>gg <Action>(CheckinProject)
 map <leader>gw <Action>(ActivateVersionControlToolWindow)
 map <leader>gb <Action>(Git.Branches)
+map <leader>gp <Action>(Git.Push)
 
 "" Display Options
-map <leader>dd <action>(ToggleDistractionFreeMode)
-map <leader>dz <action>(ToggleZenMode)
-map <leader>df <action>(ToggleFullScreen)
+map <leader>zd <action>(ToggleDistractionFreeMode)
+map <leader>zz <action>(ToggleZenMode)
+map <leader>zf <action>(ToggleFullScreen)
 
 "" File Navigation
 map <leader>ff <action>(GotoFile)
