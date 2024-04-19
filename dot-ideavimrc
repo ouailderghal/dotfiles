@@ -62,3 +62,7 @@ map <leader>fs <action>(NewScratchFile)
 "" Tools
 map <C-g> <action>(ActivateTerminalToolWindow)
 map <C-t> <action>(ActivateTODOToolWindow)
+
+
+map <leader>gf <Action>(SearchEverywhere)
+map <leader>op <Action>(CheckinFiles)
