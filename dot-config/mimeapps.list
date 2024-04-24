@@ -1,6 +1,8 @@
 [Default Applications]
 image/png=org.xfce.ristretto.desktop
 application/pdf=org.gnome.Evince.desktop
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_home_xd_Downloads_eclipse_.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 
 [Added Associations]
 image/png=org.xfce.ristretto.desktop;
