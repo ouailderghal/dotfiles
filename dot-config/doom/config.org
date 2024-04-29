@@ -101,3 +101,37 @@ TODO: Configuration =citar=.
         (start-process "firefox" nil "firefox" file)
       (message "Not a HTML file"))))
 #+end_src
+
+* =mu4e=
+** Gloabl config
+#+begin_src elisp
+(setq mu4e-verify-signature t)
+(setq mu4e-decryption-policy 'ask)
+(setq mm-verify-option 'always)
+
+(after! mu4e
+       (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime))
+
+(after! mu4e
+  (setq sendmail-program (executable-find "msmtp")
+	send-mail-function #'smtpmail-send-it
+	message-sendmail-f-is-evil t
+	message-sendmail-extra-arguments '("--read-envelope-from")
+	message-send-mail-function #'message-send-mail-with-sendmail))
+#+end_src
+
+** Mailboxes
+*** =IMTA=
+#+begin_src elisp
+(set-email-account! "IMTA"
+  '((mu4e-sent-folder       . "/imt/Sent")
+    (mu4e-drafts-folder     . "/imt/Drafts")
+    (mu4e-trash-folder      . "/imt/Trash")
+    (mu4e-refile-folder     . "/imt/Inbox")
+    (smtpmail-smtp-user     . "ouail.derghal@imt-atlantique.fr")
+    (user-mail-address      . "ouail.derghal@imt-atlantique.fr")
+    (mu4e-compose-signature . "Ouail Derghal"))
+  t)
+#+end_src
+
+
