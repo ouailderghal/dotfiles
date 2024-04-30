@@ -15,8 +15,8 @@ Set different Emacs font variables.
 
 #+begin_src elisp
 (setq
- doom-font (font-spec :family "Hack Nerd Font Mono" :size 14 :weight 'semi-light)
- doom-variable-pitch-font (font-spec :family "Hack Nerd Font" :size 14))
+ doom-font (font-spec :family "CodeNewRoman Nerd Font" :size 16 :weight 'semi-light)
+ doom-variable-pitch-font (font-spec :family "CodeNewRoman Nerd Font" :size 16))
 #+end_src
 
 ** Zoom In/Out
