@@ -1,5 +1,7 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
+
+
 ;; This file controls what Doom modules are enabled and what order they load
 ;; in. Remember to run 'doom sync' after modifying it!
 
@@ -41,11 +43,11 @@
        ;;minimap              ; show a map of the code on the side
        modeline               ; snazzy, Atom-inspired modeline, plus API
        ;;nav-flash            ; blink cursor line after big motions
-       neotree                ; a project drawer, like NERDTree for vim
+       ;;neotree              ; a project drawer, like NERDTree for vim
        ophints                ; highlight the region an operation acts on
        (popup +defaults)      ; tame sudden yet inevitable temporary windows
        ;;tabs                 ; a tab bar for Emacs
-       ;;treemacs             ; a project drawer, like neotree but cooler
+       treemacs             ; a project drawer, like neotree but cooler
        ;;unicode              ; extended unicode support for various languages
        (vc-gutter +pretty)    ; vcs diff in the fringe
        vi-tilde-fringe        ; fringe tildes to mark beyond EOB
