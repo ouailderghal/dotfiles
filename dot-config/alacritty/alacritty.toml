@@ -21,23 +21,23 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 8.0
+size = 10.0
 
 
 [font.normal]
-family = "CodeNewRoman Nerd Font Mono"
+family = "Hack Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "CodeNewRoman Nerd Font Mono"
+family = "Hack Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "CodeNewRoman Nerd Font Mono"
+family = "Hack Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "CodeNewRoman Nerd Font Mono"
+family = "Hack Nerd Font"
 style = "Italic"
 
 [font.offset]
