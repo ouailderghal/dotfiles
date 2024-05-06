@@ -6,7 +6,7 @@ alias ll="ls -lah"
 
 # General
 alias q="exit"
-alias e="vim"
+alias e="nvim"
 alias rf="rm -rf"
 alias systemctl="sudo systemctl"
 alias ss="sudo systemctl"
