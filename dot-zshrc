@@ -1,7 +1,7 @@
 ### Set OhMyZSH settings
 zstyle ':omz:update' mode disabled
 
-ZSH_THEME="minimal"
+ZSH_THEME="zhann"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"
@@ -13,13 +13,12 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export PS1="%2~ $(vcs_status)$ %b"
 
 ### Set editor on local and remote connections
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 ### Load todo.txt completion file
