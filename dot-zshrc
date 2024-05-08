@@ -1,3 +1,5 @@
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+
 ### Set OhMyZSH settings
 zstyle ':omz:update' mode disabled
 
