@@ -32,6 +32,11 @@
   (setq blink-cursor-mode nil)
 #+end_src
 
+#+begin_src elisp
+  (display-time-mode 1)
+  (setq display-time-format "%H:%M")
+#+end_src
+
 ** Fonts
 #+begin_src elisp
   (set-face-attribute 'default nil :family "Hack Nerd Font" :height 120 :weight 'normal)
@@ -146,6 +151,7 @@ Visually indent text under an Org title.
     :after tree-sitter
     :ensure t)
 #+end_src
+
 ** Magit
 #+begin_src elisp
   (use-package magit
