@@ -107,6 +107,7 @@ Visually indent text under an Org title.
 #+begin_src elisp
   (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
+
 ** org-bullets
 #+begin_src elisp
   (use-package org-bullets
@@ -164,16 +165,18 @@ Projectile is a  package that provides project navigation and management functio
     (setq projectile-completion-system 'ido)
     :bind
     ("C-c p p" . projectile-switch-project)
-    ("C-c p f" . projectile-find-file)
+    ("C-c p f f" . projectile-find-file)
+    ("C-c p f t" . projectile-find-test-file)
     ("C-c p c" . projectile-compile-project)
     ("C-c p s" . projectile-run-shell)
     ("C-c p g" . projectile-grep)
     ("C-c p d" . projectile-dired)
     ("C-c p q" . projectile-kill-buffers)
-    ("C-c p t" . projectile-find-test-file)
     ("C-c p i" . projectile-add-known-project)
     ("C-c p x" . projectile-save-project-buffers)
     ("C-c p b" . projectile-switch-to-buffer)
+    ("C-c p r" . projectile-run-project)
+    ("C-c p v c" . projectile-vc)
     :config
     (projectile-mode +1))
 #+end_src
@@ -194,6 +197,7 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
 | =C-c p q=  | Kill project's opened buffers.        |
 | =C-c p x=  | Save project's opened buffers.        |
 | =C-c p b=  | Open project's buffers list.          |
+| =C-c p r=  | Run the current project.              |
 |------------+---------------------------------------|
 
 ** Docker
@@ -206,6 +210,7 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
   :ensure t
   :mode ("Dockerfile\\'" . dockerfile-mode))
 #+end_src
+
 ** Go
 #+begin_src elisp
   (use-package go-mode
@@ -215,3 +220,4 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
               (lambda ()
                 (setq tab-width 4))))
 #+end_src
+
