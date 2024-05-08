@@ -144,6 +144,7 @@ Projectile is a  package that provides project navigation and management functio
     ("C-c p t" . projectile-find-test-file)
     ("C-c p i" . projectile-add-known-project)
     ("C-c p x" . projectile-save-project-buffers)
+    ("C-c p b" . projectile-switch-to-buffer)
     :config
     (projectile-mode +1))
 #+end_src
@@ -163,6 +164,7 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
 | =C-c p i=  | Add directory to known projects.      |
 | =C-c p q=  | Kill project's opened buffers.        |
 | =C-c p x=  | Save project's opened buffers.        |
+| =C-c p b=  | Open project's buffers list.          |
 |------------+---------------------------------------|
 
 ** Docker
