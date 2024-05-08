@@ -170,6 +170,10 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
   (use-package docker
   :ensure t
   :bind ("C-c d" . docker))
+
+  (use-package dockerfile-mode
+  :ensure t
+  :mode ("Dockerfile\\'" . dockerfile-mode))
 #+end_src
 ** Go
 #+begin_src elisp
