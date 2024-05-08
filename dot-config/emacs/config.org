@@ -1,0 +1,182 @@
+#+title: Emacs Configuration
+#+author: Ouail Derghal
+#+startup: fold
+
+* Open Emacs config file
+#+begin_src elisp
+  (defun od/open-config-org ()
+    "Open config.org in a new buffer."
+    (interactive)
+    (find-file "~/.config/emacs/config.org"))
+#+end_src
+
+#+begin_src elisp
+  (defun od/open-config-init ()
+    "Open init.el in a new buffer."
+    (interactive)
+    (find-file "~/.config/emacs/init.el"))
+#+end_src
+
+* Appearance
+** Clean Interface
+#+begin_src elisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (column-number-mode 1)
+  (line-number-mode 1)
+  (setq inhibit-startup-screen t)
+  (setq inhibit-splash-screen t)
+  (setq split-width-threshold nil)
+  (setq split-height-threshold nil)
+  (setq blink-cursor-mode nil)
+#+end_src
+
+** Fonts
+#+begin_src elisp
+  (set-face-attribute 'default nil :family "Hack Nerd Font" :height 120 :weight 'normal)
+  (set-face-attribute 'fixed-pitch nil :family "Hack Nerd Font" :height 120 :weight 'normal)
+  (set-face-attribute 'variable-pitch nil :family "Georgia" :height 130 :weight 'normal)
+#+end_src
+
+** Theme
+#+begin_src elisp
+  (use-package doom-themes
+    :ensure t
+    :config
+    (setq doom-themes-enable-bold t
+          doom-themes-enable-italic t)
+
+    (load-theme 'doom-badger t)
+
+    (doom-themes-visual-bell-config)
+    (doom-themes-neotree-config)
+    (setq doom-themes-treemacs-theme "doom-badger")
+    (doom-themes-treemacs-config)
+    
+    (doom-themes-org-config))
+#+end_src
+
+** Line Numbers
+#+begin_src elisp
+  (add-hook 'text-mode-hook #'display-line-numbers-mode)
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (add-hook 'org-mode-hook #'display-line-numbers-mode)
+#+end_src
+
+** temp and backup files
+#+begin_src elisp
+  (setq auto-save-default nil)
+  (setq backup-inhibited t)
+#+end_src
+
+* Productivity
+** windmove
+#+begin_src elisp
+  (when (fboundp 'windmove-default-keybindings)
+    (windmove-default-keybindings))
+#+end_src
+
+** ido
+#+begin_src elisp
+  (ido-mode 1)
+  (setq ido-everywhere t)
+  (setq ido-enable-flex-matching t)
+  (setq ido-create-new-buffer 'always)
+  (setq ido-file-extensions-order '(".org" ".txt" ".py" ".emacs" ".xml" ".el" ".ini" ".cfg" ".conf" ".yaml" ".yml" ".json" ".jsx" ".js" ".ts" ".tsx" ".html" ".css" ".scss" ".md" ".markdown" ".rst" ".csv" ".sql" ".php" ".java" ".c" ".cpp" ".h" ".hpp" ".m" ".sh" ".rb" ".pl" ".pm" ".tcl" ".go" ".lua" ".coffee" ".bat" ".ps1" ".psm1" ".psd1" ".erb"))
+
+  (global-set-key (kbd "C-x b") 'ido-switch-buffer)
+  (global-set-key (kbd "C-x C-f") 'ido-find-file)
+  (global-set-key (kbd "C-x k") 'ido-kill-buffer)
+  (global-set-key (kbd "C-x B") 'ido-switch-buffer-other-window)
+#+end_src
+
+** smex
+#+begin_src elisp
+  (use-package smex
+  :ensure t
+  :bind (("M-x" . smex)
+         ("M-X" . smex-major-mode-commands)
+         ;; This is your old M-x.
+         ("C-c C-c M-x" . execute-extended-command)))
+#+end_src
+
+* Org
+** config
+Visually indent text under an Org title.
+#+begin_src elisp
+  (add-hook 'org-mode-hook 'org-indent-mode)
+#+end_src
+** org-bullets
+#+begin_src elisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+end_src
+
+* Programmming
+** Magit
+#+begin_src elisp
+  (use-package magit
+    :ensure t
+    :bind ("C-x g" . magit-status)
+    :config
+    (setq magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+#+end_src
+
+** Projectile
+Projectile is a  package that provides project navigation and management functionalities, including features such as file searching, project-wide commands, and integration with version control systems.
+
+#+begin_src elisp
+  (use-package projectile
+    :ensure t
+    :init
+    (setq projectile-completion-system 'ido)
+    :bind
+    ("C-c p p" . projectile-switch-project)
+    ("C-c p f" . projectile-find-file)
+    ("C-c p c" . projectile-compile-project)
+    ("C-c p s" . projectile-run-shell)
+    ("C-c p g" . projectile-grep)
+    ("C-c p d" . projectile-dired)
+    ("C-c p q" . projectile-kill-buffers)
+    ("C-c p t" . projectile-find-test-file)
+    ("C-c p i" . projectile-add-known-project)
+    ("C-c p x" . projectile-save-project-buffers)
+    :config
+    (projectile-mode +1))
+#+end_src
+
+The primary entry point to Projectile's keybindings is =C-c p=, followed by a letter to execute a specific action. Here is the list of configured keybindings:
+
+|------------+---------------------------------------|
+| Keybinding | Action                                |
+|------------+---------------------------------------|
+| =C-c p p=  | Switch to a project.                  |
+| =C-c p f=  | Find file in the project.             |
+| =C-c p t=  | Find test file in the project.        |
+| =C-c p c=  | Compile project.                      |
+| =C-c p s=  | Run shell in the project's directory. |
+| =C-c p g=  | Grep for a string in the project.     |
+| =C-c p d=  | Open =dired= in the project root.     |
+| =C-c p i=  | Add directory to known projects.      |
+| =C-c p q=  | Kill project's opened buffers.        |
+| =C-c p x=  | Save project's opened buffers.        |
+|------------+---------------------------------------|
+
+** Docker
+#+begin_src elisp
+  (use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+#+end_src
+** Go
+#+begin_src elisp
+  (use-package go-mode
+    :ensure t
+    :config
+    (add-hook 'go-mode-hook
+              (lambda ()
+                (setq tab-width 4))))
+#+end_src
