@@ -235,3 +235,11 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
                 (setq tab-width 4))))
 #+end_src
 
+** Markdown
+#+begin_src elisp
+  (use-package markdown-mode
+    :ensure t
+    :mode ("\\.md\\'" . markdown-mode)
+    :hook (markdown-mode . visual-line-mode)
+    :bind (("C-c C-r" . markdown-preview)))
+#+end_src
