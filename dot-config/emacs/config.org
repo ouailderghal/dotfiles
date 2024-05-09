@@ -62,6 +62,14 @@
     (doom-themes-org-config))
 #+end_src
 
+** Doom modeline
+#+begin_src elisp
+  (use-package doom-modeline
+    :ensure t
+    :init
+    (setq doom-modeline-height 25) ;; Adjust the height of the modeline
+    :hook (after-init . doom-modeline-mode))  
+#+end_src
 ** Line Numbers
 #+begin_src elisp
   (add-hook 'text-mode-hook #'display-line-numbers-mode)
