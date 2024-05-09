@@ -281,3 +281,16 @@ Projectile is a package that provides project navigation and management function
       :commands (sudo-edit)
       :bind (("C-x #" . sudo-edit)))
 #+end_src
+
+** Open PDF in envince
+#+begin_src elisp
+  (defun od/dired-open-pdf ()
+    "Open the selected PDF file in evince."
+    (interactive)
+    (let ((file (dired-get-file-for-visit)))
+      (if (string-match "\\.pdf\\'" file)
+          (start-process "evince" nil "evince" file)
+        (message "Not a PDF file."))))
+
+  (define-key dired-mode-map (kbd "C-c o") 'od/dired-open-pdf)
+#+end_src
