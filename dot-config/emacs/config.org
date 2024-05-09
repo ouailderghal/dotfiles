@@ -154,6 +154,32 @@
   :hook (org-mode . toc-org-enable))
 #+end_src
 
+** Org Capture
+#+begin_src elisp
+  (use-package org
+    :config
+    ;; Define capture templates for personal.org
+    (setq org-capture-templates
+          '(("p" "Personal Todo" entry
+             (file+headline "~/Dropbox/org/personal.org" "Tasks")
+             "* TODO %?\n %i\n")
+            ("n" "Personal Note" entry
+             (file+headline "~/Dropbox/org/personal.org" "Notes")
+             "* %?\n %i\n")))
+
+    ;; Define capture templates for phd.org
+    (add-to-list 'org-capture-templates
+                 '("i" "IMT Todo" entry
+                   (file+headline "~/Dropbox/org/phd.org" "Tasks")
+                   "* TODO %?\n %i\n"))
+
+    ;; Define capture templates for work.org
+    (add-to-list 'org-capture-templates
+                 '("w" "Work Todo" entry
+                   (file+headline "~/Dropbox/org/work.org" "Tasks")
+                   "* TODO %?\n %i\n")))
+#+end_src
+
 * Programmming
 ** Treesitter
 #+begin_src elisp
