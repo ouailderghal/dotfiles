@@ -276,3 +276,12 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
     :hook (markdown-mode . visual-line-mode)
     :bind (("C-c C-r" . markdown-preview)))
 #+end_src
+
+* Tools
+** sudo-edit
+#+begin_src elisp
+    (use-package sudo-edit
+      :ensure t
+      :commands (sudo-edit)
+      :bind (("C-x #" . sudo-edit-find-file)))
+#+end_src
