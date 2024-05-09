@@ -109,9 +109,12 @@
 
 * Org
 ** config
-Visually indent text under an Org title.
 #+begin_src elisp
-  (add-hook 'org-mode-hook 'org-indent-mode)
+  (use-package org
+    :config
+    (setq org-ellipsis "⤵"
+          org-hide-emphasis-markers t)
+    :hook (org-mode . org-indent-mode))
 #+end_src
 
 ** org-bullets
