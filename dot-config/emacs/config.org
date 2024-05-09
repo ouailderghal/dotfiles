@@ -294,3 +294,14 @@ Projectile is a package that provides project navigation and management function
 
   (define-key dired-mode-map (kbd "C-c o") 'od/dired-open-pdf)
 #+end_src
+
+** Open Alacritty in working directory
+#+begin_src elisp
+  (defun od/open-alacritty-here ()
+    "Open an Alacritty terminal in the current working directory."
+    (interactive)
+    (let ((default-directory (file-name-directory buffer-file-name)))
+      (start-process "alacritty" nil "alacritty")))
+
+  (global-set-key (kbd "C-x a") 'od/open-alacritty-here)
+#+end_src
