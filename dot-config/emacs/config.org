@@ -41,7 +41,7 @@
 #+begin_src elisp
   (set-face-attribute 'default nil :family "Hack Nerd Font" :height 120 :weight 'normal)
   (set-face-attribute 'fixed-pitch nil :family "Hack Nerd Font" :height 120 :weight 'normal)
-  (set-face-attribute 'variable-pitch nil :family "Georgia" :height 130 :weight 'normal)
+  (set-face-attribute 'variable-pitch nil :family "Hack Nerd Font" :height 130 :weight 'normal)
 #+end_src
 
 ** Theme
