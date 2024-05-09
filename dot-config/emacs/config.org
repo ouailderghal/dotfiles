@@ -17,7 +17,7 @@
     (find-file "~/.config/emacs/init.el"))
 #+end_src
 
-v* Appearance
+* Appearance
 ** Clean Interface
 #+begin_src elisp
   (menu-bar-mode -1)
@@ -70,8 +70,9 @@ v* Appearance
     :ensure t
     :init
     (setq doom-modeline-height 25) ;; Adjust the height of the modeline
+    :custom-face (doom-modeline-buffer-modified ((t (:foreground "orange"))))
     :hook (after-init . doom-modeline-mode))  
-#+end_src
+    #+end_src
 ** Line Numbers
 #+begin_src elisp
   (add-hook 'text-mode-hook #'display-line-numbers-mode)
@@ -182,6 +183,8 @@ v* Appearance
                    "* TODO %?\n %i\n")))
 #+end_src
 
+** PDF Tools
+
 * Programmming
 ** Treesitter
 #+begin_src elisp
@@ -226,42 +229,19 @@ v* Appearance
 Projectile is a package that provides project navigation and management functionalities, including features such as file searching, project-wide commands, and integration with version control systems.
 
 #+begin_src elisp
-    (use-package projectile
-      :ensure t
-
-      :init
-      (setq projectile-completion-system 'ido)
-
-      :bind
-      ("C-c p p" . projectile-commander)
-      :config
-      (projectile-mode +1)
-
-      (def-projectile-commander-method ?$
-        "Open a *shell* buffer for the project."
-        (projectile-run-shell)))  
+  (use-package projectile
+    :ensure t
+    :init
+    (setq projectile-completion-system 'ido)
+    :bind
+    ("C-c p" . projectile-commander)
+    :config
+    (projectile-mode +1)
+    
+    (def-projectile-commander-method ?$
+      "Open a *shell* buffer for the project."
+      (projectile-run-shell)))  
 #+end_src
-
-
-
-The primary entry point to Projectile's keybindings is =C-c p=, followed by a letter to execute a specific action. Here is the list of configured keybindings:
-
-|------------+---------------------------------------|
-| Keybinding | Action                                |
-|------------+---------------------------------------|
-| =C-c p p=  | Switch to a project.                  |
-| =C-c p f=  | Find file in the project.             |
-| =C-c p t=  | Find test file in the project.        |
-| =C-c p c=  | Compile project.                      |
-| =C-c p s=  | Run shell in the project's directory. |
-| =C-c p g=  | Grep for a string in the project.     |
-| =C-c p d=  | Open =dired= in the project root.     |
-| =C-c p i=  | Add directory to known projects.      |
-| =C-c p q=  | Kill project's opened buffers.        |
-| =C-c p x=  | Save project's opened buffers.        |
-| =C-c p b=  | Open project's buffers list.          |
-| =C-c p r=  | Run the current project.              |
-|------------+---------------------------------------|
 
 ** Docker
 #+begin_src elisp
