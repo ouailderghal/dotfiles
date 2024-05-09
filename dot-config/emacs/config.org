@@ -17,7 +17,7 @@
     (find-file "~/.config/emacs/init.el"))
 #+end_src
 
-* Appearance
+v* Appearance
 ** Clean Interface
 #+begin_src elisp
   (menu-bar-mode -1)
@@ -35,6 +35,8 @@
 #+begin_src elisp
   (display-time-mode 1)
   (setq display-time-format "%H:%M")
+  (setq display-time-default-load-average nil)
+  (setq display-time-load-average nil)
 #+end_src
 
 ** Fonts
