@@ -221,7 +221,7 @@
 #+end_src
 
 ** Projectile
-Projectile is a  package that provides project navigation and management functionalities, including features such as file searching, project-wide commands, and integration with version control systems.
+Projectile is a package that provides project navigation and management functionalities, including features such as file searching, project-wide commands, and integration with version control systems.
 
 #+begin_src elisp
     (use-package projectile
@@ -231,28 +231,16 @@ Projectile is a  package that provides project navigation and management functio
       (setq projectile-completion-system 'ido)
 
       :bind
-      ("C-c p p" . projectile-switch-project)
-
-      ("C-c p f f" . projectile-find-file)
-      ("C-c p f o" . projectile-find-file-other-window)
-      ("C-c p f t" . projectile-find-test-file)
-
-      ("C-c p a r" . projectile-run-project)
-      ("C-c p a c" . projectile-compile-project)
-    
-      ("C-c p o d" . projectile-dired)
-      ("C-c p o g" . projectile-vc)    
-      ("C-c p o s" . projectile-run-shell)
-
-      ("C-c p s b" . projectile-switch-to-buffer)
-
-      ("C-c p q" . projectile-kill-buffers)
-      ("C-c p i" . projectile-add-known-project)
-      ("C-c p x" . projectile-save-project-buffers)
-
+      ("C-c p p" . projectile-commander)
       :config
-      (projectile-mode +1))
+      (projectile-mode +1)
+
+      (def-projectile-commander-method ?$
+        "Open a *shell* buffer for the project."
+        (projectile-run-shell)))  
 #+end_src
+
+
 
 The primary entry point to Projectile's keybindings is =C-c p=, followed by a letter to execute a specific action. Here is the list of configured keybindings:
 
@@ -309,5 +297,5 @@ The primary entry point to Projectile's keybindings is =C-c p=, followed by a le
     (use-package sudo-edit
       :ensure t
       :commands (sudo-edit)
-      :bind (("C-x #" . sudo-edit-find-file)))
+      :bind (("C-x #" . sudo-edit)))
 #+end_src
