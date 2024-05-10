@@ -1,8 +1,6 @@
 live_config_reload = true
 
-import = [
-    "~/.config/alacritty/themes/one_dark.toml"
-]
+import = [ "~/.config/alacritty/themes/terminator.toml" ]
 
 [env]
 TERM = "xterm-256color"
