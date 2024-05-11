@@ -1,0 +1,7 @@
+require("ouailderghal.config.telescope")
+require("ouailderghal.config.treesitter")
+require("ouailderghal.config.lsp")
+require("ouailderghal.config.cmp")
+require("ouailderghal.config.kanagawa")
+require("ouailderghal.config.conform")
+require("ouailderghal.config.ufo")
