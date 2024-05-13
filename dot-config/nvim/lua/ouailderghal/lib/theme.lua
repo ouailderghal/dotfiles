@@ -20,6 +20,8 @@ function set_theme(theme)
 		vim.cmd([[colorscheme moonfly]])
 	elseif theme == 'tokyonight-storm' then
 		vim.cmd([[colorscheme tokyonight-storm]])
+	elseif theme == 'catppuccin' then
+		vim.cmd([[colorscheme catppuccin]])
 	end
 end
 
