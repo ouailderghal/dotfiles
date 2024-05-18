@@ -4,7 +4,7 @@ require("ouailderghal.options")
 init_lazy('/lazy/lazy.nvim')
 require('lazy').setup({ { import = 'ouailderghal.plugins' } })
 
-set_theme('gruvbox-dark')
+set_theme('tokyonight-storm')
 
 require("ouailderghal.config") require("ouailderghal.keymaps")
 
