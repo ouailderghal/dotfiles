@@ -1,5 +1,5 @@
 # Set font.
-font pango:Hack Nerd Font 9
+font pango:Hack Nerd Font 11
 
 # Set apps.
 set $term alacritty
@@ -7,14 +7,12 @@ set $fileManager thunar
 set $browser firefox
 set $browserIncognito firefox --private-window
 set $appfinder xfce4-appfinder
-set $emacsserver emacs --daemon
-set $emacsclient emacsclient -c -a "emacs"
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xsetroot -solid "#000000"
 exec --no-startup-id copyq
-exec --no-startup-id $emacsserver
+exec --no-startup-id thunderbird
 
 # Set modifier key.
 set $mod Mod4
@@ -31,7 +29,6 @@ tiling_drag modifier titlebar
 
 ### Program bindings.
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $emacsclient
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
