@@ -10,6 +10,7 @@ return {
   'rebelot/kanagawa.nvim',
   'bluz71/vim-moonfly-colors',
   'folke/tokyonight.nvim',
+  'whonore/Coqtail',
 
   { "numToStr/Comment.nvim", opts = {} },
 }
