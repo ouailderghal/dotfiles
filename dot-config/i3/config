@@ -50,6 +50,7 @@ for_window [class="^copyq$"] floating enable
 for_window [class="^SimpleScreenRecorder$"] floating enable
 for_window [class="^Arandr$"] floating enable
 for_window [class="^floating_term$"] floating enable
+for_window [class="^Protonvpn$"] floating enable
 
 assign [class="^Brave-browser$"] 1
 assign [class="^Zotero$"] 5
