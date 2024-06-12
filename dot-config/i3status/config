@@ -9,12 +9,12 @@ order += "battery BAT0"
 order += "tztime local"
 
 wireless _first_ {
-    format_up = "W: (%quality at %essid) %ip"
+    format_up = "W: UP"
     format_down = "W: down"
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
+    format_up = "E: UP"
     format_down = "E: down"
 }
 
@@ -31,3 +31,5 @@ battery "CMB1" {
 tztime local {
     format = "%d/%m/%Y %H:%M:%S"
 }
+
+# vim: set ft=config ts=4
