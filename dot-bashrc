@@ -40,3 +40,5 @@ test -f "$HOME/.bash_aliases" && source "$HOME/.bash_aliases"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 PATH="$GOBIN:$PATH"
+
+# vi: set ft=bash ts=4
