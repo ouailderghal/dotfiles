@@ -55,3 +55,6 @@ map o &mimeopen $f
 map O $mimeopen --ask $f
 map a :push %mkdir<space>
 map X extract $f
+
+
+# vi: set ft=config
