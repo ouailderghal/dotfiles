@@ -3,7 +3,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 ### Set OhMyZSH settings
 zstyle ':omz:update' mode disabled
 
-ZSH_THEME="simple"
+ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"
