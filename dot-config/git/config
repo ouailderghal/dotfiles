@@ -1,7 +1,7 @@
 [user]
 	name = Ouail Derghal
-	email = derghal.ouail@protonmail.com
-	signingkey = CD772B86615094C280924DCEAF60DCBB1BB1E5F8
+	email = ouailderghal@protonmail.com
+	signingkey = D8A10AC13F577AADBFBDD95980D2AC4E135C1C80
 
 [init]
 	defaultBranch = main
