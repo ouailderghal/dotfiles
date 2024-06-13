@@ -66,3 +66,5 @@ map <C-t> <action>(ActivateTODOToolWindow)
 
 map <leader>gf <Action>(SearchEverywhere)
 map <leader>op <Action>(CheckinFiles)
+
+" vi: set ft=vim
