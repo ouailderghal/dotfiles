@@ -30,4 +30,8 @@ test -f "$HOME/.bash_aliases" && source "$HOME/.bash_aliases"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
+# Opam config
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+eval $(opam env)
+
 # vi: set ft=bash ts=2
