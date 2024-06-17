@@ -23,7 +23,7 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 10
+size = 7
 
 [font.normal]
 family = "DejaVuSansM Nerd Font Mono"
