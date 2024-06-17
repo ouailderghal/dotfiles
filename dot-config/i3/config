@@ -40,6 +40,9 @@ bindsym $mod+Shift+y --release exec scrot -s
 bindsym $mod+Control+l --release exec xflock4
 
 ### Window rules.
+default_border pixel 1
+default_floating_border pixel 1
+
 for_window [class="^Pcmanfm$"] floating enable
 for_window [class="^Thunar$"] floating enable
 for_window [class="^Xfce4-appfinder$"] floating enable
@@ -209,6 +212,7 @@ mode "resize" {
 
 bar {
     status_command i3status
+    position top
 }
 
 bindsym $mod+r mode "resize"
