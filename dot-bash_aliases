@@ -27,6 +27,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gp="git push"
+alias lg="lazygit"
 
 # Tmux
 alias t="tmux"
