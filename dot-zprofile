@@ -1,9 +1,1 @@
-path+="/usr/local/bin"
-path+="$HOME/bin"
-path+="$HOME/.local/bin"
-
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-path+="$GOBIN"
-
 # vi: set ft=bash ts=2
