@@ -1,25 +1,44 @@
 #!/usr/bin/env bash
 
+PROJECTS_DIR="$HOME/projects/"
+DOCUMENTS_DIR="$HOME/Documents/"
+
 if [[ $# -eq 1 ]]; then
-	selected=$1
+    selected=$1
 else
-	selected=$(find ~/Projects/work ~/Projects/personal/ ~/Projects/phd/ ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find \
+    $PROJECTS_DIR \
+    $PROJECTS_DIR/work \
+    $PROJECTS_DIR/personal \
+    $PROJECTS_DIR/phd \
+    $PROJECTS_DIR/config \
+    $PROJECTS_DIR/other \
+    $DOCUMENTS_DIR \
+    $DOCUMENTS_DIR/learning \
+    -mindepth 1 -maxdepth 1 -type d | fzf)
+
 fi
 
 if [[ -z $selected ]]; then
-	exit 0
+    exit 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-	tmux new-session -s $selected_name -c $selected
-	exit 0
+    tmux new-session -s $selected_name -c $selected -n "vi" "nvim"
+    tmux new-window -t $selected_name: -n "term" -c $selected
+    tmux new-window -t $selected_name: -n "lazygit" -c $selected "lazygit"
+    tmux select-window -t $selected_name:0
+    exit 0
 fi
 
 if ! tmux has-session -t=$selected_name 2>/dev/null; then
-	tmux new-session -ds $selected_name -c $selected
+    tmux new-session -ds $selected_name -c $selected -n "vi" "nvim"
+    tmux new-window -t $selected_name: -n "term" -c $selected
+    tmux new-window -t $selected_name: -n "lazygit" -c $selected "lazygit"
+    tmux select-window -t $selected_name:0
 fi
 
 tmux switch-client -t $selected_name
