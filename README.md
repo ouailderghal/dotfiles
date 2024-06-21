@@ -31,3 +31,30 @@ git clone https://github.com/ouailderghal/dotfiles /path/to/dotfiles/
 cd /path/to/dotfiles
 stow . -t $HOME --dotfiles --verbose --adopt
 ```
+
+## Available Configurations
+
+### Alacritty
+
+My preferred terminal is Alacritty. It is a simple, fast, GPU-rendered terminal
+with minimal functionality compared to other terminal applications (no windows,
+tabs, splits, etc.). I prefer using a minimal terminal application and
+delegating window, split, and tab management to a specialized tool like Tmux
+(see [Tmux] section).
+
+The latest version of Alacritty uses a TOML configuration file, whereas older
+versions used a YAML format. Since not all Linux repositories have the latest
+version of Alacritty, it is recommended to compile it from source. Alacritty is
+written in Rust, so you need to install a [Rust compiler](https://rustup.rs/),
+Cargo, and other dependencies to compile it.
+
+```bash
+git clone https://github.com/alacritty/alacritty.git && cd alacritty
+rustup override set stable
+rustup update stable
+sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+cargo build --release --no-default-features --features=wayland # with Wayland support
+cargo build --release --no-default-features --features=x11 # with X11 support
+```
+
+### Tmux
