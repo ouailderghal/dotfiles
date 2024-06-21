@@ -28,6 +28,10 @@ path+="$GOBIN"
     > /dev/null 2> /dev/null && \
     eval $(opam env)
 
+### Cargo
+[[ -f $HOME/.cargo/env ]] && \
+    source $HOME/.cargo/env
+
 ### Bindings
 bindkey -s ^f "tmux-sessionizer\n"
 
