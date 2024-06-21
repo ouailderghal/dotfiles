@@ -40,7 +40,7 @@ My preferred terminal is Alacritty. It is a simple, fast, GPU-rendered terminal
 with minimal functionality compared to other terminal applications (no windows,
 tabs, splits, etc.). I prefer using a minimal terminal application and
 delegating window, split, and tab management to a specialized tool like Tmux
-(see [Tmux] section).
+(see Tmux section).
 
 The latest version of Alacritty uses a TOML configuration file, whereas older
 versions used a YAML format. Since not all Linux repositories have the latest
@@ -58,3 +58,28 @@ cargo build --release --no-default-features --features=x11 # with X11 support
 ```
 
 ### Tmux
+
+Tmux is my go-to tool for terminal multiplexing. I use it to manage and quickly
+switch between projects and workspaces. It integrates well with the Alacritty
+terminal as it does not overlap with any functionality of the terminal
+application. The main modifier key in Tmux is `<C-s>`, along with other
+keybindings and shorthands I have defined to make the Tmux experience smoother
+and faster.
+
+The configuration file also includes four plugins (listed below), and their
+installation is managed using [tpm](https://github.com/tmux-plugins/tpm). Please
+ensure that you have `tpm` installed before using Tmux.
+
+1. `tmux-sensible`: Default configurations and shorthands for Tmux.
+2. `tmux-yank`: Copies selected text from Tmux to the system clipboard.
+3. `tmux-battery`: Shows the battery percentage in the status bar.
+4. `tmux-resurrect`: Saves opened sessions, allowing them to persist after a restart.
+
+Run the command below to clone the `tpm` project to your home directory, then
+start a Tmux session and press `<C-s I>` to install the plugins.
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### `i3`
