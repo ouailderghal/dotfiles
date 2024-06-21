@@ -212,7 +212,8 @@ mode "resize" {
 
 bar {
     status_command i3status
-    position top
+    position bottom
+    mode hide
 }
 
 bindsym $mod+r mode "resize"
