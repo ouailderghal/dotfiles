@@ -6,10 +6,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 
-### Aliases
-[[ -f $HOME/.bash_aliases ]] && \
-    source $HOME/.bash_aliases
-
 ### Editor
 [[ -n $SSH_CONNECTION ]] && export EDITOR='vim' || \
     export EDITOR='nvim'
@@ -50,3 +46,7 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+### Aliases
+[[ -L $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
+
