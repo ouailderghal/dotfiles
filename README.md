@@ -96,3 +96,16 @@ sudo apt install i3 i3lock suckless-tools
 
 The repository also includes a configuration file for `i3status`, which displays
 information such as the clock and network interface status on the status bar.
+
+### Shell (Bash and Zsh)
+
+I use [Zsh](https://www.zsh.org/) with the [oh-my-zsh](https://ohmyz.sh/)
+framework. All of my shell configuration is defined in a single file named
+`dot-zshrc`. The repository also includes a configuration file for the Bash
+shell (`dot-bashrc`). Configurations for both shells load aliases from the
+`dot-bash_aliases` file.
+
+```bash
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
