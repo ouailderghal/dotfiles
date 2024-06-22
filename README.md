@@ -109,3 +109,33 @@ shell (`dot-bashrc`). Configurations for both shells load aliases from the
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+
+### Other Configurations
+
+This repository includes configuration files for various tools that I use in my
+daily workflow, as listed below:
+
+1. `git`: Contains settings for commit email, GPG commit signing, and
+   configurations that load in specific directories on my system.
+
+2. `lf`: A fast terminal [file manager](https://github.com/gokcehan/lf) written
+   in Go. To install it, run the following command:
+
+   ```bash
+   env CGO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+   ```
+
+3. `neofetch`: Configuration file for the Neofetch command-line utility, which
+   displays useful system information such as the OS, kernel version, and
+hardware model.
+
+4. `terminator`: Configuration file for the
+   [Terminator](https://gnome-terminator.org/) terminal application.
+
+5. `mimeapps.list`: Defines default programs for specific file types.
+
+6. `ideavim`: Configuration file for the
+   [Ideavim](https://github.com/JetBrains/ideavim) JetBrains plugin.
+
+7. `xmodmap`: Configuration file for keyboard overrides.
