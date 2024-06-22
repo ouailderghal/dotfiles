@@ -83,3 +83,16 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ### `i3`
+
+I use `i3`, a keyboard-driven window manager, alongside the
+[Xfce](https://www.xfce.org/) desktop environment. This setup allows me to
+efficiently manage windows using my keyboard while Xfce handles other settings
+like displays, brightness, and power management. `i3` is available in most Linux
+repositories, and I usually install it using my system's package manager:
+
+```bash
+sudo apt install i3 i3lock suckless-tools
+```
+
+The repository also includes a configuration file for `i3status`, which displays
+information such as the clock and network interface status on the status bar.
