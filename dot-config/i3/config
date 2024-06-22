@@ -1,6 +1,12 @@
 # Set font.
 font pango:DejaVuSansM Nerd Font Mono 11
 
+# color class           border  backgr. text    indicator child_border
+client.focused          #800000 #800000 #ffffff #800000   #800000
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+
 # Set apps.
 set $term alacritty
 set $fileManager thunar
@@ -214,6 +220,17 @@ bar {
     status_command i3status
     position bottom
     mode hide
+
+    colors {
+        background #222222
+        statusline #ffffff
+        separator  #666666
+
+        focused_workspace  #800000 #800000 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+    }
 }
 
 bindsym $mod+r mode "resize"
