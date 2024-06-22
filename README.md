@@ -110,7 +110,6 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-
 ### Other Configurations
 
 This repository includes configuration files for various tools that I use in my
@@ -139,3 +138,20 @@ hardware model.
    [Ideavim](https://github.com/JetBrains/ideavim) JetBrains plugin.
 
 7. `xmodmap`: Configuration file for keyboard overrides.
+
+### Scripts
+
+The repository also includes helper scripts that I use to automate parts of my
+workflow. These scripts are located under `dot-local/bin` and will be deployed
+to the local bin directory, which is added to the global `PATH` variable (refer
+to the Zsh configuration file for details).
+
+The available scripts are:
+
+1. **`spawn-alacritty-cwd`**: A helper script that opens a new Alacritty window
+   in the current working directory. The script is triggered using `C-S-n` from
+   within an Alacritty window.
+
+2. **`tmux-sessionizer`**: A script that launches `fzf` with a list of
+   predefined directories, creates a new Tmux session named after the selected
+   folder, and opens several default windows (`term`, `nvim`, `lazygit`, etc.).
