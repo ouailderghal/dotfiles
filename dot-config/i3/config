@@ -1,5 +1,5 @@
 # Set font.
-font pango:DejaVuSansM Nerd Font Mono 11
+font pango:DejaVuSansM Nerd Font Mono 9
 
 # color class           border  backgr. text    indicator child_border
 client.focused          #800000 #800000 #ffffff #800000   #800000
