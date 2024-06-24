@@ -1,0 +1,108 @@
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+(set-face-attribute 'default nil
+		    :font "UbuntuMono Nerd Font"
+		    :height 130)
+
+(add-to-list 'custom-theme-load-path "~/.config/emacs/gruber-darker-theme.el")
+;; (load-theme 'gruber-darker t)
+
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+
+(use-package ido
+  :ensure t
+  :init
+  (ido-mode t)
+  (ido-everywhere t)
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
+
+(use-package smex
+  :ensure t
+  :bind (("M-x" . smex)
+	 ("M-X" . smex-major-mode-commands))
+  :config
+  (smex-initialize))
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(custom-set-faces
+ '(org-level-1 ((t (:inherit outline-1 :height 1.2))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.1))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.05))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
+
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)))
+
+(use-package tree-sitter
+  :ensure t
+  :config
+  (global-tree-sitter-mode))
+
+(use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter)
+
+(use-package eglot
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'eglot-ensure)
+  (add-to-list 'eglot-server-programs
+	       '(go-mode . ("gopls")))
+  (add-to-list 'eglot-server-programs
+	       '(ocaml-mode . ("ocamllsp")))
+  (add-to-list 'eglot-server-programs
+	       '(dockerfile-mode . ("docker-langserver" "--stdio"))))
+
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode))
+
+(use-package company
+  :hook (prog-mode . company-mode)
+  :config
+  (setq company-idle-delay 0
+	company-minimum-prefix-length 1
+	company-selection-wrap-around t
+	company-tooltip-align-annotations t
+	company-show-numbers t))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+(use-package tuareg
+  :ensure t
+  :mode ("\\.ml\\'" . tuareg-mode)
+  :hook (tuareg-mode . eglot-ensure))
+
+(use-package go-mode
+  :ensure t
+  :mode ("\\.go\\'" . go-mode))
+
+(use-package dockerfile-mode
+  :ensure t
+  :mode "Dockerfile\\'"
+  :hook (dockerfile-mode . eglot-ensure))
