@@ -15,11 +15,10 @@
 		      :font "UbuntuMono Nerd Font"
 		      :height 130)
 #+end_src
-
 * Theme
 #+begin_src emacs-lisp
   (add-to-list 'custom-theme-load-path "~/.config/emacs/gruber-darker-theme.el")
-  ;; (load-theme 'gruber-darker t)
+  (load-theme 'wombat t)
 #+end_src
 
 * Package Manager
@@ -54,6 +53,15 @@
 #+end_src
 
 * Org
+*** Indents
+#+begin_src emacs-lisp
+  ;; Enable org-indent-mode for better alignment under bullet points
+  (add-hook 'org-mode-hook 'org-indent-mode)
+
+  ;; Optionally, customize indentation settings
+  (setq org-startup-indented t)
+  (setq org-adapt-indentation nil)
+#+end_src
 *** Bullets
 #+begin_src emacs-lisp
   (use-package org-bullets
@@ -155,3 +163,19 @@
     :mode "Dockerfile\\'"
     :hook (dockerfile-mode . eglot-ensure))
 #+end_src
+
+*** Markdown
+#+begin_src emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :mode ("\\.md\\'" "\\.markdown\\'")
+    :hook (markdown-mode . (lambda () (setq markdown-command "pandoc"))))
+#+end_src
+*** YAML
+#+begin_src emacs-lisp
+  (use-package yaml-mode
+      :ensure t
+      :mode ("\\.yml\\'" "\\.yaml\\'")
+      :hook (yaml-mode . (lambda () (setq yaml-indent-offset 2))))
+#+end_src
+

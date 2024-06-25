@@ -10,7 +10,7 @@
 		    :height 130)
 
 (add-to-list 'custom-theme-load-path "~/.config/emacs/gruber-darker-theme.el")
-;; (load-theme 'gruber-darker t)
+(load-theme 'wombat t)
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -36,6 +36,13 @@
 	 ("M-X" . smex-major-mode-commands))
   :config
   (smex-initialize))
+
+;; Enable org-indent-mode for better alignment under bullet points
+(add-hook 'org-mode-hook 'org-indent-mode)
+
+;; Optionally, customize indentation settings
+(setq org-startup-indented t)
+(setq org-adapt-indentation nil)
 
 (use-package org-bullets
   :ensure t
@@ -106,3 +113,13 @@
   :ensure t
   :mode "Dockerfile\\'"
   :hook (dockerfile-mode . eglot-ensure))
+
+(use-package markdown-mode
+  :ensure t
+  :mode ("\\.md\\'" "\\.markdown\\'")
+  :hook (markdown-mode . (lambda () (setq markdown-command "pandoc"))))
+
+(use-package yaml-mode
+    :ensure t
+    :mode ("\\.yml\\'" "\\.yaml\\'")
+    :hook (yaml-mode . (lambda () (setq yaml-indent-offset 2))))
