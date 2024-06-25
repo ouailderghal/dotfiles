@@ -219,7 +219,6 @@ mode "resize" {
 bar {
     status_command i3status
     position bottom
-    mode hide
 
     colors {
         background #222222
