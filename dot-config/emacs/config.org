@@ -34,24 +34,6 @@
   (require 'use-package)
 #+end_src
 
-* Smex and IDO
-#+begin_src emacs-lisp
-  (use-package ido
-    :ensure t
-    :init
-    (ido-mode t)
-    (ido-everywhere t)
-    (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil))
-
-  (use-package smex
-    :ensure t
-    :bind (("M-x" . smex)
-	   ("M-X" . smex-major-mode-commands))
-    :config
-    (smex-initialize))
-#+end_src
-
 * Org
 *** Indents
 #+begin_src emacs-lisp
@@ -179,3 +161,37 @@
       :hook (yaml-mode . (lambda () (setq yaml-indent-offset 2))))
 #+end_src
 
+* Vertico, Orderless and Marinalia
+#+begin_src emacs-lisp
+  (use-package vertico
+    :ensure t
+    :init
+    (vertico-mode))
+
+  (use-package orderless
+    :ensure t
+    :custom
+    (completion-styles '(orderless))
+    (completion-category-defaults nil)
+    (completion-category-overrides '((file (styles partial-completion)))))
+
+  (use-package marginalia
+    :ensure t
+    :bind (:map minibuffer-local-map
+           ("M-A" . marginalia-cycle))
+    :init
+    (marginalia-mode))
+#+end_src
+
+* Evil
+#+begin_src emacs-lisp
+  (use-package evil
+    :ensure t
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump t)
+    :config
+    (evil-mode 1))
+#+end_src

@@ -22,21 +22,6 @@
   (package-install 'use-package))
 (require 'use-package)
 
-(use-package ido
-  :ensure t
-  :init
-  (ido-mode t)
-  (ido-everywhere t)
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
-
-(use-package smex
-  :ensure t
-  :bind (("M-x" . smex)
-	 ("M-X" . smex-major-mode-commands))
-  :config
-  (smex-initialize))
-
 ;; Enable org-indent-mode for better alignment under bullet points
 (add-hook 'org-mode-hook 'org-indent-mode)
 
@@ -123,3 +108,32 @@
     :ensure t
     :mode ("\\.yml\\'" "\\.yaml\\'")
     :hook (yaml-mode . (lambda () (setq yaml-indent-offset 2))))
+
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
+
+(use-package marginalia
+  :ensure t
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+  :init
+  (marginalia-mode))
+
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump t)
+  :config
+  (evil-mode 1))
