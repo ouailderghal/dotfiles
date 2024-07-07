@@ -48,6 +48,13 @@
 (use-package org
   :hook (org-mode . visual-line-mode))
 
+(use-package prog-mode
+  :ensure nil
+  :hook (prog-mode . od/compile-key-binding))
+
+(defun od/compile-key-binding ()
+  (local-set-key (kbd "C-x c") 'compile))
+
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)))
@@ -99,12 +106,9 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-(setq eshell-aliases-file "~/.bash_aliases")
-
-(use-package eshell
-  :config
-  (eshell)
-  (eshell-read-aliases-list))
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
 
 (use-package tuareg
   :ensure t
