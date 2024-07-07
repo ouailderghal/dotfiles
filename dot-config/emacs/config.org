@@ -1,7 +1,13 @@
-
 #+TITLE: Emacs Configuration
 #+AUTHOR: Ouail Derghal
 #+STARTUP: fold
+
+* Defaults
+** Disable temp and autosave files
+#+begin_src emacs-lisp
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
+#+end_src
 
 * Clean UI
 #+begin_src emacs-lisp
@@ -16,6 +22,7 @@
 		      :font "ZedMono Nerd Font Mono"
 		      :height 130)
 #+end_src
+
 * Theme
 #+begin_src emacs-lisp
   (use-package doom-themes
@@ -197,7 +204,6 @@
       :mode ("\\.yml\\'" "\\.yaml\\'")
       :hook (yaml-mode . (lambda () (setq yaml-indent-offset 2))))
 #+end_src
-
 
 * Vertico, Orderless and Marinalia
 #+begin_src emacs-lisp
