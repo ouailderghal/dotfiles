@@ -6,11 +6,15 @@
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 (set-face-attribute 'default nil
-		    :font "UbuntuMono Nerd Font"
+		    :font "ZedMono Nerd Font Mono"
 		    :height 130)
 
-(add-to-list 'custom-theme-load-path "~/.config/emacs/gruber-darker-theme.el")
-(load-theme 'wombat t)
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-ir-black t))
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -40,6 +44,9 @@
  '(org-level-3 ((t (:inherit outline-3 :height 1.05))))
  '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
+
+(use-package org
+  :hook (org-mode . visual-line-mode))
 
 (use-package magit
   :ensure t
@@ -73,17 +80,31 @@
 (use-package company
   :hook (prog-mode . company-mode)
   :config
+
+  (defun disable-company-mode-in-shell ()
+    (company-mode -1))
+
+  (add-hook 'shell-mode-hook 'disable-company-mode-in-shell)
+  (add-hook 'eshell-mode-hook 'disable-company-mode-in-shell)
+
   (setq company-idle-delay 0
-	company-minimum-prefix-length 1
-	company-selection-wrap-around t
-	company-tooltip-align-annotations t
-	company-show-numbers t))
+        company-minimum-prefix-length 1
+        company-selection-wrap-around t
+        company-tooltip-align-annotations t
+        company-show-numbers t))
 
 (use-package projectile
   :ensure t
   :config
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+(setq eshell-aliases-file "~/.bash_aliases")
+
+(use-package eshell
+  :config
+  (eshell)
+  (eshell-read-aliases-list))
 
 (use-package tuareg
   :ensure t
@@ -127,13 +148,3 @@
          ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
-
-(use-package evil
-  :ensure t
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump t)
-  :config
-  (evil-mode 1))

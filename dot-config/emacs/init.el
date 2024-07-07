@@ -6,7 +6,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(t marginalia orderless vertico markdown-mode yaml-mode evil expand-region org-bullets use-package tuareg tree-sitter-langs smex projectile magit go-mode eglot dockerfile-mode company)))
+   '(doom-themes t marginalia orderless vertico markdown-mode yaml-mode evil expand-region org-bullets use-package tuareg tree-sitter-langs smex projectile magit go-mode eglot dockerfile-mode company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
