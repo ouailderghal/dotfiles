@@ -1,5 +1,5 @@
 # Set font.
-font pango:ZedMono Nerd Font Mono 11
+font pango:UbuntuMono Nerd Font Mono 13
 
 # color class           border  backgr. text    indicator child_border
 client.focused          #808080 #808080 #ffffff #808080   #808080
