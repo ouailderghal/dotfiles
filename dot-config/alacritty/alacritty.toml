@@ -26,19 +26,19 @@ unfocused_hollow = true
 size = 12
 
 [font.normal]
-family = "ZedMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "ZedMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "ZedMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "ZedMono Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
