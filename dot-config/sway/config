@@ -1,0 +1,177 @@
+### Set font
+font pango:JetBrainsMonoNerd Font Mono 9
+
+### Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term alacritty
+set $fileManager thunar
+set $browser firefox
+set $browserIncognito firefox --private-window
+set $appfinder xfce4-appfinder
+set $menu dmenu_path | wmenu | xargs swaymsg exec --
+
+# Set startup programs.
+exec --no-startup-id copyq
+exec --no-startup-id thunderbird
+
+### Program bindings
+bindsym $mod+b exec $browser
+bindsym $mod+Shift+b exec $browserIncognito
+bindsym $mod+Shift+f exec $fileManager
+bindsym $mod+Shift+d exec $appfinder
+bindsym $mod+p exec copyq toggle
+bindsym $mod+y exec scrot
+bindsym $mod+Shift+y --release exec scrot -s
+bindsym $mod+Control+l --release exec xflock4
+bindsym $mod+shift+g exec --no-startup-id ~/.config/emacs/bin/doom +everywhere
+
+### Windows rules
+default_border pixel 1
+default_floating_border pixel 1
+
+# Rules
+for_window [app_id="thunar"] floating enable
+for_window [app_id="xfce4-appfinder"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="xfce4-appearance-settings"] floating enable
+for_window [app_id="com.github.hluk.copyq"] floating enable
+for_window [class="^floating_term$"] floating enable
+
+### Window management bindings
+bindsym $mod+d exec $menu
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+floating_modifier $mod normal
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
+
+### Moving around
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### Workspaces
+# Switch to workspace
+bindsym $mod+ampersand workspace number 1
+bindsym $mod+eacute workspace number 2
+bindsym $mod+quotedbl workspace number 3
+bindsym $mod+apostrophe workspace number 4
+bindsym $mod+parenleft workspace number 5
+bindsym $mod+minus workspace number 6
+bindsym $mod+egrave workspace number 7
+bindsym $mod+underscore workspace number 8
+bindsym $mod+ccedilla workspace number 9
+bindsym $mod+agrave workspace number 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace number 1
+bindsym $mod+Shift+eacute move container to workspace number 2
+bindsym $mod+Shift+quotedbl move container to workspace number 3
+bindsym $mod+Shift+apostrophe move container to workspace number 4
+bindsym $mod+Shift+parenleft move container to workspace number 5
+bindsym $mod+Shift+minus move container to workspace number 6
+bindsym $mod+Shift+egrave move container to workspace number 7
+bindsym $mod+Shift+underscore move container to workspace number 8
+bindsym $mod+Shift+ccedilla move container to workspace number 9
+bindsym $mod+Shift+agrave move container to workspace number 10
+bindsym $mod+Tab workspace back_and_forth
+
+### Layout stuff
+# Split current object
+bindsym $mod+n splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+### Scratchpad
+bindsym $mod+Shift+equal move scratchpad
+bindsym $mod+equal scratchpad show
+
+### Resizing containers
+mode "resize" {
+    # left, right, up and down shrink containers
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Status Bar
+bar {
+    position bottom
+
+    status_command while date +'%d/%m/%Y %X'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+### Input Configuration.
+input * {
+      xkb_layout "fr"
+      repeat_delay 200
+      repeat_rate 100
+}
+
+input type:touchpad {
+    tap enabled
+}
+
+input type:keyboard xkb_numlock enabled
+
+### Include config.d/*
+include /etc/sway/config.d/*
