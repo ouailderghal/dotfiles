@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/themes/tokyo-night.toml" ]
+import = [ "~/.config/alacritty/themes/ir-black.toml" ]
 
 [env]
 TERM = "xterm-256color"
@@ -23,22 +23,22 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 12
+size = 10
 
 [font.normal]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
