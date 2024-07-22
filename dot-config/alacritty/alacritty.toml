@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/themes/ir-black.toml" ]
+import = [ "~/.config/alacritty/themes/modus-vivendi.toml" ]
 
 [env]
 TERM = "xterm-256color"
