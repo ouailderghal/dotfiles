@@ -14,7 +14,7 @@ PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]
 
 # Path
 PATH=$PATH:"/usr/local/bin"
-PATH=$PATH:"$HOME/local/bin"
+PATH=$PATH:"$HOME/.local/bin"
 
 ### Aliases
 [[ -L $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
