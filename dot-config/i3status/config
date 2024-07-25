@@ -1,3 +1,5 @@
+# vim: set ft=config ts=4
+
 general {
     colors = true
     interval = 1
@@ -23,13 +25,6 @@ battery "BAT0" {
     path = "/sys/class/power_supply/BAT0/uevent"
 }
 
-battery "CMB1" {
-    format = "%status %percentage %remaining"
-    path = "/sys/class/power_supply/CMB1/uevent"
-}
-
 tztime local {
     format = "%d/%m/%Y %H:%M:%S"
 }
-
-# vim: set ft=config ts=4
