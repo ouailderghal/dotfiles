@@ -1,20 +1,8 @@
 [global_config]
 [keybindings]
-  zoom_in = <Primary><Shift>k
-  zoom_out = <Primary><Shift>j
-  zoom_in_all = <Primary>plus
-  zoom_out_all = <Primary>minus
-  split_horiz = <Shift><Alt>h
-  split_vert = <Shift><Alt>v
-  search = <Shift><Alt>s
 [profiles]
   [[default]]
-    background_color = "#282828"
-    cursor_blink = False
-    font = Fira Mono 16
-    foreground_color = "#ebdbb2"
-    use_custom_command = True
-    custom_command = /bin/zsh
+    font = UbuntuMono Nerd Font Mono 14
     use_system_font = False
 [layouts]
   [[default]]
