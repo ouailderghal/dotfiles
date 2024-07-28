@@ -34,5 +34,7 @@ PATH=$PATH:"$GOBIN"
     > /dev/null 2> /dev/null && \
     eval $(opam env)
 
+bind "set completion-ignore-case on"
+
 export PATH
 export PS1
