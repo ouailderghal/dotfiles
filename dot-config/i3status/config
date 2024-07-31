@@ -11,12 +11,12 @@ order += "battery BAT0"
 order += "tztime local"
 
 wireless _first_ {
-    format_up = "W: UP"
+    format_up = "W: UP (%ip)"
     format_down = "W: down"
 }
 
 ethernet _first_ {
-    format_up = "E: UP"
+    format_up = "E: UP (%ip)"
     format_down = "E: down"
 }
 
