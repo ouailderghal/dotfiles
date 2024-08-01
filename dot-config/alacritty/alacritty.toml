@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/themes/solarized_light.toml" ]
+import = [ "~/.config/alacritty/theme.toml" ]
 
 [env]
 TERM = "xterm-256color"
