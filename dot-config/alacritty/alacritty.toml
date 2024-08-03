@@ -23,7 +23,7 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 14
+size = 9
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"
