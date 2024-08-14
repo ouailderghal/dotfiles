@@ -56,7 +56,7 @@ This is my Emacs configuration written in Org mode.
 
 ** Config
 #+begin_src emacs-lisp
-  (defvar od/config-org-path "~/.emacs.d/config.org"
+  (defvar od/config-org-path (expand-file-name "config.org" user-emacs-directory)
     "Path to the config.org file.")
 
   ;; Define a function to open the config.org file
