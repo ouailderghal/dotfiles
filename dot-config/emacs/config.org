@@ -277,6 +277,18 @@ This is my Emacs configuration written in Org mode.
       (let ((comint-buffer-maximum-size 0))
         (comint-truncate-buffer))))
 #+end_src
+
+*** typescript-mode
+#+begin_src emacs-lisp
+  (use-package typescript-mode
+    :ensure t
+    :mode ("\\.ts\\'" . typescript-mode) ;; Automatically use typescript-mode for .ts files
+    :hook (typescript-mode . lsp-deferred) ;; Optionally hook LSP mode for TypeScript support
+    :config
+    ;; Set basic offset for indentation
+    (setq typescript-indent-level 4))
+#+end_src
+
 ** Settings
 #+begin_src emacs-lisp
   (setq-default tab-width 4)          ;; Set the default tab width to 4 spaces
