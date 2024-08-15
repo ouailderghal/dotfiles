@@ -259,6 +259,24 @@ This is my Emacs configuration written in Org mode.
     (setq-default indent-tabs-mode nil))       ;; Use spaces instead of tabs
 #+end_src
 
+*** shell-mode
+#+begin_src emacs-lisp
+  (use-package shell
+    :hook (shell-mode . (lambda ()
+                          ;; Bind C-l to clear the shell buffer
+                          (local-set-key (kbd "C-l") 'od/clear-shell-buffer)
+                          ;; Bind C-p to previous command in history
+                          (local-set-key (kbd "C-p") 'comint-previous-input)
+                          ;; Bind C-n to next command in history
+                          (local-set-key (kbd "C-n") 'comint-next-input)))
+    :config
+    ;; Function to clear the shell buffer
+    (defun od/clear-shell-buffer ()
+      "Clear the shell buffer."
+      (interactive)
+      (let ((comint-buffer-maximum-size 0))
+        (comint-truncate-buffer))))
+#+end_src
 ** Settings
 #+begin_src emacs-lisp
   (setq-default tab-width 4)          ;; Set the default tab width to 4 spaces
