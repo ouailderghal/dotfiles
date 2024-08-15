@@ -304,3 +304,13 @@ This is my Emacs configuration written in Org mode.
     :config
     (setq display-line-numbers-type 'relative))  ;; Use relative line numbers
 #+end_src
+
+#+begin_src emacs-lisp
+  (use-package ansi-color
+    :ensure t
+    :init
+    (defun od/colorize-compilation-buffer ()
+      "Apply ANSI color codes to the compilation buffer."
+      (ansi-color-apply-on-region compilation-filter-start (point-max)))
+    :hook (compilation-filter . od/colorize-compilation-buffer))
+#+end_src
