@@ -189,7 +189,7 @@ This is my Emacs configuration written in Org mode.
     ;; Set default search method
     (setq projectile-indexing-method 'alien) ;; Use external tools for indexing (faster for large projects)
     ;; Set Projectile completion system
-    (setq projectile-completion-system 'ivy) ;; Auto-select the best completion system (like Ivy, Helm, etc.)
+    (setq projectile-completion-system 'auto) ;; Auto-select the best completion system (like Ivy, Helm, etc.)
     ;; Use a fuzzy search for file names
     (setq projectile-enable-caching t) ;; Enable caching for faster performance
     ;; Set the default projectile switch project action
