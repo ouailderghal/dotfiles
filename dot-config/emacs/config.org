@@ -246,6 +246,19 @@ This is my Emacs configuration written in Org mode.
     (setq yaml-indent-offset 2)) ;; Set YAML indent offset to 2 spaces
 #+end_src
 
+*** php-mode
+#+begin_src emacs-lisp
+  (use-package php-mode
+    :ensure t
+    :mode ("\\.php\\'" . php-mode)
+    :config
+    ;; Optional: Set the basic indentation level
+    (setq-default php-mode-coding-style 'psr2) ;; Set to PSR-2 coding style
+    (setq-default php-lineup-cascaded-calls t) ;; Line up cascaded method calls
+    (setq-default tab-width 4)                 ;; Set tab width to 4 spaces
+    (setq-default indent-tabs-mode nil))       ;; Use spaces instead of tabs
+#+end_src
+
 ** Settings
 #+begin_src emacs-lisp
   (setq-default tab-width 4)          ;; Set the default tab width to 4 spaces
