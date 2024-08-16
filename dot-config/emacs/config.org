@@ -6,8 +6,8 @@
 #+BEGIN_SRC emacs-lisp
   (require 'package)
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			   ("org" . "https://orgmode.org/elpa/")
-			   ("gnu" . "https://elpa.gnu.org/packages/")))
+               ("org" . "https://orgmode.org/elpa/")
+               ("gnu" . "https://elpa.gnu.org/packages/")))
   (package-initialize)
 
   (unless (package-installed-p 'use-package)
@@ -226,7 +226,7 @@ Some basic enhancements for the Dired file manager:
     :bind-keymap
     ("C-c p" . projectile-command-map) ;; Bind "C-c p" as the prefix for Projectile commands
     :init
-    (setq projectile-project-search-path '("~/projects")))
+    (setq projectile-project-search-path '("~/Projects")))
 
   (use-package projectile-ripgrep
     :ensure t
