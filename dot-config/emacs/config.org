@@ -21,9 +21,9 @@ This is my Emacs configuration written in Org mode.
 ** Interface
 *** Clean interface
 #+BEGIN_SRC emacs-lisp
-  (menu-bar-mode -1)
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
+  (menu-bar-mode -1) ;; Hide menu bar
+  (tool-bar-mode -1) ;; Hide tool bar
+  (scroll-bar-mode -1) ;; Hide scollbar
   (setq inhibit-startup-message t)
   (setq inhibit-startup-echo-area-message t)  ;; Suppress the echo area message
   (setq initial-scratch-message nil) ;; Clear the initial scratch buffer message
