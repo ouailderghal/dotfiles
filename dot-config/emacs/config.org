@@ -110,6 +110,22 @@ This is my Emacs configuration written in Org mode.
     (marginalia-mode))
 #+end_src
 
+** Dired
+Some basic enhancements for the Dired file manager:
+#+begin_src emacs-lisp
+  (use-package dired
+    :ensure nil
+    :commands dired dired-jump
+    :bind (("C-x C-j" . dired-jump))
+    :config
+    (setq dired-listing-switches "-alh")   ;; Human-readable sizes, show all files
+    (setq dired-dwim-target t)             ;; Guess target directory for moving/copying files
+    (setq delete-by-moving-to-trash t)     ;; Use system trash instead of deleting files directly
+    (setq dired-recursive-deletes 'always) ;; Allow recursive deletion of directories
+    (setq dired-recursive-copies 'always)  ;; Allow recursive copying of directories
+    (put 'dired-find-alternate-file 'disabled nil)) ;; Enable using 'a' to open files in same buffer
+#+end_src
+
 * Documents
 ** markdown-mode
 #+begin_src emacs-lisp
