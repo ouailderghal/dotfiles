@@ -1,11 +1,8 @@
-#+TITLE: My Emacs Configuration
+#+TITLE: Emacs Configuration
 #+AUTHOR: Ouail Derghal
 #+STARTUP: fold
 
-* My Emacs Configuration
-This is my Emacs configuration written in Org mode.
-
-** Package management
+* Package management
 #+BEGIN_SRC emacs-lisp
   (require 'package)
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -17,6 +14,22 @@ This is my Emacs configuration written in Org mode.
     (package-refresh-contents)
     (package-install 'use-package))
 #+END_SRC
+
+* Defaults
+** Config
+#+begin_src emacs-lisp
+  (defvar od/config-org-path (expand-file-name "config.org" user-emacs-directory)
+    "Path to the config.org file.")
+
+  ;; Define a function to open the config.org file
+  (defun od/open-config-org ()
+    "Open the config.org file in a new buffer."
+    (interactive)
+    (find-file od/config-org-path))
+
+  ;; Bind the function to a key combination
+  (global-set-key (kbd "C-c C-o") 'od/open-config-org)  ;; Bind C-c C-o to open the config.org file
+#+end_src
 
 ** Interface
 *** Clean interface
@@ -54,22 +67,7 @@ This is my Emacs configuration written in Org mode.
     (doom-themes-org-config))
 #+end_src
 
-** Config
-#+begin_src emacs-lisp
-  (defvar od/config-org-path (expand-file-name "config.org" user-emacs-directory)
-    "Path to the config.org file.")
-
-  ;; Define a function to open the config.org file
-  (defun od/open-config-org ()
-    "Open the config.org file in a new buffer."
-    (interactive)
-    (find-file od/config-org-path))
-
-  ;; Bind the function to a key combination
-  (global-set-key (kbd "C-c C-o") 'od/open-config-org)  ;; Bind C-c C-o to open the config.org file
-#+end_src
-
-** Ivy
+** Ivy, Vertico, Orderless and Marginalia
 #+begin_src emacs-lisp
   (use-package ivy
     :ensure t
@@ -84,7 +82,6 @@ This is my Emacs configuration written in Org mode.
     (ivy-mode 1))
 #+end_src
 
-** Vertico
 #+begin_src emacs-lisp
   (use-package vertico
     :ensure t
@@ -92,7 +89,6 @@ This is my Emacs configuration written in Org mode.
     (vertico-mode))
 #+end_src
 
-** Orderless
 #+begin_src emacs-lisp
   (use-package orderless
     :ensure t
@@ -102,7 +98,6 @@ This is my Emacs configuration written in Org mode.
 	  completion-category-overrides '((file (styles partial-completion)))))
 #+end_src
 
-** Marginalia
 #+begin_src emacs-lisp
   (use-package marginalia
     :ensure t
@@ -316,7 +311,6 @@ Some basic enhancements for the Dired file manager:
   (use-package typescript-mode
     :ensure t
     :mode ("\\.ts\\'" . typescript-mode) ;; Automatically use typescript-mode for .ts files
-    :hook (typescript-mode . lsp-deferred) ;; Optionally hook LSP mode for TypeScript support
     :config
     ;; Set basic offset for indentation
     (setq typescript-indent-level 4))
