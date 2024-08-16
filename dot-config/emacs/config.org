@@ -271,7 +271,28 @@ Some basic enhancements for the Dired file manager:
     :mode ("\\.yaml\\'" . yaml-mode)
     :mode ("\\.yml\\'" . yaml-mode)
     :config
-    (setq yaml-indent-offset 2)) ;; Set YAML indent offset to 2 spaces
+    (setq yaml-indent-offset 2) ;; Set YAML indent offset to 2 spaces
+    (add-hook 'yaml-mode-hook
+              (lambda ()
+                (ansible 1)  ;; Enable ansible-mode when in yaml-mode
+                (ansible-doc-mode 1))))  ;; Enable ansible-doc mode for YAML files
+#+end_src
+
+*** ansible-mode
+#+begin_src emacs-lisp
+  (use-package ansible
+    :ensure t
+    :hook ((yaml-mode . ansible)      ;; Automatically enable ansible-mode in YAML files
+           (ansible . ansible-auto-decrypt-encrypt))  ;; Auto-encrypt/decrypt Vault files
+    :config
+    (setq ansible::vault-password-file "~/.ansible_vault_pass"))  ;; Set vault password file
+
+  ;; Ansible-doc mode
+  (use-package ansible-doc
+    :ensure t
+    :hook (yaml-mode . ansible-doc-mode)  ;; Enable ansible-doc mode in YAML files
+    :config
+    (add-hook 'yaml-mode-hook #'ansible-doc-mode))
 #+end_src
 
 *** php-mode
