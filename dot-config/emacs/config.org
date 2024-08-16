@@ -110,7 +110,24 @@ This is my Emacs configuration written in Org mode.
     (marginalia-mode))
 #+end_src
 
-** Org
+* Documents
+** markdown-mode
+#+begin_src emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :mode (("README\\.md\\'" . gfm-mode)  ;; Use GFM mode for README.md files
+           ("\\.md\\'" . markdown-mode)
+           ("\\.markdown\\'" . markdown-mode))
+    :init
+    (setq markdown-command "pandoc") ;; Set pandoc as the backend for markdown preview
+    :config
+    ;; Additional configurations can go here
+    (setq markdown-enable-math t)    ;; Enable LaTeX math
+    (setq markdown-hide-urls nil)    ;; Don't hide URLs
+    (setq markdown-fontify-code-blocks-natively t)) ;; Fontify code blocks
+#+end_src
+
+** org-mode
 #+begin_src emacs-lisp
   ;; Install and configure org mode
   (use-package org
