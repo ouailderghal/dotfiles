@@ -29,6 +29,9 @@
 
   ;; Bind the function to a key combination
   (global-set-key (kbd "C-c C-o") 'od/open-config-org)  ;; Bind C-c C-o to open the config.org file
+
+  ;; Use 'y' and 'n' instead of 'yes' and 'no'
+  (fset 'yes-or-no-p 'y-or-n-p)
 #+end_src
 
 ** Interface
