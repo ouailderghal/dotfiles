@@ -189,6 +189,29 @@ Some basic enhancements for the Dired file manager:
 
 #+end_src
 
+** AUCTex
+#+begin_src emacs-lisp
+  ;; Install and configure AUCTeX
+  (use-package auctex
+    :ensure t
+    :defer t
+    :init
+    ;; Enable AUCTeX by default when opening LaTeX files
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq-default TeX-master nil)  ;; Prompt for master file
+    :config
+    ;; Use PDF mode by default
+    (setq TeX-PDF-mode t))
+
+
+  ;; Set up RefTeX for citations and references
+  (use-package reftex
+    :ensure t
+    :hook (LaTeX-mode . reftex-mode)
+    :config
+    (setq reftex-plug-into-AUCTeX t))
+#+end_src
 * Programming
 ** Tools
 *** Docker
