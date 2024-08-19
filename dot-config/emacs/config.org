@@ -308,6 +308,18 @@ Some basic enhancements for the Dired file manager:
     (setq lsp-ui-flycheck-enable t)
     (setq lsp-ui-peek-enable t))
 #+end_src
+
+*** company-mode
+#+begin_src emacs-lisp
+  (use-package company
+    :ensure t
+    :hook (go-mode . company-mode)  ;; Enable company-mode for Go files
+    :config
+    (setq company-tooltip-align-annotations t)  ;; Align annotations to the right
+    (setq company-idle-delay 0.2)  ;; Delay before suggestions appear
+    (setq company-minimum-prefix-length 1))  ;; Minimum prefix length for suggestions
+#+end_src
+
 ** Languages
 *** dockerfile-mode
 #+begin_src emacs-lisp
