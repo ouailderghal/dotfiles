@@ -142,7 +142,7 @@ Some basic enhancements for the Dired file manager:
     (put 'dired-find-alternate-file 'disabled nil)) ;; Enable using 'a' to open files in same buffer
 #+end_src
 
-** Windmove
+** Windmove and Windresize
 #+begin_src emacs-lisp
   (use-package windmove
     :ensure nil
@@ -151,6 +151,39 @@ Some basic enhancements for the Dired file manager:
     (global-set-key (kbd "M-<right>") 'windmove-right)
     (global-set-key (kbd "M-<up>") 'windmove-up)
     (global-set-key (kbd "M-<down>") 'windmove-down))
+#+end_src
+
+#+begin_src emacs-lisp
+  (use-package windresize
+    :ensure t
+    :bind (("C-S-<left>" . od/windresize-left)
+           ("C-S-<right>" . od/windresize-right)
+           ("C-S-<up>" . od/windresize-up)
+           ("C-S-<down>" . od/windresize-down))
+    :config
+    (defconst od/windresize-amount 5
+    "Amount by which to resize windows.")
+
+    (defun od/windresize-left ()
+      "Resize the current window to the left by `od/windresize-amount` columns."
+      (interactive)
+      (windresize-left od/windresize-amount))
+
+    (defun od/windresize-right ()
+      "Resize the current window to the right by `od/windresize-amount` columns."
+      (interactive)
+      (windresize-right od/windresize-amount))
+
+    (defun od/windresize-up ()
+      "Resize the current window upwards by `od/windresize-amount` rows."
+      (interactive)
+      (windresize-up od/windresize-amount))
+
+    (defun od/windresize-down ()
+      "Resize the current window downwards by `od/windresize-amount` rows."
+      (interactive)
+      (windresize-down od/windresize-amount)))
+
 #+end_src
 * Documents
 ** markdown-mode
