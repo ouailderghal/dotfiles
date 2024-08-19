@@ -288,6 +288,26 @@ Some basic enhancements for the Dired file manager:
     :after projectile)
 #+end_src
 
+*** lsp-mode
+#+begin_src emacs-lisp
+  (use-package lsp-mode
+    :ensure t
+    :hook (go-mode . lsp)  ;; Automatically start lsp-mode for Go files
+    :commands lsp
+    :config
+    (setq lsp-go-gopls-server-path "gopls")  ;; Path to the Go language server
+    (setq lsp-prefer-flymake nil))  ;; Prefer lsp-ui for diagnostics instead of flymake
+
+  (use-package lsp-ui
+    :ensure t
+    :after lsp-mode
+    :config
+    (setq lsp-ui-doc-enable t)
+    (setq lsp-ui-sideline-enable t)
+    (setq lsp-ui-imenu-enable t)
+    (setq lsp-ui-flycheck-enable t)
+    (setq lsp-ui-peek-enable t))
+#+end_src
 ** Languages
 *** dockerfile-mode
 #+begin_src emacs-lisp
