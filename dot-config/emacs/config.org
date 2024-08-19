@@ -32,6 +32,16 @@
 
   ;; Use 'y' and 'n' instead of 'yes' and 'no'
   (fset 'yes-or-no-p 'y-or-n-p)
+
+  ;; Disable backup files
+  (setq make-backup-files nil)
+
+  ;; Disable auto-save files
+  (setq auto-save-default nil)
+  (setq auto-save-list-file-prefix nil)
+
+  ;; Disable lockfiles
+  (setq create-lockfiles nil)
 #+end_src
 
 ** Interface
@@ -215,6 +225,7 @@ Some basic enhancements for the Dired file manager:
     :config
     (setq reftex-plug-into-AUCTeX t))
 #+end_src
+
 * Programming
 ** Tools
 *** Docker
