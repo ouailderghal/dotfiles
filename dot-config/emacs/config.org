@@ -142,7 +142,7 @@ Some basic enhancements for the Dired file manager:
     (put 'dired-find-alternate-file 'disabled nil)) ;; Enable using 'a' to open files in same buffer
 #+end_src
 
-** Windmove and Windresize
+** wind-move and wind-resize
 #+begin_src emacs-lisp
   (use-package windmove
     :ensure nil
@@ -185,6 +185,14 @@ Some basic enhancements for the Dired file manager:
       (windresize-down od/windresize-amount)))
 
 #+end_src
+** move-text
+#+begin_src emacs-lisp
+  (use-package move-text
+    :ensure t
+    :bind (("M-S-<up>" . move-text-up)
+           ("M-S-<down>" . move-text-down)))
+#+end_src
+
 * Documents
 ** markdown-mode
 #+begin_src emacs-lisp
