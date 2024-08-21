@@ -333,7 +333,8 @@ Some basic enhancements for the Dired file manager:
 #+begin_src emacs-lisp
   (use-package lsp-mode
     :ensure t
-    :hook (go-mode . lsp)  ;; Automatically start lsp-mode for Go files
+    :hook ((go-mode . lsp)
+           (python-mode . lsp-deferred))  ;; Automatically start lsp-mode for Python files
     :commands lsp
     :config
     (setq lsp-go-gopls-server-path "gopls")  ;; Path to the Go language server
@@ -348,6 +349,17 @@ Some basic enhancements for the Dired file manager:
     (setq lsp-ui-imenu-enable t)
     (setq lsp-ui-flycheck-enable t)
     (setq lsp-ui-peek-enable t))
+
+  (use-package lsp-pyright
+    :ensure t
+    :after lsp-mode
+    :hook (python-mode . (lambda ()
+                           (require 'lsp-pyright)
+                           (lsp-deferred)))  ;; Use lsp-deferred for better performance
+    :config
+    (setq lsp-pyright-disable-organize-imports nil  ;; Keep this to let Pyright organize imports
+          lsp-pyright-auto-import-completions t     ;; Enable auto-import suggestions
+          lsp-pyright-use-library-code-for-types t)) ;; Use library code for type information
 #+end_src
 
 *** company-mode
