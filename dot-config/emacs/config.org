@@ -477,6 +477,19 @@ Some basic enhancements for the Dired file manager:
     (setq typescript-indent-level 4))
 #+end_src
 
+*** plantuml-mode
+#+begin_src emacs-lisp
+  (use-package plantuml-mode
+    :ensure t
+    :mode "\\.plantuml\\'"
+    :config
+    (setq plantuml-jar-path (expand-file-name "/usr/bin/plantuml"))
+    (setq plantuml-default-exec-mode 'jar) ; or 'executable if you have the plantuml binary
+    (setq plantuml-output-type "png")
+    (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+    (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
+    :hook (plantuml-mode . company-mode)) ; Optional: Enable company-mode for auto-completion
+#+end_src
 ** Settings
 #+begin_src emacs-lisp
   (setq-default tab-width 4)          ;; Set the default tab width to 4 spaces
@@ -484,13 +497,14 @@ Some basic enhancements for the Dired file manager:
 #+end_src
 
 #+begin_src emacs-lisp
-  (use-package display-line-numbers
-    :ensure nil
-    :hook ((prog-mode . display-line-numbers-mode)
-	   (org-mode . display-line-numbers-mode)
-	   (text-mode . display-line-numbers-mode))
-    :config
-    (setq display-line-numbers-type 'relative))  ;; Use relative line numbers
+    (use-package display-line-numbers
+      :ensure nil
+      :hook ((prog-mode . display-line-numbers-mode)
+         (org-mode . display-line-numbers-mode)
+         (text-mode . display-line-numbers-mode)
+         (plantuml-mode . display-line-numbers-mode))
+      :config
+      (setq display-line-numbers-type 'relative))  ;; Use relative line numbers
 #+end_src
 
 #+begin_src emacs-lisp
