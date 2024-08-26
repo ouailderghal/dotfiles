@@ -23,22 +23,22 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 12
+size = 14
 
 [font.normal]
-family = "LiterationMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "LiterationMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "LiterationMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "LiterationMono Nerd Font Mono"
+family = "FiraMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
