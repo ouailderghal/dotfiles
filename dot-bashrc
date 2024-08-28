@@ -34,6 +34,12 @@ PATH=$PATH:"$GOBIN"
     > /dev/null 2> /dev/null && \
     eval $(opam env)
 
+# Completion
+BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
+
+[[ -d $BASH_COMPLETION_DIR ]] && \
+    source $BASH_COMPLETION_DIR/pass.bash-completion
+
 bind "set completion-ignore-case on"
 
 export PATH
