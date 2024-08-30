@@ -12,6 +12,7 @@ alias open="xdg-open"
 alias o="xdg-open"
 alias pinger="ping -c 3 archlinux.org"
 alias copy="xclip -selection c"
+alias grep="grep --color=always"
 
 # Git
 alias g="git"
