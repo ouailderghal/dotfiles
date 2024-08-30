@@ -35,10 +35,12 @@ PATH=$PATH:"$GOBIN"
     eval $(opam env)
 
 # Completion
-BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
+BASH_COMPLETION_DIR="/usr/share/bash-completion/completions"
 
 [[ -d $BASH_COMPLETION_DIR ]] && \
-    source $BASH_COMPLETION_DIR/pass.bash-completion
+    source $BASH_COMPLETION_DIR/pass && \
+    source $BASH_COMPLETION_DIR/git && \
+    source $BASH_COMPLETION_DIR/docker
 
 bind "set completion-ignore-case on"
 
