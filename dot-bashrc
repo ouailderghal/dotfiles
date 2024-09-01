@@ -36,11 +36,16 @@ PATH=$PATH:"$GOBIN"
 
 # Completion
 BASH_COMPLETION_DIR="/usr/share/bash-completion/completions"
+CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion/"
 
 [[ -d $BASH_COMPLETION_DIR ]] && \
     source $BASH_COMPLETION_DIR/pass && \
     source $BASH_COMPLETION_DIR/git && \
-    source $BASH_COMPLETION_DIR/docker
+    source $BASH_COMPLETION_DIR/docker && \
+    source $BASH_COMPLETION_DIR/ssh
+
+[[ -d $CUSTOM_BASH_COMPLETION_DIR ]] && \
+    source $CUSTOM_BASH_COMPLETION_DIR/tmux
 
 bind "set completion-ignore-case on"
 
