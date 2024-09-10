@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/themes/nightfox.toml" ]
+import = [ "~/.config/alacritty/themes/github_dark.toml" ]
 
 [env]
 TERM = "xterm-256color"
@@ -26,19 +26,19 @@ unfocused_hollow = true
 size = 12
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Hack Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack Nerd Font Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
