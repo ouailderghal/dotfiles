@@ -192,7 +192,22 @@ Some basic enhancements for the Dired file manager:
     :bind (("M-S-<up>" . move-text-up)
            ("M-S-<down>" . move-text-down)))
 #+end_src
+** evil-mode
+#+begin_src emacs-lisp
+  (use-package evil
+    :ensure t
+    :init
+    (setq evil-want-integration t) ;; Integrates with other packages like evil-collection
+    (setq evil-want-keybinding nil) ;; Let evil-collection handle keybindings
+    :config
+    (evil-mode 1))
 
+  (use-package evil-collection
+    :after evil
+    :ensure t
+    :config
+    (evil-collection-init))
+#+end_src
 * Documents
 ** markdown-mode
 #+begin_src emacs-lisp
