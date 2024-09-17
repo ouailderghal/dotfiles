@@ -490,6 +490,13 @@ Some basic enhancements for the Dired file manager:
     (add-to-list 'auto-mode-alist '("\\.plantuml\\'" . plantuml-mode))
     :hook (plantuml-mode . company-mode)) ; Optional: Enable company-mode for auto-completion
 #+end_src
+*** pkl-mode
+#+begin_src emacs-lisp
+  (use-package pkl-mode
+    :ensure t
+    :mode "\\.pkl\\'")
+
+#+end_src
 ** Settings
 #+begin_src emacs-lisp
   (setq-default tab-width 4)          ;; Set the default tab width to 4 spaces
