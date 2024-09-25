@@ -2,7 +2,9 @@
 [keybindings]
 [profiles]
   [[default]]
+    cursor_blink = False
     font = JetBrains Mono Nerd Font Mono 14
+    show_titlebar = False
     use_system_font = False
 [layouts]
   [[default]]
