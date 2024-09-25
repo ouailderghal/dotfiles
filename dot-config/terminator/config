@@ -1,4 +1,8 @@
 [global_config]
+  scroll_tabbar = True
+  inactive_color_offset = 0.7038917089678511
+  ask_before_closing = always
+  putty_paste_style_source_clipboard = True
 [keybindings]
   split_horiz = <Alt>s
   split_vert = <Alt>v
