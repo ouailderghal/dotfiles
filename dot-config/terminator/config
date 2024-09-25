@@ -2,7 +2,7 @@
 [keybindings]
 [profiles]
   [[default]]
-    font = UbuntuMono Nerd Font Mono 14
+    font = JetBrains Mono Nerd Font Mono 14
     use_system_font = False
 [layouts]
   [[default]]
