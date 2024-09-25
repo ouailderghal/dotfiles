@@ -1,5 +1,7 @@
 [global_config]
 [keybindings]
+  split_horiz = <Alt>s
+  split_vert = <Alt>v
 [profiles]
   [[default]]
     cursor_blink = False
