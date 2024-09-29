@@ -59,7 +59,7 @@
 *** Font family
 #+begin_src emacs-lisp
   (set-face-attribute 'default nil
-		      :family "UbuntuMono Nerd Font Mono"
+		      :family "JetBrainsMono Nerd Font Mono"
 		      :height 120
 		      :weight 'normal
 		      :width 'normal)
