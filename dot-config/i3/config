@@ -36,7 +36,7 @@ bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
-bindsym $mod+Control+l --release exec i3lock
+bindsym $mod+Control+l --release exec i3lock -e -c "#000000"
 
 ### Window rules.
 default_border pixel 1
