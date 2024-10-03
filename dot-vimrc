@@ -1,0 +1,20 @@
+" vi: ft=vim
+
+set nocompatible
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set number
+
+syntax enable
+filetype plugin on
+
+set ignorecase
+set smartcase
+set incsearch
+set path+=**
+set wildmenu
+set mouse=a
+colorscheme evening
+
+nnoremap <C-p> :FZF<CR>
