@@ -1,3 +1,8 @@
+# vi: set ft=bash ts=2
+#
+# ~/.bash_aliases
+#
+
 # ls
 alias ls="ls --color=auto"
 alias sl="ls"
@@ -13,6 +18,7 @@ alias o="xdg-open"
 alias pinger="ping -c 3 archlinux.org"
 alias copy="xclip -selection c"
 alias grep="grep --color=always"
+alias m="make"
 
 # Git
 alias g="git"
@@ -46,4 +52,3 @@ alias an="ansible"
 alias anp="ansible-playbook"
 alias gc="gcloud"
 
-# vi: set ft=bash ts=2
