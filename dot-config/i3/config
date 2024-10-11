@@ -2,7 +2,7 @@
 font pango:DejaVuSansM Nerd Font 10
 
 # Set apps.
-set $term st
+set $term alacritty
 set $fileManager pcmanfm
 set $browser brave
 set $browserIncognito brave --incognito
