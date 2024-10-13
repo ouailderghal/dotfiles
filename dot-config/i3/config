@@ -4,8 +4,8 @@ font pango:DejaVuSansM Nerd Font 10
 # Set apps.
 set $term alacritty
 set $fileManager pcmanfm
-set $browser brave
-set $browserIncognito brave --incognito
+set $browser firefox
+set $browserIncognito firefox --private-window
 set $appfinder xfce4-appfinder
 
 # Set startup programs.
