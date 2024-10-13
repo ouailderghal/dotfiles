@@ -1,6 +1,6 @@
 live_config_reload = true
 
-import = [ "~/.config/alacritty/themes/solarized_osaka.toml" ]
+import = [ "~/.config/alacritty/themes/gruvbox_dark.toml" ]
 
 [env]
 TERM = "xterm-256color"
