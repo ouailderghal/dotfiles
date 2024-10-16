@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
-export BROWSER="/usr/bin/brave"
+export BROWSER="/usr/bin/firefox"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
