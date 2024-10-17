@@ -6,6 +6,7 @@ export BROWSER="/usr/bin/firefox"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
+export NVM_DIR="$HOME/.config/nvm"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -34,6 +35,10 @@ PATH=$PATH:"$GOBIN"
     > /dev/null 2> /dev/null && \
     eval $(opam env)
 
+# NVM
+[[ -s "$NVM_DIR/nvm.sh" ]] && \
+    source "$NVM_DIR/nvm.sh"
+
 # Completion
 BASH_COMPLETION_DIR="/usr/share/bash-completion/completions"
 CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion/"
@@ -47,6 +52,9 @@ CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion/"
 [[ -d $CUSTOM_BASH_COMPLETION_DIR ]] && \
     source $CUSTOM_BASH_COMPLETION_DIR/tmux
     source $CUSTOM_BASH_COMPLETION_DIR/git-prompt
+
+[[ -s "$NVM_DIR/bash_completion" ]] && \
+    source "$NVM_DIR/bash_completion"
 
 bind "set completion-ignore-case on"
 
