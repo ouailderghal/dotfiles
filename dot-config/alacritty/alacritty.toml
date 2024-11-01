@@ -1,12 +1,12 @@
+[general]
 live_config_reload = true
-
-import = [ "~/.config/alacritty/themes/gruvbox_dark.toml" ]
+import = [ "~/.config/alacritty/themes/xterm.toml" ]
 
 [env]
 TERM = "xterm-256color"
 
-[shell]
-program = "/bin/bash"
+[terminal]
+shell.program = "/bin/bash"
 
 [window]
 title = "Alacritty"
@@ -94,7 +94,6 @@ mods = "Alt"
 action = "ScrollToBottom"
 key = "L"
 mods = "Alt"
-
 
 [[keyboard.bindings]]
 command = { program = "/bin/bash", args = [ "-c", "$HOME/.local/bin/spawn-alacritty-cwd" ] }
