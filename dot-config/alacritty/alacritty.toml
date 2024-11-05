@@ -26,19 +26,19 @@ unfocused_hollow = true
 size = 10
 
 [font.normal]
-family = "DejaVuSansM Nerd Font"
+family = "Mononoki Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "DejaVuSansM Nerd Font"
+family = "Mononoki Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "DejaVuSansM Nerd Font"
+family = "Mononoki Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "DejaVuSansM Nerd Font"
+family = "Mononoki Nerd Font"
 style = "Italic"
 
 [font.offset]
