@@ -1,6 +1,5 @@
 [general]
 live_config_reload = true
-import = [ "~/.config/alacritty/themes/xterm.toml" ]
 
 [env]
 TERM = "xterm-256color"
@@ -26,19 +25,19 @@ unfocused_hollow = true
 size = 10
 
 [font.normal]
-family = "Mononoki Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Mononoki Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Mononoki Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Mononoki Nerd Font"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
@@ -99,3 +98,31 @@ mods = "Alt"
 command = { program = "/bin/bash", args = [ "-c", "$HOME/.local/bin/spawn-alacritty-cwd" ] }
 key = "N"
 mods = "Control|Shift"
+
+[colors.primary]
+background = "0x181818"
+foreground = "0xe4e4ef"
+
+[colors.normal]
+black = "0x181818"
+red = "0xe25a45"
+green = "0x00a600"
+yellow = "0xfec14c"
+blue = "0x5c5cff"
+magenta = "0xea6ea8"
+cyan = "0x00cfcf"
+white = "0xe4e4ef"
+
+[colors.bright]
+black = "0x4d4d4d"
+red = "0xff6c60"
+green = "0x00ff00"
+yellow =  "0xffffb6"
+blue = "0x96cbfe"
+magenta = "0xff73fd"
+cyan = "0xc6c5fe"
+white = "0xffffff"
+
+[colors.cursor]
+cursor = "#cd0000"
+text = "0x181818"
