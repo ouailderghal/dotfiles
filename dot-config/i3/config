@@ -55,9 +55,9 @@ assign [class="^Inkscape$"] 7
 assign [class="^Gimp-2.10$"] 7
 assign [class="^MyPaint$"] 7
 assign [class="^draw.io$"] 7
-assign [class="^discord$"] 9
-assign [class="^TelegramDesktop$"] 9
-assign [class="^Signal$"] 9
+assign [class="^discord$"] 10
+assign [class="^TelegramDesktop$"] 10
+assign [class="^Signal$"] 10
 
 ### Window management binding.
 
