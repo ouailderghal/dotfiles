@@ -49,6 +49,7 @@ for_window [class="^Lxappearance$"] floating enable
 for_window [class="^copyq$"] floating enable
 for_window [class="^Arandr$"] floating enable
 for_window [class="^floating_term$"] floating enable
+for_window [class="^Ristretto$"] floating enable
 
 assign [class="^Zotero$"] 5
 assign [class="^Inkscape$"] 7
