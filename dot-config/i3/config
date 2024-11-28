@@ -56,6 +56,7 @@ assign [class="^Inkscape$"] 7
 assign [class="^Gimp-2.10$"] 7
 assign [class="^MyPaint$"] 7
 assign [class="^draw.io$"] 7
+assign [class="^obs$"] 9
 assign [class="^discord$"] 10
 assign [class="^TelegramDesktop$"] 10
 assign [class="^Signal$"] 10
@@ -146,7 +147,7 @@ workspace $ws5 output $monitorLeft
 workspace $ws6 output $monitorLeft
 workspace $ws7 output $monitorLeft
 workspace $ws8 output $monitorLeft
-workspace $ws9 output $monitorLeft
+workspace $ws9 output $monitorRight
 workspace $ws10 output $monitorRight
 
 # switch to workspace.
