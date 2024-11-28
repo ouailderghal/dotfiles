@@ -200,9 +200,26 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 
+# Window borders
+client.focused          #2f343f #5294e2 #FFFFFF #5294e2
+client.focused_inactive #2f343f #3b414d #FFFFFF #3b414d
+client.unfocused        #2f343f #3b414d #FFFFFF #3b414d
+client.urgent           #2f343f #e34850 #FFFFFF #e34850
+
+# Bar config
 bar {
     status_command i3status
     position bottom
+    colors {
+        background #2f343f
+        statusline #d3dae3
+        separator  #5294e2
+
+        focused_workspace  #5294e2 #5294e2 #d3dae3
+        active_workspace   #3b414d #3b414d #d3dae3
+        inactive_workspace #3b414d #3b414d #d3dae3
+        urgent_workspace   #e34850 #e34850 #d3dae3
+    }
 }
 
 bindsym $mod+r mode "resize"
