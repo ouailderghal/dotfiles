@@ -6,7 +6,8 @@ set $term kitty
 set $fileManager pcmanfm
 set $browser firefox
 set $browserIncognito firefox --private-window
-set $appfinder xfce4-appfinder
+set $appFinder rofi -theme Arc-Dark -show-icons -font "FiraCode Nerd Font 12" -show drun
+set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "FiraCode Nerd Font 12" -show window
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
@@ -32,7 +33,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
-bindsym $mod+Shift+d exec $appfinder
+bindsym $mod+Shift+d exec $appFinder
+bindsym Control+Tab exec $windowSwitcher
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
