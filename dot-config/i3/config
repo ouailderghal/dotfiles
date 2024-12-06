@@ -54,6 +54,7 @@ for_window [class="^floating_term$"] floating enable
 for_window [class="^Ristretto$"] floating enable
 
 assign [class="^Zotero$"] 5
+assign [class="^org.jabref.gui.JabRefGUI$"] 5
 assign [class="^Inkscape$"] 7
 assign [class="^Gimp-2.10$"] 7
 assign [class="^MyPaint$"] 7
