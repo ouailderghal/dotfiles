@@ -22,7 +22,7 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 10
+size = 8
 
 [font.normal]
 family = "FiraCode Nerd Font Mono"
@@ -100,28 +100,28 @@ key = "N"
 mods = "Control|Shift"
 
 [colors.primary]
-background = "0x181818"
-foreground = "0xe4e4ef"
+background = "#000000"
+foreground = "#ffffff"
 
 [colors.normal]
-black = "0x181818"
-red = "0xe25a45"
-green = "0x00a600"
-yellow = "0xfec14c"
-blue = "0x5c5cff"
-magenta = "0xea6ea8"
-cyan = "0x00cfcf"
-white = "0xe4e4ef"
+black   = "#000000"
+red     = "#cd0000"
+green   = "#00cd00"
+yellow  = "#cdcd00"
+blue    = "#0000ee"
+magenta = "#cd00cd"
+cyan    = "#00cdcd"
+white   = "#e5e5e5"
 
 [colors.bright]
-black = "0x4d4d4d"
-red = "0xff6c60"
-green = "0x00ff00"
-yellow =  "0xffffb6"
-blue = "0x96cbfe"
-magenta = "0xff73fd"
-cyan = "0xc6c5fe"
-white = "0xffffff"
+black   = "#7f7f7f"
+red     = "#ff0000"
+green   = "#00ff00"
+yellow  = "#ffff00"
+blue    = "#5c5cff"
+magenta = "#ff00ff"
+cyan    = "#00ffff"
+white   = "#ffffff"
 
 [colors.cursor]
 cursor = "#cd0000"
