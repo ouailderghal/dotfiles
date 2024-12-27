@@ -107,7 +107,7 @@
 (defun od/clear-shell-buffer ()
   "Clear the current shell buffer."
   (interactive)
-  (comint-clear-buffer)
+  (comint-clear-buffer))
 
 ;; Custom Bindings
 (global-set-key (kbd "C-c d") 'od/duplicate-line)
