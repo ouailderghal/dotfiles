@@ -28,7 +28,7 @@
 ;; Appearance
 (set-face-attribute 'default nil
  :family "FiraMono Nerd Font Mono"
- :height 120)
+ :height 130)
 
 (use-package doom-themes
   :ensure t
