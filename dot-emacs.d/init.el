@@ -120,6 +120,10 @@
 (use-package indent-guide
   :ensure t)
 
+;; compile-mode
+(require 'ansi-color)
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
+
 ;; go-mode
 (use-package go-mode
   :ensure t)
