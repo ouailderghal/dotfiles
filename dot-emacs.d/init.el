@@ -25,8 +25,7 @@
 (global-hl-line-mode 1)
 
 ;; Appearance
-(set-face-attribute
- 'default nil
+(set-face-attribute 'default nil
  :family "FiraMono Nerd Font Mono"
  :height 120)
 
@@ -123,9 +122,15 @@
 ;; markdown-mode
 (use-package markdown-mode
   :ensure t
-  :mode ("\\.md\\'" . markdown-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init
+  (setq markdown-command "pandoc")
   :config
-  (setq markdown-command "pandoc"))
+  (setq markdown-enable-math t)
+  (setq markdown-hide-urls nil)
+  (setq markdown-fontify-code-blocks-natively t))
 
 ;; pkl-mode
 (use-package pkl-mode
@@ -164,3 +169,17 @@
 ;; Custom Bindings
 (global-set-key (kbd "C-c d") 'od/duplicate-line)
 (global-set-key (kbd "M-l") 'od/clear-shell-buffer)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(projectile-ripgrep projectile pkl-mode plantuml-mode yaml-mode vertico orderless markdown-mode marginalia magit ivy gruvbox-theme go-mode dockerfile-mode company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
