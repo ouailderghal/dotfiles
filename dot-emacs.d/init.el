@@ -1,3 +1,13 @@
+;; Repositories
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+    (package-install 'use-package))
+
 ;; Global Settings
 (setq inhibit-startup-screen t)
 (tool-bar-mode 0)
