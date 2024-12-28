@@ -34,7 +34,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
 bindsym $mod+Shift+d exec $appFinder
-bindsym Control+Tab exec $windowSwitcher
+bindsym Mod1+Tab exec $windowSwitcher
 bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
