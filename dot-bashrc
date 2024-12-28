@@ -54,7 +54,5 @@ CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/tmux" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/tmux"
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/git-prompt" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/git-prompt"
 
-bind "set completion-ignore-case on"
-
 export PATH
 export PS1
