@@ -10,8 +10,17 @@
 
 ;; Global Settings
 (setq inhibit-startup-screen t)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq auto-save-list-file-prefix nil)
+(setq create-lockfiles nil)
+(setq inhibit-startup-echo-area-message t)
+(setq initial-scratch-message nil)
+(fset 'yes-or-no-p 'y-or-n-p)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
+(scroll-bar-mode 0)
+(blink-cursor-mode 0)
 (global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
 
