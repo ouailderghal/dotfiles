@@ -93,6 +93,14 @@
   :ensure t
   :mode ("Dockerfile\\'" . dockerfile-mode))
 
+;; yaml-mode
+(use-package yaml-mode
+  :ensure t
+  :mode ("\\.yaml``'" . yaml-mode)
+  :mode ("\\.yml``'" . yaml-mode)
+  :config
+  (setq yaml-indent-offset 2))
+
 ;; markdown-mode
 (use-package markdown-mode
   :ensure t
