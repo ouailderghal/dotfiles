@@ -143,7 +143,8 @@
   :ensure nil
   :config
   (setq treesit-font-lock-level 4)
-  (dolist (mode '((go-mode . go-ts-mode)))
+  (dolist (mode '((go-mode . go-ts-mode)
+                  (python-mode . python-ts-mode)))
     (add-to-list 'major-mode-remap-alist mode)))
 
 (use-package eglot

@@ -3,6 +3,7 @@
 TREESIT_GO_URL="https://github.com/tree-sitter/tree-sitter-go"
 TREESIT_GOMOD_URL="https://github.com/camdencheek/tree-sitter-go-mod"
 TREESIT_BASH_URL="https://github.com/tree-sitter/tree-sitter-bash"
+TREESIT_PYTHON_URL="https://github.com/tree-sitter/tree-sitter-python"
 
 build_treesit_module() {
     local repo_url=$1
@@ -23,3 +24,4 @@ build_treesit_module() {
 build_treesit_module "$TREESIT_GO_URL" "v0.23.4"
 build_treesit_module "$TREESIT_GOMOD_URL" "v1.1.0"
 build_treesit_module "$TREESIT_BASH_URL" "v0.23.3"
+build_treesit_module "$TREESIT_PYTHON_URL" "v0.23.2"
