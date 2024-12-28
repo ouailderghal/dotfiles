@@ -17,6 +17,8 @@
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
 (setq vc-follow-symlinks t)
+(setq compilation-environment '("TERM=xterm-256color"))
+(setq compilation-scroll-output 'first-error)
 (fset 'yes-or-no-p 'y-or-n-p)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
