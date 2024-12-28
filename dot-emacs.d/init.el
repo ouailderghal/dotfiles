@@ -16,6 +16,7 @@
 (setq create-lockfiles nil)
 (setq inhibit-startup-echo-area-message t)
 (setq initial-scratch-message nil)
+(setq vc-follow-symlinks t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
