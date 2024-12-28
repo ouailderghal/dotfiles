@@ -100,6 +100,11 @@
   :config
   (setq markdown-command "pandoc"))
 
+;; pkl-mode
+(use-package pkl-mode
+  :ensure t
+  :mode "\\.pkl\\'")
+
 ;; Treesitter
 (setq treesit-extra-load-path '("/usr/local/lib"))
 (use-package treesit
