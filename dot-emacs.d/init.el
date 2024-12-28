@@ -51,6 +51,26 @@
   :bind (("C-x g" . magit-status)
 	 ("C-x M-g" . magit-dispach)))
 
+;; Projectile
+(use-package projectile
+  :ensure t
+  :bind
+  ("C-c p" . projectile-command-map)
+  :config
+  (projectile-mode +1)
+  (setq projectile-cache-file (expand-file-name "projectile.cache" user-emacs-directory))
+  (setq projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" user-emacs-directory))
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-completion-system 'auto)
+  (setq projectile-enable-caching t)
+  (setq projectile-switch-project-action 'projectile-dired)
+  :init
+  (setq projectile-project-search-path '("~/Projects")))
+
+(use-package projectile-ripgrep
+  :ensure t
+    :after projectile)
+
 ;; Completion
 (use-package company
   :ensure t
