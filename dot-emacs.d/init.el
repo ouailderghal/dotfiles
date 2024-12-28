@@ -93,7 +93,7 @@
 
 (use-package projectile-ripgrep
   :ensure t
-    :after projectile)
+  :after projectile)
 
 ;; Completion
 (use-package company
@@ -156,6 +156,16 @@
 
 (use-package eglot
   :ensure t
+  :bind
+  (("C-c r" . eglot-rename)
+   ("C-c d" . eglot-find-declaration)
+   ("C-c f" . eglot-format)
+   ("C-c a" . eglot-code-actions)
+   ("C-c e" . eglot-show-diagnostics)
+   ("C-c h" . eldoc)
+   ("C-c g" . xref-find-definitions)
+   ("C-c b" . xref-go-back)
+   ("C-c r" . xref-find-references))
   :config
   (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
   (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
