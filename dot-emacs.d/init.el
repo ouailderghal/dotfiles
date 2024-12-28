@@ -29,10 +29,14 @@
  :family "FiraMono Nerd Font Mono"
  :height 120)
 
-(use-package gruvbox-theme
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'gruvbox-dark-hard t))
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-gruvbox t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-org-config))
 
 ;; Minibuffer Completion
 (use-package ivy
@@ -153,7 +157,7 @@
   :config
   (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
   (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
-  (add-to-list 'eglot-server-programs '(sh-mode . ("bash-language-server" "start"))
+  (add-to-list 'eglot-server-programs '(sh-mode . ("bash-language-server" "start")))
   (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
