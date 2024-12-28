@@ -2,7 +2,7 @@
 font pango:FiraCode Nerd Font 9
 
 # Set apps.
-set $term alacritty
+set $term kitty
 set $fileManager pcmanfm
 set $browser firefox
 set $browserIncognito firefox --private-window
