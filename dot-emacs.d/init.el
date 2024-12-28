@@ -36,7 +36,9 @@
         doom-themes-enable-italic t)
   (load-theme 'doom-gruvbox t)
   (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
+  (doom-themes-org-config)
+  (custom-set-faces
+   '(cursor ((t (:background "red"))))))
 
 ;; Minibuffer Completion
 (use-package ivy
