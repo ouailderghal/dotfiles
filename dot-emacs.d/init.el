@@ -150,6 +150,32 @@
   (setq markdown-hide-urls nil)
   (setq markdown-fontify-code-blocks-natively t))
 
+;; org-mode
+(use-package org
+  :ensure t
+  :bind (("C-c a" . org-agenda)
+         ("C-c c" . org-capture)
+         ("C-c l" . org-store-link))
+  :config
+  (setq org-log-done 'time)
+  (setq org-hide-leading-stars t)
+  (setq org-startup-indented t)
+  (setq org-pretty-entities t)
+  (setq org-ellipsis "⤵" )
+  (setq org-hide-emphasis-markers t)
+  (setq org-src-fontify-natively t)
+  (setq org-agenda-files '("~/org/agenda.org"))
+
+  (custom-set-faces
+   '(org-level-1 ((t (:inherit outline-1 :weight bold :height 1.4))))
+   '(org-level-2 ((t (:inherit outline-2 :weight bold :height 1.3))))
+   '(org-level-3 ((t (:inherit outline-3 :weight bold :height 1.2))))
+   '(org-level-4 ((t (:inherit outline-4 :weight bold :height 1.1))))
+   '(org-level-5 ((t (:inherit outline-5 :weight bold :height 1.05))))
+   '(org-level-6 ((t (:inherit outline-6 :weight bold :height 1.0))))
+   '(org-level-7 ((t (:inherit outline-7 :weight bold :height 1.0))))
+   '(org-level-8 ((t (:inherit outline-8 :weight bold :height 1.0))))))
+
 ;; pkl-mode
 (use-package pkl-mode
   :ensure t
