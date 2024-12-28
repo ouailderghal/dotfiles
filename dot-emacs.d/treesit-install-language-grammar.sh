@@ -4,11 +4,13 @@ TREESIT_GO_URL="https://github.com/tree-sitter/tree-sitter-go"
 TREESIT_GOMOD_URL="https://github.com/camdencheek/tree-sitter-go-mod"
 TREESIT_BASH_URL="https://github.com/tree-sitter/tree-sitter-bash"
 TREESIT_PYTHON_URL="https://github.com/tree-sitter/tree-sitter-python"
+TREESIT_C_URL="https://github.com/tree-sitter/tree-sitter-c"
+TREESIT_CPP_URL="https://github.com/tree-sitter/tree-sitter-cpp"
 
 build_treesit_module() {
-    local repo_url=$1
-    local repo_name=$(echo "$repo_url" | sed 's|.*/||')
-    local branch=$2
+    local repo_url="$1"
+    local repo_name="${repo_url//\//_}"
+    local branch="$2"
 
     echo "[INFO] Cloning $repo_url"
     if [[ ! -d $repo_name ]]; then
@@ -25,3 +27,5 @@ build_treesit_module "$TREESIT_GO_URL" "v0.23.4"
 build_treesit_module "$TREESIT_GOMOD_URL" "v1.1.0"
 build_treesit_module "$TREESIT_BASH_URL" "v0.23.3"
 build_treesit_module "$TREESIT_PYTHON_URL" "v0.23.2"
+build_treesit_module "$TREESIT_C_URL" "v0.23.4"
+build_treesit_module "$TREESIT_CPP_URL" "v0.23.4"
