@@ -151,7 +151,9 @@
   :ensure t
   :config
   (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-  (add-hook 'go-mode-hook 'eglot-ensure))
+  (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
+  (add-hook 'go-mode-hook 'eglot-ensure)
+  (add-hook 'python-mode-hook 'eglot-ensure))
 
 ;; Custom Functions
 (defun od/duplicate-line()
