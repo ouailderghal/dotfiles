@@ -1,0 +1,13 @@
+# ~/.config/papis/config
+# vim: ft=config
+
+[settings]
+opentool = evince
+default-library = papers
+picktool = fzf
+file-browser = thunar
+
+[papers]
+dir = ~/Documents/papers/
+notes-name = notes_{doc[ref]}.md
+opentool = evince
