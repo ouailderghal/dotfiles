@@ -116,6 +116,26 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+;; Evil
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
+
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
 ;; Indent Guide
 (use-package indent-guide
   :ensure t)
@@ -214,12 +234,12 @@
    ("C-c b" . xref-go-back)
    ("C-c r" . xref-find-references))
   :config
-  (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-  (add-to-list 'eglot-server-programs '(python-mode . ("pyright-langserver" "--stdio")))
-  (add-to-list 'eglot-server-programs '(sh-mode . ("bash-language-server" "start")))
-  (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
-  (add-to-list 'eglot-server-programs '(c-mode . ("clangd")))
-  (add-to-list 'eglot-server-programs '(cpp-mode . ("clangd")))
+  (add-to-list 'eglot-server-programs '(go-ts-mode . ("gopls")))
+  (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
+  (add-to-list 'eglot-server-programs '(dockerfile-ts-mode . ("docker-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(c-ts-mode . ("clangd")))
+  (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
 
@@ -249,7 +269,7 @@
  '(custom-safe-themes
    '("72ed8b6bffe0bfa8d097810649fd57d2b598deef47c992920aef8b5d9599eefe" "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7" "19a2c0b92a6aa1580f1be2deb7b8a8e3a4857b6c6ccf522d00547878837267e7" "f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd" "4ade6b630ba8cbab10703b27fd05bb43aaf8a3e5ba8c2dc1ea4a2de5f8d45882" "2b20b4633721cc23869499012a69894293d49e147feeb833663fdc968f240873" "f5f80dd6588e59cfc3ce2f11568ff8296717a938edd448a947f9823a4e282b66" "c8c4baac2988652a760554e0e7ce11a0fe0f8468736be2b79355c9d9cc14b751" "48042425e84cd92184837e01d0b4fe9f912d875c43021c3bcb7eeb51f1be5710" default))
  '(package-selected-packages
-   '(php-mode indent-guide projectile-ripgrep projectile pkl-mode plantuml-mode yaml-mode vertico orderless markdown-mode marginalia magit ivy gruvbox-theme go-mode dockerfile-mode company)))
+   '(evil-surround evil-collection evil-mode evil php-mode indent-guide projectile-ripgrep projectile pkl-mode plantuml-mode yaml-mode vertico orderless markdown-mode marginalia magit ivy gruvbox-theme go-mode dockerfile-mode company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
