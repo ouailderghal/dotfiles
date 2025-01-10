@@ -233,7 +233,7 @@
   (add-to-list 'eglot-server-programs '(go-ts-mode . ("gopls")))
   (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
-  (add-to-list 'eglot-server-programs '(dockerfile-ts-mode . ("docker-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(c-ts-mode . ("clangd")))
   (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
   (add-hook 'go-mode-hook 'eglot-ensure)
