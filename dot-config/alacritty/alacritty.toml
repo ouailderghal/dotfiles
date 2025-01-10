@@ -22,22 +22,22 @@ style = "Block"
 unfocused_hollow = true
 
 [font]
-size = 8
+size = 10
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "DejaVuSansM Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "DejaVuSansM Nerd Font Mono"
 style = "Extra Bold"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font Mono"
+family = "DejaVuSansM Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
+family = "DejaVuSansM Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
