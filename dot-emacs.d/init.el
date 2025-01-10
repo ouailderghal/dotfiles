@@ -1,5 +1,6 @@
 ;; Repositories
 (require 'package)
+
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
 			 ("gnu" . "https://elpa.gnu.org/packages/")))
@@ -32,17 +33,12 @@
  :family "DejaVuSansM Nerd Font Mono"
  :height 110)
 
-(use-package gruvbox-theme
-  :ensure t
-  :config
-  (load-theme 'gruvbox-dark-hard t))
-
 (use-package doom-themes
   :ensure t
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  ; (load-theme 'doom-ir-black t)
+  (load-theme 'doom-1337 t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
   (custom-set-faces
