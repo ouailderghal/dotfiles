@@ -222,6 +222,7 @@
   (dolist (mode '((go-mode . go-ts-mode)
                   (python-mode . python-ts-mode)
                   (php-mode . php-ts-mode)
+                  (javascript-mode . js-ts-mode)
                   (json-mode . json-ts-mode)
 		  (sh-mode . bash-ts-mode)))
     (add-to-list 'major-mode-remap-alist mode)))
