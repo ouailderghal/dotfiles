@@ -29,8 +29,8 @@
 
 ;; Appearance
 (set-face-attribute 'default nil
- :family "FiraMono Nerd Font Mono"
- :height 130)
+ :family "DejaVuSansM Nerd Font Mono"
+ :height 110)
 
 (use-package gruvbox-theme
   :ensure t
