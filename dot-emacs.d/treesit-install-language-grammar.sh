@@ -7,6 +7,7 @@ TREESIT_PYTHON_URL="https://github.com/tree-sitter/tree-sitter-python"
 TREESIT_C_URL="https://github.com/tree-sitter/tree-sitter-c"
 TREESIT_CPP_URL="https://github.com/tree-sitter/tree-sitter-cpp"
 TREESIT_JS_URL="https://github.com/tree-sitter/tree-sitter-javascript"
+TREESIT_PHP_URL="https://github.com/tree-sitter/tree-sitter-php"
 
 build_treesit_module() {
     local repo_url="$1"
@@ -31,3 +32,4 @@ build_treesit_module "$TREESIT_PYTHON_URL" "v0.23.2"
 build_treesit_module "$TREESIT_C_URL" "v0.23.4"
 build_treesit_module "$TREESIT_CPP_URL" "v0.23.4"
 build_treesit_module "$TREESIT_JS_URL" "v0.23.1"
+build_treesit_module "$TREESIT_PHP_URL" "v0.23.11"
