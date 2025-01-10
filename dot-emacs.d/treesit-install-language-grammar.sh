@@ -6,10 +6,11 @@ TREESIT_BASH_URL="https://github.com/tree-sitter/tree-sitter-bash"
 TREESIT_PYTHON_URL="https://github.com/tree-sitter/tree-sitter-python"
 TREESIT_C_URL="https://github.com/tree-sitter/tree-sitter-c"
 TREESIT_CPP_URL="https://github.com/tree-sitter/tree-sitter-cpp"
+TREESIT_JS_URL="https://github.com/tree-sitter/tree-sitter-javascript"
 
 build_treesit_module() {
     local repo_url="$1"
-    local repo_name="${repo_url//\//_}"
+    local repo_name="$(echo "$repo_url" | sed 's|.*/||')"
     local branch="$2"
 
     echo "[INFO] Cloning $repo_url"
@@ -29,3 +30,4 @@ build_treesit_module "$TREESIT_BASH_URL" "v0.23.3"
 build_treesit_module "$TREESIT_PYTHON_URL" "v0.23.2"
 build_treesit_module "$TREESIT_C_URL" "v0.23.4"
 build_treesit_module "$TREESIT_CPP_URL" "v0.23.4"
+build_treesit_module "$TREESIT_JS_URL" "v0.23.1"
