@@ -169,6 +169,7 @@
 
 ;; yaml-mode
 (use-package yaml-mode
+  :ensure t
   :mode ("\\.yaml\\'" . yaml-mode)
   :mode ("\\.yml\\'" . yaml-mode)
   :config
@@ -178,9 +179,9 @@
 (use-package ansible
   :ensure t
   :hook ((yaml-mode . (lambda ()
-                        (when (or (string-match "\\.ansible\\.yaml\\'" buffer-file-name)
-                                  (string-match "\\.ansible\\.yml\\'" buffer-file-name))
-                          (ansible-mode))))))
+			(when (or (string-match "\\.ansible\\.yaml\\'" buffer-file-name)
+				  (string-match "\\.ansible\\.yml\\'" buffer-file-name))
+			  (ansible-mode))))))
 
 ;; Terraform
 (use-package terraform-mode
