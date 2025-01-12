@@ -287,8 +287,12 @@
   (comint-clear-buffer))
 
 ;; Custom Bindings
+(use-package shell
+  :ensure nil
+  :bind (:map shell-mode-map
+	      ("M-l" . od/clear-shell-buffer)))
+
 (global-set-key (kbd "C-c d") 'od/duplicate-line)
-(global-set-key (kbd "M-l") 'od/clear-shell-buffer)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
