@@ -282,15 +282,6 @@
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
 
-;; Custom Functions
-(defun od/duplicate-line()
-  "Duplicate the current line."
-  (interactive)
-  (let ((current-line (buffer-substring (line-beginning-position) (line-end-position))))
-    (end-of-line)
-    (newline)
-    (insert current-line)))
-
 ;; Custom Bindings
 (use-package shell
   :ensure nil
@@ -301,5 +292,3 @@
   :ensure nil
   :bind (:map eshell-mode-map
 	      ("M-l" . eshell/clear)))
-
-(global-set-key (kbd "C-c d") 'od/duplicate-line)
