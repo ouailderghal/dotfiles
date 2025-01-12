@@ -9,5 +9,5 @@ file-browser = thunar
 
 [papers]
 dir = ~/Documents/papers/
-notes-name = notes_{doc[ref]}.md
+notes-name = notes_{doc[ref]}.org
 opentool = evince
