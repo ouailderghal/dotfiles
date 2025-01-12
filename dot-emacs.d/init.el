@@ -281,16 +281,11 @@
     (newline)
     (insert current-line)))
 
-(defun od/clear-shell-buffer ()
-  "Clear the current shell buffer."
-  (interactive)
-  (comint-clear-buffer))
-
 ;; Custom Bindings
 (use-package shell
   :ensure nil
   :bind (:map shell-mode-map
-	      ("M-l" . od/clear-shell-buffer)))
+	      ("M-l" . comint-clear-buffer)))
 
 (use-package eshell
   :ensure nil
