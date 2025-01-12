@@ -292,6 +292,11 @@
   :bind (:map shell-mode-map
 	      ("M-l" . od/clear-shell-buffer)))
 
+(use-package eshell
+  :ensure nil
+  :bind (:map eshell-mode-map
+	      ("M-l" . eshell/clear)))
+
 (global-set-key (kbd "C-c d") 'od/duplicate-line)
 
 (custom-set-variables
