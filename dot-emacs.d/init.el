@@ -126,8 +126,9 @@
   (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
-  (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-  (define-key evil-normal-state-map (kbd "C-d") 'evil-scroll-down))
+  (evil-define-key 'normal 'global (kbd "C-u") 'evil-scroll-up)
+  (evil-define-key 'normal 'global (kbd "C-d") 'evil-scroll-down)
+  (evil-define-key 'normal 'global (kbd "g c") 'comment-or-uncomment-region))
 
 (use-package evil-collection
   :after evil
