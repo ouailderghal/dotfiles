@@ -213,11 +213,15 @@
 ;; org-mode
 (use-package org
   :ensure t
-  :hook (org-mode . visual-line-mode)
+  :hook ((org-mode . visual-line-mode)
+	 (org-mode . flyspell-mode))
   :bind (("C-c a" . org-agenda)
          ("C-c c" . org-capture)
          ("C-c l" . org-store-link))
   :config
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "en_US")
+  (setq ispell-change-dictionary "en_US")
   (setq org-log-done 'time)
   (setq org-hide-leading-stars t)
   (setq org-startup-indented t)
