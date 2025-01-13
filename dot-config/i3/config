@@ -8,6 +8,7 @@ set $browser firefox
 set $browserIncognito firefox --private-window
 set $appFinder rofi -theme Arc-Dark -show-icons -font "FiraCode Nerd Font 12" -show drun
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "FiraCode Nerd Font 12" -show window
+set $emacs /usr/bin/emacs
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
@@ -30,6 +31,7 @@ tiling_drag modifier titlebar
 
 ### Program bindings.
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $emacs
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
