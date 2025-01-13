@@ -167,6 +167,11 @@
   :ensure t
   :mode ("Dockerfile\\'" . dockerfile-mode))
 
+;; docker.el
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+
 ;; yaml-mode
 (use-package yaml-mode
   :ensure t
