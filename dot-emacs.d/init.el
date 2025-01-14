@@ -115,13 +115,15 @@
 (use-package evil
   :ensure t
   :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
+  (setq evil-want-integration t
+	evil-want-keybinding nil)
   :config
   (evil-mode 1)
+  (evil-set-leader nil (kbd "SPC"))
   (evil-define-key 'normal 'global (kbd "C-u") 'evil-scroll-up)
   (evil-define-key 'normal 'global (kbd "C-d") 'evil-scroll-down)
-  (evil-define-key 'normal 'global (kbd "g c") 'comment-or-uncomment-region))
+  (evil-define-key 'normal 'global (kbd "g c") 'comment-or-uncomment-region)
+  (evil-define-key 'normal 'normal (kbd "<leader>g") 'magit-status))
 
 (use-package evil-collection
   :after evil
