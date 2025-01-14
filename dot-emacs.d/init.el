@@ -113,6 +113,7 @@
 
 ;; Evil
 (use-package evil
+  :if nil
   :ensure t
   :init
   (setq evil-want-integration t
