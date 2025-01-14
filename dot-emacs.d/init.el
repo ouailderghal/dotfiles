@@ -39,11 +39,26 @@
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  (load-theme 'doom-1337 t)
+  ;; (load-theme 'doom-monokai-pro t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
+
+(use-package modus-themes
+  :ensure t
+  :config
+  (setq modus-themes-italic-constructs t
+	modus-themes-bold-constructs nil
+	modus-themes-region '(bg-only)
+	modus-themes-scale-headings t
+	modus-themes-variable-pitch-ui nil
+	modus-themes-completions
+	'((matches . (extrabold background intense))
+	  (selection . (semibold accented intense))
+	  (popup . (accented))))
+  (load-theme 'modus-vivendi-deuteranopia t))
+
 
 ;; Minibuffer Completion
 (use-package ivy
