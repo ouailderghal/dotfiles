@@ -22,7 +22,7 @@
       create-lockfiles nil)
 
 (setq compilation-environment '("TERM=xterm-256color")
-      compilation-scroll-output 'first-error))
+      compilation-scroll-output 'first-error)
 
 (setq vc-follow-symlinks t)
 
@@ -64,6 +64,11 @@
 	  (popup . (accented))))
   (load-theme 'modus-vivendi-deuteranopia t))
 
+;; dired
+(use-package dired
+  :ensure nil
+  :bind (:map dired-mode-map
+	      ("C-c C-e" . wdired-change-to-wdired-mode)))
 
 ;; Minibuffer Completion
 (use-package ido
