@@ -1,3 +1,0 @@
-[submodule "dot-emacs.d/elisp/papis.el"]
-	path = dot-emacs.d/elisp/papis.el
-	url = https://github.com/papis/papis.el

@@ -78,11 +78,6 @@
   :bind (("C-x g" . magit-status)
 	 ("C-x M-g" . magit-dispach)))
 
-;; Papis
-(use-package f :ensure t)
-(add-to-list 'load-path "~/.emacs.d/elisp/papis.el")
-(require 'papis)
-
 ;; Projectile
 (use-package projectile
   :ensure t
