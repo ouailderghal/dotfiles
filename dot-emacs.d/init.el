@@ -61,33 +61,16 @@
 
 
 ;; Minibuffer Completion
-(use-package ivy
-  :ensure t
-  :diminish
-  :bind (("C-s" . isearch-forward)
-	 :map ivy-minibuffer-map
-	 ("TAB" . ivy-alt-done)
-	 ("C-l" . ivy-alt-done)
-	 ("C-j" . ivy-next-line)
-	 ("C-k" . ivy-previous-line))
+(use-package ido
+  :ensure nil
   :config
-  (ivy-mode 1))
+  (ido-mode 1))
 
-(use-package vertico
+(use-package smex
   :ensure t
-  :init (vertico-mode))
-
-(use-package orderless
-  :ensure t
-  :config
-  (setq completion-styles '(orderless)
-	completion-category-defaults nil
-	completion-category-overrides '((file (styles partial-completion)))))
-
-(use-package marginalia
-  :ensure t
-  :init
-  (marginalia-mode))
+  :bind
+  (("M-x" . smex)
+   ("M-X" . smex-major-mode-commands)))
 
 ;; Magit
 (use-package magit
