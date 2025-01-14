@@ -302,3 +302,5 @@
   :ensure nil
   :bind (:map eshell-mode-map
 	      ("M-l" . eshell/clear)))
+
+(load-file "~/.emacs.d/elisp/mail.el") 
