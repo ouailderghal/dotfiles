@@ -132,6 +132,7 @@
   (evil-define-key 'normal 'normal (kbd "<leader>g") 'magit-status))
 
 (use-package evil-collection
+  :if nil
   :after evil
   :ensure t
   :config
