@@ -11,16 +11,21 @@
 
 ;; Global Settings
 (setq custom-file "~/.emacs.d/custom.el")
-(setq inhibit-startup-screen t)
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq auto-save-list-file-prefix nil)
-(setq create-lockfiles nil)
-(setq inhibit-startup-echo-area-message t)
-(setq initial-scratch-message nil)
+
+(setq inhibit-startup-screen t
+      inhibit-startup-echo-area-message t
+      initial-scratch-message nil)
+
+(setq make-backup-files nil
+      auto-save-default nil
+      auto-save-list-file-prefix nil
+      create-lockfiles nil)
+
+(setq compilation-environment '("TERM=xterm-256color")
+      compilation-scroll-output 'first-error))
+
 (setq vc-follow-symlinks t)
-(setq compilation-environment '("TERM=xterm-256color"))
-(setq compilation-scroll-output 'first-error)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
