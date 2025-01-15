@@ -2,7 +2,7 @@
 font pango:DejaVuSansM Nerd Font Mono 10
 
 # Set apps.
-set $term kitty
+set $term st
 set $fileManager pcmanfm
 set $browser firefox
 set $browserIncognito firefox --private-window
