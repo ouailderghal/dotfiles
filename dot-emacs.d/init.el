@@ -34,6 +34,7 @@
   (blink-cursor-mode 0)
   (global-display-line-numbers-mode 1)
   (global-hl-line-mode 1)
+  (column-number-mode 1)
 
   (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
