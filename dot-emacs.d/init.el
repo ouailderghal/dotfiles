@@ -36,8 +36,8 @@
 
 ;; Appearance
 (set-face-attribute 'default nil
-		    :family "DejaVuSansM Nerd Font Mono"
-		    :height 110)
+		    :family "JetBrainsMono Nerd Font Mono"
+		    :height 100)
 
 (use-package doom-themes
   :ensure t
@@ -123,7 +123,6 @@
 
 ;; Evil
 (use-package evil
-  :if nil
   :ensure t
   :init
   (setq evil-want-integration t
@@ -137,7 +136,6 @@
   (evil-define-key 'normal 'normal (kbd "<leader>g") 'magit-status))
 
 (use-package evil-collection
-  :if nil
   :after evil
   :ensure t
   :config

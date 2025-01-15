@@ -209,7 +209,6 @@ mode "resize" {
 
 # Bar config
 bar {
-    mode hide
     status_command i3status
     position bottom
 }
