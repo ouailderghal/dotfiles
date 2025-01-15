@@ -121,7 +121,7 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-;; Evil
+;; evil-mode
 (use-package evil
   :ensure t
   :init
@@ -194,12 +194,17 @@
 				  (string-match "\\.ansible\\.yml\\'" buffer-file-name))
 			  (ansible-mode))))))
 
-;; Terraform
+;; terraform-mode
 (use-package terraform-mode
   :ensure t
   :mode ("\\.tf``" . terraform-mode)
   :custom
   (terraform-indent-level 4))
+
+;; nix-mode
+(use-package nix-mode
+  :ensure t
+  :mode ("\\.nix\\'" . nix-mode))
 
 ;; tuareg-mode
 (use-package tuareg
