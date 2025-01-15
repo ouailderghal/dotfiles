@@ -1,56 +1,79 @@
-;; Repositories
+;; repositories
 (require 'package)
-
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
 			 ("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
-    (package-install 'use-package))
+  (package-install 'use-package))
 
-;; Global Settings
-(setq custom-file "~/.emacs.d/custom.el")
+;; mu4e
+(load-file "~/.emacs.d/elisp/mail.el") 
 
-(setq inhibit-startup-screen t
-      inhibit-startup-echo-area-message t
-      initial-scratch-message nil)
+;; emacs
+(use-package emacs
+  :ensure nil
+  :config
+  (setq custom-file "~/.emacs.d/custom.el")
+  (setq inhibit-startup-screen t
+	inhibit-startup-echo-area-message t
+	initial-scratch-message nil)
+  (setq make-backup-files nil
+	auto-save-default nil
+	auto-save-list-file-prefix nil
+	create-lockfiles nil)
+  (setq compilation-environment '("TERM=xterm-256color")
+	compilation-scroll-output 'first-error)
+  (setq vc-follow-symlinks t)
 
-(setq make-backup-files nil
-      auto-save-default nil
-      auto-save-list-file-prefix nil
-      create-lockfiles nil)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+  (scroll-bar-mode 0)
+  (blink-cursor-mode 0)
+  (global-display-line-numbers-mode 1)
+  (global-hl-line-mode 1)
 
-(setq compilation-environment '("TERM=xterm-256color")
-      compilation-scroll-output 'first-error)
+  (load-theme 'deeper-blue t)
+  (set-face-attribute 'default nil
+		    :family "UbuntuMono Nerd Font Mono"
+		    :height 150))
 
-(setq vc-follow-symlinks t)
+;; compile-mode
+(use-package ansi-color
+  :ensure nil
+  :config
+  (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter))
 
-(fset 'yes-or-no-p 'y-or-n-p)
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-(scroll-bar-mode 0)
-(blink-cursor-mode 0)
-(global-display-line-numbers-mode 1)
-(global-hl-line-mode 1)
+;; shell-mode
+(use-package shell
+  :ensure nil
+  :bind (:map shell-mode-map
+	      ("M-l" . comint-clear-buffer)))
 
-;; Appearance
-(set-face-attribute 'default nil
-		    :family "JetBrainsMono Nerd Font Mono"
-		    :height 100)
+;; eshell-mode
+(use-package eshell
+  :ensure nil
+  :bind (:map eshell-mode-map
+	      ("M-l" . eshell/clear)))
 
+;; doom-themes
 (use-package doom-themes
+  :if nil
   :ensure t
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  ;; (load-theme 'doom-monokai-pro t)
+  (load-theme 'doom-one t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
 
+;; modus-themes
 (use-package modus-themes
+  :if nil
   :ensure t
   :config
   (setq modus-themes-italic-constructs t
@@ -70,25 +93,27 @@
   :bind (:map dired-mode-map
 	      ("C-c C-e" . wdired-change-to-wdired-mode)))
 
-;; Minibuffer Completion
+;; ido-mode
 (use-package ido
   :ensure nil
   :config
-  (ido-mode 1))
+  (ido-mode)
+  (ido-everywhere 1))
 
+;; smex
 (use-package smex
   :ensure t
   :bind
   (("M-x" . smex)
    ("M-X" . smex-major-mode-commands)))
 
-;; Magit
+;; magit
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
 	 ("C-x M-g" . magit-dispach)))
 
-;; Projectile
+;; projectile
 (use-package projectile
   :ensure t
   :bind
@@ -105,10 +130,11 @@
   (setq projectile-project-search-path '("~/Projects")))
 
 (use-package projectile-ripgrep
+  :after projectile
   :ensure t
   :after projectile)
 
-;; Completion
+;; company-mode
 (use-package company
   :ensure t
   :config
@@ -135,48 +161,50 @@
   (evil-define-key 'normal 'global (kbd "g c") 'comment-or-uncomment-region)
   (evil-define-key 'normal 'normal (kbd "<leader>g") 'magit-status))
 
+;; evil-collection
 (use-package evil-collection
   :after evil
   :ensure t
   :config
   (evil-collection-init))
 
+;; evil-surround
 (use-package evil-surround
+  :after evil
   :ensure t
   :config
   (global-evil-surround-mode 1))
 
-;; Indent Guide
-(use-package indent-guide
-  :ensure t)
-
-;; compile-mode
-(require 'ansi-color)
-(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
-
 ;; go-mode
 (use-package go-mode
-  :ensure t)
+  :ensure t
+  :mode ("\\.go\\'" . go-mode))
 
 ;; php-mode
 (use-package php-mode
   :ensure t
-  :mode ("\\.php``'" . php-mode))
+  :mode ("\\.php\\'" . php-mode))
 
 ;; json-mode
 (use-package json-mode
   :ensure t
-  :mode ("\\.json``'" . json-mode))
+  :mode ("\\.json\\'" . json-mode))
+
+;; docker.el
+(use-package docker
+  :ensure t
+  :defer t
+  :bind ("C-c d" . docker))
 
 ;; dockerfile-mode
 (use-package dockerfile-mode
   :ensure t
   :mode ("Dockerfile\\'" . dockerfile-mode))
 
-;; docker.el
-(use-package docker
+;; docker-compose-mode
+(use-package docker-compose-mode
   :ensure t
-  :bind ("C-c d" . docker))
+  :mode ("docker-compose.yml\\'" . docker-compose-mode))
 
 ;; yaml-mode
 (use-package yaml-mode
@@ -204,7 +232,9 @@
 ;; nix-mode
 (use-package nix-mode
   :ensure t
-  :mode ("\\.nix\\'" . nix-mode))
+  :mode ("\\.nix\\'" . nix-mode)
+  :bind (:map nix-mode-map)
+  :bind ("M-l" . comint-clear-buffer))
 
 ;; tuareg-mode
 (use-package tuareg
@@ -257,6 +287,7 @@
    '(org-level-7 ((t (:inherit outline-7 :weight bold :height 1.0))))
    '(org-level-8 ((t (:inherit outline-8 :weight bold :height 1.0))))))
 
+;; org-superstar-mode
 (use-package org-superstar
   :ensure t
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
@@ -266,7 +297,7 @@
   :ensure t
   :mode "\\.pkl\\'")
 
-;; Treesitter
+;; treesitter
 (setq treesit-extra-load-path '("/usr/local/lib"))
 (use-package treesit
   :ensure nil
@@ -280,6 +311,7 @@
 		  (sh-mode . bash-ts-mode)))
     (add-to-list 'major-mode-remap-alist mode)))
 
+;; eglot
 (use-package eglot
   :ensure t
   :bind
@@ -301,16 +333,3 @@
   (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
-
-;; Custom Bindings
-(use-package shell
-  :ensure nil
-  :bind (:map shell-mode-map
-	      ("M-l" . comint-clear-buffer)))
-
-(use-package eshell
-  :ensure nil
-  :bind (:map eshell-mode-map
-	      ("M-l" . eshell/clear)))
-
-(load-file "~/.emacs.d/elisp/mail.el") 
