@@ -1,5 +1,5 @@
 # Set font.
-font pango:DejaVuSansM Nerd Font Mono 10
+font pango:JetBrainsMono Nerd Font Mono 9
 
 # Set apps.
 set $term st
@@ -209,6 +209,7 @@ mode "resize" {
 
 # Bar config
 bar {
+    mode hide
     status_command i3status
     position bottom
 }
