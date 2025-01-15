@@ -334,3 +334,18 @@
   (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
+
+;; custom functions
+
+(use-package emacs
+  :ensure nil
+  :bind ("C-x t" . od/open-alacritty-in-cwd)
+  :config
+  (defvar od/terminal "/usr/bin/alacritty"
+    "Path to the terminal executable.")
+
+  (defun od/open-alacritty-in-cwd ()
+    "Open terminal in the current working directory."
+    (interactive)
+    (let ((cwd default-directory))
+      (start-process "terminal" nil od/terminal "--working-directory" cwd))))
