@@ -176,6 +176,23 @@
   :config
   (global-evil-surround-mode 1))
 
+;; hl-todo-mode
+(use-package hl-todo
+  :ensure t
+  ;; TODO: bind keys
+  ;; :bind (
+  ;; 	 ("C-c p" . hl-todo-previous)
+  ;; 	 ("C-c n" . hl-todo-next)
+  ;; 	 ("C-c o" . hl-todo-occur)
+  ;; 	 ("C-c i" . hl-todo-insert))
+  :config
+  (setq hl-todo-keyword-faces
+	'(("TODO"  . "#FF0000")
+	  ("FIXME" . "#FF0000")
+	  ("DEBUG" . "#A020F0")
+	  ("NOTE"  . "#FF4500")
+	  ("STUB"  . "#1E90FF"))))
+
 ;; go-mode
 (use-package go-mode
   :ensure t
