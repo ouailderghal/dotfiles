@@ -353,8 +353,11 @@
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
 
-;; custom functions
+;; vterm
+(use-package vterm
+  :ensure t)
 
+;; custom functions
 (use-package emacs
   :ensure nil
   :bind ("C-x t" . od/open-alacritty-in-cwd)
