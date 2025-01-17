@@ -14,7 +14,7 @@
 ;; emacs
 (use-package emacs
   :ensure nil
-  :config
+  :init
   (setq custom-file "~/.emacs.d/custom.el")
   (setq inhibit-startup-screen t
 	inhibit-startup-echo-area-message t
@@ -26,16 +26,15 @@
   (setq compilation-environment '("TERM=xterm-256color")
 	compilation-scroll-output 'first-error)
   (setq vc-follow-symlinks t)
-
+  :config
   (fset 'yes-or-no-p 'y-or-n-p)
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (scroll-bar-mode 0)
   (blink-cursor-mode 0)
-  (global-display-line-numbers-mode 1)
+ 
   (global-hl-line-mode 1)
   (column-number-mode 1)
-
   (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
 		    :family "UbuntuMono Nerd Font Mono"
@@ -63,9 +62,10 @@
 (use-package doom-themes
   :if nil
   :ensure t
-  :config
+  :init
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
+  :config
   (load-theme 'doom-one t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
@@ -76,7 +76,7 @@
 (use-package modus-themes
   :if nil
   :ensure t
-  :config
+  :init
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil
 	modus-themes-region '(bg-only)
@@ -86,6 +86,7 @@
 	'((matches . (extrabold background intense))
 	  (selection . (semibold accented intense))
 	  (popup . (accented))))
+  :config
   (load-theme 'modus-vivendi-deuteranopia t))
 
 ;; dired
@@ -117,36 +118,36 @@
 ;; projectile
 (use-package projectile
   :ensure t
-  :bind
-  ("C-c p" . projectile-command-map)
-  :config
-  (projectile-mode +1)
-  (setq projectile-cache-file (expand-file-name "projectile.cache" user-emacs-directory))
-  (setq projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" user-emacs-directory))
-  (setq projectile-indexing-method 'alien)
-  (setq projectile-completion-system 'auto)
-  (setq projectile-enable-caching t)
-  (setq projectile-switch-project-action 'projectile-dired)
+  :bind ("C-c p" . projectile-commander)
   :init
-  (setq projectile-project-search-path '("~/Projects")))
+  (setq projectile-cache-file (expand-file-name "projectile.cache" user-emacs-directory)
+	projectile-known-projects-file (expand-file-name "projectile-bookmarks.eld" user-emacs-directory)
+	projectile-indexing-method 'alien
+	projectile-completion-system 'auto
+	projectile-enable-caching t
+	projectile-switch-project-action 'projectile-dired
+	projectile-project-search-path '("~/Projects"))
+  :config
+  (projectile-mode +1))
 
 (use-package projectile-ripgrep
-  :after projectile
   :ensure t
   :after projectile)
 
 ;; company-mode
 (use-package company
   :ensure t
+  :init
+  (setq company-idle-delay 0.2
+	company-minimum-prefix-length 1
+	company-tooltip-align-annotations t)
+  :bind (:map company-active-map
+	     ("M-n" . nil)
+	     ("M-p" . nil)
+	     ("C-n" . company-select-next)
+	     ("C-p" . company-select-previous))
   :config
-  (global-company-mode t)
-  (setq company-idle-delay 0.2)
-  (setq company-minimum-prefix-length 1)
-  (setq company-tooltip-align-annotations t)
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+  (global-company-mode t))
 
 ;; evil-mode
 (use-package evil
@@ -183,19 +184,15 @@
 ;; hl-todo-mode
 (use-package hl-todo
   :ensure t
-  ;; TODO: bind keys
-  ;; :bind (
-  ;; 	 ("C-c p" . hl-todo-previous)
-  ;; 	 ("C-c n" . hl-todo-next)
-  ;; 	 ("C-c o" . hl-todo-occur)
-  ;; 	 ("C-c i" . hl-todo-insert))
-  :config
+  :init
   (setq hl-todo-keyword-faces
 	'(("TODO"  . "#FF0000")
 	  ("FIXME" . "#FF0000")
 	  ("DEBUG" . "#A020F0")
 	  ("NOTE"  . "#FF4500")
-	  ("STUB"  . "#1E90FF"))))
+	  ("STUB"  . "#1E90FF")))
+  :config
+  (global-hl-todo-mode 1))
 
 ;; go-mode
 (use-package go-mode
@@ -255,8 +252,8 @@
 (use-package nix-mode
   :ensure t
   :mode ("\\.nix\\'" . nix-mode)
-  :bind (:map nix-mode-map)
-  :bind ("M-l" . comint-clear-buffer))
+  :bind (:map nix-mode-map
+	      ("M-l" . comint-clear-buffer)))
 
 ;; tuareg-mode
 (use-package tuareg
@@ -272,33 +269,32 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
-  (setq markdown-command "pandoc")
-  :config
-  (setq markdown-enable-math t)
-  (setq markdown-hide-urls nil)
-  (setq markdown-fontify-code-blocks-natively t))
+  (setq markdown-command "pandoc"
+	markdown-enable-math t
+	markdown-hide-urls nil
+	markdown-fontify-code-blocks-natively t))
 
 ;; org-mode
 (use-package org
   :ensure t
+  :init
+  (setq ispell-program-name "hunspell"
+	ispell-dictionary "en_US"
+	ispell-change-dictionary "en_US"
+	org-log-done 'time
+	org-hide-leading-stars t
+	org-startup-indented t
+	org-pretty-entities t
+	org-ellipsis "⤵" 
+	org-hide-emphasis-markers t
+	org-src-fontify-natively t
+	org-agenda-files '("~/org/agenda.org"))
   :hook ((org-mode . visual-line-mode)
 	 (org-mode . flyspell-mode))
   :bind (("C-c a" . org-agenda)
          ("C-c c" . org-capture)
          ("C-c l" . org-store-link))
   :config
-  (setq ispell-program-name "hunspell")
-  (setq ispell-dictionary "en_US")
-  (setq ispell-change-dictionary "en_US")
-  (setq org-log-done 'time)
-  (setq org-hide-leading-stars t)
-  (setq org-startup-indented t)
-  (setq org-pretty-entities t)
-  (setq org-ellipsis "⤵" )
-  (setq org-hide-emphasis-markers t)
-  (setq org-src-fontify-natively t)
-  (setq org-agenda-files '("~/org/agenda.org"))
-
   (custom-set-faces
    '(org-level-1 ((t (:inherit outline-1 :weight bold :height 1.4))))
    '(org-level-2 ((t (:inherit outline-2 :weight bold :height 1.3))))
@@ -323,8 +319,9 @@
 (setq treesit-extra-load-path '("/usr/local/lib"))
 (use-package treesit
   :ensure nil
-  :config
+  :init
   (setq treesit-font-lock-level 4)
+  :config
   (dolist (mode '((go-mode . go-ts-mode)
                   (python-mode . python-ts-mode)
                   (php-mode . php-ts-mode)
