@@ -154,6 +154,10 @@
   :init
   (setq evil-want-integration t
 	evil-want-keybinding nil)
+
+  (setq evil-normal-state-cursor '(box "red")
+	evil-insert-state-cursor '(box "red")
+	evil-visual-state-cursor '(box "red"))
   :config
   (evil-mode 1)
   (evil-set-leader nil (kbd "SPC"))
@@ -358,7 +362,7 @@
   :ensure nil
   :bind ("C-x t" . od/open-alacritty-in-cwd)
   :config
-  (defvar od/terminal "/usr/bin/alacritty"
+  (defvar od/terminal "/usr/bin/kitty"
     "Path to the terminal executable.")
 
   (defun od/open-alacritty-in-cwd ()
