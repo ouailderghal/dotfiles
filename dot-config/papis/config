@@ -2,7 +2,7 @@
 # vim: ft=config
 
 [settings]
-opentool = evince
+opentool = okuklar
 default-library = papers
 picktool = fzf
 file-browser = thunar
@@ -10,4 +10,4 @@ file-browser = thunar
 [papers]
 dir = ~/Documents/papers/
 notes-name = notes_{doc[ref]}.org
-opentool = evince
+opentool = okular
