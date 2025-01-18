@@ -35,10 +35,10 @@ export GOBIN="$GOPATH/bin"
 PATH=$PATH:"$GOBIN"
 
 # Opam
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || \
-    source $HOME/.opam/opam-init/init.zsh  \
-    > /dev/null 2> /dev/null && \
-    eval $(opam env)
+# [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || \
+    # source $HOME/.opam/opam-init/init.zsh  \
+    # > /dev/null 2> /dev/null && \
+    # eval $(opam env)
 
 # NVM
 # [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
