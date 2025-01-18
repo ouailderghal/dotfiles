@@ -1,2 +1,7 @@
 .idea/
 /dot-emacs.d/elisp/mail.el
+/dot-emacs.d/elpa
+/dot-emacs.d/eln-cache
+/dot-emacs.d/projectile-bookmarks.eld
+/dot-emacs.d/smex-items
+/dot-emacs.d/transient/
