@@ -32,13 +32,13 @@
   (menu-bar-mode 0)
   (scroll-bar-mode 0)
   (blink-cursor-mode 0)
- 
+  (global-display-line-numbers-mode 1)
   (global-hl-line-mode 1)
   (column-number-mode 1)
   (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		    :family "UbuntuMono Nerd Font Mono"
-		    :height 150))
+		    :family "JetBrainsMono Nerd Font Mono"
+		    :height 110))
 
 ;; compile-mode
 (use-package ansi-color
