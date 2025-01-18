@@ -35,7 +35,6 @@
   (global-display-line-numbers-mode 1)
   (global-hl-line-mode 1)
   (column-number-mode 1)
-  (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
 		    :family "JetBrainsMono Nerd Font Mono"
 		    :height 110))
@@ -88,6 +87,12 @@
 	  (popup . (accented))))
   :config
   (load-theme 'modus-vivendi-deuteranopia t))
+
+;; gruvbox-themes
+(use-package gruvbox-theme
+  :ensure t
+  :config
+  (load-theme 'gruvbox-dark-hard t))
 
 ;; dired
 (use-package dired
