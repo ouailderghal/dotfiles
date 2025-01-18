@@ -9,7 +9,7 @@
   (package-install 'use-package))
 
 ;; mu4e
-(load-file "~/.emacs.d/elisp/mail.el") 
+;; (load-file "~/.emacs.d/elisp/mail.el") 
 
 ;; emacs
 (use-package emacs
@@ -36,7 +36,7 @@
   (global-hl-line-mode 1)
   (column-number-mode 1)
   (set-face-attribute 'default nil
-		      :family "JetBrainsMono Nerd Font Mono"
+		      :family "JetBrainsMono NL"
 		      :height 110)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
@@ -357,10 +357,6 @@
   (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
   (add-hook 'go-mode-hook 'eglot-ensure)
   (add-hook 'python-mode-hook 'eglot-ensure))
-
-;; vterm
-(use-package vterm
-  :ensure t)
 
 ;; custom functions
 (use-package emacs
