@@ -36,8 +36,10 @@
   (global-hl-line-mode 1)
   (column-number-mode 1)
   (set-face-attribute 'default nil
-		    :family "JetBrainsMono Nerd Font Mono"
-		    :height 110))
+		      :family "JetBrainsMono Nerd Font Mono"
+		      :height 110)
+  (custom-set-faces
+   '(cursor ((t (:background "red"))))))
 
 ;; compile-mode
 (use-package ansi-color
@@ -67,9 +69,7 @@
   :config
   (load-theme 'doom-one t)
   (doom-themes-visual-bell-config)
-  (doom-themes-org-config)
-  (custom-set-faces
-   '(cursor ((t (:background "red"))))))
+  (doom-themes-org-config))
 
 ;; modus-themes
 (use-package modus-themes
