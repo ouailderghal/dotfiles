@@ -212,6 +212,7 @@ mode "resize" {
 bar {
     status_command i3status
     position top
+    tray_output primary
 }
 
 bindsym $mod+r mode "resize"
