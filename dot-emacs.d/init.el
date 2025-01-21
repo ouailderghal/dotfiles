@@ -35,8 +35,9 @@
   (global-display-line-numbers-mode 1)
   (global-hl-line-mode 1)
   (column-number-mode 1)
+  (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		      :family "JetBrainsMono NL"
+		      :family "JetBrains Mono"
 		      :height 110)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
@@ -90,6 +91,7 @@
 
 ;; gruvbox-themes
 (use-package gruvbox-theme
+  :if nil
   :ensure t
   :config
   (load-theme 'gruvbox-dark-hard t))

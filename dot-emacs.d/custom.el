@@ -4,12 +4,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(emacs-theme-gruvbox vterm vertico tuareg terraform-mode spacemacs-theme smex projectile-ripgrep pkl-mode php-mode org-superstar orderless nix-mode mu4e-alert modus-themes markdown-mode marginalia magit json-mode ivy indent-guide hl-todo gruvbox-theme go-mode evil-surround evil-mu4e evil-collection doom-themes dockerfile-mode docker-compose-mode docker company ansible activities)))
+   '(eglot pkl-mode org-superstar markdown-mode tuareg nix-mode terraform-mode ansible docker-compose-mode dockerfile-mode docker json-mode php-mode go-mode hl-todo evil-surround evil-collection evil company projectile-ripgrep projectile magit smex gruvbox-theme modus-themes doom-themes use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cursor ((t (:background "red"))))
  '(org-level-1 ((t (:inherit outline-1 :weight bold :height 1.4))))
  '(org-level-2 ((t (:inherit outline-2 :weight bold :height 1.3))))
  '(org-level-3 ((t (:inherit outline-3 :weight bold :height 1.2))))
