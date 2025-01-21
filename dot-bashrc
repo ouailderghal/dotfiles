@@ -1,4 +1,3 @@
-# -*- mode: sh -*-
 # vim: ft=bash
 #
 # ~/.bashrc
@@ -30,6 +29,7 @@ eval $(dircolors -b)
     export EDITOR='nvim'
 
 # Go
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 PATH=$PATH:"$GOBIN"
@@ -47,17 +47,10 @@ PATH=$PATH:"$GOBIN"
 # Completion
 BASH_COMPLETION_DIR="/usr/share/bash-completion/completions"
 CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
-FZF_COMPLETION_DIR="/usr/share/fzf"
 
 [[ -f "$BASH_COMPLETION_DIR/pass" ]] && source "$BASH_COMPLETION_DIR/pass"
 [[ -f "$BASH_COMPLETION_DIR/git" ]] && source "$BASH_COMPLETION_DIR/git"
 [[ -f "$BASH_COMPLETION_DIR/docker" ]] && source "$BASH_COMPLETION_DIR/docker"
-[[ -f "$BASH_COMPLETION_DIR/ssh" ]] && source "$BASH_COMPLETION_DIR/ssh"
-
-if [[ -d "$FZF_COMPLETION_DIR" ]]; then
-    source "$FZF_COMPLETION_DIR/key-bindings.bash"
-    source "$FZF_COMPLETION_DIR/completion.bash"
-fi
 
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/tmux" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/tmux"
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/git-prompt" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/git-prompt"
