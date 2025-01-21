@@ -19,6 +19,7 @@ alias pinger="ping -c 3 archlinux.org"
 alias copy="xclip -selection c"
 alias grep="grep --color=always"
 alias m="make"
+alias code="codium"
 
 # Git
 alias g="git"
