@@ -3,7 +3,7 @@ font pango:JetBrains Mono 10
 
 # Set apps.
 set $term st
-set $fileManager pcmanfm
+set $fileManager thunar
 set $browser firefox
 set $browserIncognito firefox --private-window
 set $appFinder xfce4-appfinder
@@ -48,6 +48,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 for_window [class="^Pcmanfm$"] floating enable
+for_window [class="^Thunar$"] floating enable
 for_window [class="^Xfce4-appfinder$"] floating enable
 for_window [class="^pavucontrol$"] floating enable
 for_window [class="^Lxappearance$"] floating enable
