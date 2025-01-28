@@ -143,19 +143,19 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10" 
 
-set $monitorLeft "HDMI-1"
-set $monitorRight "eDP-1"
+set $moniotorHorz "DP-2-1"
+set $monitorVert "DP-2-2"
 
-workspace $ws1 output $monitorLeft
-workspace $ws2 output $monitorLeft
-workspace $ws3 output $monitorLeft
-workspace $ws4 output $monitorLeft
-workspace $ws5 output $monitorLeft
-workspace $ws6 output $monitorLeft
-workspace $ws7 output $monitorLeft
-workspace $ws8 output $monitorLeft
-workspace $ws9 output $monitorRight
-workspace $ws10 output $monitorRight
+workspace $ws1 output $monitorHorz
+workspace $ws2 output $monitorHorz
+workspace $ws3 output $monitorHorz
+workspace $ws4 output $monitorHorz
+workspace $ws5 output $monitorVert
+workspace $ws6 output $monitorHorz
+workspace $ws7 output $monitorHorz
+workspace $ws8 output $monitorHorz
+workspace $ws9 output $monitorHorz
+workspace $ws10 output $monitorHorz
 
 # switch to workspace.
 bindsym $mod+1 workspace number $ws1
