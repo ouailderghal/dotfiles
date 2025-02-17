@@ -2,7 +2,7 @@
 font pango:JetBrains Mono 10
 
 # Set apps.
-set $term st
+set $term alacritty
 set $fileManager thunar
 set $browser firefox
 set $browserIncognito firefox --private-window
