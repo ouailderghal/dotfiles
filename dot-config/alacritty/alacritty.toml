@@ -25,19 +25,19 @@ unfocused_hollow = true
 size = 12
 
 [font.normal]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Extra Bold"
 
 [font.bold_italic]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "UbuntuMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
 [font.offset]
@@ -99,32 +99,47 @@ command = { program = "/bin/bash", args = [ "-c", "$HOME/.local/bin/spawn-alacri
 key = "N"
 mods = "Control|Shift"
 
+
 [colors.primary]
-background = "#001a1d"
-foreground = "#839496"
+foreground = '#e3e3e3'
+bright_foreground = '#ffffff'
+background = '#1f1f1f'
 
-# Normal colors
+
+[colors.search]
+matches = { foreground = '#b2b2b2', background = '#b26818' }
+focused_match = { foreground = "CellBackground", background = "CellForeground" }
+
 [colors.normal]
-black   = "#073642"
-red     = "#dc322f"
-green   = "#859900"
-yellow  = "#b58900"
-blue    = "#268bd2"
-magenta = "#d33682"
-cyan    = "#2aa198"
-white   = "#eee8d5"
+black   = '#000000'
+red     = '#b21818'
+green   = '#18b218'
+yellow  = '#b26818'
+blue    = '#1818b2'
+magenta = '#b218b2'
+cyan    = '#18b2b2'
+white   = '#b2b2b2'
 
-# Bright colors
 [colors.bright]
-black   = "#4c4c4c"
-red     = "#cb4b16"
-green   = "#586e75"
-yellow  = "#657b83"
-blue    = "#839496"
-magenta = "#6c71c4"
-cyan    = "#93a1a1"
-white   = "#fdf6e3"
+black   = '#686868'
+red     = '#ff5454'
+green   = '#54ff54'
+yellow  = '#ffff54'
+blue    = '#5454ff'
+magenta = '#ff54ff'
+cyan    = '#54ffff'
+white   = '#ffffff'
+
+[colors.dim]
+black   = '#000000'
+red     = '#b21818'
+green   = '#18b218'
+yellow  = '#b26818'
+blue    = '#1818b2'
+magenta = '#b218b2'
+cyan    = '#18b2b2'
+white   = '#b2b2b2'
 
 [colors.cursor]
-cursor = "#dc322f"
-text = "0x181818"
+text = '#191622'
+cursor = '#b21818'
