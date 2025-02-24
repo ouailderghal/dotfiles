@@ -30,8 +30,11 @@ eval $(dircolors -b)
 [[ -n $SSH_CONNECTION ]] && export EDITOR='vim' || \
     export EDITOR='nvim'
 
+# Scripts
+export PATH="$PATH:$HOME/.scripts"
+
 # Go
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 PATH=$PATH:"$GOBIN"
@@ -59,3 +62,5 @@ CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
 
 export PATH
 export PS1
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -2,7 +2,7 @@
 font pango:UbuntuMono Nerd Font Mono 12
 
 # Set apps.
-set $term alacritty
+set $term st
 set $fileManager thunar
 set $browser firefox
 set $browserIncognito firefox --private-window
@@ -42,6 +42,7 @@ bindsym $mod+p exec copyq toggle
 bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
 bindsym $mod+Control+l --release exec i3lock -e -c "#000000"
+bindsym $mod+Shift+p exec ~/.scripts/screenlayout
 
 ### Window rules.
 default_border pixel 1
@@ -143,19 +144,26 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10" 
 
-set $moniotorHorz "DP-2-1"
-set $monitorVert "DP-2-2"
 
-workspace $ws1 output $monitorHorz
-workspace $ws2 output $monitorHorz
-workspace $ws3 output $monitorHorz
-workspace $ws4 output $monitorHorz
-workspace $ws5 output $monitorVert
-workspace $ws6 output $monitorHorz
-workspace $ws7 output $monitorHorz
-workspace $ws8 output $monitorHorz
-workspace $ws9 output $monitorHorz
-workspace $ws10 output $monitorHorz
+set $work_monitor_builtin "eDP-1"
+set $work_monitor_horiz "DP-2-1"
+set $work_monitor_verti "DP-2-2"
+
+# TODO: add personal monitor config
+set $perso_monitor_builtin ""
+set $perso_monitor_horiz ""
+
+
+workspace $ws1 output $work_monitor_horiz
+workspace $ws2 output $work_monitor_horiz
+workspace $ws3 output $work_monitor_horiz
+workspace $ws4 output $work_monitor_horiz
+workspace $ws5 output $work_monitor_verti
+workspace $ws6 output $work_monitor_horiz
+workspace $ws7 output $work_monitor_horiz
+workspace $ws8 output $work_monitor_horiz
+workspace $ws9 output $work_monitor_builtin
+workspace $ws10 output $work_monitor_builtin
 
 # switch to workspace.
 bindsym $mod+1 workspace number $ws1

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SCRIPT_DIR="$HOME/.config/i3/screenlayout"
+SCRIPTS=$(ls -1 "$SCRIPT_DIR")
+
+if [ -z "$SCRIPTS" ]; then
+    echo "No screen layouts found in $SCRIPT_DIR"
+    exit 1
+fi
+
+SELECTED_SCRIPT=$(echo "$SCRIPTS" | dmenu -l 10 -p "Select a screen layout to apply:")
+
+if [ -n "$SELECTED_SCRIPT" ]; then
+    sh "$SCRIPT_DIR/$SELECTED_SCRIPT"
+else
+    echo "No screen layout selected"
+fi
