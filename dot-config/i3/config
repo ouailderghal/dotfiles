@@ -1,5 +1,5 @@
 # Set font.
-font pango:UbuntuMono Nerd Font Mono 12
+font pango:UbuntuMono Nerd Font Mono 9
 
 # Set apps.
 set $term st
@@ -144,26 +144,23 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10" 
 
-
 set $work_monitor_builtin "eDP-1"
 set $work_monitor_horiz "DP-2-1"
 set $work_monitor_verti "DP-2-2"
 
-# TODO: add personal monitor config
-set $perso_monitor_builtin ""
-set $perso_monitor_horiz ""
+set $perso_monitor_builtin "DP-2"
+set $perso_monitor_horiz "HDMI-0"
 
-
-workspace $ws1 output $work_monitor_horiz
-workspace $ws2 output $work_monitor_horiz
-workspace $ws3 output $work_monitor_horiz
-workspace $ws4 output $work_monitor_horiz
-workspace $ws5 output $work_monitor_verti
-workspace $ws6 output $work_monitor_horiz
-workspace $ws7 output $work_monitor_horiz
-workspace $ws8 output $work_monitor_horiz
-workspace $ws9 output $work_monitor_builtin
-workspace $ws10 output $work_monitor_builtin
+workspace $ws1 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws2 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws3 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws4 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws5 output $work_monitor_verti $perso_monitor_horiz
+workspace $ws6 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws7 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws8 output $work_monitor_horiz $perso_monitor_horiz
+workspace $ws9 output $work_monitor_builtin $perso_monitor_builtin
+workspace $ws10 output $work_monitor_builtin $perso_monitor_builtin
 
 # switch to workspace.
 bindsym $mod+1 workspace number $ws1
