@@ -14,7 +14,7 @@ shopt -s globstar
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]#\[\e[0;0m\]\t>\W\[\e[0;32m\]$(__git_ps1 "(%s)")\[\e[0;0m\]$'
+PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]|\[\e[0;0m\]\t>\W\[\e[0;32m\]$(__git_ps1 "(%s)")\[\e[0;0m\]$'
 
 # Path
 PATH=$PATH:"/usr/local/bin"
