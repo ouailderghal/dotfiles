@@ -37,8 +37,8 @@
   (column-number-mode 1)
   (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		      :family "JetBrains Mono"
-		      :height 110)
+		      :family "UbuntuMono Nerd Font Mono"
+		      :height 130)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
 
