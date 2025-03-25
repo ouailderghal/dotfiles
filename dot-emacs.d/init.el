@@ -37,7 +37,7 @@
   (column-number-mode 1)
   (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		      :family "JetBrains Mono"
+		      :family "JetBrainsMono Nerd Font Mono"
 		      :height 110)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
@@ -365,7 +365,7 @@
   :ensure nil
   :bind ("C-x t" . od/open-alacritty-in-cwd)
   :config
-  (defvar od/terminal "/usr/bin/kitty"
+  (defvar od/terminal "/usr/local/bin/kitty"
     "Path to the terminal executable.")
 
   (defun od/open-alacritty-in-cwd ()

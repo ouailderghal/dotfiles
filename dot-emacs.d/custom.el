@@ -4,7 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(eglot pkl-mode org-superstar markdown-mode tuareg nix-mode terraform-mode ansible docker-compose-mode dockerfile-mode docker json-mode php-mode go-mode hl-todo evil-surround evil-collection evil company projectile-ripgrep projectile magit smex gruvbox-theme modus-themes doom-themes use-package)))
+   '(ansible company docker docker-compose-mode dockerfile-mode
+	     doom-themes evil-collection evil-surround go-mode
+	     gruvbox-theme hl-todo json-mode magit markdown-mode
+	     modus-themes nix-mode org-superstar php-mode pkl-mode
+	     projectile-ripgrep smex terraform-mode tikz-mode tuareg)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
