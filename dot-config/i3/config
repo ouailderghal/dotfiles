@@ -145,8 +145,8 @@ set $ws9 "9"
 set $ws10 "10" 
 
 set $work_monitor_builtin "eDP-1"
-set $work_monitor_horiz "DP-2-1"
-set $work_monitor_verti "DP-2-2"
+set $work_monitor_horiz "DP-2-2"
+set $work_monitor_verti "DP-2-1"
 
 set $perso_monitor_builtin "DP-2"
 set $perso_monitor_horiz "HDMI-0"
