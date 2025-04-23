@@ -2,19 +2,16 @@
 #
 # ~/.bashrc
 #
+
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 export BROWSER="/usr/bin/firefox"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
-export NVM_DIR="$HOME/.config/nvm"
-
-shopt -s globstar
 
 # If not running interactively, don't do anything
+shopt -s globstar
 [[ $- != *i* ]] && return
-
-PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]|\[\e[0;0m\]\t>\W\[\e[0;32m\]$(__git_ps1 "(%s)")\[\e[0;0m\]$'
 
 # Path
 PATH=$PATH:"/usr/local/bin"
@@ -23,7 +20,7 @@ PATH=$PATH:"$HOME/.local/bin"
 # Better colors
 eval $(dircolors -b)
 
-### Aliases
+# Aliases
 [[ -L $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 
 # Editor
@@ -40,14 +37,12 @@ export GOBIN="$GOPATH/bin"
 PATH=$PATH:"$GOBIN"
 
 # Opam
-# [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || \
-    # source $HOME/.opam/opam-init/init.zsh  \
-    # > /dev/null 2> /dev/null && \
-    # eval $(opam env)
-
-# NVM
-# [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-# [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
+if command -v opam >/dev/null 2>&1; then
+  if [[ -r "$HOME/.opam/opam-init/init.zsh" ]]; then
+    source "$HOME/.opam/opam-init/init.zsh" >/dev/null 2>&1
+    eval "$(opam env)"
+  fi
+fi
 
 # Completion
 BASH_COMPLETION_DIR="/usr/share/bash-completion/completions"
@@ -56,11 +51,15 @@ CUSTOM_BASH_COMPLETION_DIR="$HOME/.config/bash-completion"
 [[ -f "$BASH_COMPLETION_DIR/pass" ]] && source "$BASH_COMPLETION_DIR/pass"
 [[ -f "$BASH_COMPLETION_DIR/git" ]] && source "$BASH_COMPLETION_DIR/git"
 [[ -f "$BASH_COMPLETION_DIR/docker" ]] && source "$BASH_COMPLETION_DIR/docker"
-
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/tmux" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/tmux"
 [[ -f "$CUSTOM_BASH_COMPLETION_DIR/git-prompt" ]] && source "$CUSTOM_BASH_COMPLETION_DIR/git-prompt"
 
+# Prompt
+if declare -f __git_ps1 >/dev/null 2>&1; then
+    PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]|\[\e[0;0m\]\t>\W\[\e[0;32m\]$(__git_ps1 "(%s)")\[\e[0;0m\]$'
+else
+    PS1='\[\e[1;31m\]\u\[\e[0;0m\]\[\e[0;33m\]@\[\e[0;36m\]\h\[\e[0;0m\]\[\e[0;33m\]|\[\e[0;0m\]\t>\W\[\e[0;0m\]$'
+fi
+
 export PATH
 export PS1
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
