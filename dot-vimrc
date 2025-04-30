@@ -19,4 +19,10 @@ set colorcolumn=80
 set textwidth=80
 colorscheme evening
 
+call plug#begin()
+    Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-fugitive'
+    Plug 'sheerun/vim-polyglot'
+call plug#end()
+
 nnoremap <C-p> :FZF<CR>
