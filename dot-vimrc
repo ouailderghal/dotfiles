@@ -15,6 +15,8 @@ set incsearch
 set path+=**
 set wildmenu
 set mouse=a
+set colorcolumn=80
+set textwidth=80
 colorscheme evening
 
 nnoremap <C-p> :FZF<CR>
