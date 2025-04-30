@@ -1,14 +1,14 @@
 " vi: ft=vim
 
+syntax enable
+filetype plugin on
+colorscheme evening
+
 set nocompatible
 set expandtab
 set shiftwidth=4
 set softtabstop=4
 set relativenumber
-
-syntax enable
-filetype plugin on
-
 set ignorecase
 set smartcase
 set incsearch
@@ -17,7 +17,7 @@ set wildmenu
 set mouse=a
 set colorcolumn=80
 set textwidth=80
-colorscheme evening
+set clipboard=unnamedplus
 
 call plug#begin()
     Plug 'tpope/vim-sensible'
@@ -25,4 +25,16 @@ call plug#begin()
     Plug 'sheerun/vim-polyglot'
 call plug#end()
 
+function! ToggleLineNumbers()
+    if &relativenumber
+        set norelativenumber
+        set number
+    elseif &number
+        set relativenumber
+    else
+        set number
+    endif
+endfunction
+
 nnoremap <C-p> :FZF<CR>
+nnoremap <F12> :call ToggleLineNumbers()<CR>
