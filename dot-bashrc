@@ -25,7 +25,7 @@ eval $(dircolors -b)
 
 # Editor
 [[ -n $SSH_CONNECTION ]] && export EDITOR='vim' || \
-    export EDITOR='nvim'
+    export EDITOR='vim'
 
 # Scripts
 export PATH="$PATH:$HOME/.scripts"
