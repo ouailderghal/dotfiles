@@ -4,6 +4,7 @@ syntax enable
 filetype plugin on
 colorscheme evening
 
+let mapleader = " "
 set nocompatible
 set expandtab
 set shiftwidth=4
@@ -38,3 +39,4 @@ endfunction
 
 nnoremap <C-p> :FZF<CR>
 nnoremap <F12> :call ToggleLineNumbers()<CR>
+nnoremap <leader><leader> :buffers<CR>
