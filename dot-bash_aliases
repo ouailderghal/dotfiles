@@ -11,8 +11,8 @@ alias ll="ls -lah"
 
 # General
 alias q="exit"
-alias e="vim"
-alias vi="vim"
+alias e="nvim"
+alias vi="nvim"
 alias rf="rm -rf"
 alias open="xdg-open"
 alias o="xdg-open"
