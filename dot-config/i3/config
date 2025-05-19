@@ -1,5 +1,5 @@
 # Set font.
-font pango: Iosevka Nerd Font Mono 12
+font pango:monospace 10
 
 # Set apps.
 set $term st
