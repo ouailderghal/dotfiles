@@ -4,7 +4,7 @@ font pango:monospace 10
 # Set apps.
 set $term st
 set $fileManager thunar
-set $browser rave-browser-stable
+set $browser brave-browser-stable
 set $browserIncognito brave-browser-stable --incognito
 set $appFinder xfce4-appfinder
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "JetBrains Mono 12" -show window
