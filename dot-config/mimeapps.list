@@ -10,10 +10,13 @@ x-scheme-handler/webcal=userapp-Thunderbird-5ZWMO2.desktop
 text/calendar=userapp-Thunderbird-5ZWMO2.desktop
 application/x-extension-ics=userapp-Thunderbird-5ZWMO2.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-5ZWMO2.desktop
-x-scheme-handler/http=xfce4-web-browser.desktop
-x-scheme-handler/https=xfce4-web-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
 application/metalink+xml=firefox.desktop
 application/metalink4+xml=firefox.desktop
+text/html=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
 
 [Added Associations]
 image/png=org.xfce.ristretto.desktop;

@@ -4,8 +4,8 @@ font pango:monospace 10
 # Set apps.
 set $term st
 set $fileManager thunar
-set $browser firefox
-set $browserIncognito firefox --private-window
+set $browser rave-browser-stable
+set $browserIncognito brave-browser-stable --incognito
 set $appFinder xfce4-appfinder
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "JetBrains Mono 12" -show window
 set $emacs /usr/bin/emacs
