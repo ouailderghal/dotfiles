@@ -1,5 +1,5 @@
 ### Set font
-font pango:JetBrainsMonoNerd Font Mono 9
+font pango:monospace 10
 
 ### Variables
 set $mod Mod4
@@ -8,19 +8,16 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term st
 set $fileManager thunar
-set $browser firefox
-set $browserIncognito firefox --private-window
+set $browser brave-browser
+set $browserIncognito brave-browser --incognito
 set $appfinder xfce4-appfinder
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $emacsdaemon emacs --daemon
-set $emacsclient emacsclient -c -a "emacs"
 
 # Set startup programs.
 exec --no-startup-id copyq
-exec --no-startup-id thunderbird
-exec --no-startup-id $emacsdaemon
+exec --no-startup-id nm-applet
 
 ### Program bindings
 bindsym $mod+Shift+Return exec $emacsclient
@@ -176,6 +173,27 @@ input type:touchpad {
 }
 
 input type:keyboard xkb_numlock enabled
+
+
+### Output Configuration.
+output "Dell Inc. DELL U2417H 5K9YD81CC8YL" {
+    mode 1920x1080@60.000Hz
+    position 0 0
+}
+
+output "Hewlett Packard HP Z24n CN4629142C" {
+    mode 1920x1200@59.950Hz
+    position 1920 0
+    transform 90
+}
+
+output "Chimei Innolux Corporation 0x13CD 0x00000000" {
+    mode 1920x1080@60.002Hz
+    position 3120 0
+}
+
+workspace 5 output "Hewlett Packard HP Z24n CN4629142C"
+workspace 10 output "Chimei Innolux Corporation 0x13CD 0x00000000"
 
 ### Include config.d/*
 include /etc/sway/config.d/*
