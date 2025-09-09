@@ -1,5 +1,5 @@
 # Set font.
-font pango:monospace 10
+font pango:Hack Nerd Font Mono 10
 
 # Set apps.
 set $term st
@@ -7,7 +7,7 @@ set $fileManager thunar
 set $browser brave-browser-stable
 set $browserIncognito brave-browser-stable --incognito
 set $appFinder xfce4-appfinder
-set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "JetBrains Mono 12" -show window
+set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "Hack Nerd Font Mono 12" -show window
 set $emacs /usr/bin/emacs
 
 # Set startup programs.
