@@ -1,5 +1,5 @@
 # Set font.
-font pango:Hack Nerd Font Mono 10
+font pango:Hack Nerd Font Mono 8
 
 # Set apps.
 set $term kitty
