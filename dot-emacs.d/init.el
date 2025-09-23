@@ -37,7 +37,7 @@
   (column-number-mode 1)
   ;; (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		      :family "JetBrainsMono Nerd Font Mono"
+		      :family "Hack Nerd Font Mono"
 		      :height 110)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
