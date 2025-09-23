@@ -164,6 +164,7 @@
 
 ;; evil-mode
 (use-package evil
+  :if nil
   :ensure t
   :init
   (setq evil-want-integration t
@@ -182,6 +183,7 @@
 
 ;; evil-collection
 (use-package evil-collection
+  :if nil
   :after evil
   :ensure t
   :config
@@ -189,6 +191,7 @@
 
 ;; evil-surround
 (use-package evil-surround
+  :if nil
   :after evil
   :ensure t
   :config
