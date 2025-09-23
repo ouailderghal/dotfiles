@@ -91,9 +91,16 @@
 
 ;; gruvbox-themes
 (use-package gruvbox-theme
+  :if nil
   :ensure t
   :config
   (load-theme 'gruvbox-dark-hard t))
+
+;; gruber-darker theme
+(use-package gruber-darker-theme
+  :ensure t
+  :config
+  (load-theme 'gruber-darker t))
 
 ;; dired
 (use-package dired
