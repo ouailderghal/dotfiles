@@ -16,14 +16,15 @@ set incsearch
 set path+=**
 set wildmenu
 set mouse=a
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=120
+set textwidth=120
 set clipboard=unnamedplus
 
 call plug#begin()
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-fugitive'
     Plug 'sheerun/vim-polyglot'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 function! ToggleLineNumbers()
@@ -37,6 +38,25 @@ function! ToggleLineNumbers()
     endif
 endfunction
 
+function! ToggleSplit()
+    if winnr('$') == 1
+        echo "Only one window"
+        return
+    endif
+    let buf = bufnr('%')
+    let win = winnr()
+    " Close current window and reopen as vertical if horizontal, or horizontal if vertical
+    exec 'close'
+    if &splitbelow
+        exec 'vsplit | buffer ' . buf
+    else
+        exec 'split | buffer ' . buf
+    endif
+endfunction
+
 nnoremap <C-p> :FZF<CR>
 nnoremap <F12> :call ToggleLineNumbers()<CR>
 nnoremap <leader><leader> :buffers<CR>
+nnoremap <F5> :make<CR>
+nnoremap <F6> :make clean<CR>
+nnoremap <leader>ts :call ToggleSplit()<CR>
