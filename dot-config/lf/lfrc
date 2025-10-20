@@ -32,6 +32,7 @@ cmd extract ${{
     esac
 }}
 
+# TODO: fix archive funcions
 cmd tar ${{
     set -f
     mkdir $1
