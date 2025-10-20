@@ -1,41 +1,63 @@
-### Set font
-font pango:monospace 10
+### MONITORS
+set $workMainMonitor "Dell Inc. DELL U2417H 5K9YD81CC8YL"
+set $workSecondMonitor "Hewlett Packard HP Z24n CN4629142C"
+set $workLaptopMonitor "Chimei Innolux Corporation 0x13CD"
 
-### Variables
+output $workMainMonitor {
+    mode 1920x1080@60.000Hz
+    position 0 0
+}
+
+output $workSecondMonitor {
+    mode 1920x1200@59.950Hz
+    position 1920 0
+    transform 270
+}
+
+output $workLaptopMonitor {
+    mode 1920x1080@60.002Hz
+    position 3120 0
+}
+
+workspace 8 output $workSecondMonitor
+workspace 9 output $workLaptopMonitor
+workspace 10 output $workLaptopMonitor
+
+
+### FONT 
+font pango:IosevkaTerm Nerd Font Mono 12
+
+### VARIABLES
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 
-set $term st
+set $term kitty
 set $fileManager thunar
-set $browser brave-browser
-set $browserIncognito brave-browser --incognito
+set $browser firefox
+set $browserIncognito firefox --private-window
 set $appfinder xfce4-appfinder
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
-# Set startup programs.
+### STARTUP 
 exec --no-startup-id copyq
 exec --no-startup-id nm-applet
 
-### Program bindings
-bindsym $mod+Shift+Return exec $emacsclient
+### KEYBINDINGS
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browserIncognito
 bindsym $mod+Shift+f exec $fileManager
 bindsym $mod+Shift+d exec $appfinder
 bindsym $mod+p exec copyq toggle
-bindsym $mod+y exec scrot
 bindsym $mod+Shift+y --release exec scrot -s
-bindsym $mod+Control+l --release exec xflock4
-bindsym $mod+shift+g exec --no-startup-id ~/.config/emacs/bin/doom +everywhere
+bindsym $mod+Control+l exec swaylock
+# TODO: replace with grim: bindsym $mod+y exec scrot
 
-### Windows rules
+### WINDOWS RULES
 default_border pixel 1
 default_floating_border pixel 1
-
-# Rules
 for_window [app_id="thunar"] floating enable
 for_window [app_id="xfce4-appfinder"] floating enable
 for_window [app_id="pavucontrol"] floating enable
@@ -148,7 +170,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-### Status Bar
+### STATUS BAR
 bar {
     position bottom
 
@@ -172,28 +194,9 @@ input type:touchpad {
     tap enabled
 }
 
-input type:keyboard xkb_numlock enabled
-
-
-### Output Configuration.
-output "Dell Inc. DELL U2417H 5K9YD81CC8YL" {
-    mode 1920x1080@60.000Hz
-    position 0 0
+input type:keyboard {
+    xkb_numlock enabled
 }
-
-output "Hewlett Packard HP Z24n CN4629142C" {
-    mode 1920x1200@59.950Hz
-    position 1920 0
-    transform 90
-}
-
-output "Chimei Innolux Corporation 0x13CD 0x00000000" {
-    mode 1920x1080@60.002Hz
-    position 3120 0
-}
-
-workspace 5 output "Hewlett Packard HP Z24n CN4629142C"
-workspace 10 output "Chimei Innolux Corporation 0x13CD 0x00000000"
 
 ### Include config.d/*
 include /etc/sway/config.d/*
