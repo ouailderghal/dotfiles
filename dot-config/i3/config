@@ -4,8 +4,8 @@ font pango:IosevkaTerm Nerd Font Mono 11
 # Set apps.
 set $term kitty
 set $fileManager thunar
-set $browser brave-browser-stable
-set $browserIncognito brave-browser-stable --incognito
+set $browser firefox
+set $browserIncognito firefox --private-window
 set $appFinder xfce4-appfinder
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "Hack Nerd Font Mono 12" -show window
 set $emacs /usr/bin/emacs
