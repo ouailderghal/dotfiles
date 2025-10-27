@@ -8,7 +8,6 @@ set $browser firefox
 set $browserIncognito firefox --private-window
 set $appFinder xfce4-appfinder
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "Hack Nerd Font Mono 12" -show window
-set $emacs /usr/bin/emacs
 
 # Set startup programs.
 exec --no-startup-id dex --autostart --environment i3
