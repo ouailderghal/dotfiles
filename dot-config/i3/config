@@ -2,7 +2,7 @@
 font pango: UbuntuMono Nerd Font Mono 12
 
 # Set apps.
-set $term kitty
+set $term st
 set $fileManager thunar
 set $browser firefox
 set $browserIncognito firefox --private-window
