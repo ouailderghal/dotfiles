@@ -74,7 +74,6 @@
 
 ;; modus-themes
 (use-package modus-themes
-  :if nil
   :ensure t
   :init
   (setq modus-themes-italic-constructs t
@@ -98,6 +97,7 @@
 
 ;; gruber-darker theme
 (use-package gruber-darker-theme
+  :if nil
   :ensure t
   :config
   (load-theme 'gruber-darker t))
