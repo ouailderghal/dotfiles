@@ -4,8 +4,8 @@ font pango: UbuntuMono Nerd Font Mono 12
 # Set apps.
 set $term st
 set $fileManager thunar
-set $browser firefox
-set $browserIncognito firefox --private-window
+set $browser brave-browser
+set $browserIncognito brave-browser --incognito
 set $appFinder xfce4-appfinder
 set $windowSwitcher rofi -theme Arc-Dark -show-icons -font "UbuntuMono Nerd Font Mono 14" -show window
 
