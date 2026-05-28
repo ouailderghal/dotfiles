@@ -3,25 +3,18 @@
 # ~/.bash_aliases
 #
 
-# ls
 alias ls="ls --color=auto"
 alias sl="ls"
 alias l="ls -lh"
 alias ll="ls -lah"
-
-# General
 alias q="exit"
 alias e="nvim"
 alias vi="nvim"
-alias rf="rm -rf"
 alias open="xdg-open"
-alias o="xdg-open"
-alias pinger="ping -c 3 archlinux.org"
 alias copy="xclip -selection c"
 alias grep="grep --color=always"
-alias m="make"
+alias cat='bat'
 
-# Git
 alias g="git"
 alias gl="git log --oneline --decorate"
 alias ga="git add"
@@ -35,7 +28,6 @@ alias gcb="git checkout -b"
 alias gp="git push"
 alias lg="lazygit"
 
-# Tmux
 alias t="tmux"
 alias ta="tmux a"
 alias tns="tmux new-session -s"
@@ -43,14 +35,3 @@ alias tat="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
-
-# DevOps
-alias d="docker"
-alias tf="terraform"
-alias dc="docker compose"
-alias va="vagrant"
-alias an="ansible"
-alias anp="ansible-playbook"
-alias gc="gcloud"
-
-alias cat='bat'
