@@ -53,4 +53,4 @@ alias an="ansible"
 alias anp="ansible-playbook"
 alias gc="gcloud"
 
-alias bat="bat -p"
+alias cat='bat'
