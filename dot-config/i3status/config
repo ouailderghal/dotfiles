@@ -1,14 +1,28 @@
 # vim: set ft=config ts=4
 
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "cpu_usage"
+order += "memory"
+order += "battery BAT0"
+order += "tztime local"
+
 general {
     colors = true
     interval = 1
 }
 
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "battery BAT0"
-order += "tztime local"
+cpu_usage {
+    format = "CPU: %usage"
+    max_threshold = 75
+    degraded_threshold = 25
+}
+
+memory {
+    format = "RAM: %used/%total"
+    threshold_degraded = "10%"
+    threshold_critical = "5%"
+}
 
 wireless _first_ {
     format_up = "W: UP (%ip)"
@@ -21,9 +35,17 @@ ethernet _first_ {
 }
 
 battery "BAT0" {
-    format = "%status %percentage %remaining"
-    path = "/sys/class/power_supply/BAT0/uevent"
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        status_idle = "☻ IDLE"
+        path = "/sys/class/power_supply/BAT0/uevent"
+        low_threshold = 10
 }
+
 
 tztime local {
     format = "%d/%m/%Y %H:%M:%S"
