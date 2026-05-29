@@ -29,7 +29,9 @@ export ARCHFLAGS="-arch $(uname -m)"
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
+export LOCALBIN="$HOME/.local/bin"
 PATH=$PATH:"$GOBIN"
+PATH=$PATH:"$LOCALBIN"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
