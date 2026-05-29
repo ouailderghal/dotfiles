@@ -143,20 +143,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10" 
 
-set $workLaptopMonitor "eDP-1"
-set $workMainMonitor "DP-2-2"
-set $workSecondMonitor "DP-2-1"
-
-workspace $ws1 output $workMainMonitor
-workspace $ws2 output $workMainMonitor
-workspace $ws3 output $workMainMonitor
-workspace $ws4 output $workMainMonitor
-workspace $ws5 output $workSecondMonitor
-workspace $ws6 output $workMainMonitor
-workspace $ws7 output $workMainMonitor
-workspace $ws8 output $workMainMonitor
-workspace $ws9 output $workLaptopMonitor
-workspace $ws10 output $workLaptopMonitor
 
 # switch to workspace.
 bindsym $mod+1 workspace number $ws1
