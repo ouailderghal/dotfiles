@@ -198,7 +198,7 @@ mode "resize" {
 # Bar config
 bar {
     status_command i3status
-    position bottom
+    position top
     colors {
         background #000000
         statusline #ffffff
