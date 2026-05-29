@@ -213,6 +213,24 @@ mode "resize" {
 bar {
     status_command i3status
     position bottom
+    colors {
+        background #000000
+        statusline #ffffff
+        separator  #ffffff
+
+        # class              border    bg        text
+        focused_workspace    #ff0000   #ff0000   #ffffff
+        active_workspace     #000000   #000000   #ffffff
+        inactive_workspace   #000000   #000000   #ffffff
+        urgent_workspace     #ff0000   #ff0000   #ffffff
+    }
 }
+
+# Window colors
+#                       border    bg        text      indicator  child_border
+client.focused          #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
+client.focused_inactive #000000   #000000   #ffffff   #000000    #000000
+client.unfocused        #000000   #000000   #ffffff   #000000    #000000
+client.urgent           #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
 
 bindsym $mod+r mode "resize"
