@@ -215,7 +215,7 @@ bar {
 # Window colors
 #                       border    bg        text      indicator  child_border
 client.focused          #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
-client.focused_inactive #000000   #000000   #ffffff   #000000    #000000
+client.focused_inactive #ff0000   #ff0000   #ffffff   #000000    #000000
 client.unfocused        #000000   #000000   #ffffff   #000000    #000000
 client.urgent           #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
 
