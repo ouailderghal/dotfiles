@@ -2,7 +2,7 @@
 font pango: Hack Nerd Font Mono 10
 
 # Set apps.
-set $term st -e /bin/zsh
+set $term kitty
 set $fileManager thunar
 set $browser brave-browser
 set $browserIncognito brave-browser --incognito
