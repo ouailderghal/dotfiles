@@ -1,6 +1,14 @@
 # Set font.
 font pango: Hack Nerd Font Mono 10
 
+# One Dark color palette.
+set $od_bg        #282c34
+set $od_bg_alt    #21252b
+set $od_fg        #abb2bf
+set $od_gray      #5c6370
+set $od_accent    #61afef
+set $od_urgent    #e06c75
+
 # Set apps.
 set $term kitty
 set $fileManager thunar
@@ -200,23 +208,23 @@ bar {
     status_command i3status
     position top
     colors {
-        background #000000
+        background $od_bg_alt
         statusline #ffffff
-        separator  #ffffff
+        separator  $od_gray
 
-        # class              border    bg        text
-        focused_workspace    #ff0000   #ff0000   #ffffff
-        active_workspace     #000000   #000000   #ffffff
-        inactive_workspace   #000000   #000000   #ffffff
-        urgent_workspace     #ff0000   #ff0000   #ffffff
+        # class              border       bg           text
+        focused_workspace    $od_urgent   $od_urgent   #ffffff
+        active_workspace     $od_bg_alt   $od_bg       #ffffff
+        inactive_workspace   $od_bg_alt   $od_bg_alt   #ffffff
+        urgent_workspace     $od_urgent   $od_urgent   #ffffff
     }
 }
 
 # Window colors
-#                       border    bg        text      indicator  child_border
-client.focused          #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
-client.focused_inactive #ff0000   #ff0000   #ffffff   #000000    #000000
-client.unfocused        #000000   #000000   #ffffff   #000000    #000000
-client.urgent           #ff0000   #ff0000   #ffffff   #ff0000    #ff0000
+#                       border       bg          text       indicator    child_border
+client.focused          $od_urgent   $od_urgent  #ffffff    $od_urgent   $od_urgent
+client.focused_inactive $od_urgent   $od_urgent  #ffffff    $od_urgent   $od_bg_alt
+client.unfocused        $od_bg_alt   $od_bg_alt  #ffffff    $od_bg_alt   $od_bg_alt
+client.urgent           $od_urgent   $od_urgent  $od_bg_alt $od_urgent   $od_urgent
 
 bindsym $mod+r mode "resize"
