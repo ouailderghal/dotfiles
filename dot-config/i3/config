@@ -167,6 +167,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Switch between recent workspaces.
 bindsym $mod+Tab workspace back_and_forth
 
+# Switch to previous / next workspace.
+bindsym Mod1+Left workspace prev
+bindsym Mod1+Right workspace next
+
 # reload the configuration file.
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
