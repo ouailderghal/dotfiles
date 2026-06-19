@@ -1,4 +1,4 @@
-# Set font.
+# Set font.i3/config
 font pango: Hack Nerd Font Mono 10
 
 # One Dark color palette.
@@ -180,8 +180,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Tab workspace back_and_forth
 
 # Switch to previous / next workspace.
-bindsym Mod1+$mod+Left workspace prev
-bindsym Mod1+$mod+Right workspace next
+bindsym Control+$mod+Left workspace prev
+bindsym Control+$mod+Right workspace next
 
 # reload the configuration file.
 bindsym $mod+Shift+c reload
