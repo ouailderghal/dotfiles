@@ -1,4 +1,3 @@
-;; repositories
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
@@ -37,7 +36,7 @@
   (column-number-mode 1)
   ;; (load-theme 'deeper-blue t)
   (set-face-attribute 'default nil
-		      :family "UbuntuMono Nerd Font Mono"
+		      :family "Hack Nerd Font Mono"
 		      :height 110)
   (custom-set-faces
    '(cursor ((t (:background "red"))))))
@@ -62,7 +61,6 @@
 
 ;; doom-themes
 (use-package doom-themes
-  :if nil
   :ensure t
   :init
   (setq doom-themes-enable-bold t
@@ -75,6 +73,7 @@
 ;; modus-themes
 (use-package modus-themes
   :ensure t
+  :if nil
   :init
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil
@@ -108,19 +107,51 @@
   :bind (:map dired-mode-map
 	      ("C-c C-e" . wdired-change-to-wdired-mode)))
 
-;; ido-mode
-(use-package ido
+;; savehist
+(use-package savehist
   :ensure nil
-  :config
-  (ido-mode)
-  (ido-everywhere 1))
+  :init
+  (savehist-mode))
 
-;; smex
-(use-package smex
+;; vertico
+(use-package vertico
   :ensure t
-  :bind
-  (("M-x" . smex)
-   ("M-X" . smex-major-mode-commands)))
+  :init
+  (vertico-mode))
+
+;; orderless
+(use-package orderless
+  :ensure t
+  :init
+  (setq completion-styles '(orderless basic)
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles partial-completion)))))
+
+;; marginalia
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
+
+;; consult
+(use-package consult
+  :ensure t
+  :bind (("C-x b" . consult-buffer)
+	 ("C-x C-r" . consult-recentf)
+	 ("M-y" . consult-yank-pop)
+	 ("M-g g" . consult-goto-line)
+	 ("M-s r" . consult-ripgrep)
+	 ("C-s" . consult-line)))
+
+;; embark
+(use-package embark
+  :ensure t
+  :bind (("C-." . embark-act)
+	 ("C-;" . embark-dwim)))
+
+(use-package embark-consult
+  :ensure t
+  :after (embark consult))
 
 ;; magit
 (use-package magit
@@ -261,20 +292,6 @@
   :custom
   (terraform-indent-level 4))
 
-;; nix-mode
-(use-package nix-mode
-  :ensure t
-  :mode ("\\.nix\\'" . nix-mode)
-  :bind (:map nix-mode-map
-	      ("M-l" . comint-clear-buffer)))
-
-;; tuareg-mode
-(use-package tuareg
-  :ensure t
-  :mode ("\\.ml\\'" . tuareg-mode)
-  :config
-  (setq tuareg-indent-level 2))
-
 ;; markdown-mode
 (use-package markdown-mode
   :ensure t
@@ -323,48 +340,28 @@
   :ensure t
   :hook (org-mode . (lambda () (org-superstar-mode 1))))
 
-;; pkl-mode
-(use-package pkl-mode
-  :ensure t
-  :mode "\\.pkl\\'")
-
-;; treesitter
-(setq treesit-extra-load-path '("/usr/local/lib"))
-(use-package treesit
-  :ensure nil
-  :init
-  (setq treesit-font-lock-level 4)
-  :config
-  (dolist (mode '((go-mode . go-ts-mode)
-                  (python-mode . python-ts-mode)
-                  (php-mode . php-ts-mode)
-                  (javascript-mode . js-ts-mode)
-                  (json-mode . json-ts-mode)
-		  (sh-mode . bash-ts-mode)))
-    (add-to-list 'major-mode-remap-alist mode)))
-
-;; eglot
-(use-package eglot
-  :ensure t
-  :bind
-  (("C-c r" . eglot-rename)
-   ("C-c d" . eglot-find-declaration)
-   ("C-c f" . eglot-format)
-   ("C-c a" . eglot-code-actions)
-   ("C-c e" . eglot-show-diagnostics)
-   ("C-c h" . eldoc)
-   ("C-c g" . xref-find-definitions)
-   ("C-c b" . xref-go-back)
-   ("C-c r" . xref-find-references))
-  :config
-  (add-to-list 'eglot-server-programs '(go-ts-mode . ("gopls")))
-  (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
-  (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
-  (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
-  (add-to-list 'eglot-server-programs '(c-ts-mode . ("clangd")))
-  (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
-  (add-hook 'go-mode-hook 'eglot-ensure)
-  (add-hook 'python-mode-hook 'eglot-ensure))
+;; ;; eglot
+;; (use-package eglot
+;;   :ensure t
+;;   :bind
+;;   (("C-c r" . eglot-rename)
+;;    ("C-c d" . eglot-find-declaration)
+;;    ("C-c f" . eglot-format)
+;;    ("C-c a" . eglot-code-actions)
+;;    ("C-c e" . eglot-show-diagnostics)
+;;    ("C-c h" . eldoc)
+;;    ("C-c g" . xref-find-definitions)
+;;    ("C-c b" . xref-go-back)
+;;    ("C-c r" . xref-find-references))
+;;   :config
+;;   (add-to-list 'eglot-server-programs '(go-ts-mode . ("gopls")))
+;;   (add-to-list 'eglot-server-programs '(python-ts-mode . ("pyright-langserver" "--stdio")))
+;;   (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
+;;   (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
+;;   (add-to-list 'eglot-server-programs '(c-ts-mode . ("clangd")))
+;;   (add-to-list 'eglot-server-programs '(cpp-ts-mode . ("clangd")))
+;;   (add-hook 'go-mode-hook 'eglot-ensure)
+;;   (add-hook 'python-mode-hook 'eglot-ensure))
 
 ;; custom functions
 (use-package emacs

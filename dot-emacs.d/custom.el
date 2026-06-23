@@ -3,12 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(ansible company docker docker-compose-mode dockerfile-mode
-	     doom-themes evil-collection evil-surround go-mode
-	     gruvbox-theme hl-todo json-mode magit markdown-mode
-	     modus-themes nix-mode org-superstar php-mode pkl-mode
-	     projectile-ripgrep smex terraform-mode tikz-mode tuareg)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
