@@ -45,7 +45,7 @@ if [[ -L $HOME/.bash_aliases ]]; then
 fi
 
 # Changing "ls" to "eza"
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
-alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-alias l='eza -l --color=always --group-directories-first'  # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias ls='eza -al --color=always --group-directories-first --icons' # my preferred listing
+alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
+alias l='eza -l --color=always --group-directories-first --icons'  # long format
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
