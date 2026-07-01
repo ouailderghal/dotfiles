@@ -9,7 +9,6 @@
 --ignore=/dot-config/waybar
 --ignore=/dot-emacs\.d
 --ignore=/dot-bashrc
---ignore=/dot-bash_aliases
 --ignore=/dot-xmodmaprc
 --ignore=install\.sh
 --ignore=README\.md

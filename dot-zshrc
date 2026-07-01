@@ -22,6 +22,7 @@ export BROWSER="/usr/bin/firefox"
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER='bat'
+export BAT_STYLE="plain"
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
@@ -40,12 +41,30 @@ else
   export EDITOR='nvim'
 fi
 
-if [[ -L $HOME/.bash_aliases ]]; then
-    source $HOME/.bash_aliases
-fi
+# General aliases
+alias rm='rm -i'
+alias q="exit"
+alias e="nvim"
+alias vi="nvim"
+alias open="xdg-open"
+alias copy="xclip -selection c"
+alias grep="grep --color=always"
+
+# Tmux aliases
+alias t="tmux"
+alias ta="tmux a"
+alias tns="tmux new-session -s"
+alias tat="tmux attach -t"
+alias tls="tmux list-sessions"
+alias tks="tmux kill-session -t"
+alias tkserver="tmux kill-server"
 
 # Changing "ls" to "eza"
-alias ls='eza -al --color=always --group-directories-first --icons' # my preferred listing
-alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
-alias l='eza -l --color=always --group-directories-first --icons'  # long format
-alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias ls="eza --color=always --group-directories-first --icons"
+alias la="eza -a --color=always --group-directories-first --icons"
+alias ll="eza -l --color=always --group-directories-first --icons"
+alias l="eza -l --color=always --group-directories-first --icons"
+alias lla="eza -la --color=always --group-directories-first --icons"
+alias lt="eza -T --color=always --group-directories-first --icons"
+alias lta="eza -aT --color=always --group-directories-first --icons"
+alias sl="eza --color=always --group-directories-first --icons"
