@@ -210,7 +210,7 @@ mode "resize" {
 
 # Bar config
 bar {
-    status_command i3status
+    status_command i3blocks
     position top
     colors {
         background $od_bg_alt

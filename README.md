@@ -28,7 +28,8 @@ Ignored files and packages are configured in `.stowrc`.
 - **git**: Git configuration
 - **hypr**: Hyprland window manager
 - **i3**: i3 window manager
-- **i3status**: Status bar for i3
+- **i3blocks**: Status bar for i3
+- **i3status**: Alternate status bar for i3
 - **ideavim**: JetBrains IdeaVim plugin
 - **kitty**: Kitty terminal
 - **lf**: lf terminal file manager

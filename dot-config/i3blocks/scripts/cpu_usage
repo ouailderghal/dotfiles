@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# i3blocks block: CPU usage percentage, computed as the delta between
+# consecutive invocations (i3blocks re-runs this on each interval tick).
+
+cache="${XDG_RUNTIME_DIR:-/tmp}/i3blocks-cpu_usage"
+
+read -r _ user nice system idle iowait irq softirq steal _ < /proc/stat
+total=$((user + nice + system + idle + iowait + irq + softirq + steal))
+busy=$((total - idle - iowait))
+
+usage=0
+if [ -r "$cache" ]; then
+	read -r prev_total prev_busy < "$cache"
+	delta_total=$((total - prev_total))
+	delta_busy=$((busy - prev_busy))
+	[ "$delta_total" -gt 0 ] && usage=$((100 * delta_busy / delta_total))
+fi
+
+echo "$total $busy" > "$cache"
+
+echo "CPU: ${usage}%"

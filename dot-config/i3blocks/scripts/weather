@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# i3blocks block: current weather condition + temperature from wttr.in
+# (auto-detects location by IP). Cached to avoid hammering the API on every
+# interval tick; left click forces a refresh.
+
+cache="${XDG_RUNTIME_DIR:-/tmp}/i3blocks-weather"
+max_age=900
+
+stale=1
+if [ -r "$cache" ] && [ "$BLOCK_BUTTON" != "1" ]; then
+	age=$(( $(date +%s) - $(date -r "$cache" +%s) ))
+	[ "$age" -lt "$max_age" ] && stale=0
+fi
+
+if [ "$stale" -eq 1 ]; then
+	weather=$(curl -s --max-time 5 'wttr.in/?format=%c+%t' 2>/dev/null)
+	[ -n "$weather" ] && echo "$weather" > "$cache"
+fi
+
+[ -r "$cache" ] && cat "$cache"

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# i3blocks block: battery status/percentage, mirroring the old i3status
+# battery module for BAT0.
+
+bat=/sys/class/power_supply/BAT0
+
+if [ ! -d "$bat" ]; then
+	echo "No battery"
+	exit 0
+fi
+
+status=$(cat "$bat/status")
+capacity=$(cat "$bat/capacity")
+
+case "$status" in
+	Charging)    icon="⚡ CHR" ;;
+	Discharging) icon="🔋 BAT" ;;
+	Full)        icon="☻ FULL" ;;
+	*)           icon="? UNK" ;;
+esac
+
+echo "$icon ${capacity}%"
+echo ""
+
+if [ "$status" = "Discharging" ] && [ "$capacity" -le 10 ]; then
+	echo "#e06c75"
+fi

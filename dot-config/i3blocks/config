@@ -1,0 +1,37 @@
+# vim: set ft=cfg ts=4
+
+separator=true
+separator_block_width=15
+
+[spotify]
+command=~/.config/i3blocks/scripts/spotify
+interval=1
+color=#98c379
+
+[wifi]
+command=~/.config/i3blocks/scripts/network wifi W
+interval=5
+
+[ethernet]
+command=~/.config/i3blocks/scripts/network ethernet E
+interval=5
+
+[cpu_usage]
+command=~/.config/i3blocks/scripts/cpu_usage
+interval=2
+
+[memory]
+command=~/.config/i3blocks/scripts/memory
+interval=5
+
+[battery]
+command=~/.config/i3blocks/scripts/battery
+interval=30
+
+[weather]
+command=~/.config/i3blocks/scripts/weather
+interval=900
+
+[time]
+command=date '+%d/%m/%Y %H:%M:%S'
+interval=1

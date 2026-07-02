@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# i3blocks block: current Spotify track (artist, title, elapsed/total time) via MPRIS, from either the desktop app
+# (player name "spotify") or the web player in a browser tab (player named after the browser, identified by its
+# xesam:url).  Left click toggles play/pause, scroll skips previous/next.
+
+find_player() {
+	for p in $(playerctl -l 2>/dev/null); do
+		[ "$p" = "spotify" ] && { echo "$p"; return; }
+	done
+	for p in $(playerctl -l 2>/dev/null); do
+		case "$(playerctl -p "$p" metadata xesam:url 2>/dev/null)" in
+			*open.spotify.com*) echo "$p"; return ;;
+		esac
+	done
+}
+
+player=$(find_player)
+[ -n "$player" ] || exit 0
+
+case "$BLOCK_BUTTON" in
+	1) playerctl -p "$player" play-pause 2>/dev/null ;;
+	4) playerctl -p "$player" previous 2>/dev/null ;;
+	5) playerctl -p "$player" next 2>/dev/null ;;
+esac
+
+# Use a control char as the field separator since titles can contain "|".
+sep=$(printf '\037')
+raw=$(playerctl -p "$player" metadata --format \
+	"{{ artist }}${sep}{{ title }}${sep}{{ duration(position) }}/{{ duration(mpris:length) }}${sep}{{ status }}" \
+	2>/dev/null)
+IFS="$sep" read -r artist title elapsed status <<EOF
+$raw
+EOF
+
+[ -n "$title" ] || exit 0
+
+# The web player often leaves xesam:artist blank. When it does, the title holds either "Song • Artist" (from a real
+# Media Session update) or the raw browser tab title "Song - song/Album by Artist | Spotify" (fallback).  Pull
+# song/artist out of either shape instead of showing that noise.
+if [ -z "$artist" ]; then
+	case "$title" in
+		*" • "*)
+			artist="${title#* • }"
+			title="${title%% • *}"
+			;;
+		*" | Spotify")
+			rest="${title% | Spotify}"
+			case "$rest" in
+				*" - "*" by "*)
+					artist="${rest##* by }"
+					title="${rest%% - *}"
+					;;
+				*)
+					title="$rest"
+					;;
+			esac
+			;;
+	esac
+fi
+
+track="$title"
+[ -n "$artist" ] && track="$artist - $title"
+[ -n "$elapsed" ] && track="$track ($elapsed)"
+
+case "$status" in
+	Playing) icon="▶" ;;
+	Paused)  icon="⏸" ;;
+	*)       icon="♫" ;;
+esac
+
+echo "$icon $track"
