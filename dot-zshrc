@@ -51,6 +51,9 @@ alias vi="nvim"
 alias open="xdg-open"
 alias copy="xclip -selection c"
 alias grep="grep --color=auto"
+alias l="ls -lh"
+alias ll="ls -lh"
+alias la="ls -lha"
 
 # Tmux aliases
 alias t="tmux"
@@ -60,15 +63,5 @@ alias tat="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
-
-# Changing "ls" to "eza"
-alias ls="eza --color=always --group-directories-first --icons"
-alias la="eza -a --color=always --group-directories-first --icons"
-alias ll="eza -l --color=always --group-directories-first --icons"
-alias l="eza -l --color=always --group-directories-first --icons"
-alias lla="eza -la --color=always --group-directories-first --icons"
-alias lt="eza -T --color=always --group-directories-first --icons"
-alias lta="eza -aT --color=always --group-directories-first --icons"
-alias sl="eza --color=always --group-directories-first --icons"
 
 # vim: set ft=sh:
