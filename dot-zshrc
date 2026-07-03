@@ -64,4 +64,7 @@ alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tkserver="tmux kill-server"
 
+# Git aliases
+alias gss="git status -s"
+
 # vim: set ft=sh:
