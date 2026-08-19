@@ -1,16 +1,8 @@
 # Set font.i3/config
 font pango: Hack Nerd Font Mono 10
 
-# One Dark color palette.
-set $od_bg        #282c34
-set $od_bg_alt    #21252b
-set $od_fg        #abb2bf
-set $od_gray      #5c6370
-set $od_accent    #61afef
-set $od_urgent    #e06c75
-
 # Set apps.
-set $term kitty
+set $term st -e zsh
 set $fileManager thunar
 set $browser brave-browser
 set $browserIncognito brave-browser --incognito
@@ -53,7 +45,7 @@ bindsym $mod+Control+l --release exec i3lock -e -c "#000000"
 bindsym $mod+Shift+p exec ~/.scripts/screenlayout
 
 ### Window rules.
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 1
 
 for_window [class="^Pcmanfm$"] floating enable
@@ -210,26 +202,15 @@ mode "resize" {
 
 # Bar config
 bar {
-    status_command i3blocks
+    status_command i3status
     position top
-    colors {
-        background $od_bg_alt
-        statusline #ffffff
-        separator  $od_gray
-
-        # class              border       bg           text
-        focused_workspace    $od_urgent   $od_urgent   #ffffff
-        active_workspace     $od_bg_alt   $od_bg       #ffffff
-        inactive_workspace   $od_bg_alt   $od_bg_alt   #ffffff
-        urgent_workspace     $od_urgent   $od_urgent   #ffffff
-    }
 }
 
 # Window colors
-#                       border       bg          text       indicator    child_border
-client.focused          $od_urgent   $od_urgent  #ffffff    $od_urgent   $od_urgent
-client.focused_inactive $od_urgent   $od_urgent  #ffffff    $od_urgent   $od_bg_alt
-client.unfocused        $od_bg_alt   $od_bg_alt  #ffffff    $od_bg_alt   $od_bg_alt
-client.urgent           $od_urgent   $od_urgent  $od_bg_alt $od_urgent   $od_urgent
+#                       border   bg       text     indicator child_border
+client.focused          #4c7899  #285577  #ffffff  #2e9ef4   #285577
+client.focused_inactive #333333  #5f676a  #ffffff  #484e50   #5f676a
+client.unfocused        #333333  #222222  #888888  #292d2e   #222222
+client.urgent           #2f343a  #900000  #ffffff  #900000   #900000
 
 bindsym $mod+r mode "resize"
