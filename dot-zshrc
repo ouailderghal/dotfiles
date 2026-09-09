@@ -66,5 +66,9 @@ alias tkserver="tmux kill-server"
 
 # Git aliases
 alias gss="git status -s"
+alias gp="git push"
+alias gl="git log --oneline"
+alias gaa="git add -A"
+alias gcm="git commit -m"
 
 # vim: set ft=sh:
