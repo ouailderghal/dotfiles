@@ -45,8 +45,8 @@ vim.opt.iskeyword:append("-")
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.conceallevel = 0
-vim.opt.colorcolumn = "80"
-vim.opt.textwidth = 80
+vim.opt.colorcolumn = "120"
+vim.opt.textwidth = 120
 vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.formatoptions:remove("t")
