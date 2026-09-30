@@ -5,11 +5,19 @@ return {
 
   config = function()
     require("onedark").setup({
-      style = "dark", -- dark, darker, cool, deep, warm, warmer, light
+      style = "light", -- dark, darker, cool, deep, warm, warmer, light
       transparent = false,
       term_colors = true,
       ending_tildes = false,
       cmp_itemkind_reverse = false,
+
+      -- Match the kitty light theme background (kitty/themes/light.conf)
+      colors = {
+        bg0 = "#dcdcdc",
+        bg1 = "#d0d0d0",
+        bg2 = "#c6c6c6",
+        bg3 = "#bcbcbc",
+      },
 
       code_style = {
         comments = "italic",
@@ -28,43 +36,43 @@ return {
       -- Override highlight groups
       highlights = {
         -- Editor chrome
-        CursorLine   = { bg = "#2c323c" },
-        LineNr       = { fg = "#5c6370" },
-        CursorLineNr = { fg = "#e5c07b", fmt = "bold" },
-        MatchParen   = { fg = "#d19a66", fmt = "bold,underline" },
-        Search       = { fg = "#282c34", bg = "#e5c07b", fmt = "bold" },
-        IncSearch    = { fg = "#282c34", bg = "#d19a66", fmt = "bold" },
+        CursorLine   = { bg = "$bg1" },
+        LineNr       = { fg = "$grey" },
+        CursorLineNr = { fg = "$yellow", fmt = "bold" },
+        MatchParen   = { fg = "$orange", fmt = "bold,underline" },
+        Search       = { fg = "$bg0", bg = "$yellow", fmt = "bold" },
+        IncSearch    = { fg = "$bg0", bg = "$orange", fmt = "bold" },
 
         -- Syntax
-        ["@keyword"]             = { fg = "#c678dd", fmt = "bold" },
-        ["@keyword.return"]      = { fg = "#e06c75", fmt = "bold" },
-        ["@function"]            = { fg = "#61afef", fmt = "bold" },
-        ["@function.builtin"]    = { fg = "#56b6c2", fmt = "bold" },
-        ["@type"]                = { fg = "#e5c07b", fmt = "bold" },
-        ["@type.builtin"]        = { fg = "#e5c07b", fmt = "bold,italic" },
-        ["@constant"]            = { fg = "#c678dd", fmt = "bold" },
-        ["@constant.builtin"]    = { fg = "#c678dd", fmt = "bold,italic" },
-        ["@string"]              = { fg = "#98c379", fmt = "italic" },
-        ["@comment"]             = { fg = "#5c6370", fmt = "italic" },
-        ["@variable"]            = { fg = "#abb2bf" },
-        ["@variable.builtin"]    = { fg = "#e06c75", fmt = "italic" },
-        ["@parameter"]           = { fg = "#d19a66" },
-        ["@field"]               = { fg = "#abb2bf" },
-        ["@property"]            = { fg = "#abb2bf" },
-        ["@operator"]            = { fg = "#56b6c2" },
-        ["@punctuation.bracket"] = { fg = "#abb2bf" },
+        ["@keyword"]             = { fg = "$purple", fmt = "bold" },
+        ["@keyword.return"]      = { fg = "$red", fmt = "bold" },
+        ["@function"]            = { fg = "$blue", fmt = "bold" },
+        ["@function.builtin"]    = { fg = "$cyan", fmt = "bold" },
+        ["@type"]                = { fg = "$yellow", fmt = "bold" },
+        ["@type.builtin"]        = { fg = "$yellow", fmt = "bold,italic" },
+        ["@constant"]            = { fg = "$purple", fmt = "bold" },
+        ["@constant.builtin"]    = { fg = "$purple", fmt = "bold,italic" },
+        ["@string"]              = { fg = "$green", fmt = "italic" },
+        ["@comment"]             = { fg = "$grey", fmt = "italic" },
+        ["@variable"]            = { fg = "$fg" },
+        ["@variable.builtin"]    = { fg = "$red", fmt = "italic" },
+        ["@parameter"]           = { fg = "$orange" },
+        ["@field"]               = { fg = "$fg" },
+        ["@property"]            = { fg = "$fg" },
+        ["@operator"]            = { fg = "$cyan" },
+        ["@punctuation.bracket"] = { fg = "$fg" },
 
         -- Diagnostics
-        DiagnosticError          = { fg = "#e06c75" },
-        DiagnosticWarn           = { fg = "#e5c07b" },
-        DiagnosticInfo           = { fg = "#61afef" },
-        DiagnosticHint           = { fg = "#98c379" },
-        DiagnosticUnderlineError = { fmt = "undercurl", sp = "#e06c75" },
-        DiagnosticUnderlineWarn  = { fmt = "undercurl", sp = "#e5c07b" },
+        DiagnosticError          = { fg = "$red" },
+        DiagnosticWarn           = { fg = "$yellow" },
+        DiagnosticInfo           = { fg = "$blue" },
+        DiagnosticHint           = { fg = "$green" },
+        DiagnosticUnderlineError = { fmt = "undercurl", sp = "$red" },
+        DiagnosticUnderlineWarn  = { fmt = "undercurl", sp = "$yellow" },
       },
     })
 
-    vim.o.background = "dark"
+    vim.o.background = "light"
     vim.cmd("colorscheme onedark")
   end,
 }
