@@ -18,7 +18,7 @@ return {
     },
 
     config = function()
-      config_abs_path = { show_path = "absolute" }
+      local config_abs_path = { show_path = "absolute" }
 
       require("neo-tree").setup({
         enable_git_status = true,

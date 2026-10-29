@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 -- Functional wrapper for mapping custom keybindings
-function map(mode, lhs, rhs, opts)
+local function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
     if opts then
         options = vim.tbl_extend("force", options, opts)
@@ -32,6 +32,3 @@ map("n", "<S-Tab>", ":bprevious<CR>")
 map("n", "<C-l>", ":bnext<CR>")
 map("n", "<C-h>", ":bprevious<CR>")
 map("n", "<leader>d", ":bd! <CR>")
-
--- Reload config
-map("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>")
