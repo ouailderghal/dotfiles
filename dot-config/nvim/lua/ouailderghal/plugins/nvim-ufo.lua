@@ -9,7 +9,7 @@ return {
                     yaml = { "indent" },
                     json = { "indent" },
                 }
-                return map[filetype] or { "treesitter", "indent" }
+                return map[filetype] or { "lsp", "indent" }
             end,
         })
 
