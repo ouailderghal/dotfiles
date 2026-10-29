@@ -21,6 +21,7 @@ local servers = {
     init_options = { licenceKey = vim.fn.expand("~/intelephense/licence.txt") },
   },
   gopls = { requires = "go" },
+  jdtls = { requires = "java" },
 }
 
 -- Servers are not started automatically: <F11> starts them for the session,
