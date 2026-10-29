@@ -4,20 +4,33 @@ return {
   priority = 1000,
 
   config = function()
-    require("onedark").setup({
-      style = "light", -- dark, darker, cool, deep, warm, warmer, light
+    -- Variant loaded at startup: "dark" or "light"
+    local default_variant = "dark"
+
+    local variants = {
+      dark = {
+        style = "dark", -- dark, darker, cool, deep, warm, warmer
+        colors = {},
+      },
+      light = {
+        style = "light",
+        -- Match the kitty light theme background (kitty/themes/light.conf)
+        colors = {
+          bg0 = "#dcdcdc",
+          bg1 = "#d0d0d0",
+          bg2 = "#c6c6c6",
+          bg3 = "#bcbcbc",
+        },
+      },
+    }
+
+    local onedark = require("onedark")
+
+    onedark.setup({
       transparent = false,
       term_colors = true,
       ending_tildes = false,
       cmp_itemkind_reverse = false,
-
-      -- Match the kitty light theme background (kitty/themes/light.conf)
-      colors = {
-        bg0 = "#dcdcdc",
-        bg1 = "#d0d0d0",
-        bg2 = "#c6c6c6",
-        bg3 = "#bcbcbc",
-      },
 
       code_style = {
         comments = "italic",
@@ -43,25 +56,6 @@ return {
         Search       = { fg = "$bg0", bg = "$yellow", fmt = "bold" },
         IncSearch    = { fg = "$bg0", bg = "$orange", fmt = "bold" },
 
-        -- Syntax
-        ["@keyword"]             = { fg = "$purple", fmt = "bold" },
-        ["@keyword.return"]      = { fg = "$red", fmt = "bold" },
-        ["@function"]            = { fg = "$blue", fmt = "bold" },
-        ["@function.builtin"]    = { fg = "$cyan", fmt = "bold" },
-        ["@type"]                = { fg = "$yellow", fmt = "bold" },
-        ["@type.builtin"]        = { fg = "$yellow", fmt = "bold,italic" },
-        ["@constant"]            = { fg = "$purple", fmt = "bold" },
-        ["@constant.builtin"]    = { fg = "$purple", fmt = "bold,italic" },
-        ["@string"]              = { fg = "$green", fmt = "italic" },
-        ["@comment"]             = { fg = "$grey", fmt = "italic" },
-        ["@variable"]            = { fg = "$fg" },
-        ["@variable.builtin"]    = { fg = "$red", fmt = "italic" },
-        ["@parameter"]           = { fg = "$orange" },
-        ["@field"]               = { fg = "$fg" },
-        ["@property"]            = { fg = "$fg" },
-        ["@operator"]            = { fg = "$cyan" },
-        ["@punctuation.bracket"] = { fg = "$fg" },
-
         -- Diagnostics
         DiagnosticError          = { fg = "$red" },
         DiagnosticWarn           = { fg = "$yellow" },
@@ -72,7 +66,22 @@ return {
       },
     })
 
-    vim.o.background = "light"
-    vim.cmd("colorscheme onedark")
+    -- Apply a variant. set_options replaces the colors table, whereas setup()
+    -- would merge it with the previous variant's overrides.
+    local function apply(variant)
+      onedark.set_options("style", variants[variant].style)
+      onedark.set_options("colors", variants[variant].colors)
+      vim.o.background = variant
+      vim.cmd.colorscheme("onedark")
+    end
+
+    local function toggle_variant()
+      apply(vim.o.background == "dark" and "light" or "dark")
+    end
+
+    vim.keymap.set("n", "<leader>tb", toggle_variant, { desc = "Toggle light/dark theme" })
+    vim.keymap.set("n", "<F10>", toggle_variant, { desc = "Toggle light/dark theme" })
+
+    apply(default_variant)
   end,
 }
