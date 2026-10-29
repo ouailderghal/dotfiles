@@ -16,5 +16,13 @@ return {
         }
         vim.g.vimtex_mappings_enabled = true
         vim.g.vimtex_quickfix_mode = 2
+
+        vim.api.nvim_create_autocmd("FileType", {
+            group = vim.api.nvim_create_augroup("VimtexKeymaps", { clear = true }),
+            pattern = "tex",
+            callback = function(event)
+                vim.keymap.set("n", "<leader>lv", "<cmd>VimtexView<cr>", { buffer = event.buf, silent = true })
+            end,
+        })
     end,
 }
