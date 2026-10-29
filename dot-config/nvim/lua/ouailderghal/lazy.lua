@@ -20,6 +20,12 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = { { import = "ouailderghal.plugins" } },
   change_detection = { enabled = false, notify = false },
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "default" } },
   checker = { enabled = false },
+  performance = {
+    rtp = {
+      -- Keep Neovim's bundled treesitter parsers (e.g. /usr/lib/nvim/parser) on the rtp
+      paths = { vim.fn.fnamemodify(vim.v.progpath, ":p:h:h") .. "/lib/nvim" },
+    },
+  },
 })
